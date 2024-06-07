@@ -1,39 +1,34 @@
----
-id: contextualstandards
-title: Contextual Standard
----
-
 # Introduction
 Content:
 
 [Motivation](#motivation)
 
 [Description and Requirements](#description-and-requirements)
-- [Classification](#classification)
-- [Analysis](#analysis)
+   - [Classification](#classification)
+   - [Analysis](#analysis)
 
 [Criteria](#criteria)
 
 [1. QUALITY](#1-quality)
-- [1.1 Direct connection](#11-direct-connection)
-- [1.2 Review and publication of the test results](#12-review-and-publication-of-the-test-results)
+   - [1.1 Direct connection](#11-direct-connection)
+   - [1.2 Review and publication of the test results](#12-review-and-publication-of-the-test-results)
 
 [2. DOCUMENTATION](#2-documentation)
-- [2.1 Documentation of the system functionality](#21-documentation-of-the-system-functionality)
-- [2.2 Documentation of quality assurance](#22-documentation-of-quality-assurance)
+   - [2.1 Documentation of the system functionality](#21-documentation-of-the-system-functionality)
+   - [2.2 Documentation of quality assurance](#22-documentation-of-quality-assurance)
 
 [3. DATA PROTECTION AND PRIVACY](#3-data-protection-and-privacy)
-- [3.1 Exclusion of sensitive categories](#31-exclusion-of-sensitive-categories)
+   - [3.1 Exclusion of sensitive categories](#31-exclusion-of-sensitive-categories)
 
 [4. TECHNOLOGY](#4-technology)
-- [4.1 Taxonomy standard](#41-taxonomy-standard)
-- [4.2 Open RTB standard](#42-open-rtb-standard)
+   - [4.1 Taxonomy standard](#41-taxonomy-standard)
+   - [4.2 Open RTB standard](#42-open-rtb-standard)
 
 [Documentation](#documentation)
-- [Market adoption and implementation overview](#market-adoption-and-implementation-overview)
+   - [Market adoption and implementation overview](#market-adoption-and-implementation-overview)
 
 [Current Projects](#current-projects)
-
+     
 
 # Motivation
 
@@ -45,7 +40,7 @@ In order to successfully establish contextual targeting on the market, scalabili
 The standard described below is supported by all marketers organized in the OVK. OVK members have already implemented it or will implement it by the end of Q2 2024.
 
 # Description and Requirements
-The OVK Contextual Standard v1.0 is provider and technology-agnostic standard for online contextual targeting in the German advertising market.  The standard emphasizes direct connectivity to the content owner or marketer, scalability, reliable quality, and adherence to the IAB Content Taxonomy and the Open RTB standard for signaling. Sensitive categories are excluded, and sensitive topics are signaled. The system functionality, quality assurance, and processes and methods for quality assurance are documented and published on the publishers websited and also here.
+The OVK Contextual Standard v1.0 is provider and technology-agnostic standard for online contextual targeting in the German advertising market.  The standard emphasizes direct connectivity to the content owner or marketer, scalability, reliable quality, and adherence to the IAB Content Taxonomy and the Open RTB standard for signaling. Sensitive categories are excluded, and sensitive topics are signaled. The system functionality, quality assurance, and processes and methods for quality assurance are documented and published on the publishers websited and also here. 
 
 # Distinction between Classification and Analysis
 When talking about the Contextual Standard the distiction between Classification and Analysis should be made.
@@ -64,13 +59,13 @@ Main Principles
 -  Enrichment with information that is not publicly available
 -  Transparency
 -  comprehensible Quality for market participants
-
+ 
 ### 1.1 Direct connection
 - The technology used is connected directly by the content owner or marketer.
 
 ### 1.2 Review and publication of the test results
-- Content classification results are checked manually on a random basis for each technology used.<br />
-- If possible, the classification results of different technologies are compared and contrasted.<br />
+- Content classification results are checked manually on a random basis for each technology used.<br>
+- If possible, the classification results of different technologies are compared and contrasted.<br>
 - The results of the manual check and, if applicable, those of the comparison are published on the provider's website.
 
 ## 2. DOCUMENTATION
@@ -80,21 +75,21 @@ Main Principles
 -  Consistently high quality
 -  Trust
 
-### 2.1 Documentation of the system functionality<br />
-- The functionality of the classification system(s) used is described in the form of documentation (underlying architecture, connection to the
-  content, which data is used, how the data is processed, etc.).<br />
+ ### 2.1 Documentation of the system functionality<br>
+ - The functionality of the classification system(s) used is described in the form of documentation (underlying architecture, connection to the 
+   content, which data is used, how the data is processed, etc.).<br>
 - The documentation is published on the provider's website.
-
-### 2.2 Documentation of quality assurance﻿﻿
-- Systems and data are continuously reviewed and optimized.<br />
-- The processes and methods for quality assurance are documented and published on the provider's website.
+   
+ ### 2.2 Documentation of quality assurance﻿﻿
+ - Systems and data are continuously reviewed and optimized.<br>
+ - The processes and methods for quality assurance are documented and published on the provider's website.
 
 ## 3. DATA PROTECTION AND PRIVACY
-Main Principles
+ Main Principles
 -  No usage of sensitive categories
 
-### 3.1 Exclusion of sensitive categories
-- Following sensitive categories are excluded, "Sensitive Topic" should be signaled:
+ ### 3.1 Exclusion of sensitive categories
+ - Following sensitive categories are excluded, "Sensitive Topic" should be signaled:
 
 | Unique ID | Name                                   | Tier 1                  | Tier 2                   | Tier 3                             | Tier 4              | Replacement     |
 |-----------|----------------------------------------|-------------------------|--------------------------|------------------------------------|---------------------|-----------------|
@@ -163,16 +158,16 @@ Main Principles
 
 
 
-## 4. TECHNOLOGY
-Main Principles
+ ## 4. TECHNOLOGY
+ Main Principles
 -  Transparency
+  
+ ### 4.1 Taxonomy standard
+ - The IAB Content Taxonomy at least version 2.1 is used. Sensitive categories are excluded (see data protection)
+   [IAB Content Taxonony 2.1](https://github.com/InteractiveAdvertisingBureau/Taxonomies/blob/main/Content%20Taxonomies/Content%20Taxonomy%202.1.tsv)
 
-### 4.1 Taxonomy standard
-- The IAB Content Taxonomy at least version 2.1 is used. Sensitive categories are excluded (see data protection)
-  [IAB Content Taxonony 2.1](https://github.com/InteractiveAdvertisingBureau/Taxonomies/blob/main/Content%20Taxonomies/Content%20Taxonomy%202.1.tsv)
-
-### 4.2 Open RTB standard
-- Signaling is carried out according to the Open RTB standard.
+ ### 4.2 Open RTB standard
+ - Signaling is carried out according to the Open RTB standard.
 
 # Documentation
 Please find here all documentation around the OVK Contextual Standard.
@@ -184,12 +179,12 @@ Marketers sales houses and publishers implemented the standard and system docume
 |        **marketer**          | `ducumentation according to 2.1 & 2.2 ` |
 | ---------------------------------- |--------------|
 | `Ad Alliance`           |https://osdatasolutions.de/contextual-ovk/  
-| `Bauer`                 |
+| `Bauer`                 |  
 | `BCN`                   |
 | `BurdaForward`          |https://www.burda-forward.de/advertising/data-targeting/
 | `Funke`                 |https://funkedigital.de/ovk-contextual/ 
 | `Himedia`               |
-| `iq Digital`            |
+| `iq Digital`            | 
 | `Media Impact`          |https://osdatasolutions.de/contextual-ovk/ 
 | `mobile.de`             |
 | `netpointmedia`         |
