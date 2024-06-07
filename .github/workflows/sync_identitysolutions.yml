@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 0 * * *'  # Runs once a day at midnight
+    - cron: '0 0 * * *'  # Läuft einmal täglich um Mitternacht
 
 jobs:
   sync:
@@ -49,3 +49,7 @@ jobs:
         git push origin main || echo "Nothing to push"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Post-Action Cleanup
+      run: |
+        echo "Cleanup complete"
