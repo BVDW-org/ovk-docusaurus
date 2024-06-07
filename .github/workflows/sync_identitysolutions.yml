@@ -30,17 +30,18 @@ jobs:
       run: ls -R ovk-identifiersupport
 
     - name: List files in ovk-docusaurus before copy
-      run: ls -la ovk-docusaurus/ovk/docs
+      run: ls -la ovk-docusaurus/ovk/docs/identitysolutions
 
-    - name: List files in ovk-identifiersupport before copy
-      run: ls -la ovk-identifiersupport/ovk/docs/identitysolutions
+    - name: Remove old identitysolutions folder
+      run: |
+        echo "Removing old identitysolutions folder"
+        rm -rf ovk-docusaurus/ovk/docs/identitysolutions
+        mkdir ovk-docusaurus/ovk/docs/identitysolutions
 
     - name: Copy identitysolutions to ovk-docusaurus
       run: |
-        echo "Removing old identitysolutions folder if it exists"
-        rm -rf ovk-docusaurus/ovk/docs/identitysolutions
         echo "Copying identitysolutions folder"
-        cp -r ovk-identifiersupport/ovk/docs/identitysolutions ovk-docusaurus/ovk/docs/
+        cp -r ovk-identifiersupport/* ovk-docusaurus/ovk/docs/identitysolutions/
         echo "Files after copy:"
         ls -la ovk-docusaurus/ovk/docs/identitysolutions
 
