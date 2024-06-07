@@ -1,0 +1,41 @@
+name: Sync identitysolutions
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * *'  # Runs once a day at midnight
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout ovk-docusaurus
+      uses: actions/checkout@v2
+      with:
+        repository: BVDW-org/ovk-docusaurus
+        path: ovk-docusaurus
+
+    - name: Checkout ovk-identifiersupport
+      uses: actions/checkout@v2
+      with:
+        repository: BVDW-org/ovk-identifiersupport
+        path: ovk-identifiersupport
+
+    - name: Copy identitysolutions to ovk-docusaurus
+      run: |
+        rm -rf ovk-docusaurus/ovk/docs/identitysolutions
+        cp -r ovk-identifiersupport/ovk/docs/identitysolutions ovk-docusaurus/ovk/docs/
+
+    - name: Commit and push changes
+      run: |
+        cd ovk-docusaurus
+        git config --global user.email "carlos.bracho@axelspringer.com"
+        git config --global user.name "github-actions[bot]"
+        git add ovk/docs/identitysolutions
+        git commit -m "Update identitysolutions from ovk-identifiersupport"
+        git push origin main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
