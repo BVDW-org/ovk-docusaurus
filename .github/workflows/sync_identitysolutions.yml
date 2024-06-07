@@ -24,15 +24,24 @@ jobs:
         repository: BVDW-org/ovk-identifiersupport
         path: ovk-identifiersupport
 
+    - name: List files in ovk-docusaurus
+      run: ls -la ovk-docusaurus/ovk/docs
+
+    - name: List files in ovk-identifiersupport
+      run: ls -la ovk-identifiersupport/ovk/docs/identitysolutions
+
     - name: Copy identitysolutions to ovk-docusaurus
       run: |
         rm -rf ovk-docusaurus/ovk/docs/identitysolutions
         cp -r ovk-identifiersupport/ovk/docs/identitysolutions ovk-docusaurus/ovk/docs/
 
+    - name: List files after copy
+      run: ls -la ovk-docusaurus/ovk/docs/identitysolutions
+
     - name: Commit and push changes
       run: |
         cd ovk-docusaurus
-        git config --global user.email "carlos.bracho@axelspringer.com"
+        git config --global user.email "your-email@example.com"
         git config --global user.name "github-actions[bot]"
         git add ovk/docs/identitysolutions
         git commit -m "Update identitysolutions from ovk-identifiersupport"
