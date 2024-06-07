@@ -23,6 +23,7 @@ jobs:
       with:
         repository: BVDW-org/ovk-identifiersupport
         path: ovk-identifiersupport
+        ref: main  # Explizit den Branch 'main' angeben
 
     - name: List files in ovk-docusaurus before copy
       run: ls -la ovk-docusaurus/ovk/docs
