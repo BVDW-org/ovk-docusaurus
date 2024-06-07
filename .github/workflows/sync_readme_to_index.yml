@@ -1,0 +1,54 @@
+name: Sync README to index
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * *'  # Läuft einmal täglich um Mitternacht
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout ovk-docusaurus
+      uses: actions/checkout@v2
+      with:
+        repository: BVDW-org/ovk-docusaurus
+        path: ovk-docusaurus
+
+    - name: Checkout ovk-contextualstandard
+      uses: actions/checkout@v2
+      with:
+        repository: BVDW-org/ovk-contextualstandard
+        path: ovk-contextualstandard
+        token: ${{ secrets.GH_TOKEN }}
+        ref: main  # Explizit den Branch 'main' angeben
+
+    - name: Clear old index.md content
+      run: |
+        echo "Clearing old content of index.md"
+        > ovk-docusaurus/ovk/docs/contextualstandards/index.md
+
+    - name: Copy README to index.md
+      run: |
+        echo "Copying README.md to index.md"
+        cp ovk-contextualstandard/README.md ovk-docusaurus/ovk/docs/contextualstandards/index.md
+        echo "Files after copy:"
+        ls -la ovk-docusaurus/ovk/docs/contextualstandards/
+
+    - name: Commit and push changes
+      env:
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      run: |
+        cd ovk-docusaurus
+        git config --global user.email "carlos.bracho@axelspringer.com"
+        git config --global user.name "github-actions[bot]"
+        git add ovk/docs/contextualstandards/index.md
+        if git diff-index --quiet HEAD; then
+          echo "No changes to commit"
+        else
+          git commit -m "Update index.md from README.md of ovk-contextualstandard"
+          git push origin main
+        fi
