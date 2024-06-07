@@ -1,4 +1,4 @@
-# Case Studies
+# Case Studies -
 
 ## Use Case "Bid Stream (deal id)"
 ### Case Study 1:
