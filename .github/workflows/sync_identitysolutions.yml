@@ -24,10 +24,10 @@ jobs:
         repository: BVDW-org/ovk-identifiersupport
         path: ovk-identifiersupport
 
-    - name: List files in ovk-docusaurus
+    - name: List files in ovk-docusaurus before copy
       run: ls -la ovk-docusaurus/ovk/docs
 
-    - name: List files in ovk-identifiersupport
+    - name: List files in ovk-identifiersupport before copy
       run: ls -la ovk-identifiersupport/ovk/docs/identitysolutions
 
     - name: Copy identitysolutions to ovk-docusaurus
