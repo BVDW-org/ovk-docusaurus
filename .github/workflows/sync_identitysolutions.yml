@@ -26,6 +26,9 @@ jobs:
         token: ${{ secrets.GH_TOKEN }}
         ref: main  # Explizit den Branch 'main' angeben
 
+    - name: List all files in ovk-identifiersupport
+      run: ls -R ovk-identifiersupport
+
     - name: List files in ovk-docusaurus before copy
       run: ls -la ovk-docusaurus/ovk/docs
 
