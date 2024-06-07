@@ -1,0 +1,58 @@
+name: Sync werbeformen docs
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * *'  # Läuft einmal täglich um Mitternacht
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout ovk-docusaurus
+      uses: actions/checkout@v2
+      with:
+        repository: BVDW-org/ovk-docusaurus
+        path: ovk-docusaurus
+
+    - name: Checkout ovk-werbeformen
+      uses: actions/checkout@v2
+      with:
+        repository: BVDW-org/ovk-werbeformen
+        path: ovk-werbeformen
+        token: ${{ secrets.GH_TOKEN }}
+        ref: main  # Explizit den Branch 'main' angeben
+
+    - name: List all files in ovk-werbeformen
+      run: ls -R ovk-werbeformen/werbeformen.org/docs
+
+    - name: Remove old werbeformen folder
+      run: |
+        echo "Removing old werbeformen folder"
+        rm -rf ovk-docusaurus/ovk/docs/werbeformen
+        mkdir ovk-docusaurus/ovk/docs/werbeformen
+
+    - name: Copy werbeformen docs to ovk-docusaurus
+      run: |
+        echo "Copying werbeformen docs"
+        cp -r ovk-werbeformen/werbeformen.org/docs/* ovk-docusaurus/ovk/docs/werbeformen/
+        echo "Files after copy:"
+        ls -la ovk-docusaurus/ovk/docs/werbeformen
+
+    - name: Commit and push changes
+      env:
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      run: |
+        cd ovk-docusaurus
+        git config --global user.email "carlos.bracho@axelspringer.com"
+        git config --global user.name "github-actions[bot]"
+        git add ovk/docs/werbeformen
+        if git diff-index --quiet HEAD; then
+          echo "No changes to commit"
+        else
+          git commit -m "Update werbeformen docs from ovk-werbeformen"
+          git push origin main
+        fi
