@@ -13,13 +13,13 @@ jobs:
 
     steps:
     - name: Checkout ovk-docusaurus
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: BVDW-org/ovk-docusaurus
         path: ovk-docusaurus
 
     - name: Checkout ovk-identifiersupport
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: BVDW-org/ovk-identifiersupport
         path: ovk-identifiersupport
