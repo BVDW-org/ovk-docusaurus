@@ -64,8 +64,8 @@ Main Principles
 - The technology used is connected directly by the content owner or marketer.
 
 ### 1.2 Review and publication of the test results
-- Content classification results are checked manually on a random basis for each technology used.<br>
-- If possible, the classification results of different technologies are compared and contrasted.<br>
+- Content classification results are checked manually on a random basis for each technology used.<br />
+- If possible, the classification results of different technologies are compared and contrasted.<br />
 - The results of the manual check and, if applicable, those of the comparison are published on the provider's website.
 
 ## 2. DOCUMENTATION
@@ -75,13 +75,13 @@ Main Principles
 -  Consistently high quality
 -  Trust
 
- ### 2.1 Documentation of the system functionality<br>
+ ### 2.1 Documentation of the system functionality<br />
  - The functionality of the classification system(s) used is described in the form of documentation (underlying architecture, connection to the 
-   content, which data is used, how the data is processed, etc.).<br>
+   content, which data is used, how the data is processed, etc.).<br />
 - The documentation is published on the provider's website.
    
  ### 2.2 Documentation of quality assurance﻿﻿
- - Systems and data are continuously reviewed and optimized.<br>
+ - Systems and data are continuously reviewed and optimized.<br />
  - The processes and methods for quality assurance are documented and published on the provider's website.
 
 ## 3. DATA PROTECTION AND PRIVACY
