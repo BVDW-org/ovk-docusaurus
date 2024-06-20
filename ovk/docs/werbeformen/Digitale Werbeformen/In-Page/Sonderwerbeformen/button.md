@@ -9,18 +9,18 @@ Als Button werden alle Werbeformen mit Abmessungen kleiner 234x60 Pixel zusammen
 ## Technische Spezifikationen
 
 
-| Name         | Button    |
-|--------------|-----------|
-| OVK ID       | 241       |
-| expandable   | nein      |
-| sticky       | nein      |
-| video        | nein      |
-| Dateigewicht | &lt;20 KB |
-| Größe        | in PX     |
-| min. Breite  | 1         |
-| max. Breite  | 234       |
-| min. Höhe    | 1         |
-| max. Höhe    | 60        |
+| Name         | Button |
+|--------------|--------|
+| OVK ID       | 241    |
+| expandable   | nein   |
+| sticky       | nein   |
+| video        | nein   |
+| Dateigewicht | <20 KB |
+| Größe        | in PX  |
+| min. Breite  | 1      |
+| max. Breite  | 234    |
+| min. Höhe    | 1      |
+| max. Höhe    | 60     |
 
 
 
