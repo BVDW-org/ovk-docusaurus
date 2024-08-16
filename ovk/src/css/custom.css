@@ -49,3 +49,108 @@
   --ifm-color-primary-lightest: #fff;
   --docusaurus-highlighted-code-line-bg: rgb(255, 255, 255);
 }
+
+.hero__title {
+  padding: 1rem 0;
+  text-align: center;
+}
+
+
+
+/* Unterstreichen der Navbar-Links beim Hover */
+.navbar__item.navbar__link:hover {
+  text-decoration: none; /* Entfernt die Standard-Unterstreichung */
+  border-bottom: 1px solid #FF4627; /* Nutzt die CSS-Variable für die Farbe */
+}
+
+.navbar__item.navbar__link {
+  text-decoration: none; /* Stellt sicher, dass keine Unterstreichung vorhanden ist */
+  transition: border-bottom 0.1s ease; /* Glättet die Übergangseffekte */
+}
+
+/* Standard-Stil für alle Links */
+a {
+  color: #FF4627; /* Setzt die Standardfarbe der Links */
+  text-decoration: none; /* Entfernt die Unterstreichung */
+  transition: text-decoration 0.3s ease; /* Glättet den Übergangseffekt für die Unterstreichung */
+}
+
+/* Hover-Stil für alle Links */
+a:hover {
+  text-decoration: underline; /* Fügt eine Unterstreichung beim Hover hinzu */
+}
+
+
+
+/* Standard-Stil für den spezifischen Button */
+.button--secondary {
+  background-color: #FF4627; /* Setzt die Hintergrundfarbe des Buttons */
+  color: #FFFFFF !important; /* Setzt die Textfarbe auf Weiß für bessere Lesbarkeit */
+  border: none; /* Entfernt den Rand, falls vorhanden */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Glättet den Übergangseffekt für Farbänderungen */
+}
+
+/* Hover-Stil für den spezifischen Button */
+.button--secondary:hover {
+  background-color: #FFFFFF; /* Dunkelt die Hintergrundfarbe beim Hover leicht ab */
+  color: #000000 !important; /* Hält die Textfarbe auf Weiß */
+}
+
+
+.features {
+  background-color: #f4f4f6d2; /* Leichter Hintergrund für den gesamten Feature-Bereich */
+  padding: 50px 0; /* Mehr Platz um die Features */
+}
+
+
+
+.col--4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Zentriert die Inhalte vertikal */
+  padding: 15px;
+  margin-left: 15px; /* Horizontaler Abstand zwischen den Containern */
+  margin-right: 15px; /* Horizontaler Abstand zwischen den Containern */
+  flex: 0 0 calc(33.333% - 20px); /* Berechnet die Breite abzüglich der Ränder */
+  background: white; /* Hintergrund für jede Feature-Box */
+  box-shadow: 0px 4px 7px rgba(0,0,0,0.1); /* Schatten für 3D-Effekt */
+  border-radius: 8px; /* Abgerundete Ecken */
+}
+
+.row {
+  display: flex;
+  justify-content: center; /* Zentriert die .col--4 Elemente horizontal */
+  flex-wrap: nowrap; /* Verhindert den Umbruch auf neue Zeile */
+}
+
+
+.padding-horiz--md {
+  padding: 0 25px; /* Horizontaler Padding innerhalb der Box */
+}
+
+h3 {
+  color: #142F52; /* Dunkelblaue Farbe für Titel */
+}
+
+
+
+.feature-container {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  background-color: #fefefe;
+}
+
+.feature-container:hover {
+  transform: scale(1.05);
+}
+
+.featureImage {
+  width: 50px !important;
+  height: 10px;
+}
+
+.preformatted {
+  white-space: pre-wrap;
+}

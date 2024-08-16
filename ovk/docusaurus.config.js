@@ -8,7 +8,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'OVK Tech Specs',
+  title: 'Tech Specs',
   tagline: '',
   favicon: 'img/logo_ovk_mobile.png',
 
@@ -66,7 +66,7 @@ const config = {
         // Replace with your project's social card
         image: 'img/docusaurus-social-card.jpg',
         navbar: {
-          title: 'OVK Tech Specs',
+          title: 'Tech Specs',
           logo: {
             alt: 'OVK Logo',
             src: 'img/logo_ovk_mobile.png',
@@ -76,7 +76,7 @@ const config = {
               type: 'docSidebar',
               sidebarId: 'tutorialSidebar',
               position: 'left',
-              label: 'Tech Specs', // Change this line
+              label: 'Intro', // Change this line
             },
             
             { to: '/docs/identitysolutions/', label: 'ID Lösungen', position: 'left' },
@@ -92,9 +92,14 @@ const config = {
               title: 'Anschrift',
               items: [
                 {
-                  label: 'Bundesverband Digitale Wirtschaft \n Schumannstraße 2 10117 Berlin Tel. +49 30 2062196-0 info@bvdw.org', // Change this line if it appears here
-                  to: '/docs/intro',
-                },
+                  title: 'Anschrift',
+                  items: [
+                    {
+                      label: 'Bundesverband Digitale Wirtschaft \n Schumannstraße 2 \n 10117 Berlin \n Tel. +49 30 2062196-0 \n info@bvdw.org',
+                      to: '/docs/intro',
+                    },
+                  ],
+                }
               ],
             },
             {
@@ -140,5 +145,6 @@ const config = {
         },
       }),
 };
+
 
 export default config;

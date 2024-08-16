@@ -1,3 +1,4 @@
+import React from 'react';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
@@ -5,41 +6,48 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: 'Werbeformen',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
-    description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
-    ),
+    image: require('@site/static/img/ad-formats.png').default, // Pfad zur PNG-Datei
+    description: 'Eine vermarkterübergreifende Standardisierung der unterschiedlichen Werbeformen. Hier finden Sie die Specs dazu.',
+    to: "/docs/werbeformen/"
   },
   {
     title: 'ID Lösungen',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    image: require('@site/static/img/id-solution.png').default, // Pfad zur PNG-Datei
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Übersicht der aktiven ID Lösungen pro Vermarkter und verschiedene Case Studies.
       </>
     ),
+    to: "/docs/identitysolutions/"
   },
   {
     title: 'OVK Contextual Standard',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    image: require('@site/static/img/Contextual.png').default, // Pfad zur PNG-Datei
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Specs zum kontextuellen Standard, den der OVK 2023 ins Leben gerufen hat und von all seinen Mitgliedern genutzt wird.
       </>
     ),
-  },
+    to: "/docs/contextualstandards/"
+}
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({ image, title, description, to }) {
+  // Handler für Klicks auf den Container
+  const handleClick = () => {
+    window.location.href = to; // Navigiere zur URL in 'to'
+  };
+
+  const imageStyle = {
+    width: '170px', 
+    height: 'auto',  
+    margin: '20px'
+  };
+
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx('col col--4 feature-container')} onClick={handleClick}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        <img src={image} alt={title} style={imageStyle} />
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
@@ -49,16 +57,17 @@ function Feature({Svg, title, description}) {
   );
 }
 
-export default function HomepageFeatures() {
+
+function HomepageFeatures() {
   return (
-    <section className={styles.features}>
-      <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
-        </div>
+    <div className="container">
+      <div className="row">
+        {FeatureList.map((feature, idx) => (
+          <Feature key={idx} {...feature} />
+        ))}
       </div>
-    </section>
+    </div>
   );
 }
+
+export default HomepageFeatures;

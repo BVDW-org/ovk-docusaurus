@@ -3,7 +3,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
-
+import React from 'react';
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
 
@@ -12,10 +12,21 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <Heading as="h1" className="hero__title">
+        {/* Logo Image */}
+        <img
+          src="/img/ovk-logo.svg" // Replace with the path to your logo image
+          alt="OVK_Logo"
+          width="20%"
+          className={styles.logo} // Optional: Add a custom CSS class for styling
+        />
+
+
+        {/* Headline */}
+        <Heading as="h2" className="hero__title">
           {siteConfig.title}
         </Heading>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
+
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
@@ -32,8 +43,8 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`OVK Tech Specs`}
+      description="Aktuelle Specs und Standardisierungen des Online Vermarkterkreises (OVK)">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
