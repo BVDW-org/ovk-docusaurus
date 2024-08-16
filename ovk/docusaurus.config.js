@@ -87,21 +87,32 @@ const config = {
         },
         footer: {
           style: 'light',
-          links: [
-            {
-              title: 'Anschrift',
-              items: [
-                {
-                  title: 'Anschrift',
-                  items: [
-                    {
-                      label: 'Bundesverband Digitale Wirtschaft \n Schumannstraße 2 \n 10117 Berlin \n Tel. +49 30 2062196-0 \n info@bvdw.org',
-                      to: '/docs/intro',
-                    },
-                  ],
-                }
-              ],
-            },
+          links: [{
+            title: 'Menü',
+            items: [
+              {
+                label: 'Der OVK',
+                href: 'https://www.ovk.de/der-ovk/',
+              },
+              {
+                label: 'Projekte',
+                href: 'https://www.ovk.de/projekte/',
+              },
+              {
+                label: 'News',
+                href: 'https://www.ovk.de/news/',
+              },
+              {
+                label: 'Top Of Mind',
+                href: 'https://www.ovk.de/top-of-mind/',
+              },
+              {
+                label: 'Kontakt',
+                href: 'https://www.ovk.de/kontakt/',
+              },
+            ],
+          },
+            
             {
               title: 'Folgen Sie uns',
               items: [
@@ -137,6 +148,7 @@ const config = {
               ],
             },
           ],
+         
           copyright: `Copyright © ${new Date().getFullYear()} OVK, Built with Docusaurus.`,
         },
         prism: {
