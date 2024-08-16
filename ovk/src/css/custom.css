@@ -17,6 +17,27 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
+
+/* Override the footer background color */
+.footer {
+  background-color: #010F2D; /* Replace with your specific hex color */
+  color: #ffffff; /* Set default text color to white */
+}
+.footer__links a, 
+.footer__copyright {
+  color: #ffffff; /* Ensure all text and links are white */
+}
+
+/* Set hover color for links in the footer to white */
+.footer__links a:hover {
+  color: #ffffff;
+  text-decoration: underline; /* Optional: add underline on hover */
+}
+
+.toggleButton_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
+  display: none !important;
+}
+
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
   --ifm-color-primary: #FF4627;
@@ -26,5 +47,5 @@
   --ifm-color-primary-light: #fff;
   --ifm-color-primary-lighter: #fff;
   --ifm-color-primary-lightest: #fff;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --docusaurus-highlighted-code-line-bg: rgb(255, 255, 255);
 }
