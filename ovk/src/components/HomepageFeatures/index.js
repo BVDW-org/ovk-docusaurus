@@ -9,7 +9,7 @@ const FeatureList = [
     title: 'Werbeformen',
     image: require('@site/static/img/ad-formats.png').default,
     description: 'Eine vermarkterübergreifende Standardisierung der unterschiedlichen Werbeformen. Hier finden Sie die Specs dazu.',
-    to: "/docs/werbeformen/"
+    to: "/docs/werbeformen/intro"
   },
   {
     title: 'ID Lösungen',
@@ -54,7 +54,7 @@ function Feature({ image, title, description, to }) {
 function Features() {
   return (
     <div className="container">
-      <div className="row">
+      <div className={clsx('row', 'row-features')}>
         {FeatureList.map((feature, idx) => (
           <Feature key={idx} {...feature} />
         ))}
@@ -106,7 +106,7 @@ function UnitSection() {
         <div className={styles.person} style={{ maxWidth: '200px' }}>
           <img src="https://www.ovk.de/wp-content/uploads/2021/12/Letzner_Markus_duplex-300x300.jpg" alt="Markus Letzner" style={{ width: '100%', borderRadius: '50%' }} />
           <h3>Markus Letzner</h3>
-          <p style={{ margin: '0' }}>Leiter der Unit Ad Tech & Programmatic im OVK</p>
+          <p style={{ margin: '0' }}>Leiter der Unit Ad Tech & Programmatic im OVK und Mitsprecher des Contextual Workstreams</p>
           <a href="https://www.stroeer.de/" target="_blank" rel="noopener" style={{ margin: '0', color: 'inherit', textDecoration: 'underline'  }}>Ströer Digital Media GmbH</a>
         </div>
       </div>

@@ -117,12 +117,20 @@ a:hover {
   border-radius: 8px; /* Abgerundete Ecken */
 }
 
-.row {
+/* Flexbox container */
+.row-features {
   display: flex;
-  justify-content: center; /* Zentriert die .col--4 Elemente horizontal */
-  flex-wrap: nowrap; /* Verhindert den Umbruch auf neue Zeile */
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px; /* Space between items */
 }
-
+/* Prevent wrapping on larger screens */
+@media (min-width: 769px) {
+  .row-features {
+    flex-wrap: nowrap; /* Prevent wrapping on larger screens */
+    justify-content: space-between; /* Ensure space between items */
+  }
+}
 
 .padding-horiz--md {
   padding: 0 25px; /* Horizontaler Padding innerhalb der Box */
@@ -140,7 +148,23 @@ h3 {
   margin-top: 100px;
   margin-bottom: 100px;
   background-color: #fefefe;
+  flex: 1 1 30%; /* Each item takes up 30% of the row width */
+  min-width: 250px; /* Ensures a minimum size for each item */
+  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    .feature-container {
+      flex: 1 1 100%; /* Each item takes up 100% of the row width on mobile */
+    }
+  }
+
 }
+
+.feature-container img {
+  max-width: 100%;
+  height: auto;
+}
+
 
 .feature-container:hover {
   transform: scale(1.05);
@@ -155,3 +179,41 @@ h3 {
   white-space: pre-wrap;
 }
 
+.container {
+  padding: 0 15px; /* Ensure there's some padding on mobile */
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 10px; /* Adjust padding for smaller screens */
+  }
+}
+
+
+.unitSection {
+  text-align: center;
+  padding: 50px;
+  margin: 0px 100px 150px 100px;
+  background-color: #F4F4F4;
+}
+
+.unitSection h1 {
+  margin: 0px 0px 40px 0px;
+}
+
+.unitSection p {
+  margin: 0px 0px 50px 0px;
+  padding: 0px 100px;
+}
+
+/* Styles for mobile devices */
+@media (max-width: 768px) {
+  .unitSection {
+    padding: 30px 20px;
+    margin: 0px 20px 100px 20px;
+  }
+
+  .unitSection p {
+    padding: 0px 20px;
+  }
+}

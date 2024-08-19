@@ -76,12 +76,12 @@ const config = {
               type: 'docSidebar',
               sidebarId: 'tutorialSidebar',
               position: 'left',
-              label: 'Intro', // Change this line
+              label: 'Einführung', // Change this line
             },
             
             { to: '/docs/identitysolutions/', label: 'ID Lösungen', position: 'left' },
             { to: '/docs/contextualstandards/', label: 'OVK Contextual Standard', position: 'left' },
-            { to: '/docs/werbeformen/', label: 'Werbeformen', position: 'left' },
+            { to: '/docs/werbeformen/intro/', label: 'Digitale Werbeformen', position: 'left' },
            
           ],
         },
