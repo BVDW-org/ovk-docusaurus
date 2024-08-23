@@ -179,7 +179,6 @@ Marketers sales houses and publishers implemented the standard and system docume
 |        **marketer**          | `ducumentation according to 2.1 & 2.2 ` |
 | ---------------------------------- |--------------|
 | `Ad Alliance`           |https://osdatasolutions.de/contextual-ovk/  
-| `Bauer`                 |  
 | `BCN`                   |https://www.brand-community-network.de/fileadmin/user_upload/20230822_BCN_Contextual_Targeting.pdf
 | `BurdaForward`          |https://www.burda-forward.de/advertising/data-targeting/
 | `Funke`                 |https://funkedigital.de/ovk-contextual/ 
