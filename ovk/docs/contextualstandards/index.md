@@ -191,7 +191,7 @@ Marketers sales houses and publishers implemented the standard and system docume
 | `Score Media`           |
 | `SevenOne`              |
 | `Ströer`                |https://osdatasolutions.de/contextual-ovk/
-| `UIM`                   |
+| `UIM`                   |https://www.united-internet-media.de/de/produkteundloesungen/data-targeting/zielgruppen/smart-contextual-targeting/
 
 
 # Current Projects
