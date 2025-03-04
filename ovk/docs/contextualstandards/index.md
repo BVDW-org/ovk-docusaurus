@@ -1,95 +1,97 @@
-# Introduction
-Content:
+# Einführung
+Inhalt:
 
 [Motivation](#motivation)
 
-[Description and Requirements](#description-and-requirements)
-   - [Classification](#classification)
-   - [Analysis](#analysis)
+[Beschreibung und Anforderungen](#beschreibung-und-anforderungen)
+   - [Klassifizierung](#klassifizierung)
+   - [Analyse](#analyse)
 
-[Criteria](#criteria)
+[Kriterien](#Kriterien)
 
-[1. QUALITY](#1-quality)
-   - [1.1 Direct connection](#11-direct-connection)
-   - [1.2 Review and publication of the test results](#12-review-and-publication-of-the-test-results)
+[1. QUALTÄT](#1-qualität)
+   - [1.1 Direktanbindung](#11-direktanbindung)
+   - [1.2 Überprüfung und Veröffentlichung der Prüfergebnisse](#12-überprüfung-und-veröffentlichung-der-prüfergebnisse)
 
-[2. DOCUMENTATION](#2-documentation)
-   - [2.1 Documentation of the system functionality](#21-documentation-of-the-system-functionality)
-   - [2.2 Documentation of quality assurance](#22-documentation-of-quality-assurance)
+[2. DOKUMENTATION](#2-dokumentation)
+   - [2.1 Dokumentation der Systemfunktionalität](#21-dokumentation-der-systemfunktionalität)
+   - [2.2 Dokumentation der Qualitätssicherung](#22-dokumentation-der-qualitätssicherung)
 
-[3. DATA PROTECTION AND PRIVACY](#3-data-protection-and-privacy)
-   - [3.1 Exclusion of sensitive categories](#31-exclusion-of-sensitive-categories)
+[3. DATENSCHUTZ UND PRIVACY](#3-datenschutz-und-privacy)
+   - [3.1 Ausschluss von sensiblen Kategorien](#31-ausschluss-von-sensiblen-kategorien)
 
-[4. TECHNOLOGY](#4-technology)
-   - [4.1 Taxonomy standard](#41-taxonomy-standard)
-   - [4.2 Open RTB standard](#42-open-rtb-standard)
+[4. TECHNOLOGIE](#4-technologie)
+   - [4.1 Taxonomie-Standard](#41-taxonomie-standard)
+   - [4.2 Open RTB-Standard](#42-open-rtb-standard)
 
 [Documentation](#documentation)
-   - [Market adoption and implementation overview](#market-adoption-and-implementation-overview)
+   - [Implementierungsübersicht und Dokumentationen](#implementierungsübersicht-und-dokumentationen)
 
-[Current Projects](#current-projects)
+[Laufende Projeke](#laufende-projekte)
      
 
 # Motivation
 
 ## OVK-Contextual Standard v1.0: A solution for the post-cookie era
 
-3rd party cookie-based advertising is becoming less and less possible.
-Contextual targeting is a solution to continue to operate a successful advertising business in the future - based on content and without cookies or consent.
-In order to successfully establish contextual targeting on the market, scalability and reliable quality are required. ﻿﻿The Online-Vermarkterkreis (OVK) in the Bundesverband Digitale Wirtschaft (BVDW) e. V. has developed a provider and technology-agnostic standard for online contextual targeting, which is presented here.
-The standard described below is supported by all marketers organized in the OVK. OVK members have already implemented it or will implement it by the end of Q2 2024.
+OVK-Contextual Standard v1.0: Eine Lösung für die Post-Cookie-Ära
+3rd-Party-Cookie-basierte Werbung ist immer weniger möglich. Kontextuelles Targeting ist eine Lösung, um auch in Zukunft ein erfolgreiches Werbegeschäft betreiben zu können - basierend auf den nicht-werblichen Inhalten eines Angebotes. Um kontextuelles Targeting erfolgreich am Markt zu etablieren, sind Skalierbarkeit und verlässliche Qualität gefragt. Der Online-Vermarkterkreis (OVK) im Bundesverband Digitale Wirtschaft (BVDW) e. V. hat einen anbieter- und technologieunabhängigen Standard für Online Kontextuelles Targeting entwickelt, der hier vorgestellt wird. Der im Folgenden beschriebene Standard wird von allen im OVK organisierten Vermarktern unterstützt. OVK-Mitglieder haben ihn bereits implementiert oder werden ihn bis zum Ende des 2. Quartals 2025 implementieren.
 
-# Description and Requirements
-The OVK Contextual Standard v1.0 is provider and technology-agnostic standard for online contextual targeting in the German advertising market.  The standard emphasizes direct connectivity to the content owner or marketer, scalability, reliable quality, and adherence to the IAB Content Taxonomy and the Open RTB standard for signaling. Sensitive categories are excluded, and sensitive topics are signaled. The system functionality, quality assurance, and processes and methods for quality assurance are documented and published on the publishers websited and also here. 
+# Beschreibung und Anforderungen
+Der OVK-Contextual Standard v1.0 ist ein anbieter- und technologieunabhängiger Standard für kontextuelles Online-Targeting im deutschen Werbemarkt. Der Standard legt Wert auf eine direkte Anbindung an den Content Owner oder Vermarkter, Skalierbarkeit, verlässliche Qualität und die Einhaltung der IAB Content Taxonomy und des Open RTB Standards für die Signalisierung. Sensible Kategorien werden ausgeschlossen, es wird „Sensitive Topic“ signalisiert. Die Systemfunktionalität, die Qualitätssicherung sowie die Prozesse und Methoden zur Qualitätssicherung werden dokumentiert und auf der Website des Anbieters sowie hier veröffentlicht.
 
-# Distinction between Classification and Analysis
-When talking about the Contextual Standard the distiction between Classification and Analysis should be made.
+# Unterscheidung zwischen Klassifizierung und Analyse
+In Bezug auf die Erarbeitung des kontextuellen Standards ist eine Unterscheidung zwischen den Prozessen der Klassifizierung und der Analyse wichtig.
 
-## Classification
-Classification refers to the process of organizing digital content into specific categories. For the classification of online content, the OVK follows the IAB Content Taxonomy. The IAB Content Taxonomy consists of a hierarchical structure of categories and subcategories for classifying the digital content. It currently contains around seven hundred thematic categories (such as Automotive, Books and Literature, Business and Finance) and around four hundred content attributes (such as content type, source, media format, language and location). Topics around Brand Suitability and Risk or Sensitive Categories are also part of the tematic categories.
+## Klassifizierung
+Klassifizierung bezieht sich auf den Prozess der Einteilung digitaler Inhalte in bestimmte Kategorien. Bei der Klassifizierung von Online-Inhalten orientiert sich der OVK an der IAB Content Taxonomy. Die IAB Content Taxonomy besteht aus einer hierarchischen Struktur von Kategorien und Unterkategorien zur Klassifizierung der digitalen Inhalte. Sie enthält derzeit rund siebenhundert thematische Kategorien (z. B. Automobil, Bücher und Literatur, Wirtschaft und Finanzen) und rund vierhundert Inhaltsattribute (z. B. Inhaltstyp, Quelle, Medienformat, Sprache und Standort). Zu den thematischen Kategorien gehören auch Themen wie Markentauglichkeit und risikoreiche oder sensible Kategorien.
 
-## Analysis
-The analysis of the content, on the other hand, refers to using different methods, such as algorithms and machine learning, to analyze the content of a certain digital content (web page , app, email etc.) and determine the contextual category/categories matching the content on the page. The method of analysing the content is different for each solution and technology. The OVK-Contextual-Standard is technology-agnostic and therefore does not prescribe a certain method of analyzing the content. However each OVK member is obliged to transparently communicate the results of the analysis on a sample of contents and publish a detailed documentation of the method (s. below)
+## Analyse
+Die Analyse des Inhalts hingegen bezieht sich auf die Verwendung verschiedener Methoden wie Algorithmen und maschinelles Lernen, um den Inhalt eines bestimmten digitalen Inhalts (Webseite, App, E-Mail usw.) zu analysieren und die kontextbezogenen Kategorien zu bestimmen, die zum Inhalt des Digitalangebots passen. Die Methode zur Analyse des Inhalts ist für jede Lösung und Technologie unterschiedlich. Der kontextuelle Standard des OVK ist technologieunabhängig und schreibt daher keine bestimmte Methode zur Analyse des Inhalts vor. Allerdings sind eine stichprobenartige Überprüfung der Analyseergebnisse und deren Veröffentlichung sowie die Veröffentlichung einer detaillierten Dokumentation der Methode Bestandteile des Standards (s. unten)
 
-# Criteria
-## 1. QUALITY
-Main Principles
--  Timely classification
--  Only relevant content is classified
--  Enrichment with information that is not publicly available
--  Transparency
--  comprehensible Quality for market participants
+# Kriterien
+## 1. QUALITÄT
+Wichtigste Grundsätze
+-  Zeitnahe Klassifizierung
+-  Nur relevante Inhalte werden klassifiziert
+-  Anreicherung mit Informationen, die nicht öffentlich zugänglich sind
+-  Transparenz
+-  Nachvollziehbare Qualität für Marktteilnehmer
+
  
-### 1.1 Direct connection
-- The technology used is connected directly by the content owner or marketer.
+### 1.1 Direktanbindung
+-  Die verwendete Technologie wird direkt vom Publisher oder Vermarkter der Inhalte angebunden.
 
-### 1.2 Review and publication of the test results
-- Content classification results are checked manually on a random basis for each technology used.<br />
-- If possible, the classification results of different technologies are compared and contrasted.<br />
-- The results of the manual check and, if applicable, those of the comparison are published on the provider's website.
+### 1.2 Überprüfung und Veröffentlichung der Prüfergebnisse
+-  Die Ergebnisse der Inhaltsklassifizierung werden stichprobenartig für jede verwendete Technologie manuell überprüft.
+-  Wenn möglich, werden die Klassifizierungsergebnisse verschiedener Technologien verglichen und gegenübergestellt.
+-  Die Ergebnisse der manuellen Prüfung und ggf. die des Vergleichs werden auf der Website des Anbieters veröffentlicht.
 
-## 2. DOCUMENTATION
-Main Principles
--  Transparency
--  Verifiable quality
--  Consistently high quality
--  Trust
 
- ### 2.1 Documentation of the system functionality<br />
- - The functionality of the classification system(s) used is described in the form of documentation (underlying architecture, connection to the 
-   content, which data is used, how the data is processed, etc.).<br />
-- The documentation is published on the provider's website.
+## 2. DOkUMENTATION
+Wichtigste Grundsätze
+-  Transparenz
+-  Überprüfbare Qualität
+-  Gleichbleibend hohe Qualität
+-  Vertrauen
+
+
+ ### 2.1 Dokumentation der Systemfunktionalität<br />
+ -  Die Funktionsweise des/der verwendeten Klassifikationssystems/e wird in Form einer Dokumentation beschrieben (zugrunde liegende Architektur, Verbindung zu den Inhalten, welche Daten verwendet werden, wie die Daten verarbeitet werden, usw.).
+ -  Die Dokumentation wird auf der Website des Anbieters veröffentlicht.
+ 
    
- ### 2.2 Documentation of quality assurance﻿﻿
- - Systems and data are continuously reviewed and optimized.<br />
- - The processes and methods for quality assurance are documented and published on the provider's website.
+ ### 2.2 Dokumentation der Qualitätssicherung<br />
+ -  Die Systeme und Daten werden laufend überprüft und optimiert.
+ -  Die Prozesse und Methoden zur Qualitätssicherung werden dokumentiert und auf der Website des Anbieters veröffentlicht.
+ 
 
-## 3. DATA PROTECTION AND PRIVACY
- Main Principles
--  No usage of sensitive categories
+## 3. DATENSCHUTZ UND PRIVACY
+ Wichtigste Grundsätze
+-  Keine Verwendung sensitiver Kategorien
 
- ### 3.1 Exclusion of sensitive categories
- - Following sensitive categories are excluded, "Sensitive Topic" should be signaled:
+ ### 3.1 Ausschluss von sensiblen Kategorien
+ - Die folgenen sensitiven Kategories werden für die Signalisierung ausgeschlossen. "Sensitive Topic" sollte statt dessen signalisiert werden:
 
 | Unique ID | Name                                   | Tier 1                  | Tier 2                   | Tier 3                             | Tier 4              | Replacement     |
 |-----------|----------------------------------------|-------------------------|--------------------------|------------------------------------|---------------------|-----------------|
@@ -158,25 +160,25 @@ Main Principles
 
 
 
- ## 4. TECHNOLOGY
- Main Principles
--  Transparency
+ ## 4. TECHNOLOGIE
+ Wichtigste Grundsätze
+-  Transparenz
   
- ### 4.1 Taxonomy standard
- - The IAB Content Taxonomy at least version 2.1 is used. Sensitive categories are excluded (see data protection)
+ ### 4.1 Taxonomie-Standard
+ - Es wird die IAB-Content Taxonomy, mindestens Version 2.1, verwendet. Sensitive Kategorien werden ausgeschlossen (siehe Datenschutz) 
    [IAB Content Taxonony 2.1](https://github.com/InteractiveAdvertisingBureau/Taxonomies/blob/main/Content%20Taxonomies/Content%20Taxonomy%202.1.tsv)
 
- ### 4.2 Open RTB standard
- - Signaling is carried out according to the Open RTB standard.
+ ### 4.2 Open RTB Standard
+ - Die Signalisierung erfolgt nach dem Open RTB-Standard im programmatischen Prozess.
 
 # Documentation
-Please find here all documentation around the OVK Contextual Standard.
+Hier finden sie die OVK-Mitglieder, die den OVK-Contextual Standard implementiert haben sowie deren Dokumentationen.
 
-## Market adoption and implementation overview
-Marketers sales houses and publishers implemented the standard and system documentations.
+## Implementierungsübersicht und Dokumentationen
+Liste der Mitglieder und deren Dokumentationen, die den OVK-Contextual Standard unterstützen:
 
 
-|        **marketer**          | `ducumentation according to 2.1 & 2.2 ` |
+|        **Vermarkter**          | `Dokumentation nach 2.1 & 2.2 ` |
 | ---------------------------------- |--------------|
 | `Ad Alliance`           |https://osdatasolutions.de/contextual-ovk/  
 | `BCN`                   |https://www.brand-community-network.de/fileadmin/user_upload/20230822_BCN_Contextual_Targeting.pdf
@@ -194,10 +196,9 @@ Marketers sales houses and publishers implemented the standard and system docume
 | `UIM`                   |https://www.united-internet-media.de/de/produkteundloesungen/data-targeting/zielgruppen/smart-contextual-targeting/
 
 
-# Current Projects
+# Laufende Projekte
 
-- Contextual classification of video content
-
+-  Kontextueller Standard für Video
   
   
   
