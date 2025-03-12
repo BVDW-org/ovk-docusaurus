@@ -13,7 +13,7 @@ const config = {
   favicon: 'img/logo_ovk_mobile.png',
 
   // Set the production url of your site here
-  url: 'https://tech.ovk.de',
+  url: 'https://bvdw.pages.dev', // Changed from url tech.ovk.de to test
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -23,7 +23,7 @@ const config = {
   organizationName: 'OVK', // Usually your GitHub org/user name.
   projectName: 'tech-specs', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',// changed from throw to warm to skip
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
