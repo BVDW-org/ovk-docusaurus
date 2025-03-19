@@ -182,7 +182,6 @@ Liste der Mitglieder und deren Dokumentationen, die den OVK-Contextual Standard 
 | ---------------------------------- |--------------|
 | `Ad Alliance`           |https://osdatasolutions.de/contextual-ovk/  
 | `BCN`                   |https://www.brand-community-network.de/fileadmin/user_upload/20230822_BCN_Contextual_Targeting.pdf
-| `BurdaForward`          |https://www.burda-forward.de/advertising/data-targeting/
 | `Funke`                 |https://funkedigital.de/ovk-contextual/ 
 | `Himedia`               |
 | `iq Digital`            | 
@@ -191,7 +190,7 @@ Liste der Mitglieder und deren Dokumentationen, die den OVK-Contextual Standard 
 | `netpointmedia`         |
 | `Quarter Media`         |
 | `Score Media`           |
-| `SevenOne`              |
+| `SevenOne`              |https://www.seven.one/werbeprodukte/contextual-targeting
 | `Ströer`                |https://osdatasolutions.de/contextual-ovk/
 | `UIM`                   |https://www.united-internet-media.de/de/produkteundloesungen/data-targeting/zielgruppen/smart-contextual-targeting/
 
