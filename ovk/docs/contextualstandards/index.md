@@ -181,7 +181,7 @@ Liste der Mitglieder und deren Dokumentationen, die den OVK-Contextual Standard 
 |        **Vermarkter**          | `Dokumentation nach 2.1 & 2.2 ` |
 | ---------------------------------- |--------------|
 | `Ad Alliance`           |https://osdatasolutions.de/contextual-ovk/  
-| `BCN`                   |https://www.brand-community-network.de/fileadmin/user_upload/20230822_BCN_Contextual_Targeting.pdf
+| `BCN`                   |https://bcn.group/fileadmin/Assets/02_Werbeloesungen/Digital/Programmatic_Contextual_Targeting_2025.pdf
 | `Funke`                 |https://funkedigital.de/ovk-contextual/ 
 | `Himedia`               |
 | `iq Digital`            | 
