@@ -72,16 +72,10 @@ const config = {
             src: 'img/logo_ovk_mobile.png',
           },
           items: [
-            {
-              type: 'docSidebar',
-              sidebarId: 'tutorialSidebar',
-              position: 'left',
-              label: 'Einführung', // Change this line
-            },
-            
+           
             { to: '/docs/identitysolutions/', label: 'Identity', position: 'left' },
             { to: '/docs/contextualstandards/', label: 'OVK Contextual Standard', position: 'left' },
-            { to: '/docs/werbeformen/intro/', label: 'Digitale Werbeformen', position: 'left' },
+            
            
           ],
         },
