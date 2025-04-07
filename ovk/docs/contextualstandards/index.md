@@ -1,33 +1,33 @@
 # Einführung
 Inhalt:
 
-[Motivation](#motivation)
+[1. Motivation](#motivation)
 
-[Beschreibung und Anforderungen](#beschreibung-und-anforderungen)
-   - [Klassifizierung](#klassifizierung)
-   - [Analyse](#analyse)
+[2. Beschreibung und Anforderungen](#beschreibung-und-anforderungen)
+   - [2.1 Klassifizierung](#klassifizierung)
+   - [2.3 Analyse](#analyse)
 
-[Kriterien](#Kriterien)
+[3. Kriterien](#Kriterien)
 
-[1. QUALTÄT](#1-qualität)
-   - [1.1 Direktanbindung](#11-direktanbindung)
-   - [1.2 Überprüfung und Veröffentlichung der Prüfergebnisse](#12-überprüfung-und-veröffentlichung-der-prüfergebnisse)
+[3.1 QUALTÄT](#1-qualität)
+   - [3.1.1 Direktanbindung](#11-direktanbindung)
+   - [3.1.2 Überprüfung und Veröffentlichung der Prüfergebnisse](#12-überprüfung-und-veröffentlichung-der-prüfergebnisse)
 
-[2. DOKUMENTATION](#2-dokumentation)
-   - [2.1 Dokumentation der Systemfunktionalität](#21-dokumentation-der-systemfunktionalität)
-   - [2.2 Dokumentation der Qualitätssicherung](#22-dokumentation-der-qualitätssicherung)
+[3.2 DOKUMENTATION](#2-dokumentation)
+   - [3.2.1 Dokumentation der Systemfunktionalität](#21-dokumentation-der-systemfunktionalität)
+   - [3.2.2 Dokumentation der Qualitätssicherung](#22-dokumentation-der-qualitätssicherung)
 
-[3. DATENSCHUTZ UND PRIVACY](#3-datenschutz-und-privacy)
-   - [3.1 Ausschluss von sensiblen Kategorien](#31-ausschluss-von-sensiblen-kategorien)
+[3.3 DATENSCHUTZ UND PRIVACY](#3-datenschutz-und-privacy)
+   - [3.3.1 Ausschluss von sensiblen Kategorien](#31-ausschluss-von-sensiblen-kategorien)
 
-[4. TECHNOLOGIE](#4-technologie)
-   - [4.1 Taxonomie-Standard](#41-taxonomie-standard)
-   - [4.2 Open RTB-Standard](#42-open-rtb-standard)
+[3.4 TECHNOLOGIE](#4-technologie)
+   - [3.4.1 Taxonomie-Standard](#41-taxonomie-standard)
+   - [3.4.2 Open RTB-Standard](#42-open-rtb-standard)
 
-[Documentation](#documentation)
+[4. Documentation](#documentation)
    - [Implementierungsübersicht und Dokumentationen](#implementierungsübersicht-und-dokumentationen)
 
-[Laufende Projeke](#laufende-projekte)
+[5. Laufende Projeke](#laufende-projekte)
      
 
 # Motivation
