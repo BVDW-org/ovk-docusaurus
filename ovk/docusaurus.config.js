@@ -79,7 +79,7 @@ const config = {
               label: 'Einführung', // Change this line
             },
             
-            { to: '/docs/identitysolutions/', label: 'ID Lösungen', position: 'left' },
+            { to: '/docs/identitysolutions/', label: 'Identity', position: 'left' },
             { to: '/docs/contextualstandards/', label: 'OVK Contextual Standard', position: 'left' },
             { to: '/docs/werbeformen/intro/', label: 'Digitale Werbeformen', position: 'left' },
            
@@ -101,10 +101,6 @@ const config = {
               {
                 label: 'News',
                 href: 'https://www.ovk.de/news/',
-              },
-              {
-                label: 'Top Of Mind',
-                href: 'https://www.ovk.de/top-of-mind/',
               },
               {
                 label: 'Kontakt',

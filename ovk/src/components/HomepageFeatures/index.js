@@ -6,13 +6,13 @@ import styles from './styles.module.css';
 // Feature List
 const FeatureList = [
   {
-    title: 'Werbeformen',
+    title: 'Werbeformen (coming soon)',
     image: require('@site/static/img/ad-formats.png').default,
-    description: 'Eine vermarkterübergreifende Standardisierung der unterschiedlichen Werbeformen. Hier finden Sie die Specs dazu.',
-    to: "/docs/werbeformen/intro"
+    description: 'Übersicht aller standardisierten vermarkterübergreifenden Werbeformen inkl. Specs',
+    to: "#"
   },
   {
-    title: 'ID Lösungen',
+    title: 'Identity',
     image: require('@site/static/img/id-solution.png').default,
     description: 'Übersicht der aktiven ID Lösungen pro Vermarkter und verschiedene Case Studies.',
     to: "/docs/identitysolutions/"
@@ -81,7 +81,7 @@ function UnitSection() {
       </p>
       
       {/* Erster Leader-Bereich */}
-      <h2 className={styles.headline} style={{margin: '40px 0px 40px 0px' }}>Leiter der Leiter der Unit Ad Tech & Programmatic</h2>
+      <h2 className={styles.headline} style={{margin: '40px 0px 40px 0px' }}>Leiter der Unit Ad Tech & Programmatic</h2>
       <div 
         className={styles.leaders} 
         style={{ 
@@ -133,7 +133,7 @@ function UnitSection() {
         <div className={styles.person} style={{ maxWidth: '200px' }}>
           <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="Nadeem Qureshi" style={{ width: '100%', borderRadius: '50%' }} />
           <h3>Nadeem Qureshi</h3>
-          <p style={{ margin: '0' }}>Leiter des OVK Workstreams "ID Lösungen"</p>
+          <p style={{ margin: '0' }}>Leiter des OVK Workstreams "Identity"</p>
           <a href="https://www.bcn.group" target="_blank" rel="noopener" style={{ margin: '0', color: 'inherit', textDecoration: 'underline'  }}>Brand Community Network GmbH</a>
         </div>
         <div className={styles.person} style={{ maxWidth: '200px' }}>

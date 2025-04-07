@@ -22,9 +22,7 @@ function HomepageHeader() {
 
 
         {/* Headline */}
-        <Heading as="h2" className="hero__title">
-          {siteConfig.title}
-        </Heading>
+        
         <p className="hero__subtitle">{siteConfig.tagline}</p>
 
         <div className={styles.buttons}>
