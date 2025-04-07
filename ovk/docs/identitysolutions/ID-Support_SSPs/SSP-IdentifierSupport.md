@@ -4,6 +4,7 @@ This overview only contains SSPs that:
 - process EU traffic
 - Crawled from: https://docs.prebid.org/dev-docs/bidders.html
 - Last updated: February 2024
+- All information without guarantee!
 
 
 | Documentation  (Prebid)                                      | SSP                 | Supported Ids                                                                                                               |

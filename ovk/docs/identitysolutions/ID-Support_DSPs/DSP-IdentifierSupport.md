@@ -1,5 +1,8 @@
 # DSP Overview #
 
+- The information displayed is based on individual inquiries made by German sales houses to the DSPs
+- All information without guarantee!
+  
 
 |                   | SharedID      |                | Criteo Id      |                | ID5            |                    | PPID           |                   | Panorama Id   |                    | Liveramp Id   |                        | netId  |                           | EUID           |                       | Utiq           |                          | Proprietary Publisher Ids |                                         |
 | ----------------- |  ------------ |  ------------- |  ------------- |  ------------- |  ------------- |  ----------------- |  ------------- |  ---------------- |  ------------ |  ----------------- | ------------- | ---------------------- |--------| ------------------------- | -------------- | --------------------- | -------------- | ------------------------ | ------------------------- | --------------------------------------- |
