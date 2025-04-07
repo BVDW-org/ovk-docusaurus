@@ -125,19 +125,19 @@ function UnitSection() {
         
       >
         <div className={styles.person} style={{ maxWidth: '200px' }}>
-          <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="Alexander Peischl" style={{ width: '100%', borderRadius: '50%' }} />
+          <img src="/img/alexander.jpeg" alt="Alexander Peischl" style={{ width: '100%', borderRadius: '50%' }} />
           <h3>Alexander Peischl</h3>
           <p style={{ margin: '0' }}>Leiter des OVK Workstreams "Werbeformen"</p>
           <a href="https://www.united-internet-media.de/de/home/" target="_blank" rel="noopener" style={{ margin: '0', color: 'inherit', textDecoration: 'underline'  }}>United Internet Media GmbH</a>
         </div>
         <div className={styles.person} style={{ maxWidth: '200px' }}>
-          <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="Nadeem Qureshi" style={{ width: '100%', borderRadius: '50%' }} />
+          <img src="/img/nadeem.png" alt="Nadeem Qureshi" style={{ width: '100%', borderRadius: '50%' }} />
           <h3>Nadeem Qureshi</h3>
           <p style={{ margin: '0' }}>Leiter des OVK Workstreams "Identity"</p>
           <a href="https://www.bcn.group" target="_blank" rel="noopener" style={{ margin: '0', color: 'inherit', textDecoration: 'underline'  }}>Brand Community Network GmbH</a>
         </div>
         <div className={styles.person} style={{ maxWidth: '200px' }}>
-          <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="Smaranda Dancu" style={{ width: '100%', borderRadius: '50%' }} />
+          <img src="/img/smaranda.jpeg" alt="Smaranda Dancu" style={{ width: '100%', borderRadius: '50%' }} />
           <h3>Smaranda Dancu</h3>
           <p style={{ margin: '0' }}>Leiterin des OVK Workstreams "Contextual"</p>
           <a href="https://www.burda-forward.de" target="_blank" rel="noopener" style={{ margin: '0', color: 'inherit', textDecoration: 'underline'  }}>BurdaForward GmbH</a>
