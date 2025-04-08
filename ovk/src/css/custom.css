@@ -217,3 +217,15 @@ h3 {
     padding: 0px 20px;
   }
 }
+
+
+/* Die Breite des Inhalts vergößern, u.a. für die Tabellen */
+:root .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module {
+  max-width: 100% !important;
+}
+
+/* Seitenleiste (Inhaltsverzechnis) ausblenden */
+.col--3 {
+  max-width: none !important;
+  display: none !important;
+}

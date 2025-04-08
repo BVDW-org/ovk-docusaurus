@@ -1,4 +1,4 @@
-# Einführung
+# Intro
 Inhalt:
 
 [1. Motivation](#motivation)
