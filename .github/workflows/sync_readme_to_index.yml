@@ -1,7 +1,104 @@
 name: Sync README to index
 
 on:
+  push:name: Sync README to index
+
+on:
   push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * *'  # Runs daily at midnight (fixed cron syntax)
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout ovk-docusaurus
+      uses: actions/checkout@v4  # Updated to latest version
+      with:
+        repository: BVDW-org/ovk-docusaurus
+        path: ovk-docusaurus
+        fetch-depth: 1  # Shallow clone for better performance
+    
+    - name: Checkout ovk-contextualstandard
+      uses: actions/checkout@v4  # Updated to latest version
+      with:
+        repository: BVDW-org/ovk-contextualstandard
+        path: ovk-contextualstandard
+        token: ${{ secrets.GH_TOKEN }}
+        ref: main
+        fetch-depth: 1  # Shallow clone for better performance
+    
+    - name: Validate repositories
+      run: |
+        if [ ! -d "ovk-contextualstandard" ]; then
+          echo "::error::Source repository (ovk-contextualstandard) not properly checked out"
+          exit 1
+        fi
+        
+        if [ ! -d "ovk-docusaurus" ]; then
+          echo "::error::Target repository (ovk-docusaurus) not properly checked out"
+          exit 1
+        fi
+        
+        if [ ! -f "ovk-contextualstandard/README.md" ]; then
+          echo "::error::README.md not found in source repository"
+          exit 1
+        fi
+        
+        # Create directory if it doesn't exist
+        mkdir -p ovk-docusaurus/ovk/docs/contextualstandards
+    
+    - name: Backup existing index.md
+      run: |
+        if [ -f "ovk-docusaurus/ovk/docs/contextualstandards/index.md" ]; then
+          echo "Creating backup of current index.md"
+          mkdir -p backup
+          cp ovk-docusaurus/ovk/docs/contextualstandards/index.md backup/
+        fi
+    
+    - name: Copy README to index.md
+      run: |
+        echo "Clearing old content of index.md"
+        > ovk-docusaurus/ovk/docs/contextualstandards/index.md
+        
+        echo "Copying README.md to index.md"
+        cp ovk-contextualstandard/README.md ovk-docusaurus/ovk/docs/contextualstandards/index.md
+        
+        echo "Verification: Content after copy:"
+        ls -la ovk-docusaurus/ovk/docs/contextualstandards/
+        wc -l ovk-docusaurus/ovk/docs/contextualstandards/index.md
+    
+    - name: Commit and push changes
+      env:
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      run: |
+        cd ovk-docusaurus
+        git config --global user.email "github-actions@github.com"
+        git config --global user.name "GitHub Actions"
+        
+        # Add changes
+        git add ovk/docs/contextualstandards/index.md
+        
+        # Check if there are changes to commit
+        if git diff --staged --quiet; then
+          echo "No changes detected in index.md - skipping commit"
+        else
+          # Commit and push changes
+          git commit -m "Update index.md from README.md of ovk-contextualstandard [automated sync]"
+          git push origin main || {
+            echo "::error::Failed to push changes. Attempting to restore from backup..."
+            if [ -f "../backup/index.md" ]; then
+              cp ../backup/index.md ovk/docs/contextualstandards/
+              echo "Restored index.md from backup."
+            fi
+            exit 1
+          }
+          echo "Successfully updated index.md content"
+        fi
     branches:
       - main
   schedule:
