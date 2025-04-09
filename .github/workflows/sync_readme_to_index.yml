@@ -1,9 +1,6 @@
 name: Sync README to index
 
 on:
-  push:name: Sync README to index
-
-on:
   push:
     branches:
       - main
@@ -17,20 +14,20 @@ jobs:
     
     steps:
     - name: Checkout ovk-docusaurus
-      uses: actions/checkout@v4  # Updated to latest version
+      uses: actions/checkout@v4
       with:
         repository: BVDW-org/ovk-docusaurus
         path: ovk-docusaurus
-        fetch-depth: 1  # Shallow clone for better performance
+        fetch-depth: 1
     
     - name: Checkout ovk-contextualstandard
-      uses: actions/checkout@v4  # Updated to latest version
+      uses: actions/checkout@v4
       with:
         repository: BVDW-org/ovk-contextualstandard
         path: ovk-contextualstandard
         token: ${{ secrets.GH_TOKEN }}
         ref: main
-        fetch-depth: 1  # Shallow clone for better performance
+        fetch-depth: 1
     
     - name: Validate repositories
       run: |
@@ -88,7 +85,7 @@ jobs:
           echo "No changes detected in index.md - skipping commit"
         else
           # Commit and push changes
-          git commit -m "Update index.md from README.md of ovk-contextualstandard [automated sync]"
+          git commit -m "Update index.md from README.md of ovk-contextualstandard"
           git push origin main || {
             echo "::error::Failed to push changes. Attempting to restore from backup..."
             if [ -f "../backup/index.md" ]; then
@@ -98,54 +95,4 @@ jobs:
             exit 1
           }
           echo "Successfully updated index.md content"
-        fi
-    branches:
-      - main
-  schedule:
-    - cron: '0 0 * * *'  # Läuft einmal täglich um Mitternacht
-
-jobs:
-  sync:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout ovk-docusaurus
-      uses: actions/checkout@v2
-      with:
-        repository: BVDW-org/ovk-docusaurus
-        path: ovk-docusaurus
-
-    - name: Checkout ovk-contextualstandard
-      uses: actions/checkout@v2
-      with:
-        repository: BVDW-org/ovk-contextualstandard
-        path: ovk-contextualstandard
-        token: ${{ secrets.GH_TOKEN }}
-        ref: main  # Explizit den Branch 'main' angeben
-
-    - name: Clear old index.md content
-      run: |
-        echo "Clearing old content of index.md"
-        > ovk-docusaurus/ovk/docs/contextualstandards/index.md
-
-    - name: Copy README to index.md
-      run: |
-        echo "Copying README.md to index.md"
-        cp ovk-contextualstandard/README.md ovk-docusaurus/ovk/docs/contextualstandards/index.md
-        echo "Files after copy:"
-        ls -la ovk-docusaurus/ovk/docs/contextualstandards/
-
-    - name: Commit and push changes
-      env:
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-      run: |
-        cd ovk-docusaurus
-        git config --global user.email "carlos.bracho@axelspringer.com"
-        git config --global user.name "github-actions[bot]"
-        git add ovk/docs/contextualstandards/index.md
-        if git diff-index --quiet HEAD; then
-          echo "No changes to commit"
-        else
-          git commit -m "Update index.md from README.md of ovk-contextualstandard"
-          git push origin main
         fi
