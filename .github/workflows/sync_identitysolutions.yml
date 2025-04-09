@@ -64,8 +64,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
         cd ovk-docusaurus
-        git config --global user.email "github-actions@github.com"
-        git config --global user.name "GitHub Actions"
+        git config --global user.email "carlos.bracho@axelspringer.com"
+        git config --global user.name "github-actions[bot]"
         
         # Add changes
         git add ovk/docs/identitysolutions
