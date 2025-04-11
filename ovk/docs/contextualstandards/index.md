@@ -9,7 +9,7 @@ Inhalt:
 
 [3. Kriterien](#Kriterien)
 
-[3.1 QUALTÄT](#1-qualität)
+[3.1 QUALITÄT](#1-qualität)
    - [3.1.1 Direktanbindung](#11-direktanbindung)
    - [3.1.2 Überprüfung und Veröffentlichung der Prüfergebnisse](#12-überprüfung-und-veröffentlichung-der-prüfergebnisse)
 
@@ -24,7 +24,7 @@ Inhalt:
    - [3.4.1 Taxonomie-Standard](#41-taxonomie-standard)
    - [3.4.2 Open RTB-Standard](#42-open-rtb-standard)
 
-[4. Documentation](#documentation)
+[4. Dokumentation](#documentation)
    - [Implementierungsübersicht und Dokumentationen](#implementierungsübersicht-und-dokumentationen)
 
 [5. Laufende Projeke](#laufende-projekte)
@@ -35,7 +35,7 @@ Inhalt:
 ## OVK-Contextual Standard v1.0: A solution for the post-cookie era
 
 OVK-Contextual Standard v1.0: Eine Lösung für die Post-Cookie-Ära
-3rd-Party-Cookie-basierte Werbung ist immer weniger möglich. Kontextuelles Targeting ist eine Lösung, um auch in Zukunft ein erfolgreiches Werbegeschäft betreiben zu können - basierend auf den nicht-werblichen Inhalten eines Angebotes. Um kontextuelles Targeting erfolgreich am Markt zu etablieren, sind Skalierbarkeit und verlässliche Qualität gefragt. Der Online-Vermarkterkreis (OVK) im Bundesverband Digitale Wirtschaft (BVDW) e. V. hat einen anbieter- und technologieunabhängigen Standard für Online Kontextuelles Targeting entwickelt, der hier vorgestellt wird. Der im Folgenden beschriebene Standard wird von allen im OVK organisierten Vermarktern unterstützt. OVK-Mitglieder haben ihn bereits implementiert oder werden ihn bis zum Ende des 2. Quartals 2025 implementieren.
+3rd-Party-Cookie-basierte Werbung ist immer weniger möglich. Kontextuelles Targeting ist eine Lösung, um auch in Zukunft ein erfolgreiches Werbegeschäft betreiben zu können - basierend auf den nicht-werblichen Inhalten eines Angebotes. Um kontextuelles Targeting erfolgreich am Markt zu etablieren, sind Skalierbarkeit und verlässliche Qualität gefragt. Der Online-Vermarkterkreis (OVK) im Bundesverband Digitale Wirtschaft (BVDW) e. V. hat einen anbieter- und technologieunabhängigen Standard für Online Kontextuelles Targeting entwickelt, der hier vorgestellt wird. Der im Folgenden beschriebene Standard wird perspektivisch von allen im OVK organisierten Vermarktern unterstützt. Der Großteil der OVK-Mitglieder hat den Standard bereits implementiert.
 
 # Beschreibung und Anforderungen
 Der OVK-Contextual Standard v1.0 ist ein anbieter- und technologieunabhängiger Standard für kontextuelles Online-Targeting im deutschen Werbemarkt. Der Standard legt Wert auf eine direkte Anbindung an den Content Owner oder Vermarkter, Skalierbarkeit, verlässliche Qualität und die Einhaltung der IAB Content Taxonomy und des Open RTB Standards für die Signalisierung. Sensible Kategorien werden ausgeschlossen, es wird „Sensitive Topic“ signalisiert. Die Systemfunktionalität, die Qualitätssicherung sowie die Prozesse und Methoden zur Qualitätssicherung werden dokumentiert und auf der Website des Anbieters sowie hier veröffentlicht.
@@ -68,7 +68,7 @@ Wichtigste Grundsätze
 -  Die Ergebnisse der manuellen Prüfung und ggf. die des Vergleichs werden auf der Website des Anbieters veröffentlicht.
 
 
-## 2. DOkUMENTATION
+## 2. DOKUMENTATION
 Wichtigste Grundsätze
 -  Transparenz
 -  Überprüfbare Qualität
@@ -91,7 +91,7 @@ Wichtigste Grundsätze
 -  Keine Verwendung sensitiver Kategorien
 
  ### 3.1 Ausschluss von sensiblen Kategorien
- - Die folgenen sensitiven Kategories werden für die Signalisierung ausgeschlossen. "Sensitive Topic" sollte statt dessen signalisiert werden:
+ - Die folgenen sensitiven Kategorien werden für die Signalisierung ausgeschlossen. "Sensitive Topic" sollte statt dessen signalisiert werden:
 
 | Unique ID | Name                                   | Tier 1                  | Tier 2                   | Tier 3                             | Tier 4              | Replacement     |
 |-----------|----------------------------------------|-------------------------|--------------------------|------------------------------------|---------------------|-----------------|
@@ -171,8 +171,8 @@ Wichtigste Grundsätze
  ### 4.2 Open RTB Standard
  - Die Signalisierung erfolgt nach dem Open RTB-Standard im programmatischen Prozess.
 
-# Documentation
-Hier finden sie die OVK-Mitglieder, die den OVK-Contextual Standard implementiert haben sowie deren Dokumentationen.
+# Dokumentation
+Hier finden Sie die OVK-Mitglieder, die den OVK-Contextual Standard implementiert haben sowie deren Dokumentationen.
 
 ## Implementierungsübersicht und Dokumentationen
 Liste der Mitglieder und deren Dokumentationen, die den OVK-Contextual Standard unterstützen:
