@@ -169,7 +169,7 @@ Wichtigste Grundsätze
    [IAB Content Taxonony 2.1](https://github.com/InteractiveAdvertisingBureau/Taxonomies/blob/main/Content%20Taxonomies/Content%20Taxonomy%202.1.tsv)
 
  ### 4.2 Open RTB Standard
- - Die Signalisierung erfolgt nach dem Open RTB-Standard im programmatischen Prozess.
+ - Die Signalisierung erfolgt nach dem Open RTB-Standard im programmatischen Prozess. Dies ist kein verpflichtendes Kriterium.
 
 # Dokumentation
 Hier finden Sie die OVK-Mitglieder, die den OVK-Contextual Standard implementiert haben sowie deren Dokumentationen.
@@ -182,7 +182,6 @@ Liste der Mitglieder und deren Dokumentationen, die den OVK-Contextual Standard 
 | ---------------------------------- |--------------|
 | `Ad Alliance`           |https://osdatasolutions.de/contextual-ovk/  
 | `BCN`                   |https://bcn.group/fileadmin/Assets/02_Werbeloesungen/Digital/Programmatic_Contextual_Targeting_2025.pdf
-| `Funke`                 |https://funkedigital.de/ovk-contextual/ 
 | `Himedia`               |
 | `iq Digital`            | 
 | `Media Impact`          |https://osdatasolutions.de/contextual-ovk/ 
