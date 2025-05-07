@@ -2,7 +2,7 @@
 sidebar_position: 0
 ---
 
-# Einführung
+# Intro
 
 
 ## Was ist der OVK?
