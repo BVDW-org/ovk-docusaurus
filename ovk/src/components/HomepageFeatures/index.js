@@ -134,13 +134,13 @@ function UnitSection() {
           <img src="/img/nadeem.png" alt="Nadeem Qureshi" style={{ width: '100%', borderRadius: '50%' }} />
           <h3>Nadeem Qureshi</h3>
           <p style={{ margin: '0' }}>Leiter des OVK Workstreams "Identity"</p>
-          <a href="https://www.bcn.group" target="_blank" rel="noopener" style={{ margin: '0', color: 'inherit', textDecoration: 'underline'  }}>Brand Community Network GmbH</a>
+          <a href="https://www.bcn.group" target="_blank" rel="noopener" style={{ margin: '0', color: 'inherit', textDecoration: 'underline'  }}>BCN Brand Community Network GmbH</a>
         </div>
         <div className={styles.person} style={{ maxWidth: '200px' }}>
           <img src="/img/smaranda.jpeg" alt="Smaranda Dancu" style={{ width: '100%', borderRadius: '50%' }} />
           <h3>Smaranda Dancu</h3>
           <p style={{ margin: '0' }}>Leiterin des OVK Workstreams "Contextual"</p>
-          <a href="https://www.burda-forward.de" target="_blank" rel="noopener" style={{ margin: '0', color: 'inherit', textDecoration: 'underline'  }}>BurdaForward GmbH</a>
+          <a href="https://www.bcn.group" target="_blank" rel="noopener" style={{ margin: '0', color: 'inherit', textDecoration: 'underline'  }}>BCN Brand Community Network GmbH</a>
         </div>
       </div>
     </div>
