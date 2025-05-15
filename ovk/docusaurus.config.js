@@ -6,6 +6,7 @@
 
 import { themes as prismThemes } from 'prism-react-renderer';
 
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Tech Specs',
@@ -66,7 +67,7 @@ const config = {
   /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
       ({
         // Replace with your project's social card
-        image: 'img/docusaurus-social-card.jpg',
+        image: 'img/logo_ovk_mobile.png',
         navbar: {
           title: 'Tech Specs',
           logo: {
