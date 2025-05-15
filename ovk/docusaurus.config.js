@@ -13,10 +13,12 @@ const config = {
   favicon: 'img/logo_ovk_mobile.png',
 
   // Set the production url of your site here
-  url: 'https://bvdw.pages.dev', // Changed from url tech.ovk.de to test
+  url: 'https://tech.ovk.de', // Changed from url tech.ovk.de to test
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
+  trailingSlash: false, // oder true je nach Wunsch
+
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
