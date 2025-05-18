@@ -34,21 +34,23 @@
   text-decoration: underline; /* Optional: add underline on hover */
 }
 
-.toggleButton_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
-  display: none !important;
-  visibility: hidden !important;
-}
-
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #142F52;
-  --ifm-color-primary-dark: #010F2D;
-  --ifm-color-primary-darker: #212529;
-  --ifm-color-primary-darkest: #212529;
-  --ifm-color-primary-light: #FF4627;
-  --ifm-color-primary-lighter: #FF4627;
-  --ifm-color-primary-lightest: #FF4627;
-  --docusaurus-highlighted-code-line-bg: rgb(255, 255, 255);
+  --ifm-color-primary: #4d82c3;
+  --ifm-color-primary-dark: #3a70b1;
+  --ifm-color-primary-darker: #2c5e9f;
+  --ifm-color-primary-darkest: #1e4c8d;
+  --ifm-color-primary-light: #FF6347;
+  --ifm-color-primary-lighter: #FF8267;
+  --ifm-color-primary-lightest: #FFA187;
+  --ifm-background-color: #1a1a2e;
+  --ifm-navbar-background-color: #121225;
+  --ifm-footer-background-color: #121225;
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1);
+  --ifm-font-color-base: #ffffff;
+  --ifm-heading-color: #ffffff;
+  --ifm-color-content: #ffffff;
+  --ifm-color-content-secondary: #e0e0e0;
 }
 
 .hero__title {
@@ -103,6 +105,11 @@ a:hover {
   padding: 50px 0; /* Mehr Platz um die Features */
 }
 
+/* Dark mode specific styles for features section */
+[data-theme='dark'] .features {
+  background-color: #232338;
+}
+
 
 
 .col--4 {
@@ -113,9 +120,14 @@ a:hover {
   margin-left: 10px; /* Horizontaler Abstand zwischen den Containern */
   margin-right: 10px; /* Horizontaler Abstand zwischen den Containern */
   flex: 0 0 calc(33.333% - 20px); /* Berechnet die Breite abzüglich der Ränder */
-  background: white; /* Hintergrund für jede Feature-Box */
+  background: var(--ifm-background-surface-color); /* Adaptive background color */
   box-shadow: 0px 4px 7px rgba(0,0,0,0.1); /* Schatten für 3D-Effekt */
   border-radius: 8px; /* Abgerundete Ecken */
+}
+
+/* Dark mode specific styles for feature boxes */
+[data-theme='dark'] .col--4 {
+  box-shadow: 0px 4px 7px rgba(0,0,0,0.3);
 }
 
 /* Flexbox container */
@@ -141,6 +153,16 @@ h3 {
   color: #142F52; /* Dunkelblaue Farbe für Titel */
 }
 
+/* Dark mode heading colors for better readability */
+[data-theme='dark'] h1,
+[data-theme='dark'] h2,
+[data-theme='dark'] h3,
+[data-theme='dark'] h4,
+[data-theme='dark'] h5,
+[data-theme='dark'] h6 {
+  color: #ffffff;
+}
+
 
 
 .feature-container {
@@ -148,17 +170,75 @@ h3 {
   cursor: pointer;
   margin-top: 100px;
   margin-bottom: 100px;
-  background-color: #fefefe;
+  background-color: var(--ifm-background-surface-color);
   flex: 1 1 30%; /* Each item takes up 30% of the row width */
   min-width: 250px; /* Ensures a minimum size for each item */
   box-sizing: border-box;
+  box-shadow: 0px 4px 7px rgba(0,0,0,0.1);
+  border-radius: 8px;
 
   @media (max-width: 768px) {
     .feature-container {
       flex: 1 1 100%; /* Each item takes up 100% of the row width on mobile */
     }
   }
+}
 
+/* Dark mode specific styles for feature containers */
+[data-theme='dark'] .feature-container {
+  box-shadow: 0px 4px 7px rgba(0,0,0,0.3);
+  color: #e3e3e3;
+}
+
+/* Fix text color in feature cards for dark mode */
+[data-theme='dark'] .col--4 {
+  box-shadow: 0px 4px 7px rgba(0,0,0,0.3);
+  color: #e3e3e3;
+}
+
+/* Simple dark mode text color fix */
+[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+/* Ensure text in dark mode is visible */
+[data-theme='dark'] p,
+[data-theme='dark'] h1,
+[data-theme='dark'] h2,
+[data-theme='dark'] h3,
+[data-theme='dark'] h4,
+[data-theme='dark'] h5,
+[data-theme='dark'] h6,
+[data-theme='dark'] span,
+[data-theme='dark'] div {
+  color: #ffffff;
+}
+
+/* Fix for main content area in dark mode */
+[data-theme='dark'] .main-wrapper {
+  background-color: #1a1a2e;
+}
+
+/* Fix for white background sections in dark mode */
+[data-theme='dark'] article,
+[data-theme='dark'] .hero,
+[data-theme='dark'] .container,
+[data-theme='dark'] .main-wrapper .container {
+  background-color: #1a1a2e;
+  color: #ffffff;
+}
+
+/* Fix for specific section with white background */
+[data-theme='dark'] .unitSection {
+  background-color: #252542;
+  color: #ffffff;
+}
+
+/* Fix for any elements with inline background styles */
+[data-theme='dark'] [style*="background-color"],
+[data-theme='dark'] [style*="background"] {
+  background-color: #1a1a2e !important;
+  color: #ffffff !important;
 }
 
 .feature-container img {
@@ -198,6 +278,11 @@ h3 {
   background-color: #F4F4F4;
 }
 
+/* Dark mode specific styles for unitSection */
+[data-theme='dark'] .unitSection {
+  background-color: #252542;
+}
+
 .unitSection h1 {
   margin: 0px 0px 40px 0px;
 }
@@ -216,6 +301,20 @@ h3 {
 
   .unitSection p {
     padding: 0px 20px;
+  }
+  
+  /* Fix for vertical text display on mobile */
+  * {
+    writing-mode: horizontal-tb !important;
+    text-orientation: mixed !important;
+    letter-spacing: normal !important;
+  }
+  
+  /* Ensure proper text flow on mobile */
+  h1, h2, h3, h4, h5, h6, p, span, div {
+    display: block;
+    width: auto;
+    text-align: inherit;
   }
 }
 

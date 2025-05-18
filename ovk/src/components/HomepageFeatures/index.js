@@ -74,73 +74,55 @@ function UnitSectionWrapper() {
 
 function UnitSection() {
   return (
-    <div className={styles.unitSection} style={{ textAlign: 'center', padding: '50px', margin: '0px 100px 150px 100px', backgroundColor: '#F4F4F4' }}>
-      <h1 className={styles.headline} style={{margin: '0px 0px 40px 0px' }}>Ein Projekt der Unit "AdTech & Programmatic" des OVK</h1>
-      <p className={styles.lead} style={{margin: '0px 0px 50px 0px', padding: '0px 100px' }}>
+    <div className={styles.unitSection}>
+      <h1 className={styles.headline}>Ein Projekt der Unit "AdTech & Programmatic" des OVK</h1>
+      <p className={styles.lead}>
         Kernaufgaben der Unit Ad Tech & Programmatic sind Standardisierung und Marktaufklärung. Ziel der Unit ist es, die Durchführung digitaler Kampagnen für die Marktpartner so effizient wie möglich zu gestalten. Die Experten aus den OVK Mitgliedsunternehmen bewerten neue technologische Ansätze und Initiativen, konsolidieren die Sicht der Vermarkter auf Ad Tech-, Programmatic- und Data-Fragestellungen, formulieren Marktanforderungen und entwickeln Lösungen. Gemeinsam mit den Marktpartnern werden Standards definiert und Regulierungs- und Datenschutzinitiativen begleitet. Die Veröffentlichungen und Veranstaltungen der Unit liefern Hilfestellung und klären auf.
       </p>
       
       {/* Erster Leader-Bereich */}
-      <h2 className={styles.headline} style={{margin: '40px 0px 40px 0px' }}>Leiter der Unit Ad Tech & Programmatic</h2>
-      <div 
-        className={styles.leaders} 
-        style={{ 
-          display: 'flex', 
-          justifyContent: 'center', 
-          gap: '70px', 
-          flexWrap: 'wrap'
-        }}
-      >
-        <div className={styles.person} style={{ maxWidth: '200px' }}>
-          <img src="https://www.ovk.de/wp-content/uploads/2020/04/ASP_ProgrammaticData_Alwin_Viereck.png" alt="Alwin Viereck" style={{ width: '100%', borderRadius: '50%' }} />
+      <h2 className={styles.headline}>Leiter der Unit Ad Tech & Programmatic</h2>
+      <div className={styles.leaders}>
+        <div className={styles.person}>
+          <img src="https://www.ovk.de/wp-content/uploads/2020/04/ASP_ProgrammaticData_Alwin_Viereck.png" alt="Alwin Viereck" className={styles.personImage} />
           <h3>Alwin Viereck</h3>
-          <p style={{ margin: '0' }}>Leiter der Unit Ad Tech & Programmatic im OVK</p>
-          <a href="https://www.united-internet-media.de/de/home/" target="_blank" rel="noopener" style={{ margin: '0', color: 'inherit', textDecoration: 'underline'  }}>United Internet Media GmbH</a>
+          <p>Leiter der Unit Ad Tech & Programmatic im OVK</p>
+          <a href="https://www.united-internet-media.de/de/home/" target="_blank" rel="noopener">United Internet Media GmbH</a>
         </div>
-        <div className={styles.person} style={{ maxWidth: '200px' }}>
-          <img src="https://www.ovk.de/wp-content/uploads/2021/12/Brachos-Carlos-eingefärbt_quadratisch-300x300.jpg" alt="Carlos Bracho" style={{ width: '100%', borderRadius: '50%' }} />
+        <div className={styles.person}>
+          <img src="https://www.ovk.de/wp-content/uploads/2021/12/Brachos-Carlos-eingefärbt_quadratisch-300x300.jpg" alt="Carlos Bracho" className={styles.personImage} />
           <h3>Carlos Bracho</h3>
-          <p style={{ margin: '0' }}>Leiter der Unit Ad Tech & Programmatic im OVK</p>
-          <a href="https://www.mediaimpact.de/de/" style={{ margin: '0', color: 'inherit', textDecoration: 'underline'  }}>Media Impact GmbH und Co. KG</a>
+          <p>Leiter der Unit Ad Tech & Programmatic im OVK</p>
+          <a href="https://www.mediaimpact.de/de/" target="_blank" rel="noopener">Media Impact GmbH und Co. KG</a>
         </div>
-        <div className={styles.person} style={{ maxWidth: '200px' }}>
-          <img src="https://www.ovk.de/wp-content/uploads/2021/12/Letzner_Markus_duplex-300x300.jpg" alt="Markus Letzner" style={{ width: '100%', borderRadius: '50%' }} />
+        <div className={styles.person}>
+          <img src="https://www.ovk.de/wp-content/uploads/2021/12/Letzner_Markus_duplex-300x300.jpg" alt="Markus Letzner" className={styles.personImage} />
           <h3>Markus Letzner</h3>
-          <p style={{ margin: '0' }}>Leiter der Unit Ad Tech & Programmatic im OVK und Mitsprecher des Contextual Workstreams</p>
-          <a href="https://www.stroeer.de/" target="_blank" rel="noopener" style={{ margin: '0', color: 'inherit', textDecoration: 'underline'  }}>Ströer Digital Media GmbH</a>
+          <p>Leiter der Unit Ad Tech & Programmatic im OVK und Mitsprecher des Contextual Workstreams</p>
+          <a href="https://www.stroeer.de/" target="_blank" rel="noopener">Ströer Digital Media GmbH</a>
         </div>
       </div>
       
       {/* Zweiter Leader-Bereich */}
-      <h2 className={styles.headline} style={{margin: '40px 0px 40px 0px' }}>Leiter der Workstreams</h2>
-      <div 
-        className={styles.leaders} 
-        style={{ 
-          display: 'flex', 
-          justifyContent: 'center', 
-          gap: '70px', 
-          flexWrap: 'wrap', 
-          marginTop: '50px'  // Abstand zwischen den Leader-Bereichen
-        }}
-        
-      >
-        <div className={styles.person} style={{ maxWidth: '200px' }}>
-          <img src="/img/alexander.jpeg" alt="Alexander Peischl" style={{ width: '100%', borderRadius: '50%' }} />
+      <h2 className={styles.headline}>Leiter der Workstreams</h2>
+      <div className={styles.leaders}>
+        <div className={styles.person}>
+          <img src="/img/alexander.jpeg" alt="Alexander Peischl" className={styles.personImage} />
           <h3>Alexander Peischl</h3>
-          <p style={{ margin: '0' }}>Leiter des OVK Workstreams "Werbeformen"</p>
-          <a href="https://www.united-internet-media.de/de/home/" target="_blank" rel="noopener" style={{ margin: '0', color: 'inherit', textDecoration: 'underline'  }}>United Internet Media GmbH</a>
+          <p>Leiter des OVK Workstreams "Werbeformen"</p>
+          <a href="https://www.united-internet-media.de/de/home/" target="_blank" rel="noopener">United Internet Media GmbH</a>
         </div>
-        <div className={styles.person} style={{ maxWidth: '200px' }}>
-          <img src="/img/nadeem.png" alt="Nadeem Qureshi" style={{ width: '100%', borderRadius: '50%' }} />
+        <div className={styles.person}>
+          <img src="/img/nadeem.png" alt="Nadeem Qureshi" className={styles.personImage} />
           <h3>Nadeem Qureshi</h3>
-          <p style={{ margin: '0' }}>Leiter des OVK Workstreams "Identity"</p>
-          <a href="https://www.bcn.group" target="_blank" rel="noopener" style={{ margin: '0', color: 'inherit', textDecoration: 'underline'  }}>BCN Brand Community Network GmbH</a>
+          <p>Leiter des OVK Workstreams "Identity"</p>
+          <a href="https://www.bcn.group" target="_blank" rel="noopener">BCN Brand Community Network GmbH</a>
         </div>
-        <div className={styles.person} style={{ maxWidth: '200px' }}>
-          <img src="/img/smaranda.jpeg" alt="Smaranda Dancu" style={{ width: '100%', borderRadius: '50%' }} />
+        <div className={styles.person}>
+          <img src="/img/smaranda.jpeg" alt="Smaranda Dancu" className={styles.personImage} />
           <h3>Smaranda Dancu</h3>
-          <p style={{ margin: '0' }}>Co-Leiterin des OVK Workstreams "Contextual"</p>
-          <a href="https://www.bcn.group" target="_blank" rel="noopener" style={{ margin: '0', color: 'inherit', textDecoration: 'underline'  }}>BCN Brand Community Network GmbH</a>
+          <p>Co-Leiterin des OVK Workstreams "Contextual"</p>
+          <a href="https://www.bcn.group" target="_blank" rel="noopener">BCN Brand Community Network GmbH</a>
         </div>
       </div>
     </div>

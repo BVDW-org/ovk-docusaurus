@@ -19,7 +19,7 @@ const config = {
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
   trailingSlash: false, // oder true je nach Wunsch
-
+  
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -68,6 +68,11 @@ const config = {
       ({
         // Replace with your project's social card
         image: 'img/logo_ovk_mobile.png',
+        colorMode: {
+          defaultMode: 'light',
+          disableSwitch: false,
+          respectPrefersColorScheme: true,
+        },
         navbar: {
           title: 'Tech Specs',
           logo: {

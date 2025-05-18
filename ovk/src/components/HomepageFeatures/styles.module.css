@@ -9,3 +9,129 @@
   height: 200px;
   width: 200px;
 }
+
+.unitSection {
+  text-align: center;
+  padding: 50px;
+  margin: 0px 100px 150px 100px;
+  background-color: #F4F4F4;
+}
+
+/* Dark mode specific styles for unitSection */
+[data-theme='dark'] .unitSection {
+  background-color: #252542;
+  color: #ffffff;
+}
+
+.headline {
+  margin: 0px 0px 40px 0px;
+  text-align: center;
+  writing-mode: horizontal-tb !important;
+}
+
+.lead {
+  margin: 0px 0px 50px 0px;
+  padding: 0px 100px;
+  text-align: center;
+  writing-mode: horizontal-tb !important;
+}
+
+.unitSection p {
+  text-align: center;
+  writing-mode: horizontal-tb !important;
+}
+
+.leaders {
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.person {
+  max-width: 200px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.personImage {
+  width: 100%;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.person h3 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.person p {
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.person a {
+  margin: 0;
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* Dark mode specific styles for person elements */
+[data-theme='dark'] .person h3,
+[data-theme='dark'] .person p,
+[data-theme='dark'] .person a {
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .unitSection {
+    padding: 30px 20px;
+    margin: 0px 20px 100px 20px;
+  }
+  
+  .headline {
+    margin: 0px 0px 20px 0px;
+    writing-mode: horizontal-tb !important;
+    text-orientation: mixed !important;
+    letter-spacing: normal !important;
+    word-break: normal !important;
+    white-space: normal !important;
+    display: block !important;
+    width: auto !important;
+  }
+  
+  .lead {
+    margin: 0px 0px 30px 0px;
+    padding: 0px 20px;
+    writing-mode: horizontal-tb !important;
+    text-orientation: mixed !important;
+    letter-spacing: normal !important;
+    word-break: normal !important;
+    white-space: normal !important;
+    display: block !important;
+    width: auto !important;
+  }
+  
+  .unitSection p {
+    padding: 0px 20px;
+    writing-mode: horizontal-tb !important;
+    text-orientation: mixed !important;
+    letter-spacing: normal !important;
+    word-break: normal !important;
+    white-space: normal !important;
+  }
+  
+  .unitSection h1, 
+  .unitSection h2, 
+  .unitSection h3, 
+  .unitSection p, 
+  .unitSection div, 
+  .unitSection a {
+    writing-mode: horizontal-tb !important;
+    text-orientation: mixed !important;
+    display: block !important;
+    width: auto !important;
+  }
+}
