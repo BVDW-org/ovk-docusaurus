@@ -1,0 +1,19 @@
+.aboutHeader {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--ifm-color-primary);
+  color: var(--ifm-color-white);
+}
+
+.aboutTitle {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 996px) {
+  .aboutTitle {
+    font-size: 2rem;
+  }
+}
