@@ -7,31 +7,31 @@
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #142F52;
-  --ifm-color-primary-dark: #010F2D;
-  --ifm-color-primary-darker: #212529;
-  --ifm-color-primary-darkest: #212529;
-  --ifm-color-primary-light: #FF4627;
-  --ifm-color-primary-lighter: #FF4627;
-  --ifm-color-primary-lightest: #FF4627;
+  --ifm-color-primary-dark: #122A4A;
+  --ifm-color-primary-darker: #0F2440;
+  --ifm-color-primary-darkest: #0C1E36;
+  --ifm-color-primary-light: #17365E;
+  --ifm-color-primary-lighter: #1A3D6A;
+  --ifm-color-primary-lightest: #1D4476;
+  
+  --ifm-color-secondary: #FF4627;
+  --ifm-color-secondary-dark: #FF3010;
+  --ifm-color-secondary-darker: #FA2100;
+  --ifm-color-secondary-darkest: #D01C00;
+  --ifm-color-secondary-light: #FF5C3E;
+  --ifm-color-secondary-lighter: #FF7255;
+  --ifm-color-secondary-lightest: #FF886C;
+  
   --ifm-code-font-size: 95%;
+  --ifm-font-family-base: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --ifm-heading-font-weight: 700;
+  --ifm-navbar-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.05);
+  --ifm-footer-background-color: #010F2D;
+  --ifm-footer-color: #ffffff;
+  --ifm-footer-link-color: #ffffff;
+  --ifm-footer-title-color: #ffffff;
+  
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-}
-
-
-/* Override the footer background color */
-.footer {
-  background-color: #010F2D; /* Replace with your specific hex color */
-  color: #ffffff; /* Set default text color to white */
-}
-.footer__links a, 
-.footer__copyright {
-  color: #ffffff; /* Ensure all text and links are white */
-}
-
-/* Set hover color for links in the footer to white */
-.footer__links a:hover {
-  color: #ffffff;
-  text-decoration: underline; /* Optional: add underline on hover */
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -40,284 +40,212 @@
   --ifm-color-primary-dark: #3a70b1;
   --ifm-color-primary-darker: #2c5e9f;
   --ifm-color-primary-darkest: #1e4c8d;
-  --ifm-color-primary-light: #FF6347;
-  --ifm-color-primary-lighter: #FF8267;
-  --ifm-color-primary-lightest: #FFA187;
-  --ifm-background-color: #1a1a2e;
-  --ifm-navbar-background-color: #121225;
-  --ifm-footer-background-color: #121225;
+  --ifm-color-primary-light: #6090cb;
+  --ifm-color-primary-lighter: #739fd3;
+  --ifm-color-primary-lightest: #86addb;
+  
+  --ifm-color-secondary: #FF6347;
+  --ifm-color-secondary-dark: #FF4F30;
+  --ifm-color-secondary-darker: #FF3A19;
+  --ifm-color-secondary-darkest: #E02500;
+  --ifm-color-secondary-light: #FF775E;
+  --ifm-color-secondary-lighter: #FF8C75;
+  --ifm-color-secondary-lightest: #FFA18C;
+  
+  --ifm-background-color: #010F2D;
+  --ifm-navbar-background-color: #010F2D;
+  --ifm-footer-background-color: #010F2D;
   --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1);
   --ifm-font-color-base: #ffffff;
   --ifm-heading-color: #ffffff;
   --ifm-color-content: #ffffff;
   --ifm-color-content-secondary: #e0e0e0;
+  --ifm-menu-color: #e0e0e0;
+  --ifm-breadcrumb-color-active: var(--ifm-color-primary-light);
+  --ifm-link-color: var(--ifm-color-secondary);
+  --ifm-link-hover-color: var(--ifm-color-secondary-light);
 }
 
-.hero__title {
-  padding: 1rem 0;
-  text-align: center;
+/* Global styles */
+html {
+  scroll-behavior: smooth;
 }
 
-
-
-/* Unterstreichen der Navbar-Links beim Hover */
-.navbar__item.navbar__link:hover {
-  text-decoration: none; /* Entfernt die Standard-Unterstreichung */
-  border-bottom: 1px solid #FF4627; /* Nutzt die CSS-Variable für die Farbe */
+body {
+  font-family: var(--ifm-font-family-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.navbar__item.navbar__link {
-  text-decoration: none; /* Stellt sicher, dass keine Unterstreichung vorhanden ist */
-  transition: border-bottom 0.1s ease; /* Glättet die Übergangseffekte */
+/* Navbar styles */
+.navbar {
+  box-shadow: var(--ifm-navbar-shadow);
+  backdrop-filter: blur(10px);
 }
 
-/* Standard-Stil für alle Links */
-a {
-  color: #FF4627; /* Setzt die Standardfarbe der Links */
-  text-decoration: none; /* Entfernt die Unterstreichung */
-  transition: text-decoration 0.3s ease; /* Glättet den Übergangseffekt für die Unterstreichung */
+.navbar__brand {
+  font-weight: 700;
 }
 
-/* Hover-Stil für alle Links */
-a:hover {
-  text-decoration: underline; /* Fügt eine Unterstreichung beim Hover hinzu */
+.navbar__item {
+  font-weight: 500;
 }
 
+.navbar__link {
+  position: relative;
+  transition: color 0.2s ease;
+}
 
+.navbar__link:hover {
+  color: var(--ifm-color-secondary);
+}
 
-/* Standard-Stil für den spezifischen Button */
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--ifm-color-secondary);
+  transition: width 0.3s ease;
+}
+
+.navbar__link:hover::after {
+  width: 100%;
+}
+
+/* Footer styles */
+.footer {
+  background-color: var(--ifm-footer-background-color);
+  color: var(--ifm-footer-color);
+  padding: 4rem 0 2rem;
+}
+
+.footer__links {
+  margin-bottom: 3rem;
+}
+
+.footer__title {
+  color: var(--ifm-footer-title-color);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.footer__link-item {
+  color: var(--ifm-footer-link-color);
+  opacity: 0.8;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.footer__link-item:hover {
+  color: var(--ifm-color-secondary);
+  opacity: 1;
+  text-decoration: none;
+}
+
+.footer__copyright {
+  color: var(--ifm-footer-color);
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+/* Button styles */
+.button {
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  padding: 0.8rem 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
 .button--secondary {
-  background-color: #FF4627; /* Setzt die Hintergrundfarbe des Buttons */
-  color: #FFFFFF !important; /* Setzt die Textfarbe auf Weiß für bessere Lesbarkeit */
-  border: none; /* Entfernt den Rand, falls vorhanden */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Glättet den Übergangseffekt für Farbänderungen */
+  background-color: var(--ifm-color-secondary);
+  color: white;
 }
 
-/* Hover-Stil für den spezifischen Button */
 .button--secondary:hover {
-  background-color: #FFFFFF; /* Dunkelt die Hintergrundfarbe beim Hover leicht ab */
-  color: #000000 !important; /* Hält die Textfarbe auf Weiß */
+  background-color: var(--ifm-color-secondary-dark);
+  color: white;
 }
 
-
-.features {
-  background-color: #f4f4f6d2; /* Leichter Hintergrund für den gesamten Feature-Bereich */
-  padding: 50px 0; /* Mehr Platz um die Features */
+/* Link styles */
+a {
+  color: var(--ifm-color-secondary);
+  transition: color 0.2s ease;
+  text-decoration: none;
 }
 
-/* Dark mode specific styles for features section */
-[data-theme='dark'] .features {
-  background-color: #232338;
+a:hover {
+  color: var(--ifm-color-secondary-dark);
+  text-decoration: underline;
 }
 
-
-
-.col--4 {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Zentriert die Inhalte vertikal */
-  padding: 10px;
-  margin-left: 10px; /* Horizontaler Abstand zwischen den Containern */
-  margin-right: 10px; /* Horizontaler Abstand zwischen den Containern */
-  flex: 0 0 calc(33.333% - 20px); /* Berechnet die Breite abzüglich der Ränder */
-  background: var(--ifm-background-surface-color); /* Adaptive background color */
-  box-shadow: 0px 4px 7px rgba(0,0,0,0.1); /* Schatten für 3D-Effekt */
-  border-radius: 8px; /* Abgerundete Ecken */
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--ifm-heading-font-weight);
 }
 
-/* Dark mode specific styles for feature boxes */
-[data-theme='dark'] .col--4 {
-  box-shadow: 0px 4px 7px rgba(0,0,0,0.3);
+/* Container */
+.container {
+  padding: 0 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Flexbox container */
-.row-features {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px; /* Space between items */
-}
-/* Prevent wrapping on larger screens */
-@media (min-width: 769px) {
-  .row-features {
-    flex-wrap: nowrap; /* Prevent wrapping on larger screens */
-    justify-content: space-between; /* Ensure space between items */
+/* Responsive adjustments */
+@media (max-width: 996px) {
+  .container {
+    padding: 0 1rem;
   }
 }
 
-.padding-horiz--md {
-  padding: 0 25px; /* Horizontaler Padding innerhalb der Box */
+/* Fix for dark mode text visibility */
+[data-theme='dark'] .navbar__title,
+[data-theme='dark'] .navbar__link,
+[data-theme='dark'] .menu__link,
+[data-theme='dark'] .table-of-contents__link {
+  color: #e0e0e0;
 }
 
-h3 {
-  color: #142F52; /* Dunkelblaue Farbe für Titel */
-}
-
-/* Dark mode heading colors for better readability */
-[data-theme='dark'] h1,
-[data-theme='dark'] h2,
-[data-theme='dark'] h3,
-[data-theme='dark'] h4,
-[data-theme='dark'] h5,
-[data-theme='dark'] h6 {
-  color: #ffffff;
-}
-
-
-
-.feature-container {
-  transition: transform 0.3s ease;
-  cursor: pointer;
-  margin-top: 100px;
-  margin-bottom: 100px;
-  background-color: var(--ifm-background-surface-color);
-  flex: 1 1 30%; /* Each item takes up 30% of the row width */
-  min-width: 250px; /* Ensures a minimum size for each item */
-  box-sizing: border-box;
-  box-shadow: 0px 4px 7px rgba(0,0,0,0.1);
-  border-radius: 8px;
-
-  @media (max-width: 768px) {
-    .feature-container {
-      flex: 1 1 100%; /* Each item takes up 100% of the row width on mobile */
-    }
-  }
-}
-
-/* Dark mode specific styles for feature containers */
-[data-theme='dark'] .feature-container {
-  box-shadow: 0px 4px 7px rgba(0,0,0,0.3);
-  color: #e3e3e3;
-}
-
-/* Fix text color in feature cards for dark mode */
-[data-theme='dark'] .col--4 {
-  box-shadow: 0px 4px 7px rgba(0,0,0,0.3);
-  color: #e3e3e3;
-}
-
-/* Simple dark mode text color fix */
-[data-theme='dark'] {
-  color-scheme: dark;
-}
-
-/* Ensure text in dark mode is visible */
-[data-theme='dark'] p,
-[data-theme='dark'] h1,
-[data-theme='dark'] h2,
-[data-theme='dark'] h3,
-[data-theme='dark'] h4,
-[data-theme='dark'] h5,
-[data-theme='dark'] h6,
-[data-theme='dark'] span,
-[data-theme='dark'] div {
-  color: #ffffff;
+[data-theme='dark'] .navbar__link:hover,
+[data-theme='dark'] .menu__link:hover,
+[data-theme='dark'] .table-of-contents__link:hover {
+  color: var(--ifm-color-secondary);
 }
 
 /* Fix for main content area in dark mode */
 [data-theme='dark'] .main-wrapper {
-  background-color: #1a1a2e;
-}
-
-/* Fix for white background sections in dark mode */
-[data-theme='dark'] article,
-[data-theme='dark'] .hero,
-[data-theme='dark'] .container,
-[data-theme='dark'] .main-wrapper .container {
-  background-color: #1a1a2e;
-  color: #ffffff;
-}
-
-/* Fix for specific section with white background */
-[data-theme='dark'] .unitSection {
-  background-color: #252542;
-  color: #ffffff;
+  background-color: var(--ifm-background-color);
 }
 
 /* Fix for any elements with inline background styles */
 [data-theme='dark'] [style*="background-color"],
 [data-theme='dark'] [style*="background"] {
-  background-color: #1a1a2e !important;
-  color: #ffffff !important;
+  background-color: var(--ifm-background-color) !important;
+  color: var(--ifm-font-color-base) !important;
 }
 
-.feature-container img {
-  max-width: 100%;
-  height: auto;
-}
-
-
-.feature-container:hover {
-  transform: scale(1.05);
-}
-
-.featureImage {
-  width: 50px !important;
-  height: 10px;
-}
-
-.preformatted {
-  white-space: pre-wrap;
-}
-
-.container {
-  padding: 0 15px; /* Ensure there's some padding on mobile */
-}
-
+/* Ensure proper text flow on mobile */
 @media (max-width: 768px) {
-  .container {
-    padding: 0 10px; /* Adjust padding for smaller screens */
-  }
-}
-
-
-.unitSection {
-  text-align: center;
-  padding: 50px;
-  margin: 0px 100px 150px 100px;
-  background-color: #F4F4F4;
-}
-
-/* Dark mode specific styles for unitSection */
-[data-theme='dark'] .unitSection {
-  background-color: #252542;
-}
-
-.unitSection h1 {
-  margin: 0px 0px 40px 0px;
-}
-
-.unitSection p {
-  margin: 0px 0px 50px 0px;
-  padding: 0px 100px;
-}
-
-/* Styles for mobile devices */
-@media (max-width: 768px) {
-  .unitSection {
-    padding: 30px 20px;
-    margin: 0px 20px 100px 20px;
-  }
-
-  .unitSection p {
-    padding: 0px 20px;
-  }
-  
-  /* Fix for vertical text display on mobile */
   * {
     writing-mode: horizontal-tb !important;
     text-orientation: mixed !important;
     letter-spacing: normal !important;
   }
   
-  /* Ensure proper text flow on mobile */
   h1, h2, h3, h4, h5, h6, p, span, div {
     display: block;
     width: auto;
     text-align: inherit;
   }
 }
-
 
 /* Die Breite des Inhalts vergößern, u.a. für die Tabellen */
 :root .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module {

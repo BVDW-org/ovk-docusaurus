@@ -4,20 +4,161 @@
  */
 
 .heroBanner {
-  padding: 4rem 0;
-  text-align: center;
   position: relative;
+  padding: 6rem 0;
+  text-align: center;
+  background: var(--ifm-color-primary);
+  color: white;
   overflow: hidden;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
-.buttons {
+.heroLogoContainer {
+  margin-bottom: 2rem;
+}
+
+.heroLogo {
+  width: 300px;
+  height: auto;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
+
+.heroLogo:hover {
+  transform: scale(1.05);
+}
+
+.heroText {
+  max-width: 800px;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.heroSubtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.heroButtons {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
+}
+
+.heroButton {
+  background-color: #FF4627;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.heroButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  background-color: #e53a1c;
+  color: white;
+  text-decoration: none;
+}
+
+.main {
+  position: relative;
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .heroBanner {
+  background: #010F2D;
+}
+
+[data-theme='dark'] .heroLogo {
+  filter: brightness(0) invert(1);
+}
+
+
+[data-theme='dark'] .heroButton {
+  background-color: #FF4627;
+  color: white;
+}
+
+[data-theme='dark'] .heroButton:hover {
+  background-color: #e53a1c;
+  color: white;
+}
+
+/* Responsive styles */
+@media screen and (min-width: 768px) {
+  .heroContent {
+    flex-direction: row;
+    text-align: left;
+    gap: 3rem;
+  }
+
+  .heroLogoContainer {
+    margin-bottom: 0;
+  }
+
+  .heroButtons {
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .heroBanner {
+    padding: 4rem 0;
+  }
+
+  .heroTitle {
+    font-size: 2.2rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.2rem;
+  }
+
+  .heroLogo {
+    width: 225px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .heroBanner {
+    padding: 3rem 0;
+  }
+
+  .heroTitle {
+    font-size: 1.8rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+
+  .heroLogo {
+    width: 180px;
+  }
+
+  .heroButton {
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+  }
 }

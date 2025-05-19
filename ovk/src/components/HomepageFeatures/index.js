@@ -31,20 +31,14 @@ function Feature({ image, title, description, to }) {
     window.location.href = to;
   };
 
-  const imageStyle = {
-    width: '170px',
-    height: 'auto',
-    margin: '20px'
-  };
-
   return (
-    <div className={clsx('col col--4 feature-container')} onClick={handleClick}>
-      <div className="text--center">
-        <img src={image} alt={title} style={imageStyle} />
+    <div className={styles.featureCard} onClick={handleClick}>
+      <div className={styles.featureImageContainer}>
+        <img src={image} alt={title} className={styles.featureImage} />
       </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
+      <div className={styles.featureContent}>
+        <Heading as="h3" className={styles.featureTitle}>{title}</Heading>
+        <p className={styles.featureDescription}>{description}</p>
       </div>
     </div>
   );
@@ -53,91 +47,126 @@ function Feature({ image, title, description, to }) {
 // Features Component
 function Features() {
   return (
-    <div className="container">
-      <div className={clsx('row', 'row-features')}>
-        {FeatureList.map((feature, idx) => (
-          <Feature key={idx} {...feature} />
-        ))}
+    <section className={styles.featuresSection}>
+      <div className="container">
+        <div className={styles.sectionTitle}>
+          <Heading as="h2">Unsere Schwerpunkte</Heading>
+        </div>
+        <div className={styles.featuresGrid}>
+          {FeatureList.map((feature, idx) => (
+            <Feature key={idx} {...feature} />
+          ))}
+        </div>
       </div>
+    </section>
+  );
+}
+
+// Team Member Component
+function TeamMember({ image, name, role, company, companyUrl }) {
+  return (
+    <div className={styles.teamMember}>
+      <div className={styles.teamMemberImageContainer}>
+        <img src={image} alt={name} className={styles.teamMemberImage} />
+      </div>
+      <h3 className={styles.teamMemberName}>{name}</h3>
+      <p className={styles.teamMemberRole}>{role}</p>
+      <a href={companyUrl} target="_blank" rel="noopener noreferrer" className={styles.teamMemberCompany}>
+        {company}
+      </a>
     </div>
   );
 }
 
 // Unit Section Component
-function UnitSectionWrapper() {
-  return (
-    <div className={styles.unitSectionWrapper}>
-      <UnitSection />
-    </div>
-  );
-}
-
 function UnitSection() {
+  const unitLeaders = [
+    {
+      name: "Alwin Viereck",
+      role: "Leiter der Unit Ad Tech & Programmatic im OVK",
+      company: "United Internet Media GmbH",
+      companyUrl: "https://www.united-internet-media.de/de/home/",
+      image: "https://www.ovk.de/wp-content/uploads/2020/04/ASP_ProgrammaticData_Alwin_Viereck.png"
+    },
+    {
+      name: "Carlos Bracho",
+      role: "Leiter der Unit Ad Tech & Programmatic im OVK",
+      company: "Media Impact GmbH und Co. KG",
+      companyUrl: "https://www.mediaimpact.de/de/",
+      image: "https://www.ovk.de/wp-content/uploads/2021/12/Brachos-Carlos-eingefärbt_quadratisch-300x300.jpg"
+    },
+    {
+      name: "Markus Letzner",
+      role: "Leiter der Unit Ad Tech & Programmatic im OVK und Mitsprecher des Contextual Workstreams",
+      company: "Ströer Digital Media GmbH",
+      companyUrl: "https://www.stroeer.de/",
+      image: "https://www.ovk.de/wp-content/uploads/2021/12/Letzner_Markus_duplex-300x300.jpg"
+    }
+  ];
+
+  const workstreamLeaders = [
+    {
+      name: "Alexander Peischl",
+      role: "Leiter des OVK Workstreams \"Werbeformen\"",
+      company: "United Internet Media GmbH",
+      companyUrl: "https://www.united-internet-media.de/de/home/",
+      image: "/img/alexander.jpeg"
+    },
+    {
+      name: "Nadeem Qureshi",
+      role: "Leiter des OVK Workstreams \"Identity\"",
+      company: "BCN Brand Community Network GmbH",
+      companyUrl: "https://www.bcn.group",
+      image: "/img/nadeem.png"
+    },
+    {
+      name: "Smaranda Dancu",
+      role: "Co-Leiterin des OVK Workstreams \"Contextual\"",
+      company: "BCN Brand Community Network GmbH",
+      companyUrl: "https://www.bcn.group",
+      image: "/img/smaranda.jpeg"
+    }
+  ];
+
   return (
-    <div className={styles.unitSection}>
-      <h1 className={styles.headline}>Ein Projekt der Unit "AdTech & Programmatic" des OVK</h1>
-      <p className={styles.lead}>
-        Kernaufgaben der Unit Ad Tech & Programmatic sind Standardisierung und Marktaufklärung. Ziel der Unit ist es, die Durchführung digitaler Kampagnen für die Marktpartner so effizient wie möglich zu gestalten. Die Experten aus den OVK Mitgliedsunternehmen bewerten neue technologische Ansätze und Initiativen, konsolidieren die Sicht der Vermarkter auf Ad Tech-, Programmatic- und Data-Fragestellungen, formulieren Marktanforderungen und entwickeln Lösungen. Gemeinsam mit den Marktpartnern werden Standards definiert und Regulierungs- und Datenschutzinitiativen begleitet. Die Veröffentlichungen und Veranstaltungen der Unit liefern Hilfestellung und klären auf.
-      </p>
-      
-      {/* Erster Leader-Bereich */}
-      <h2 className={styles.headline}>Leiter der Unit Ad Tech & Programmatic</h2>
-      <div className={styles.leaders}>
-        <div className={styles.person}>
-          <img src="https://www.ovk.de/wp-content/uploads/2020/04/ASP_ProgrammaticData_Alwin_Viereck.png" alt="Alwin Viereck" className={styles.personImage} />
-          <h3>Alwin Viereck</h3>
-          <p>Leiter der Unit Ad Tech & Programmatic im OVK</p>
-          <a href="https://www.united-internet-media.de/de/home/" target="_blank" rel="noopener">United Internet Media GmbH</a>
-        </div>
-        <div className={styles.person}>
-          <img src="https://www.ovk.de/wp-content/uploads/2021/12/Brachos-Carlos-eingefärbt_quadratisch-300x300.jpg" alt="Carlos Bracho" className={styles.personImage} />
-          <h3>Carlos Bracho</h3>
-          <p>Leiter der Unit Ad Tech & Programmatic im OVK</p>
-          <a href="https://www.mediaimpact.de/de/" target="_blank" rel="noopener">Media Impact GmbH und Co. KG</a>
-        </div>
-        <div className={styles.person}>
-          <img src="https://www.ovk.de/wp-content/uploads/2021/12/Letzner_Markus_duplex-300x300.jpg" alt="Markus Letzner" className={styles.personImage} />
-          <h3>Markus Letzner</h3>
-          <p>Leiter der Unit Ad Tech & Programmatic im OVK und Mitsprecher des Contextual Workstreams</p>
-          <a href="https://www.stroeer.de/" target="_blank" rel="noopener">Ströer Digital Media GmbH</a>
-        </div>
-      </div>
-      
-      {/* Zweiter Leader-Bereich */}
-      <h2 className={styles.headline}>Leiter der Workstreams</h2>
-      <div className={styles.leaders}>
-        <div className={styles.person}>
-          <img src="/img/alexander.jpeg" alt="Alexander Peischl" className={styles.personImage} />
-          <h3>Alexander Peischl</h3>
-          <p>Leiter des OVK Workstreams "Werbeformen"</p>
-          <a href="https://www.united-internet-media.de/de/home/" target="_blank" rel="noopener">United Internet Media GmbH</a>
-        </div>
-        <div className={styles.person}>
-          <img src="/img/nadeem.png" alt="Nadeem Qureshi" className={styles.personImage} />
-          <h3>Nadeem Qureshi</h3>
-          <p>Leiter des OVK Workstreams "Identity"</p>
-          <a href="https://www.bcn.group" target="_blank" rel="noopener">BCN Brand Community Network GmbH</a>
-        </div>
-        <div className={styles.person}>
-          <img src="/img/smaranda.jpeg" alt="Smaranda Dancu" className={styles.personImage} />
-          <h3>Smaranda Dancu</h3>
-          <p>Co-Leiterin des OVK Workstreams "Contextual"</p>
-          <a href="https://www.bcn.group" target="_blank" rel="noopener">BCN Brand Community Network GmbH</a>
+    <section className={styles.unitSection}>
+      <div className="container">
+        <div className={styles.unitContent}>
+          <Heading as="h2" className={styles.unitTitle}>Ein Projekt der Unit "AdTech & Programmatic" des OVK</Heading>
+          <p className={styles.unitDescription}>
+            Kernaufgaben der Unit Ad Tech & Programmatic sind Standardisierung und Marktaufklärung. Ziel der Unit ist es, die Durchführung digitaler Kampagnen für die Marktpartner so effizient wie möglich zu gestalten. Die Experten aus den OVK Mitgliedsunternehmen bewerten neue technologische Ansätze und Initiativen, konsolidieren die Sicht der Vermarkter auf Ad Tech-, Programmatic- und Data-Fragestellungen, formulieren Marktanforderungen und entwickeln Lösungen. Gemeinsam mit den Marktpartnern werden Standards definiert und Regulierungs- und Datenschutzinitiativen begleitet. Die Veröffentlichungen und Veranstaltungen der Unit liefern Hilfestellung und klären auf.
+          </p>
+          
+          <div className={styles.teamSection}>
+            <Heading as="h3" className={styles.teamSectionTitle}>Leiter der Unit Ad Tech & Programmatic</Heading>
+            <div className={styles.teamGrid}>
+              {unitLeaders.map((leader, idx) => (
+                <TeamMember key={idx} {...leader} />
+              ))}
+            </div>
+          </div>
+          
+          <div className={styles.teamSection}>
+            <Heading as="h3" className={styles.teamSectionTitle}>Leiter der Workstreams</Heading>
+            <div className={styles.teamGrid}>
+              {workstreamLeaders.map((leader, idx) => (
+                <TeamMember key={idx} {...leader} />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
-
-
-// Hauptkomponente
+// Main Component
 function HomepageFeatures() {
   return (
-    <div>
+    <>
       <Features />
       <UnitSection />
-    </div>
+    </>
   );
 }
 
