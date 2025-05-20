@@ -247,6 +247,15 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* Fix for mobile menu appearing behind content */
+.navbar-sidebar {
+  z-index: 100 !important;
+}
+
+.navbar-sidebar__backdrop {
+  z-index: 99 !important;
+}
+
 /* Die Breite des Inhalts vergößern, u.a. für die Tabellen */
 :root .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module {
   max-width: 100% !important;

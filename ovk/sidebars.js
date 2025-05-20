@@ -11,6 +11,7 @@ const sidebars = {
         { type: 'doc', id: 'identitysolutions/README' },
         { type: 'doc', id: 'identitysolutions/Case Studies' },
         { type: 'doc', id: 'identitysolutions/ID-Support_OVK-Vermarkter/OVK-IdentifierSupport' },
+        { type: 'doc', id: 'identitysolutions/ID-Support_OVK-Vermarkter/OVK-IdentifierSupport_byVendor' },
         
         // Füge nur die gewünschten Dateien hinzu, die du anzeigen willst
       ],
