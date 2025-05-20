@@ -1,6 +1,6 @@
 # OVK Vermarkter Overview #
 
-The following tables show which ID vendor is supported by which German OVK Vermarkter (Sales House).<br>
+The following tables show which ID vendor is supported by which German OVK Vermarkter (Sales House).</br>
 Note: Score Media and Bauer use their Erstvermarkter's ID solutions. Azerion, netpointmedia haven't added their data yet. 
 
 ## ##
