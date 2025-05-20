@@ -1,10 +1,10 @@
 # OVK Vermarkter Overview #
 
-The following tables show which ID vendor is supported by which German OVK Vermarkter (Sales House).<br />
+The following tables show which ID vendor is supported by which German OVK Vermarkter (Sales House).<br></br>
 Note: Score Media and Bauer use their Erstvermarkter's ID solutions. Azerion, netpointmedia haven't added their data yet. 
 
 ## ##
-### <img src="https://www.criteo.com/wp-content/uploads/2021/10/criteo-logo-2021.jpeg" width="100" /> ###
+### <img src="https://www.criteo.com/wp-content/uploads/2021/10/criteo-logo-2021.jpeg" width="100"></img> ###
 [`Criteo Id`](#Criteo)
 | Vermarkter                   | Status     | Usable Via                     |
 |------------------------------|------------|--------------------------------|
@@ -19,7 +19,7 @@ Note: Score Media and Bauer use their Erstvermarkter's ID solutions. Azerion, ne
 | UIM                          | Live       | Bid Stream (unrestricted)      |
 
 ## ##
-### <img src="https://www.thetradedesk.com/assets/global/EUID-800x450.png" width="100" /> ###
+### <img src="https://www.thetradedesk.com/assets/global/EUID-800x450.png" width="100"></img> ###
 [`EUID`](#EUID)
 | Vermarkter                   | Status       | Usable Via                                                                     |
 |------------------------------|--------------|-------------------------------------------------------------------------------|
@@ -30,14 +30,14 @@ Note: Score Media and Bauer use their Erstvermarkter's ID solutions. Azerion, ne
 | UIM                          | Live         | Bid Stream (deal id/unrestricted), Data Marketplace (multiple), Data Clean Room|
 
 ## ##
-### <img src="https://www.first-id.fr/wp-content/uploads/First-id-master-logo-blanc-480x136.png" width="100" /> ###
+### <img src="https://www.first-id.fr/wp-content/uploads/First-id-master-logo-blanc-480x136.png" width="100"></img> ###
 [`First-Id`](#First-Id)
 | Vermarkter                   | Status     | Usable Via |
 |------------------------------|------------|----------- |
 | All                          | No Support |            |
 
 ## ##
-### <img src="https://samples.id5.io/assets/images/id5-logo.png" width="100" /> ###
+### <img src="https://samples.id5.io/assets/images/id5-logo.png" width="100"></img> ###
 [`ID5`](#ID5)
 | Vermarkter                   | Status     | Usable Via                                              |
 |------------------------------|------------|---------------------------------------------------------|
@@ -52,7 +52,7 @@ Note: Score Media and Bauer use their Erstvermarkter's ID solutions. Azerion, ne
 | UIM                          | Live       | Bid Stream (restricted), Data Marketplace (multiple)    |
 
 ## ##
-### <img src="https://upload.wikimedia.org/wikipedia/commons/8/8f/LiveRamp-logo.png" width="150" /> ###
+### <img src="https://upload.wikimedia.org/wikipedia/commons/8/8f/LiveRamp-logo.png" width="150"></img> ###
 [`Liveramp (RampId)`](#Liveramp)
 | Vermarkter                   | Status               | Usable Via                     |
 |------------------------------|----------------------|--------------------------------|
@@ -66,7 +66,7 @@ Note: Score Media and Bauer use their Erstvermarkter's ID solutions. Azerion, ne
 | UIM                          | Live                 | Bid Stream (unrestricted)      |
 
 ## ##
-### <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsxHT3ETXCVLbxn9dhsR4xW9Vg3PwibdnRgA&s" width="100" /> ###
+### <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsxHT3ETXCVLbxn9dhsR4xW9Vg3PwibdnRgA&s" width="100"></img> ###
 [`netID`](#netId)
 | Vermarkter                   | Status     | Usable Via                                                                     |
 |------------------------------|------------|-------------------------------------------------------------------------------|
@@ -79,7 +79,7 @@ Note: Score Media and Bauer use their Erstvermarkter's ID solutions. Azerion, ne
 
 
 ## ##
-### <img src="https://www.lotame.com/wp-content/uploads/2024/07/lotame-logo-2.png" width="150" /> ###
+### <img src="https://www.lotame.com/wp-content/uploads/2024/07/lotame-logo-2.png" width="150"></img> ###
 [`Panorama Id (by Lotame)`](#PanoramaId)
 | Vermarkter                   | Status     | Usable Via              |
 |------------------------------|------------|-------------------------|
@@ -92,7 +92,7 @@ Note: Score Media and Bauer use their Erstvermarkter's ID solutions. Azerion, ne
 
 
 ## ##
-### <img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/logo_admanager_192px_MuAH4Zs.max-800x800.png" width="50" /> ###
+### <img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/logo_admanager_192px_MuAH4Zs.max-800x800.png" width="50"></img> ###
 [`PPID (GAM)`](#PPID)
 | Vermarkter                   | Status     | Usable Via                              |
 |------------------------------|------------|-----------------------------------------|
@@ -108,7 +108,7 @@ Note: Score Media and Bauer use their Erstvermarkter's ID solutions. Azerion, ne
 
 
 ## ##
-### <img src="https://prebid.org/wp-content/uploads/2024/03/Prebid-SharedID-Logo-e1711053935570.png" width="250" /> ###
+### <img src="https://prebid.org/wp-content/uploads/2024/03/Prebid-SharedID-Logo-e1711053935570.png" width="250"></img> ###
 [`SharedId`](#SharedId)
 | Vermarkter                   | Status     | Usable Via                     |
 |------------------------------|------------|--------------------------------|
@@ -124,7 +124,7 @@ Note: Score Media and Bauer use their Erstvermarkter's ID solutions. Azerion, ne
 | UIM                          | Live       | Bid Stream (unrestricted)      |
 
 ## ##
-### <img src="https://utiq.com/wp-content/uploads/2023/05/utiq-logo@2x.png" width="100" /> ###
+### <img src="https://utiq.com/wp-content/uploads/2023/05/utiq-logo@2x.png" width="100"></img> ###
 [`Utiq`](#Utiq)
 | Vermarkter                   | Status       | Usable Via                     |
 |------------------------------|--------------|--------------------------------|
@@ -143,3 +143,5 @@ Note: Score Media and Bauer use their Erstvermarkter's ID solutions. Azerion, ne
 | Ad Alliance                  | RTL Household IDs           | Internal only (audiences and martech)       |
 | BCN Brand Community Network  | Own email hash based id     | IO only (Adserver), Data Clean Room         |
 | iq Digital                   | iq Profile IDs              | Internal only (audiences and martech)       |
+
+
