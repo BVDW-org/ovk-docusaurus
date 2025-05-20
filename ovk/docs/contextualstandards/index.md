@@ -182,13 +182,7 @@ Liste der Mitglieder und deren Dokumentationen, die den OVK-Contextual Standard 
 | ---------------------------------- |--------------|
 | `Ad Alliance`           |https://osdatasolutions.de/contextual-ovk/  
 | `BCN`                   |https://bcn.group/fileadmin/Assets/02_Werbeloesungen/Digital/Programmatic_Contextual_Targeting_2025.pdf
-| `Himedia`               |
-| `iq Digital`            | 
 | `Media Impact`          |https://osdatasolutions.de/contextual-ovk/ 
-| `mobile.de`             |
-| `netpointmedia`         |
-| `Quarter Media`         |
-| `Score Media`           |
 | `SevenOne`              |https://www.seven.one/werbeprodukte/contextual-targeting
 | `Ströer`                |https://osdatasolutions.de/contextual-ovk/
 | `UIM`                   |https://www.united-internet-media.de/de/produkteundloesungen/data-targeting/zielgruppen/smart-contextual-targeting/
