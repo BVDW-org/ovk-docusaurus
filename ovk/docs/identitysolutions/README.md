@@ -1,8 +1,7 @@
 # Intro
 ### Dieses Repository enthält:
 - Eine [Übersicht](https://github.com/BVDW-org/ovk-identifiersupport/blob/main/OVK-IdentifierSupport.md) der OVK Häuser welche Identifier ihre Publisher unterstützen, um so Addressability in der Postcookie Ära sicherzustellen.
-- Eine [Übersicht](https://github.com/BVDW-org/ovk-identifiersupport/blob/main/DSP-IdentifierSupport.md) des Identifier Supports auf DSP und eine [Übersicht](https://github.com/BVDW-org/ovk-identifiersupport/blob/main/SSP-IdentifierSupport.md) der SSP Seite.
- 
+
 
 ## Erläuterung der Vermarkter ID Übersicht:
 - Die Datei soll von jedem OVK Vermarkter initial und fortlaufend gepflegt werden.
@@ -22,10 +21,6 @@
   - Data Marketplace (DSP) = ID is used for data activation through the data marketplace of a DSP
   - Data Clean Room = ID can be activated through DCR workflow
 
-
-## Erläuterung der DSP und SSP ID Übersicht:
-- Diese Datei soll ebenfalls regelmäßig von den Vermarktern gepflegt werden.
-- Ids sollen nur dann eingetragen werden, wenn eine offizielle Bestätigung der DSP oder SSP vorliegt, dass eine ID unterstützt wird. Oder die Info ist öffentlich einsehbar wie z.B. in der Prebid Doku.
 
 **Legende:**
   - Status: Der Release Status der ID Lösung (Live = ausgerollt, In-Progress = Eine Integration ist beabsichtigt und Gespräche laufen, No Support = Derzeit keine Integration vorgesehen)
