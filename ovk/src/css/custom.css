@@ -249,11 +249,31 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Fix for mobile menu appearing behind content */
 .navbar-sidebar {
-  z-index: 100 !important;
+  z-index: 9999 !important;
+  position: fixed !important;
 }
 
 .navbar-sidebar__backdrop {
-  z-index: 99 !important;
+  z-index: 9998 !important;
+  position: fixed !important;
+}
+
+.navbar-sidebar__close {
+  z-index: 10000 !important;
+  position: relative !important;
+}
+
+.navbar-sidebar__brand {
+  z-index: 9999 !important;
+}
+
+.navbar-sidebar__items {
+  z-index: 9999 !important;
+}
+
+/* Ensure content doesn't overlap with the menu */
+.navbar-sidebar-shown .main-wrapper {
+  z-index: 0 !important;
 }
 
 /* Die Breite des Inhalts vergößern, u.a. für die Tabellen */
