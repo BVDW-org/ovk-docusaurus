@@ -1,6 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
+import Link from '@docusaurus/Link';
 import styles from './styles.module.css';
 
 // Feature List
@@ -27,12 +28,8 @@ const FeatureList = [
 
 // Feature Component
 function Feature({ image, title, description, to }) {
-  const handleClick = () => {
-    window.location.href = to;
-  };
-
   return (
-    <div className={styles.featureCard} onClick={handleClick}>
+    <Link to={to} className={styles.featureCard}>
       <div className={styles.featureImageContainer}>
         <img src={image} alt={title} className={styles.featureImage} />
       </div>
@@ -40,7 +37,7 @@ function Feature({ image, title, description, to }) {
         <Heading as="h3" className={styles.featureTitle}>{title}</Heading>
         <p className={styles.featureDescription}>{description}</p>
       </div>
-    </div>
+    </Link>
   );
 }
 
