@@ -7,32 +7,73 @@ import Heading from '@theme/Heading';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import styles from './index.module.css';
 
-// Simple Mobile Menu Component - Plain text menu with no fancy effects
+// Simple Mobile Menu Component with CSS-only accordions
 function MobileMenu() {
   return (
     <div className={styles.mobileMenu}>
-      {/* Main menu item */}
+      {/* Identity section */}
       <div className={styles.mobileMenuItem}>
-        <div className={styles.mobileMenuMainItem}>
-          <Link to="/docs/identitysolutions/">Identity</Link>
+        <input 
+          type="checkbox" 
+          id="identity-toggle" 
+          className={styles.accordionToggle} 
+        />
+        <label 
+          htmlFor="identity-toggle" 
+          className={styles.mobileMenuMainItem}
+        >
+          <div className={styles.menuItemContent}>
+            <Link 
+              to="/docs/identitysolutions/"
+              className={styles.menuItemLink}
+              onClick={(e) => e.stopPropagation()}
+            >
+              Identity
+            </Link>
+            <span className={styles.chevronIcon}>▼</span>
+          </div>
+        </label>
+        
+        <div className={styles.submenuContainer}>
+          <div className={styles.mobileSubmenuItem}>
+            <Link to="/docs/identitysolutions/Case%20Studies">• Case Studies</Link>
+          </div>
+          <div className={styles.mobileSubmenuItem}>
+            <Link to="/docs/identitysolutions/ID-Support_OVK-Vermarkter/OVK-IdentifierSupport">• OVK Vermarkter Overview</Link>
+          </div>
+          <div className={styles.mobileSubmenuItem}>
+            <Link to="/docs/identitysolutions/ID-Support_OVK-Vermarkter/OVK-IdentifierSupport_byVendor">• OVK Vermarkter ID-Overview</Link>
+          </div>
         </div>
       </div>
       
-      {/* Submenu items with indentation */}
-      <div className={styles.mobileSubmenuItem}>
-        <Link to="/docs/identitysolutions/Case%20Studies">• Case Studies</Link>
-      </div>
-      <div className={styles.mobileSubmenuItem}>
-        <Link to="/docs/identitysolutions/ID-Support_OVK-Vermarkter/OVK-IdentifierSupport">• OVK Vermarkter Overview</Link>
-      </div>
-      <div className={styles.mobileSubmenuItem}>
-        <Link to="/docs/identitysolutions/ID-Support_OVK-Vermarkter/OVK-IdentifierSupport_byVendor">• OVK Vermarkter ID-Overview</Link>
-      </div>
-      
-      {/* Second main menu item */}
+      {/* OVK Contextual Standard section */}
       <div className={styles.mobileMenuItem}>
-        <div className={styles.mobileMenuMainItem}>
-          <Link to="/docs/contextualstandards">OVK Contextual Standard</Link>
+        <input 
+          type="checkbox" 
+          id="contextual-toggle" 
+          className={styles.accordionToggle} 
+        />
+        <label 
+          htmlFor="contextual-toggle" 
+          className={styles.mobileMenuMainItem}
+        >
+          <div className={styles.menuItemContent}>
+            <Link 
+              to="/docs/contextualstandards"
+              className={styles.menuItemLink}
+              onClick={(e) => e.stopPropagation()}
+            >
+              OVK Contextual Standard
+            </Link>
+            <span className={styles.chevronIcon}>▼</span>
+          </div>
+        </label>
+        
+        <div className={styles.submenuContainer}>
+           <div className={styles.mobileSubmenuItem}>
+            <Link to="/docs/contextualstandards">• Intro</Link>
+          </div>
         </div>
       </div>
     </div>

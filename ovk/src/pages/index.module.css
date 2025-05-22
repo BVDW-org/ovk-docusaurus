@@ -110,26 +110,130 @@
   width: 100%;
   margin-top: 1.5rem;
   text-align: left;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .mobileMenuItem {
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.mobileMenuItem:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .mobileMenuMainItem {
   font-weight: 600;
+  padding: 0.8rem 1rem;
+  color: white;
+  font-size: 1.1rem;
+  transition: background-color 0.2s ease;
+  user-select: none;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+}
+
+.mobileMenuMainItem:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.mobileMenuMainItem:active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.menuItemContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Toggle button styling */
+.toggleButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin: -0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.toggleButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.toggleButton:focus {
+  outline: none;
+}
+
+/* Menu item link styling */
+.menuItemLink {
+  color: white;
+  text-decoration: none;
+  flex: 1;
+  font-size: 1.1rem;
+  transition: color 0.2s ease;
   padding: 0.5rem 0;
 }
 
-.mobileMenuMainItem a {
+.menuItemLink:hover {
   color: white;
   text-decoration: none;
-  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Chevron icon styling */
+.chevronIcon {
+  font-size: 0.7rem;
+  transition: transform 0.3s ease;
+  opacity: 0.8;
+  margin-left: 8px;
+}
+
+.chevronExpanded {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+/* Accordion toggle (checkbox) */
+.accordionToggle {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+/* Submenu container with animation */
+.submenuContainer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.1);
+  opacity: 0;
+}
+
+/* CSS-only accordion functionality */
+.accordionToggle:checked ~ .submenuContainer {
+  max-height: 300px; /* Adjust based on content needs */
+  opacity: 1;
+}
+
+/* Rotate chevron when expanded */
+.accordionToggle:checked + label .chevronIcon {
+  transform: rotate(180deg);
+  opacity: 1;
 }
 
 .mobileSubmenuItem {
-  padding: 0.5rem 0;
-  margin-left: 1.5rem;
+  padding: 0.7rem 1rem 0.7rem 2rem;
 }
 
 .mobileSubmenuItem a {
@@ -138,10 +242,16 @@
   font-size: 0.95rem;
   opacity: 0.9;
   display: block;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .mobileSubmenuItem a:hover {
   opacity: 1;
+  transform: translateX(3px);
+}
+
+.mobileSubmenuItem a:active {
+  opacity: 0.8;
 }
 
 /* Desktop/Mobile visibility */
