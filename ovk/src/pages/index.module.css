@@ -105,6 +105,54 @@
   color: white;
 }
 
+/* Mobile Menu Styles */
+.mobileMenu {
+  width: 100%;
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+.mobileMenuItem {
+  margin-bottom: 0.8rem;
+}
+
+.mobileMenuMainItem {
+  font-weight: 600;
+  padding: 0.5rem 0;
+}
+
+.mobileMenuMainItem a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.mobileSubmenuItem {
+  padding: 0.5rem 0;
+  margin-left: 1.5rem;
+}
+
+.mobileSubmenuItem a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+  opacity: 0.9;
+  display: block;
+}
+
+.mobileSubmenuItem a:hover {
+  opacity: 1;
+}
+
+/* Desktop/Mobile visibility */
+.desktopOnly {
+  display: none;
+}
+
+.mobileOnly {
+  display: block;
+}
+
 /* Responsive styles */
 @media screen and (min-width: 768px) {
   .heroContent {
@@ -119,6 +167,15 @@
 
   .heroButtons {
     justify-content: flex-start;
+  }
+  
+  /* Show desktop button, hide mobile menu on desktop */
+  .desktopOnly {
+    display: block;
+  }
+  
+  .mobileOnly {
+    display: none;
   }
 }
 
