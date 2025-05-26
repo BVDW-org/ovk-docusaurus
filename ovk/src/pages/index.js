@@ -7,75 +7,82 @@ import Heading from '@theme/Heading';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import styles from './index.module.css';
 
-// Simple Mobile Menu Component with CSS-only accordions
+// Modern Segmented Control Navigation with Submenus for Mobile
 function MobileMenu() {
+  const [activeSegment, setActiveSegment] = useState('identity');
+  const [showSubmenu, setShowSubmenu] = useState(true);
+  
+  const handleSegmentClick = (segment) => {
+    if (activeSegment === segment) {
+      // Toggle submenu if clicking the same segment
+      setShowSubmenu(!showSubmenu);
+    } else {
+      // Show submenu when switching segments
+      setActiveSegment(segment);
+      setShowSubmenu(true);
+    }
+  };
+  
   return (
-    <div className={styles.mobileMenu}>
-      {/* Identity section */}
-      <div className={styles.mobileMenuItem}>
-        <input 
-          type="checkbox" 
-          id="identity-toggle" 
-          className={styles.accordionToggle} 
-        />
-        <label 
-          htmlFor="identity-toggle" 
-          className={styles.mobileMenuMainItem}
-        >
-          <div className={styles.menuItemContent}>
-            <Link 
-              to="/docs/identitysolutions/"
-              className={styles.menuItemLink}
-              onClick={(e) => e.stopPropagation()}
-            >
-              Identity
-            </Link>
-            <span className={styles.chevronIcon}>▼</span>
-          </div>
-        </label>
-        
-        <div className={styles.submenuContainer}>
-          <div className={styles.mobileSubmenuItem}>
-            <Link to="/docs/identitysolutions/Case%20Studies">• Case Studies</Link>
-          </div>
-          <div className={styles.mobileSubmenuItem}>
-            <Link to="/docs/identitysolutions/ID-Support_OVK-Vermarkter/OVK-IdentifierSupport">• OVK Vermarkter Overview</Link>
-          </div>
-          <div className={styles.mobileSubmenuItem}>
-            <Link to="/docs/identitysolutions/ID-Support_OVK-Vermarkter/OVK-IdentifierSupport_byVendor">• OVK Vermarkter ID-Overview</Link>
-          </div>
+    <div className={styles.mobileNavContainer}>
+      {/* Segmented Control */}
+      <div className={styles.segmentedControlContainer}>
+        <div className={styles.segmentedControl}>
+          <button 
+            className={clsx(
+              styles.segment, 
+              activeSegment === 'identity' && styles.segmentActive
+            )}
+            onClick={() => handleSegmentClick('identity')}
+          >
+            Identity
+          </button>
+          <button 
+            className={clsx(
+              styles.segment, 
+              activeSegment === 'contextual' && styles.segmentActive
+            )}
+            onClick={() => handleSegmentClick('contextual')}
+          >
+            OVK Contextual
+          </button>
         </div>
       </div>
       
-      {/* OVK Contextual Standard section */}
-      <div className={styles.mobileMenuItem}>
-        <input 
-          type="checkbox" 
-          id="contextual-toggle" 
-          className={styles.accordionToggle} 
-        />
-        <label 
-          htmlFor="contextual-toggle" 
-          className={styles.mobileMenuMainItem}
-        >
-          <div className={styles.menuItemContent}>
-            <Link 
-              to="/docs/contextualstandards"
-              className={styles.menuItemLink}
-              onClick={(e) => e.stopPropagation()}
-            >
-              OVK Contextual Standard
-            </Link>
-            <span className={styles.chevronIcon}>▼</span>
-          </div>
-        </label>
-        
-        <div className={styles.submenuContainer}>
-           <div className={styles.mobileSubmenuItem}>
-            <Link to="/docs/contextualstandards">• Intro</Link>
-          </div>
+      {/* Submenu */}
+      {showSubmenu && (
+        <div className={styles.submenu}>
+          {activeSegment === 'identity' ? (
+            <>
+              <Link to="/docs/identitysolutions/" className={styles.submenuMainLink}>
+                Identity Overview
+              </Link>
+              <div className={styles.submenuLinks}>
+                <Link to="/docs/identitysolutions/Case%20Studies" className={styles.submenuLink}>
+                  Case Studies
+                </Link>
+                <Link to="/docs/identitysolutions/ID-Support_OVK-Vermarkter/OVK-IdentifierSupport" className={styles.submenuLink}>
+                  OVK Vermarkter Overview
+                </Link>
+                <Link to="/docs/identitysolutions/ID-Support_OVK-Vermarkter/OVK-IdentifierSupport_byVendor" className={styles.submenuLink}>
+                  OVK Vermarkter ID-Overview
+                </Link>
+              </div>
+            </>
+          ) : (
+            <>
+              <Link to="/docs/contextualstandards" className={styles.submenuMainLink}>
+                OVK Contextual Standard
+              </Link>
+              <div className={styles.submenuLinks}>
+                <Link to="/docs/contextualstandards" className={styles.submenuLink}>
+                  Introduction
+                </Link>
+              </div>
+            </>
+          )}
         </div>
-      </div>
+      )}
     </div>
   );
 }
