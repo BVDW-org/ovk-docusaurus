@@ -9,7 +9,7 @@ Note: Score Media and Bauer use their Erstvermarkter's ID solutions. Azerion, ne
 |------------------------------|------------|--------------------------------|
 | Ad Alliance                  | No support |                                |
 | BCN Brand Community Network  | Live       | Bid Stream (unrestricted)      |
-| iq Digital                   | Live       | Bid Stream (restricted)        |
+| iq digital                   | Live       | Bid Stream (restricted)        |
 | Media Impact                 | No support |                                |
 | mobile.de                    | No support |                                |
 | Quarter Media                | Live       | Bid Stream (unrestricted)      |
@@ -23,7 +23,8 @@ Note: Score Media and Bauer use their Erstvermarkter's ID solutions. Azerion, ne
 | Vermarkter                   | Status       | Usable Via                                                                     |
 |------------------------------|--------------|-------------------------------------------------------------------------------|
 | Ad Alliance                  | In-Progress  |                                                                              |
-| BCN Brand Community Network  | Live         | Bid Stream (unrestricted)                                                     |
+| BCN Brand Community Network  | Live         | Bid Stream (unrestricted)                                                    |
+| iq digital                   | In-Progress  | 
 | SevenOne                     | Live         |                                                                              |
 | Ströer                       | In-Progress  |                                                                              |
 | UIM                          | Live         | Bid Stream (deal id/unrestricted), Data Marketplace (multiple), Data Clean Room|
@@ -42,7 +43,7 @@ Note: Score Media and Bauer use their Erstvermarkter's ID solutions. Azerion, ne
 |------------------------------|------------|---------------------------------------------------------|
 | Ad Alliance                  | No support |                                                        |
 | BCN Brand Community Network  | Live       | Bid Stream (unrestricted)                               |
-| iq Digital                   | Live       | Bid Stream (unrestricted)                               |
+| iq digital                   | Live       | Bid Stream (unrestricted), Data Marketplace (Curation-SSP), Data Marketplace (DSP)                               |
 | Media Impact                 | No support |                                                        |
 | mobile.de                    | Live       | Bid Stream (unrestricted)                               |
 | Quarter Media                | Live       | Bid Stream (unrestricted)                               |
@@ -57,7 +58,7 @@ Note: Score Media and Bauer use their Erstvermarkter's ID solutions. Azerion, ne
 |------------------------------|----------------------|--------------------------------|
 | Ad Alliance                  | No support           |                                |
 | BCN Brand Community Network  | Live                 | Bid Stream (unrestricted)      |
-| iq Digital                   | Support discontinued |                                |
+| iq digital                   | No support           |                                |
 | Media Impact                 | No support           |                                |
 | Quarter Media                | In-Progress          |                                |
 | SevenOne                     | Live                 |                                |
@@ -71,6 +72,7 @@ Note: Score Media and Bauer use their Erstvermarkter's ID solutions. Azerion, ne
 |------------------------------|------------|-------------------------------------------------------------------------------|
 | Ad Alliance                  | Live       | Bid Stream (restricted), Data Marketplace (Curation-SSP)                      |
 | BCN Brand Community Network  | No support |                                                                              |
+| iq digital                   | No support |                         |
 | Media Impact                 | Live       |                                                                              |
 | SevenOne                     | Live       |                                                                              |
 | Ströer                       | Live       | Bid Stream (restricted)                                                       |
@@ -83,7 +85,7 @@ Note: Score Media and Bauer use their Erstvermarkter's ID solutions. Azerion, ne
 |------------------------------|------------|-------------------------|
 | Ad Alliance                  | No support |                         |
 | BCN Brand Community Network  | No support |                         |
-| iq Digital                   | No support |                         |
+| iq digital                   | No support |                         |
 | Quarter Media                | Live       | Bid Stream (restricted) |
 | Ströer                       | No support |                         |
 | UIM                          | No Support |                         |
