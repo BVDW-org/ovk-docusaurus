@@ -9,4 +9,5 @@
 ## ID5
 1. Ströer | Agentur: Mediascale | Use Case: Deal Reichweite und Performance vs. Cookie | <a href="https://osdatasolutions.de/2022/05/09/case-study-os-ds-stroeer-und-virtual-minds-testen-id5-gemeinsam-mit-mediascale/">Artikel</a> 
   
-
+## Utiq
+1. iq digital | Agentur: GroupM | Use Case: Reach & Frequency/Targeting vs. Cookie | <a href="https://www.iqdigital.de/News-und-Cases/Presse/Presseinformation-Erste-Data-Only-Kampagne-von-Utiq_GroupM-und-iq-digital-steigern-Performance/">Artikel</a>
