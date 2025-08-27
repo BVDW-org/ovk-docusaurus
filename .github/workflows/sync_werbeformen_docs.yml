@@ -10,7 +10,6 @@ on:
 
 jobs:
   sync:
-    if: false  # verhindert die Ausführung
     runs-on: ubuntu-latest
     steps:
     - name: Checkout ovk-docusaurus
