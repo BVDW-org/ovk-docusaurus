@@ -1,0 +1,3 @@
+# Digitale Werbeformen (Mobile)
+
+Mobile ist ein wesentlicher Wachstumstreiber der Online Werbebranche und gewinnt im Medienmix zunehmend an Bedeutung. Großflächige, interaktive, mobile Werbeformate gewinnen zunehmend an Bedeutung und bieten neue Möglichkeiten die Kommunikation mit der entsprechenden Zielgruppe zu gestalten. Auf den folgenden Seiten finden Sie Spezifikationen für mobile Werbeformen für den In-Stream und In-Page Bereich.
