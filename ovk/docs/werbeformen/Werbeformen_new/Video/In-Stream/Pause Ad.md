@@ -1,5 +1,5 @@
 # Pause Ad
-<img width="1024" height="682" alt="image" src="https://github.com/BVDW-org/ovk-docusaurus/blob/main/ovk/static/img/formats/OVK_WF_Video_Pause_Ad.png?raw=true" />
+<img alt="image" src="https://github.com/BVDW-org/ovk-docusaurus/blob/main/ovk/static/img/formats/OVK_WF_Video_Pause_Ad.png?raw=true" />
 
 ## Beschreibung
 Pause Ads sind Banner, die ausgespielt werden, wenn ein Nutzer während des Streamens auf „Pause“ klickt.

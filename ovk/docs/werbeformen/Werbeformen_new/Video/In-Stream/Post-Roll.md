@@ -1,5 +1,5 @@
 # Post-Roll Ad
-<img width="1024" height="682" alt="image" src="https://github.com/BVDW-org/ovk-docusaurus/blob/main/ovk/static/img/formats/OVK_WF_Video_Post_Roll.png?raw=true" />
+<img alt="image" src="https://github.com/BVDW-org/ovk-docusaurus/blob/main/ovk/static/img/formats/OVK_WF_Video_Post_Roll.png?raw=true" />
 
 
 ## Beschreibung
