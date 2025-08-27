@@ -1,7 +1,7 @@
 # (Mobile) Medium Rectangle
 <span class="badge badge--success">Active</span>
 
-<img width="2500" height="1667" alt="OVK_WF_Mobile_MediumRectangle" src="https://github.com/user-attachments/assets/0d6d4ee6-69fb-4860-84e0-9ccb13c705cb" />
+<img width="2500" height="1667" alt="OVK_WF_Mobile_MediumRectangle" src="/img/formats/OVK_WF_Mobile_MediumRectangle.png" />
 
 ## Beschreibung
 Auffällig auf der Website im Content-Bereich platziert, zieht das Medium-Rectangle sofort die Blicke auf sich. Die Interpretation in den redaktionellen Bereich stärkt zusätzlich das Vertrauen in die Werbeaussage.

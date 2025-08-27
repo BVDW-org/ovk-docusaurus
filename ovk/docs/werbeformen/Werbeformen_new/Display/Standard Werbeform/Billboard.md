@@ -1,6 +1,6 @@
 # Billboard Ad
 <span class="badge badge--success">Active</span>
-<img width="2500" height="1667" alt="OVK_WF_Desktop_BillboardAd" src="https://github.com/user-attachments/assets/2edd3fef-1491-4eec-a37d-2b571cb87b8c" />
+<img width="2500" height="1667" alt="OVK_WF_Desktop_BillboardAd" src="/img/formats/OVK_WF_Desktop_BillboardAd.png" />
 
 
 ## Beschreibung

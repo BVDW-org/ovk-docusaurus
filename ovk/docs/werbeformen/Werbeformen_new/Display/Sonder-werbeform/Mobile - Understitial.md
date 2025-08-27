@@ -1,6 +1,6 @@
 # (Mobile) Understitial / Mobile Poster Ad
 <span class="badge badge--success">Active</span>
-<img width="2500" height="1667" alt="OVK_WF_Mobile_UnderstitialMobilePosterAd " src="https://github.com/user-attachments/assets/f5a740e7-0dfb-4ac2-8ee9-4334224c1fd1" />
+<img width="2500" height="1667" alt="OVK_WF_Mobile_UnderstitialMobilePosterAd " src="/img/formats/OVK_WF_Mobile_UnderstitialMobilePosterAd .png" />
 
 
 ## Beschreibung

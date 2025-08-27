@@ -1,6 +1,6 @@
 # Cinematic Ad
 <span class="badge badge--success">Active</span>
-<img width="2500" height="1667" alt="OVK_WF_Desktop_CinematicAd" src="https://github.com/user-attachments/assets/58be6cbf-0589-4d47-89e2-b79d4f7d8a30" />
+<img width="2500" height="1667" alt="OVK_WF_Desktop_CinematicAd" src="/img/formats/OVK_WF_Desktop_CinematicAd.png" />
 
 
 ## Beschreibung

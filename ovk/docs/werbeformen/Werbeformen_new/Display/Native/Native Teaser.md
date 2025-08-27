@@ -1,6 +1,6 @@
 # (Native) Teaser
 <span class="badge badge--success">Active</span>
-<img width="2500" height="1667" alt="OVK_WF_Desktop_Mobil_NativeTeaser" src="https://github.com/user-attachments/assets/d6adf3a1-8267-4a80-8e31-e2f10a01150d" />
+<img width="2500" height="1667" alt="OVK_WF_Desktop_Mobil_NativeTeaser" src="/img/formats/OVK_WF_Desktop_Mobil_NativeTeaser.png" />
 
 
 ## Beschreibung

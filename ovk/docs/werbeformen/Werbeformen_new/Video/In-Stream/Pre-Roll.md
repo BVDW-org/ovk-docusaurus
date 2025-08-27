@@ -1,5 +1,5 @@
 # Pre-Roll Ad
-<img width="1024" height="682" alt="image" src="https://github.com/user-attachments/assets/6174628d-473a-433e-a3fa-d44b34e86a11" />
+<img width="1024" height="682" alt="image" src="/img/formats/OVK_WF_Video_Pre_Roll.png" />
 
 
 ## Beschreibung

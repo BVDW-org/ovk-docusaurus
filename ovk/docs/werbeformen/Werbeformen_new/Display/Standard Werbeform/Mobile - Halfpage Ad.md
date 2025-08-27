@@ -1,6 +1,6 @@
 # (Mobile) Halfpage Ad
 <span class="badge badge--success">Active</span>
-<img width="2500" height="1667" alt="OVK_WF_Mobile_HalfpageAd" src="https://github.com/user-attachments/assets/5d84f50d-96a5-4a6b-a32e-8984222eb7a9" />
+<img width="2500" height="1667" alt="OVK_WF_Mobile_HalfpageAd" src="/img/formats/OVK_WF_Mobile_HalfpageAd.png" />
 
 
 ## Beschreibung

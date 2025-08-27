@@ -1,6 +1,6 @@
 # Maxi Ad
 <span class="badge badge--success">Active</span>
-<img width="2500" height="1667" alt="OVK_WF_Desktop_Mobil_MaxiAd" src="https://github.com/user-attachments/assets/a7cd9b76-d858-480f-a590-a57ec936fdd6" />
+<img width="2500" height="1667" alt="OVK_WF_Desktop_Mobil_MaxiAd" src="/img/formats/OVK_WF_Desktop_Mobil_MaxiAd.png" />
 
 
 ## Beschreibung

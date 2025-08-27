@@ -1,5 +1,5 @@
 # Post-Roll Ad
-<img width="1024" height="682" alt="image" src="https://github.com/user-attachments/assets/47eda680-8317-416b-9748-914548a9e412" />
+<img width="1024" height="682" alt="image" src="/img/formats/OVK_WF_Video_Post_Roll.png" />
 
 
 ## Beschreibung

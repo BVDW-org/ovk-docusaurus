@@ -1,6 +1,6 @@
 # Skyscraper
 <span class="badge badge--success">Active</span>
-<img width="2500" height="1667" alt="OVK_WF_Desktop_Skyscraper" src="https://github.com/user-attachments/assets/be1e0aa4-c77d-4f1d-b154-e2dfc40f6cbb" />
+<img width="2500" height="1667" alt="OVK_WF_Desktop_Skyscraper" src="/img/formats/OVK_WF_Desktop_Skyscraper.png" />
 
 
 ## Beschreibung

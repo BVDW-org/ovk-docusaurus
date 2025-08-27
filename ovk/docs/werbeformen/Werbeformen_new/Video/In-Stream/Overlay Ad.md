@@ -1,5 +1,5 @@
 # Overlay Ad
-<img width="1024" height="682" alt="image" src="https://github.com/user-attachments/assets/fc88f462-36fb-4d05-b91b-49e85dfd0bfc" />
+<img width="1024" height="682" alt="image" src="/img/formats/OVK_WF_Video_Overlay_Ad.png" />
 
 
 ## Beschreibung

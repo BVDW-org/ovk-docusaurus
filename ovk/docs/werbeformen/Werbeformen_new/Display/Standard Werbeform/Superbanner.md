@@ -1,6 +1,6 @@
 # Superbanner
 <span class="badge badge--success">Active</span>
-<img width="2500" height="1667" alt="OVK_WF_Desktop_Superbanner" src="https://github.com/user-attachments/assets/eb060567-eb1f-4516-800d-1d32dbae2ef4" />
+<img width="2500" height="1667" alt="OVK_WF_Desktop_Superbanner" src="/img/formats/OVK_WF_Desktop_Superbanner.png" />
 
 
 ## Beschreibung

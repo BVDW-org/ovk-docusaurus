@@ -1,6 +1,6 @@
 # Bridge Ad
 <span class="badge badge--success">Active</span>
-<img width="2500" height="1667" alt="OVK_WF_Desktop_BridgeAd" src="https://github.com/user-attachments/assets/a130e646-363f-4d52-95b4-e8b1f900a09b" />
+<img width="2500" height="1667" alt="OVK_WF_Desktop_BridgeAd" src="/img/formats/OVK_WF_Desktop_BridgeAd.png" />
 
 
 ## Beschreibung

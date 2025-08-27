@@ -1,5 +1,5 @@
 # Content Frame/ Cutin XXL
-<img width="1250" height="833" alt="OVK_WF_Video_Content_Frame_02 (002)" src="https://github.com/user-attachments/assets/f74eb310-3529-492e-9675-a918f99ed175" />
+<img width="1250" height="833" alt="OVK_WF_Video_Content_Frame_02 (002)" src="/img/formats/OVK_WF_Video_Content_Frame_02.png" />
 
 
 ## Beschreibung

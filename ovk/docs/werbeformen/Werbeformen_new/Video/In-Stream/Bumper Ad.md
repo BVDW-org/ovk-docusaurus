@@ -1,5 +1,5 @@
 # Bumper Ad
-<img width="1250" height="833" alt="OVK_WF_Video_Bumper_Ad 3" src="https://github.com/user-attachments/assets/8c14918c-b398-4b44-875f-d022a5442adf" />
+<img width="1250" height="833" alt="OVK_WF_Video_Bumper_Ad 3" src="/img/formats/OVK_WF_Video_Bumper_Ad.png" />
 
 
 

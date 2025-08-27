@@ -1,6 +1,6 @@
 # Mobile Banner 6:1
 <span class="badge badge--success">Active</span>
-<img width="2500" height="1667" alt="OVK_WF_Mobil_Banner_1_6" src="https://github.com/user-attachments/assets/37a79828-dedb-4796-b54e-5cfe8c851c8b" />
+<img width="2500" height="1667" alt="OVK_WF_Mobil_Banner_1_6" src="/img/formats/OVK_WF_Mobil_Banner_1_6.png" />
 
 
 ## Beschreibung

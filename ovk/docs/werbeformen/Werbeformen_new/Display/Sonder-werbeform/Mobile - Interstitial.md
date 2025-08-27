@@ -1,7 +1,7 @@
 # (Mobile) Pre-/Interstitial
 <span class="badge badge--success">Active</span>
 
-<img width="2500" height="1667" alt="OVK_WF_Mobile_Pre_Interstitial" src="https://github.com/user-attachments/assets/191e6b5f-83c8-4ea5-8a02-c73705ac6607" />
+<img width="2500" height="1667" alt="OVK_WF_Mobile_Pre_Interstitial" src="/img/formats/OVK_WF_Mobile_Pre_Interstitial.png" />
 
 ## Beschreibung
 Das (Mobile) Pre-/Interstitial zieht die Aufmerksamkeit des Nutzers auf sich, indem es die Content-Nutzung unterbricht und einen großen Teil des Displays ausfüllt.

@@ -1,5 +1,5 @@
 # In-Text Video Ad
-<img width="1024" height="682" alt="image" src="https://github.com/user-attachments/assets/12371f17-aa04-4cea-8a2e-c768de022dc4" />
+<img width="1024" height="682" alt="image" src="/img/formats/OVK_WF_Video_Intext_VideoAd.png" />
 
 ## Beschreibung
 Der Werbespot startet muted im Autoplay. Der Player ist zwischen zwei Absätzen innerhalb eines Artikels platziert. Das Format ist somit sehr aufmerksamkeitsstark. Je nach Größe des Viewports skaliert der Player seine Werbefläche im idealen Verhältnis zum Rest der Website bzw. des Viewports. Der Videostart erfolgt erst dann, wenn mindestens 50% der Werbefläche im sichtbaren Bereich ist.

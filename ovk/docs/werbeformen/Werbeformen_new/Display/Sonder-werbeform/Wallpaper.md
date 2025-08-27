@@ -1,6 +1,6 @@
 # Wallpaper
 <span class="badge badge--success">Active</span>
-<img width="2500" height="1667" alt="OVK_WF_Desktop_Wallpaper" src="https://github.com/user-attachments/assets/e3201322-fc17-433a-bd79-c4bc977069c5" />
+<img width="2500" height="1667" alt="OVK_WF_Desktop_Wallpaper" src="/img/formats/OVK_WF_Desktop_Wallpaper.png" />
 
 
 ## Beschreibung
