@@ -1,6 +1,6 @@
 # Adbundle
 <span class="badge badge--success">Active</span>
-<img width="2500" height="1667" alt="OVK_WF_Desktop_Adbundle" src="/img/formats/OVK_WF_Desktop_Adbundle.png" />
+<img width="2500" height="1667" alt="OVK_WF_Desktop_Adbundle" src="https://github.com/BVDW-org/ovk-docusaurus/blob/main/ovk/static/img/formats/OVK_WF_Desktop_Adbundle.png?raw=true" />
 
 
 ## Beschreibung

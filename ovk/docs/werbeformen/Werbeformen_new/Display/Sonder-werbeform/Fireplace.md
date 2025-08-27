@@ -1,6 +1,6 @@
 # Fireplace / Skin (Pageskin)
 <span class="badge badge--success">Active</span>
-<img width="2500" height="1667" alt="OVK_WF_Desktop_Fireplace" src="/img/formats/OVK_WF_Desktop_Fireplace.png" />
+<img width="2500" height="1667" alt="OVK_WF_Desktop_Fireplace" src="https://github.com/BVDW-org/ovk-docusaurus/blob/main/ovk/static/img/formats/OVK_WF_Desktop_Fireplace.png?raw=true" />
 
 
 ## Beschreibung

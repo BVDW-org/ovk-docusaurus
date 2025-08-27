@@ -1,5 +1,5 @@
 # Pre-Roll Ad
-<img width="1024" height="682" alt="image" src="/img/formats/OVK_WF_Video_Pre_Roll.png" />
+<img width="1024" height="682" alt="image" src="https://github.com/BVDW-org/ovk-docusaurus/blob/main/ovk/static/img/formats/OVK_WF_Video_Pre_Roll.png?raw=true" />
 
 
 ## Beschreibung
