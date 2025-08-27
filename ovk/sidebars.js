@@ -31,7 +31,7 @@ const sidebars = {
       items: [
         { type: 'doc', id: 'werbeformen/Werbeformen_new' },
         { type: 'doc', id: 'werbeformen/Tech-Hilfe' },
-       
+        { type: 'doc', id: 'werbeformen/intro.md' },
         ],
     },
   ],
