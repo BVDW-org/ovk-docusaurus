@@ -58,37 +58,53 @@ function MobileMenu() {
         </div>
       </div>
       
-      {/* Submenu */}
-      {showSubmenu && (
-        <div className={styles.submenu}>
-          {activeSegment === 'identity' ? (
-            <>
-              <Link to="/docs/identitysolutions/" className={styles.submenuMainLink}>
-                Identity Overview
-              </Link>
-              <div className={styles.submenuLinks}>
-                <Link to="/docs/identitysolutions/Case%20Studies" className={styles.submenuLink}>
-                  Case Studies
-                </Link>
-                <Link to="/docs/identitysolutions/ID-Support_OVK-Vermarkter/OVK-IdentifierSupport_byVendor" className={styles.submenuLink}>
-                  OVK Vermarkter ID-Overview
-                </Link>
-              </div>
-            </>
-          ) : (
-            <>
-              <Link to="/docs/contextualstandards" className={styles.submenuMainLink}>
-                OVK Contextual Standard
-              </Link>
-              <div className={styles.submenuLinks}>
-                <Link to="/docs/contextualstandards" className={styles.submenuLink}>
-                  Introduction
-                </Link>
-              </div>
-            </>
-          )}
+{showSubmenu && (
+  <div className={styles.submenu}>
+    {activeSegment === 'identity' ? (
+      <>
+        <Link to="/docs/identitysolutions/" className={styles.submenuMainLink}>
+          Identity Overview
+        </Link>
+        <div className={styles.submenuLinks}>
+          <Link to="/docs/identitysolutions/Case%20Studies" className={styles.submenuLink}>
+            Case Studies
+          </Link>
+          <Link to="/docs/identitysolutions/ID-Support_OVK-Vermarkter/OVK-IdentifierSupport_byVendor" className={styles.submenuLink}>
+            OVK Vermarkter ID-Overview
+          </Link>
         </div>
-      )}
+      </>
+    ) : activeSegment === 'contextual' ? (
+      <>
+        <Link to="/docs/contextualstandards" className={styles.submenuMainLink}>
+          OVK Contextual Standard
+        </Link>
+        <div className={styles.submenuLinks}>
+          <Link to="/docs/contextualstandards" className={styles.submenuLink}>
+            Intro
+          </Link>
+        </div>
+      </>
+    ) : activeSegment === 'werbeformen' ? (
+      <>
+        <Link to="/docs/werbeformen/" className={styles.submenuMainLink}>
+          Werbeformen Übersicht
+        </Link>
+        <div className={styles.submenuLinks}>
+          <Link to="/docs/werbeformen/" className={styles.submenuLink}>
+            Intro
+          </Link>
+           <Link to="/docs/werbeformen/Werbeformen_new/Display/Standard%20Werbeform/Ad%20Bundle" className={styles.submenuLink}>
+            Display
+          </Link>
+           <Link to="/docs/werbeformen/Werbeformen_new/Video/In-Stream/Bumper%20Ad" className={styles.submenuLink}>
+            Video
+          </Link>       
+        </div>
+      </>
+    ) : null}
+  </div>
+)}
     </div>
   );
 }
