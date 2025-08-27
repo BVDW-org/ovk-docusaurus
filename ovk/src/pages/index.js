@@ -70,9 +70,6 @@ function MobileMenu() {
                 <Link to="/docs/identitysolutions/Case%20Studies" className={styles.submenuLink}>
                   Case Studies
                 </Link>
-                <Link to="/docs/identitysolutions/ID-Support_OVK-Vermarkter/OVK-IdentifierSupport" className={styles.submenuLink}>
-                  OVK Vermarkter Overview
-                </Link>
                 <Link to="/docs/identitysolutions/ID-Support_OVK-Vermarkter/OVK-IdentifierSupport_byVendor" className={styles.submenuLink}>
                   OVK Vermarkter ID-Overview
                 </Link>
@@ -85,17 +82,6 @@ function MobileMenu() {
               </Link>
               <div className={styles.submenuLinks}>
                 <Link to="/docs/contextualstandards" className={styles.submenuLink}>
-                  Introduction
-                </Link>
-              </div>
-            </>
-          )(
-            <>
-              <Link to="/docs/werbeformen" className={styles.submenuMainLink}>
-                Werbeformen
-              </Link>
-              <div className={styles.submenuLinks}>
-                <Link to="/docs/werbeformen" className={styles.submenuLink}>
                   Introduction
                 </Link>
               </div>
