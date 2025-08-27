@@ -1,0 +1,88 @@
+name: Build and Deploy Docusaurus
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'ovk/docs/**'
+      - 'ovk/src/**'
+      - 'ovk/static/**'
+      - 'ovk/docusaurus.config.js'
+      - 'ovk/sidebars.js'
+      - 'ovk/package.json'
+  workflow_dispatch:  # Allow manual triggering
+  workflow_run:
+    workflows: ["Sync werbeformen docs", "Sync identitysolutions", "Sync README to index"]
+    types:
+      - completed
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'push' || github.event_name == 'workflow_dispatch' }}
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Fetch full history for proper git operations
+        token: ${{ secrets.GH_TOKEN }}
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: 'ovk/package-lock.json'
+
+    - name: Install dependencies
+      run: |
+        cd ovk
+        npm ci
+
+    - name: Build Docusaurus site
+      run: |
+        cd ovk
+        npm run build
+      env:
+        NODE_ENV: production
+
+    - name: Verify build output
+      run: |
+        echo "Checking build output..."
+        ls -la docs/
+        echo "Build completed successfully"
+
+    - name: Configure Git
+      run: |
+        git config --global user.email "carlos.bracho@axelspringer.com"
+        git config --global user.name "github-actions[bot]"
+
+    - name: Commit and push build files
+      run: |
+        # Add all build files
+        git add docs/
+        
+        # Check if there are changes to commit
+        if git diff --staged --quiet; then
+          echo "No changes detected in build output - skipping commit"
+        else
+          # Commit and push changes
+          git commit -m "🚀 Auto-build: Update static site files [skip ci]"
+          git push origin main
+          echo "✅ Successfully deployed updated static site"
+        fi
+      env:
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+    - name: Deploy to GitHub Pages (Optional)
+      if: success()
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GH_TOKEN }}
+        publish_dir: ./docs
+        publish_branch: gh-pages
+        user_name: 'github-actions[bot]'
+        user_email: 'carlos.bracho@axelspringer.com'
+        commit_message: '🚀 Deploy static site from ${{ github.sha }}'
