@@ -53,7 +53,7 @@ function MobileMenu() {
             )}
             onClick={() => handleSegmentClick('werbeformen')}
           >
-            OVK Contextual
+            Werbeformen
           </button>
         </div>
       </div>
@@ -85,6 +85,17 @@ function MobileMenu() {
               </Link>
               <div className={styles.submenuLinks}>
                 <Link to="/docs/contextualstandards" className={styles.submenuLink}>
+                  Introduction
+                </Link>
+              </div>
+            </>
+          )(
+            <>
+              <Link to="/docs/werbeformen" className={styles.submenuMainLink}>
+                Werbeformen
+              </Link>
+              <div className={styles.submenuLinks}>
+                <Link to="/docs/werbeformen" className={styles.submenuLink}>
                   Introduction
                 </Link>
               </div>
