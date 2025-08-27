@@ -7,10 +7,10 @@ import styles from './styles.module.css';
 // Feature List
 const FeatureList = [
   {
-    title: 'Werbeformen (coming soon)',
+    title: 'Werbeformen',
     image: require('@site/static/img/ad-formats.png').default,
     description: 'Übersicht aller standardisierten vermarkterübergreifenden Werbeformen inkl. Specs',
-    to: "#"
+    to: "/docs/werbeformen/"
   },
   {
     title: 'Identity',

@@ -83,6 +83,7 @@ const config = {
            
             { to: '/docs/identitysolutions/', label: 'Identity', position: 'left' },
             { to: '/docs/contextualstandards/', label: 'OVK Contextual Standard', position: 'left' },
+             { to: '/docs/werbeformen/', label: 'Werbeformen', position: 'left' },
             
            
           ],
