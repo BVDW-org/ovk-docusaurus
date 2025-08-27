@@ -46,6 +46,15 @@ function MobileMenu() {
           >
             OVK Contextual
           </button>
+           <button 
+            className={clsx(
+              styles.segment, 
+              activeSegment === 'werbeformen' && styles.segmentActive
+            )}
+            onClick={() => handleSegmentClick('werbeformen')}
+          >
+            OVK Contextual
+          </button>
         </div>
       </div>
       
