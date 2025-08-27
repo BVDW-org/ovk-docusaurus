@@ -1,6 +1,6 @@
 # Sitebar
 <span class="badge badge--success">Active</span>
-<img width="2500" height="1667" alt="OVK_WF_Desktop_Sitebar" src="https://github.com/BVDW-org/ovk-docusaurus/blob/main/ovk/static/img/formats/OVK_WF_Desktop_Sitebar.png?raw=true" />
+<img alt="OVK_WF_Desktop_Sitebar" src="https://github.com/BVDW-org/ovk-docusaurus/blob/main/ovk/static/img/formats/OVK_WF_Desktop_Sitebar.png?raw=true" />
 
 
 ## Beschreibung

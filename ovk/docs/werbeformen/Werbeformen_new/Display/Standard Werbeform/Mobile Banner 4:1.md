@@ -1,6 +1,6 @@
 # Mobile Banner 4:1
 <span class="badge badge--success">Active</span>
-<img width="2500" height="1667" alt="OVK_WF_Mobil_Banner_1_4" src="https://github.com/BVDW-org/ovk-docusaurus/blob/main/ovk/static/img/formats/OVK_WF_Mobil_Banner_1_4.png?raw=true" />
+<img alt="OVK_WF_Mobil_Banner_1_4" src="https://github.com/BVDW-org/ovk-docusaurus/blob/main/ovk/static/img/formats/OVK_WF_Mobil_Banner_1_4.png?raw=true" />
 
 
 ## Beschreibung
