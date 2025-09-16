@@ -14,20 +14,18 @@ Besteht aus einem (Wide) Skyscraper und einem Super Banner, der Skyscraper ist s
 | Name           | Wallpaper    |
 |----------------|--------------|
 | OVK ID         | 337          |
-| expandable     | ja/nein      |
-| sticky         | nein         |
-| video          | ja/nein      |
-| big screen     | ja           |
-| small screen   | nein         |
-| initial load   | 80 KB        |
-| subload        | 80 KB        |
+| Expandable     | ja/nein      |
+| Sticky         | nein         |
+| Video          | ja/nein      |
+| Big screen     | ja           |
+| Small screen   | nein         |
+| Initial load   | 80 kB        |
+| Subload        | 80 kB        |
 
 
-## Offizielle Size für Programmatic
-XXX x XXX
 
 ## Größe
 80 kB (von uns gehostet), max. 2MB nachgeladen (polite Download aus externen Quellen)
 
 ## Formate
-JPEG, Gif, HTML5 und Video
+JPEG, GIF, HTML5 und Video

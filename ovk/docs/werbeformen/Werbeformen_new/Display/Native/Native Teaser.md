@@ -14,24 +14,17 @@ An das Seitenlayout angepasstes Bild-Text-Werbemittel. Sehr webseitenspezifisch 
 | Name           | (Native) Teaser |
 |----------------|-----------------|
 | OVK ID         | 551             |
-| expandable     | nein            |
-| sticky         | nein            |
-| video          | ja/nein         |
-| big screen     | ja              |
-| small screen   | ja              |
-| initial load   | 40 KB           |
-| subload        | 80 KB           |
-| Größe          | (webseitenspezifisch) |
-| min. Breite    | -               |
-| max. Breite    | -               |
-| min. Höhe      | -               |
-| max. Höhe      | -               |
-
-## Offizielle Size für Programmatic
-XXX x XXX
+| Expandable     | nein            |
+| Sticky         | nein            |
+| Video          | ja/nein         |
+| Big screen     | ja              |
+| Small screen   | ja              |
+| Initial load   | 40 kB           |
+| Subload        | 80 kB           |
+| Größe          | webseitenspezifisch |
 
 ## Größe
 40 kB (von uns gehostet), max. 2MB nachgeladen (polite Download aus externen Quellen)
 
 ## Formate
-JPEG, Gif, HTML5, Video und Bild-Text-Kombination
+JPEG, GIF, HTML5, Video und Bild-Text-Kombination

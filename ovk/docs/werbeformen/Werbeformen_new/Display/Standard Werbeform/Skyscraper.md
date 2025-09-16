@@ -14,15 +14,15 @@ Optional in der Breite 120, 160 oder 200 Pixel.
 | Name           | Skyscraper     |
 |----------------|---------------|
 | OVK ID         | 362           |
-| expandable     | ja/nein       |
-| sticky         | ja/nein       |
-| video          | ja/nein       |
-| big screen     | ja            |
-| small screen   | nein          |
-| initial load   | 100 KB        |
-| subload        | 200 KB        |
-| Größe          | in PX         |
-| Sizes   | 120 x 600, 160 x 600, 200 x 600           |
+| Expandable     | ja/nein       |
+| Sticky         | ja/nein       |
+| Video          | ja/nein       |
+| Big screen     | ja            |
+| Small screen   | nein          |
+| Initial load   | 100 kB        |
+| Subload        | 200 kB        |
+| Größe          | in px         |
+| Sizes          | 120x600, 160x600, 200x600   |
 
 
 
@@ -31,4 +31,4 @@ Optional in der Breite 120, 160 oder 200 Pixel.
 200 kB (von uns gehostet), max. 2MB nachgeladen (polite Download aus externen Quellen)
 
 ## Formate
-JPEG, Gif, HTML5 und Video
+JPEG, GIF, HTML5 und Video

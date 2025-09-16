@@ -14,18 +14,18 @@ Im Contentbereich positioniert.
 | Name           | (Mobile) Halfpage Ad |
 |----------------|----------------------|
 | OVK ID         | 690                  |
-| expandable     | ja/nein              |
-| sticky         | nein                 |
-| video          | ja/nein              |
-| big screen     | ja                   |
-| small screen   | ja                   |
-| initial load   | 150 KB               |
-| subload        | 300 KB               |
-| Größe          | in PX                |
-| Breite         | 300                  |
-| Höhe           | 600                  |
+| Expandable     | ja/nein              |
+| Sticky         | nein                 |
+| Video          | ja/nein              |
+| Big screen     | ja                   |
+| Small screen   | ja                   |
+| Initial load   | 150 kB               |
+| Subload        | 300 kB               |
+| Größe          | in px                |
+| Sizes          | 300x600              |
+
 
 
 
 ## Formate
-JPEG, Gif, HTML5 und Video
+JPEG, GIF, HTML5 und Video

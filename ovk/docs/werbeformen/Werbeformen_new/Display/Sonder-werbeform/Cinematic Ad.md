@@ -14,24 +14,23 @@ Erweitertes Billboard, skaliert dynamisch in Breite.
 | Name           | Cinematic Ad   |
 |----------------|----------------|
 | OVK ID         |                |
-| expandable     | nein           |
-| sticky         | nein           |
-| video          | ja/nein        |
-| big screen     | ja             |
-| small screen   | nein           |
-| initial load   | 400 KB         |
-| subload        | 800 KB         |
-| Größe          | in PX          |
-| min. Breite    | 1920           |
-| max. Breite    | viewport       |
-| min. Höhe      | 250            |
-| max. Höhe      | 380            |
+| Expandable     | nein           |
+| Sticky         | nein           |
+| Video          | ja/nein        |
+| Big screen     | ja             |
+| Small screen   | nein           |
+| Initial load   | 400 kB         |
+| Subload        | 800 kB         |
+| Größe          | in px          |
+| Min. Breite    | 1920           |
+| Max. Breite    | viewport       |
+| Min. Höhe      | 250            |
+| Max. Höhe      | 380            |
 
-## Offizielle Size für Programmatic
-XXX x XXX
+
 
 ## Größe
 200 kB (von uns gehostet), max. 2MB nachgeladen (polite Download aus externen Quellen)
 
 ## Formate
-JPEG, Gif, HTML5 und Video
+JPEG, GIF, HTML5 und Video

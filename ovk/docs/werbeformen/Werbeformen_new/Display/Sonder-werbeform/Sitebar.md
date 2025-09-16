@@ -15,27 +15,25 @@ Die Sitebar spannt sich seitlich des Contents auf und nutzt dabei den zur Verfü
 | Name           | Sitebar      |
 |----------------|--------------|
 | OVK ID         | 804          |
-| expandable     | ja           |
-| sticky         | ja/nein      |
-| video          | ja/nein      |
-| big screen     | ja           |
-| small screen   | nein         |
-| initial load   | 200 KB       |
-| subload        | 400 KB       |
-| Größe          | in PX        |
-| min. Breite    | 120           |
-| max. Breite    | viewport     |
-| min. Höhe      | 600            |
-| max. Höhe      | viewport     |
+| Expandable     | ja           |
+| Sticky         | ja/nein      |
+| Video          | ja/nein      |
+| Big screen     | ja           |
+| Small screen   | nein         |
+| Initial load   | 200 kB       |
+| Subload        | 400 kB       |
+| Größe          | in px        |
+| Min. Breite    | 120          |
+| Max. Breite    | viewport     |
+| Min. Höhe      | 600          |
+| Max. Höhe      | viewport     |
 
-## Offizielle Size für Programmatic
-XXX x XXX
 
 ## Größe
 200 kB (von uns gehostet), max. 2MB nachgeladen (polite Download aus externen Quellen)
 
 ## Formate
-JPEG, Gif, PNG, HTML5 und Video
+JPEG, GIF, PNG, HTML5 und Video
 
 ## Besonderheit
 Das Fallbackwerbemittel dient als Orientierung für das Seitenverhältnis und ist nicht skalierend.

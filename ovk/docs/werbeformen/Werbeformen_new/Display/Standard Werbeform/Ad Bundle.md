@@ -14,19 +14,19 @@ Mindestens drei der folgenden Werbeformen: Super-Banner/Medium Rectange/Skyscrap
 | Name           | Adbundle  |
 |----------------|-----------|
 | OVK ID         | 679       |
-| expandable     | nein      |
-| sticky         | nein      |
-| video          | ja/nein   |
-| big screen     | ja        |
-| small screen   | ja        |
-| initial load   | 100 KB    |
-| subload        | 200 KB    |
-| Größe          | in PX     |
+| Expandable     | nein      |
+| Sticky         | nein      |
+| Video          | ja/nein   |
+| Big screen     | ja        |
+| Small screen   | ja        |
+| Initial load   | 100 kB    |
+| Subload        | 200 kB    |
+| Sizes           | in px     |
 
 
 ## Offizielle Size für Programmatic
-XXX x XXX
+
 
 
 ## Formate
-JPEG, Gif, HTML5 und Video
+JPEG, GIF, HTML5 und Video

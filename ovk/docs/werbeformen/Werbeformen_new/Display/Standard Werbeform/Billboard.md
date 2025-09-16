@@ -14,19 +14,19 @@ Das Billboard steht für einen eindrucksvollen Auftritt durch seine Größe und 
 | Name           | Billboard Ad |
 |----------------|--------------|
 | OVK ID         | 801          |
-| expandable     | nein         |
-| sticky         | ja/nein      |
-| video          | ja/nein      |
-| big screen     | ja           |
-| small screen   | nein         |
-| initial load   | 150 KB       |
-| subload        | 300 KB       |
-| Größe          | in PX        |
-| Sizes      | 800 x 250, 970 x 250        |
+| Expandable     | nein         |
+| Sticky         | ja/nein      |
+| Video          | ja/nein      |
+| Big screen     | ja           |
+| Small screen   | nein         |
+| Initial load   | 150 kB       |
+| Subload        | 300 kB       |
+| Größe          | in px        |
+| Sizes          | 800x250, 970x250        |
 
 
 ## Größe
 200 kB (von uns gehostet), max. 2MB nachgeladen (polite Download aus externen Quellen)
 
 ## Formate
-JPEG, Gif, HTML5 und Video
+JPEG, GIF, HTML5 und Video

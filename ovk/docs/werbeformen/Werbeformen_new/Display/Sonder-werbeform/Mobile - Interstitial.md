@@ -13,21 +13,20 @@ Vollflächige Werbeunterbrechung zwischen zwei Landingpages einer Website
 | Name         | Pre-/Interstitial |
 |--------------|-------------------|
 | OVK ID       | 229               |
-| expandable   | nein              |
-| sticky       | nein              |
-| video        | ja/nein           |
+| Expandable   | nein              |
+| Sticky       | nein              |
+| Video        | ja/nein           |
 | Big Screen   | ja                |
-| Samll Screen | ja                |
-| min. Breite  | 300               |
-| max. Breite  | viewport          |
-| min. Höhe    | 300               |
-| max. Höhe    | viewport          |
+| Small Screen | ja                |
+| Größe        | in px
+| Min. Breite  | 300               |
+| Max. Breite  | viewport          |
+| Min. Höhe    | 300               |
+| Max. Höhe    | viewport          |
 | Dateigewicht | 75 KB             |
 
-## Offizielle Size für Programmatic
-XXX x XXX
 
 ## Größe
 200 kB (von uns gehostet), max. 2MB nachgeladen (polite Download aus externen Quellen)
 ## Formate
-JPEG, Gif, HTML5 und Video
+JPEG, GIF, HTML5 und Video

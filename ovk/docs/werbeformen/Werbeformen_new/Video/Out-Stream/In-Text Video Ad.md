@@ -14,24 +14,21 @@ Das In-Text Video Ad wird gestartet, wenn 50% des Werbemittels im Sichtfeld des 
 | Name            | Content Roll   |
 |-----------------|----------------|
 | OVK ID          | 694            |
-| big screen      | ja             |
-| small screen    | ja             |
+| Big screen      | ja             |
+| Small screen    | ja             |
 | Ebene           | Video          |
 | Ebene 2         | Out-Stream     |
 | Seitenverhältnis| 16:9 (Vollformat)           |
-| Größe           | in PX          |
-| min. Breite     | 640            |
-| max. Breite     | 1920           |
-| min. Höhe       | 360            |
-| max. Höhe       | 1080           |
+| Größe           | in px          |
+| Min. Breite     | 640            |
+| Max. Breite     | 1920           |
+| Min. Höhe       | 360            |
+| Max. Höhe       | 1080           |
 | Framerate       | 25 oder 30     |
 | Audio           | 48 oder 44,1 kHz, 16- oder 24-Bit, Stereo |
-| max. Dateigewicht| 200 MB        |
-| max. Bitrate    | 30000 kbps     |
-| Lautheit        | lautheitsnorm EBU R 128 |
-
-## Offizielle Size für Programmatic
-XXX x XXX
+| Max. Dateigewicht| 200 MB        |
+| Max. Bitrate    | 30000 kbps     |
+| Lautheit        | Lautheitsnorm EBU R 128 |
 
 
 ## Formate

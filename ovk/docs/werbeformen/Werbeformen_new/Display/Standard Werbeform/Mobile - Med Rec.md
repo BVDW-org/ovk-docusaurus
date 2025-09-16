@@ -12,17 +12,17 @@ Auffällig auf der Website im Content-Bereich platziert, zieht das Medium-Rectan
 | Name         | Medium Rectangle |
 |--------------|------------------|
 | OVK ID       | 307              |
-| expandable   | ja/nein          |
-| sticky       | nein             |
-| video        | ja/nein          |
-| big screen   | ja               |
-| small screen | ja               |
-| Initial loadn| 50 kb              |
-| subload      | 100 kb             |
-| Dateigewicht | 50 KB            |
-| Größe        | in PX            |
-|  Breite  | 300              |
-|  Höhe    | 250              |
+| Expandable   | ja/nein          |
+| Sticky       | nein             |
+| Video        | ja/nein          |
+| Big screen   | ja               |
+| Small screen | ja               |
+| Initial loadn| 50 kB              |
+| Subload      | 100 kB             |
+| Dateigewicht | 50 kB            |
+| Größe        | in px            |
+| Sizes        | 300x250              |
+
 
 
 
@@ -30,4 +30,4 @@ Auffällig auf der Website im Content-Bereich platziert, zieht das Medium-Rectan
 ## Größe
 200 kB (von uns gehostet), max. 2MB nachgeladen (polite Download aus externen Quellen)
 ## Formate
-JPEG, Gif, HTML5 und Video
+JPEG, GIF, HTML5 und Video

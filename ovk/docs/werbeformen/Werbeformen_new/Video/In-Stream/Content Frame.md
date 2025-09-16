@@ -10,19 +10,17 @@ Der Content Frame bzw. Cut In legt sich als "Band" horizontal oder vertikal wä
 | Name            | Overlay Ad     |
 |-----------------|----------------|
 | OVK ID          |                |
-| big screen      | ja             |
-| small screen    | ja             |
+| Big screen      | ja             |
+| Small screen    | ja             |
 | Ebene           | Video          |
 | Ebene 2         | In-Stream      |
 | Seitenverhältnis| 16:9 (Vollformat)|
-| Größe           | in PX          |
-| max. Breite     | 1920           |
-| max. Höhe       | 1080           |
-| max. Dateigewicht| 250 KB        |
+| Größe           | in px          |
+| Max. Breite     | 1920           |
+| Max. Höhe       | 1080           |
+| max. Dateigewicht| 250 kB        |
 
 
-## Offizielle Size für Programmatic
-XXX x XXX
 
 
 ## Formate

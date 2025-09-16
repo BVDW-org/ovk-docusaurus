@@ -14,24 +14,23 @@ Das Seitenverhältnis 2:3 muss eingehalten werden. Werbemittel liegt hinter dem 
 | Name           | (Mobile) Understitial / Mobile Poster Ad |
 |----------------|------------------------------------------|
 | OVK ID         | 807                                      |
-| expandable     | nein                                     |
-| sticky         | nein                                     |
-| video          | ja/nein                                  |
-| big screen     | ja                                       |
-| small screen   | ja                                       |
-| initial load   | 100 KB                                   |
-| subload        | 300 KB                                   |
-| Größe          | in PX                                    |
-| min. Breite    | 320                                      |
-| max. Breite    | viewport                                 |
-| min. Höhe      | 480                                      |
-| max. Höhe      | viewport                                 |
+| Expandable     | nein                                     |
+| Sticky         | nein                                     |
+| Video          | ja/nein                                  |
+| Big screen     | ja                                       |
+| Small screen   | ja                                       |
+| Initial load   | 100 kB                                   |
+| Subload        | 300 kB                                   |
+| Größe          | in px                                    |
+| Min. Breite    | 320                                      |
+| Max. Breite    | viewport                                 |
+| Min. Höhe      | 480                                      |
+| Max. Höhe      | viewport                                 |
 
-## Offizielle Size für Programmatic
-XXX x XXX
+
 
 ## Größe
 200 kB (von uns gehostet), max. 2MB nachgeladen (polite Download aus externen Quellen)
 
 ## Formate
-JPEG, Gif, HTML5 und Video
+JPEG, GIF, HTML5 und Video

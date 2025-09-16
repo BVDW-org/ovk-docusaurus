@@ -14,15 +14,15 @@ Im Smallscreen-Einsatz gilt für Initialload und Subload jeweils die Hälfte der
 | Name           | Mobile Banner 4:1 |
 |----------------|-------------------|
 | OVK ID         | 901               |
-| expandable     | nein              |
-| sticky         | ja/nein           |
-| video          | ja/nein           |
-| big screen     | nein              |
-| small screen   | ja                |
-| initial load   | 50 KB             |
-| subload        | 100 KB            |
-| Größe          | in PX             |
-| Sizes          | 300 x 75, 320 x 75, 320 x 80    |
+| Expandable     | nein              |
+| Sticky         | ja/nein           |
+| Video          | ja/nein           |
+| Big screen     | nein              |
+| Small screen   | ja                |
+| Initial load   | 50 kB             |
+| Subload        | 100 kB            |
+| Größe          | in px             |
+| Sizes          | 300x75, 320x75, 320x80    |
 
 
 
@@ -30,4 +30,4 @@ Im Smallscreen-Einsatz gilt für Initialload und Subload jeweils die Hälfte der
 200 kB (von uns gehostet), max. 2MB nachgeladen (polite Download aus externen Quellen)
 
 ## Formate
-JPEG, Gif, HTML5 und Video
+JPEG, GIF, HTML5 und Video

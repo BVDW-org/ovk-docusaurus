@@ -10,20 +10,19 @@ Pause Ads sind Banner, die ausgespielt werden, wenn ein Nutzer während des Stre
 | Name            | Overlay Ad     |
 |-----------------|----------------|
 | OVK ID          |                |
-| big screen      | ja             |
-| small screen    | ja             |
+| Big screen      | ja             |
+| Small screen    | ja             |
 | Ebene           | Video          |
 | Ebene 2         | In-Stream      |
-| Größe           | in PX          |
-| min. Breite     | 300            |
-| max. Breite     | 640            |
-| min. Höhe       | 250            |
-| max. Höhe       | 480            |
-| max. Dateigewicht| 200 KB        |
+| Größe           | in px          |
+| Min. Breite     | 300            |
+| Max. Breite     | 640            |
+| Min. Höhe       | 250            |
+| Max. Höhe       | 480            |
+| Max. Dateigewicht| 200 kB        |
 
 
-## Offizielle Size für Programmatic
-XXX x XXX
+
 
 
 ## Formate

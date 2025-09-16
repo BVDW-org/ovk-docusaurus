@@ -22,7 +22,7 @@ Im Smallscreen-Einsatz gilt für Initialload und Subload jeweils die Hälfte der
 | Initial load   | 50 kB             |
 | Subload        | 100 kB            |
 | Größe          | in px             |
-| Size    | 300x50, 320x50, 320x53  |
+| Sizes    | 300x50, 320x50, 320x53  |
 
 
 
@@ -30,4 +30,4 @@ Im Smallscreen-Einsatz gilt für Initialload und Subload jeweils die Hälfte der
 200 kB (von uns gehostet), max. 2MB nachgeladen (polite Download aus externen Quellen)
 
 ## Formate
-JPEG, gif, HTML5 und Video
+JPEG, GIF, HTML5 und Video

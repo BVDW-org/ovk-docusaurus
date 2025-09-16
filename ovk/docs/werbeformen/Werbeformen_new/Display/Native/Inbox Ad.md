@@ -14,24 +14,17 @@ Platzierung in der E-Mailliste. Größe in Abhängigkeit von Darstellung der E-M
 | Name           | InboxAd / Mail Ad |
 |----------------|-------------------|
 | OVK ID         | 702               |
-| expandable     | nein              |
-| sticky         | nein              |
-| video          | nein              |
-| big screen     | ja                |
-| small screen   | ja                |
-| initial load   | -                 |
-| subload        | -                 |
-| Größe          |( abhängig von der Darstellung der E-Mailbetreffzeilen) |
-| min. Breite    | -                 |
-| max. Breite    | -                 |
-| min. Höhe      | -                 |
-| max. Höhe      | -                 |
+| Expandable     | nein              |
+| Sticky         | nein              |
+| Video          | nein              |
+| Big screen     | ja                |
+| Small screen   | ja                |
+| Größe          | abhängig von der Darstellung der E-Mailbetreffzeilen |
 
-## Offizielle Size für Programmatic
-XXX x XXX
+
 
 ## Größe
 (Abhängig von der Darstellung im E-Mail-Posteingang.)
 
 ## Formate
-Text, JPEG, Gif, HTML5, Video, interaktive Elemente
+Text, JPEG, GIF, HTML5, Video, interaktive Elemente

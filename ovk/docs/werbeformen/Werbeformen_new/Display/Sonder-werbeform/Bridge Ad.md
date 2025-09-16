@@ -14,24 +14,22 @@ Besondere Form des Fireplace Ads (Site-/Vermarkter-individuell).
 | Name           | Bridge Ad    |
 |----------------|--------------|
 | OVK ID         |              |
-| expandable     | nein         |
-| sticky         | ja           |
-| video          | ja/nein      |
-| big screen     | ja           |
-| small screen   | nein         |
-| initial load   | 300 KB       |
-| subload        | 600 KB       |
-| Größe          | in PX        |
-| min. Breite    | 630          |
-| max. Breite    | 1620         |
-| min. Höhe      | 250          |
-| max. Höhe      | 250          |
+| Expandable     | nein         |
+| Sticky         | ja           |
+| Video          | ja/nein      |
+| Big screen     | ja           |
+| Small screen   | nein         |
+| Initial load   | 300 kB       |
+| Subload        | 600 kB       |
+| Größe          | in px        |
+| Min. Breite    | 630          |
+| Max. Breite    | 1620         |
+| Höhe           | 250          |
 
-## Offizielle Size für Programmatic
-XXX x XXX
+
 
 ## Größe
 200 kB (von uns gehostet), max. 2MB nachgeladen (polite Download aus externen Quellen)
 
 ## Formate
-JPEG, Gif, HTML5 und Video
+JPEG, GIF, HTML5 und Video

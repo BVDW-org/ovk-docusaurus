@@ -15,23 +15,22 @@ Bestehend aus einem horizontalen Werbeformat (z.B. Billboard) sowie zwei vertika
 |----------------|----------------------------|
 | OVK ID         |                            |
 | expandable     | nein                       |
-| sticky         | ja                         |
-| video          | ja/nein                    |
-| big screen     | ja                         |
-| small screen   | nein                       |
-| initial load   | 400 KB                     |
-| subload        | 800 KB                     |
-| Größe          | in PX                      |
-| min. Breite    | 1020                       |
-| max. Breite    | 1337                       |
-| min. Höhe      | 90                         |
-| max. Höhe      | 250                        |
+| Sticky         | ja                         |
+| Video          | ja/nein                    |
+| Big screen     | ja                         |
+| Small screen   | nein                       |
+| Initial load   | 400 kB                     |
+| Subload        | 800 kB                     |
+| Größe          | in px                      |
+| Min. Breite    | 1020                       |
+| Max. Breite    | 1337                       |
+| Min. Höhe      | 90                         |
+| Max. Höhe      | 250                        |
 
-## Offizielle Size für Programmatic
-XXX x XXX
+
 
 ## Größe
 200 kB (von uns gehostet), max. 2MB nachgeladen (polite Download aus externen Quellen)
 
 ## Formate
-JPEG, Gif, HTML5 und Video
+JPEG, GIF, HTML5 und Video
