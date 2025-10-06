@@ -22,7 +22,7 @@ Note: Score Media and Bauer use their Erstvermarkter's ID solutions. Azerion, ne
 [`EUID`](#EUID)
 | Vermarkter                   | Status       | Usable Via                                                                     |
 |------------------------------|--------------|-------------------------------------------------------------------------------|
-| Ad Alliance                  | In-Progress  |                                                                              |
+| Ad Alliance                  | No Support   |                                                                              |
 | BCN Brand Community Network  | Live         | Bid Stream (unrestricted)                                                    |
 | iq digital                   | In-Progress  | 
 | SevenOne                     | Live         |                                                                              |
@@ -56,7 +56,7 @@ Note: Score Media and Bauer use their Erstvermarkter's ID solutions. Azerion, ne
 [`Liveramp (RampId)`](#Liveramp)
 | Vermarkter                   | Status               | Usable Via                     |
 |------------------------------|----------------------|--------------------------------|
-| Ad Alliance                  | No support           |                                |
+| Ad Alliance                  | In-Progress          | Bid Stream (restricted)        |
 | BCN Brand Community Network  | Live                 | Bid Stream (unrestricted)      |
 | iq digital                   | No support           |                                |
 | Media Impact                 | No support           |                                |
@@ -70,7 +70,7 @@ Note: Score Media and Bauer use their Erstvermarkter's ID solutions. Azerion, ne
 [`netID`](#netId)
 | Vermarkter                   | Status     | Usable Via                                                                     |
 |------------------------------|------------|-------------------------------------------------------------------------------|
-| Ad Alliance                  | Live       | Bid Stream (restricted), Data Marketplace (Curation-SSP)                      |
+| Ad Alliance                  | Live       | Bid Stream (restricted), Data Marketplace (Curation-SSP), Data Clean Room    |
 | BCN Brand Community Network  | No support |                                                                              |
 | iq digital                   | No support |                         |
 | Media Impact                 | Live       |                                                                              |
@@ -96,7 +96,7 @@ Note: Score Media and Bauer use their Erstvermarkter's ID solutions. Azerion, ne
 [`PPID (GAM)`](#PPID)
 | Vermarkter                   | Status     | Usable Via                              |
 |------------------------------|------------|-----------------------------------------|
-| Ad Alliance                  | Live       | Adserver                                |
+| Ad Alliance                  | Live       | Adserver, Bid Stream (restricted)       |
 | BCN Brand Community Network  | Live       | IO only (Adserver), Bid Stream          |
 | iq Digital                   | Live       | IO only (Adserver)                      |
 | Media Impact                 | Live       | Adserver                                |
@@ -128,7 +128,7 @@ Note: Score Media and Bauer use their Erstvermarkter's ID solutions. Azerion, ne
 [`Utiq`](#Utiq)
 | Vermarkter                   | Status       | Usable Via                     |
 |------------------------------|--------------|--------------------------------|
-| Ad Alliance                  | In-Progress  |                                |
+| Ad Alliance                  | Live         | Bid Stream (restricted), Data Clean Room |
 | BCN Brand Community Network  | Live         | Bid Stream (unrestricted)      |
 | iq Digital                   | Live         | Bid Stream (restricted)        |
 | Media Impact                 | Live         |                                |
