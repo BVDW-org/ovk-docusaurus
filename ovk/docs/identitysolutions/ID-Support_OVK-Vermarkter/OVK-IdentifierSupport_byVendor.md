@@ -134,6 +134,7 @@ Note: Score Media and Bauer use their Erstvermarkter's ID solutions. Azerion, ne
 | Media Impact                 | Live         |                                |
 | Quarter Media                | In-Progress  |                                |
 | Ströer                       | Live (Test)  | Bid Stream (restricted)        |
+| Visoon                       | Live         | Bid Stream (restricted), Bid Stream (deal id), Data Clean Room, Data Marketplace (DSP)|
 
 
 [`Proprietary IDs`](#Proprietary-Ids)
