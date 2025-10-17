@@ -102,7 +102,7 @@ Note: Score Media and Bauer use their Erstvermarkter's ID solutions. Azerion, ne
 | Media Impact                 | Live       | Adserver                                |
 | mobile.de                    | Live       | Bid Stream (restricted)                 |
 | Quarter Media                | Live       | Bid Stream (restricted)                 |
-| SevenOne                     | No support |                                        |
+| SevenOne                     | Live       |                                        |
 | Ströer                       | Live       | IO only (Adserver)                      |
 | UIM                          | Live       | Bid Stream (restricted)                 |
 
