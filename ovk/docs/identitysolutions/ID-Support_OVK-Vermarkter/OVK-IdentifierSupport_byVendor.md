@@ -129,7 +129,7 @@ Note: Score Media and Bauer use their Erstvermarkter's ID solutions. Azerion, ne
 | Vermarkter                   | Status       | Usable Via                     |
 |------------------------------|--------------|--------------------------------|
 | Ad Alliance                  | Live         | Bid Stream (restricted), Data Clean Room |
-| BCN Brand Community Network  | Live         | Bid Stream (unrestricted)      |
+| BCN Brand Community Network  | Live         | Bid Stream (unrestricted), Data Clean Room, Data Marketplace (DSP)|
 | iq Digital                   | Live         | Bid Stream (restricted)        |
 | Media Impact                 | Live         |                                |
 | Quarter Media                | In-Progress  |                                |
