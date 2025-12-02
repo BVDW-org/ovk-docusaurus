@@ -63,7 +63,7 @@ function MobileMenu() {
     {activeSegment === 'identity' ? (
       <>
         <Link to="/docs/identitysolutions/" className={styles.submenuMainLink}>
-          Identity Overview
+          Intro
         </Link>
         <div className={styles.submenuLinks}>
           <Link to="/docs/identitysolutions/Case%20Studies" className={styles.submenuLink}>
