@@ -83,21 +83,21 @@ function UnitSection() {
       role: "Leiter der Unit Ad Tech & Programmatic im OVK",
       company: "United Internet Media GmbH",
       companyUrl: "https://www.united-internet-media.de/de/home/",
-      image: "https://www.ovk.de/wp-content/uploads/2020/04/ASP_ProgrammaticData_Alwin_Viereck.png"
+      image: "https://www.ovk.de/wp-content/uploads/2025/09/Alwin-Viereck.jpg"
     },
     {
       name: "Carlos Bracho",
       role: "Leiter der Unit Ad Tech & Programmatic im OVK",
       company: "Media Impact GmbH und Co. KG",
       companyUrl: "https://www.mediaimpact.de/de/",
-      image: "https://www.ovk.de/wp-content/uploads/2021/12/Brachos-Carlos-eingefärbt_quadratisch-300x300.jpg"
+      image: "https://www.ovk.de/wp-content/uploads/2025/09/Carlos-Bracho-990x990.jpg"
     },
     {
       name: "Markus Letzner",
       role: "Leiter der Unit Ad Tech & Programmatic im OVK und Mitsprecher des Contextual Workstreams",
       company: "Ströer Digital Media GmbH",
       companyUrl: "https://www.stroeer.de/",
-      image: "https://www.ovk.de/wp-content/uploads/2021/12/Letzner_Markus_duplex-300x300.jpg"
+      image: "https://www.ovk.de/wp-content/uploads/2025/09/Markus-Letzner.jpg"
     }
   ];
 
