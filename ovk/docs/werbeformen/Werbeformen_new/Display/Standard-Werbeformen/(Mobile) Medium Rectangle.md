@@ -15,9 +15,9 @@ Auffällig auf der Website im Content-Bereich platziert, zieht das Medium Rectan
 | Expandable   | ja/nein          |
 | Sticky       | nein             |
 | Video        | ja/nein          |
-| Big screen   | ja               |
-| Small screen | ja               |
-| Initial loadn| 50 kB              |
+| Big Screen   | ja               |
+| Small Screen | ja               |
+| Initial load| 50 kB              |
 | Subload      | 100 kB             |
 | Dateigewicht | 50 kB            |
 | Größe        | in px            |
