@@ -1,6 +1,6 @@
 # Einführung
 ### Dieses Repository enthält:
-- Eine [Übersicht](https://github.com/BVDW-org/ovk-identifiersupport/blob/main/OVK-IdentifierSupport.md) der OVK Häuser welche Identifier ihre Publisher unterstützen, um so Addressability in der Postcookie Ära sicherzustellen.
+- Eine [Übersicht](https://tech.ovk.de/docs/identitysolutions/ID-Support_OVK-Vermarkter/OVK-IdentifierSupport_byVendor) der OVK Häuser welche Identifier ihre Publisher unterstützen, um so Addressability in der Postcookie Ära sicherzustellen.
 
 
 ## Erläuterung der Vermarkter ID Übersicht:
