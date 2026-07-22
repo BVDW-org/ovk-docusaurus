@@ -48,17 +48,32 @@ jobs:
         if [ -d "ovk-docusaurus/ovk/docs/identitysolutions" ]; then
           cp -r ovk-docusaurus/ovk/docs/identitysolutions backup/
         fi
-        
+
         echo "Removing old identitysolutions folder"
         rm -rf ovk-docusaurus/ovk/docs/identitysolutions
         mkdir -p ovk-docusaurus/ovk/docs/identitysolutions
-        
-        echo "Copying identitysolutions files"
-        cp -r ovk-identifiersupport/* ovk-docusaurus/ovk/docs/identitysolutions/
-        
+
+        echo "Copying identitysolutions files (excluding tools/, which is synced separately into static/)"
+        rsync -a --exclude 'tools' ovk-identifiersupport/ ovk-docusaurus/ovk/docs/identitysolutions/
+
         echo "Verification: Files after copy:"
         ls -la ovk-docusaurus/ovk/docs/identitysolutions
-    
+
+    - name: Sync identifier-landscape tool into static/
+      run: |
+        SRC="ovk-identifiersupport/tools/identifier-landscape"
+        DEST="ovk-docusaurus/ovk/static/tools/identifier-landscape"
+        if [ -d "$SRC" ]; then
+          echo "Syncing identifier-landscape tool from ovk-identifiersupport"
+          rm -rf "$DEST"
+          mkdir -p "$DEST"
+          cp -r "$SRC"/* "$DEST"/
+          echo "Verification: Files after copy:"
+          ls -la "$DEST"
+        else
+          echo "No tools/identifier-landscape folder found in ovk-identifiersupport - skipping"
+        fi
+
     - name: Commit and push changes
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -66,10 +81,13 @@ jobs:
         cd ovk-docusaurus
         git config --global user.email "carlos.bracho@axelspringer.com"
         git config --global user.name "github-actions[bot]"
-        
+
         # Add changes
         git add ovk/docs/identitysolutions
-        
+        if [ -d "ovk/static/tools/identifier-landscape" ]; then
+          git add ovk/static/tools/identifier-landscape
+        fi
+
         # Check if there are changes to commit
         if git diff --staged --quiet; then
           echo "No changes detected in the content - skipping commit"

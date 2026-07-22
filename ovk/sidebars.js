@@ -11,7 +11,9 @@ const sidebars = {
         { type: 'doc', id: 'identitysolutions/README' },
         { type: 'doc', id: 'identitysolutions/Case Studies' },
         { type: 'doc', id: 'identitysolutions/ID-Support_OVK-Vermarkter/OVK-IdentifierSupport_byVendor' },
-        
+        // "ID Landscape Map" (docs/tools/id-landscape-map.md) bewusst noch nicht gelistet -
+        // erreichbar nur per Direktlink mit Access-Token, bis zur Stakeholder-Abnahme.
+
         // Füge nur die gewünschten Dateien hinzu, die du anzeigen willst
       ],
     },

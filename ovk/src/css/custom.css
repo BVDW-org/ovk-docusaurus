@@ -291,3 +291,20 @@ h1, h2, h3, h4, h5, h6 {
   max-width: none !important;
   display: none !important;
 }
+
+/* Vollbreite für eingebettete Tools (z.B. ID Landscape Map), damit deren
+   eigenes Grid-Layout auf breiten Bildschirmen den vollen verfügbaren
+   Platz neben der Docs-Sidebar nutzen kann */
+.id-landscape-fullbleed {
+  width: calc(100vw - var(--doc-sidebar-width, 0px));
+  margin-left: calc(50% - 50vw + (var(--doc-sidebar-width, 0px) / 2));
+  margin-right: calc(50% - 50vw + (var(--doc-sidebar-width, 0px) / 2));
+}
+
+@media (max-width: 996px) {
+  .id-landscape-fullbleed {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

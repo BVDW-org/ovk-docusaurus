@@ -29,6 +29,13 @@ const config = {
   onBrokenLinks: 'warn',// changed from throw to warm to skip
   onBrokenMarkdownLinks: 'warn',
 
+  stylesheets: [
+    {
+      href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap',
+      type: 'text/css',
+    },
+  ],
+
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
