@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       "config/vermarkter/stroeer.js",
       "config/vermarkter/uim.js",
       "config/vermarkter/iqd.js",
+      "config/vermarkter/bcn.js",
       "config/data_partners.js"
     ];
     
