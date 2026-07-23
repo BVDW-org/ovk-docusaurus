@@ -15,6 +15,21 @@
   color: var(--ifm-color-primary);
 }
 
+.eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ifm-color-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.eyebrowCentered {
+  display: block;
+  text-align: center;
+}
+
 .featuresGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -25,47 +40,75 @@
 
 /* Feature Card */
 .featureCard {
+  position: relative;
   display: flex;
   flex-direction: column;
   background-color: var(--ifm-background-surface-color);
   border-radius: 12px;
+  border-top: 4px solid transparent;
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   cursor: pointer;
   height: 100%;
+  padding: 2rem 1.75rem 1.75rem;
+  color: inherit;
 }
 
 .featureCard:hover {
   transform: translateY(-8px);
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+  border-top-color: var(--ifm-color-secondary);
+  color: inherit;
+  text-decoration: none;
 }
 
-.featureImageContainer {
-  padding: 2rem;
+.featureNumber {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.75rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--ifm-color-emphasis-400);
+}
+
+.featureIconBadge {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  background-color: var(--ifm-color-emphasis-100);
+  justify-content: center;
+  background-color: var(--ifm-color-primary);
+  color: white;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
 }
 
-.featureImage {
-  width: 170px;
-  height: auto;
-  object-fit: contain;
+.featureIconBadge svg {
+  width: 32px;
+  height: 32px;
+}
+
+.featureCard:hover .featureIconBadge {
+  transform: scale(1.08);
+}
+
+.featuresGrid > a:nth-child(2) .featureIconBadge {
+  background-color: var(--ifm-color-secondary);
 }
 
 .featureContent {
-  padding: 1.5rem;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
 
 .featureTitle {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   color: var(--ifm-color-primary);
 }
 
@@ -74,6 +117,44 @@
   line-height: 1.6;
   margin-bottom: 0;
   flex-grow: 1;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.featureLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ifm-color-secondary);
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: all 0.25s ease;
+}
+
+.featureCard:hover .featureLink {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.coreTaskPills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 2rem auto 0;
+  max-width: 700px;
+}
+
+.coreTaskPill {
+  background-color: var(--ifm-background-surface-color);
+  color: var(--ifm-color-primary);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
 }
 
 /* Unit Section */
@@ -119,6 +200,10 @@
   color: var(--ifm-color-primary);
 }
 
+.teamSection .eyebrow {
+  margin-top: 0;
+}
+
 .teamGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -136,6 +221,7 @@
   padding: 1.5rem;
   background-color: var(--ifm-background-surface-color);
   border-radius: 12px;
+  border-top: 3px solid transparent;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
 }
@@ -143,6 +229,7 @@
 .teamMember:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-top-color: var(--ifm-color-secondary);
 }
 
 .teamMemberImageContainer {
@@ -194,8 +281,9 @@
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
 }
 
-[data-theme='dark'] .featureImageContainer {
-  background-color: var(--ifm-color-emphasis-200);
+[data-theme='dark'] .coreTaskPill {
+  border-color: var(--ifm-color-emphasis-300);
+  color: #ffffff;
 }
 
 [data-theme='dark'] .unitSection {

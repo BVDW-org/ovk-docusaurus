@@ -110,9 +110,9 @@ function MobileMenu() {
 }
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
   return (
     <header className={styles.heroBanner}>
+      <div className={styles.heroPattern} aria-hidden="true" />
       <div className={styles.heroContent}>
         <div className={styles.heroLogoContainer}>
           <img
@@ -125,17 +125,24 @@ function HomepageHeader() {
           <Heading as="h1" className={styles.heroTitle}>
             OVK Tech Specs
           </Heading>
-          {siteConfig.tagline && (
-            <p className={styles.heroSubtitle}>{siteConfig.tagline}</p>
-          )}
+          <p className={styles.heroSubtitle}>
+            Die zentrale technische Referenz des Online-Vermarkterkreises im
+            BVDW – Identity-Lösungen, der OVK Contextual Standard und
+            standardisierte Werbeformen an einem Ort.
+          </p>
           <div className={styles.heroButtons}>
-            {/* Desktop button */}
+            {/* Desktop buttons */}
             <Link
-              className={clsx('button', styles.heroButton, styles.desktopOnly)}
+              className={clsx(styles.heroButtonPrimary, styles.desktopOnly)}
               to="/docs/identitysolutions/">
               Zur Übersicht
             </Link>
-            
+            <a
+              className={clsx(styles.heroButtonSecondary, styles.desktopOnly)}
+              href="#schwerpunkte">
+              Schwerpunkte ansehen
+            </a>
+
             {/* Mobile menu */}
             <div className={styles.mobileOnly}>
               <MobileMenu />
