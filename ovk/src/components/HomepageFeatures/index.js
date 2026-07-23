@@ -123,26 +123,26 @@ function TeamMember({ image, name, role, company, companyUrl }) {
   );
 }
 
-// Unit Section Component
+// Lab Section Component
 function UnitSection() {
   const unitLeaders = [
     {
       name: "Alwin Viereck",
-      role: "Leiter der Unit Ad Tech & Programmatic im OVK",
+      role: "Leiter des Labs Ad Tech & Programmatic im OVK",
       company: "United Internet Media GmbH",
       companyUrl: "https://www.united-internet-media.de/de/home/",
       image: "https://www.ovk.de/wp-content/uploads/2025/09/Alwin-Viereck.jpg"
     },
     {
       name: "Carlos Bracho",
-      role: "Leiter der Unit Ad Tech & Programmatic im OVK",
+      role: "Leiter des Labs Ad Tech & Programmatic im OVK",
       company: "Media Impact GmbH und Co. KG",
       companyUrl: "https://www.mediaimpact.de/de/",
       image: "https://www.ovk.de/wp-content/uploads/2025/09/Carlos-Bracho-990x990.jpg"
     },
     {
       name: "Markus Letzner",
-      role: "Leiter der Unit Ad Tech & Programmatic im OVK und Mitsprecher des Contextual Workstreams",
+      role: "Leiter des Labs Ad Tech & Programmatic im OVK und Mitsprecher des Contextual Workstreams",
       company: "Ströer Digital Media GmbH",
       companyUrl: "https://www.stroeer.de/",
       image: "https://www.ovk.de/wp-content/uploads/2025/09/Markus-Letzner.jpg"
@@ -180,9 +180,9 @@ function UnitSection() {
       <div className="container">
         <div className={styles.unitContent}>
           <span className={clsx(styles.eyebrow, styles.eyebrowCentered)}>Über uns</span>
-          <Heading as="h2" className={styles.unitTitle}>Ein Projekt der Unit "AdTech & Programmatic" des OVK</Heading>
+          <Heading as="h2" className={styles.unitTitle}>Ein Projekt des Labs "AdTech & Programmatic" des OVK</Heading>
           <p className={styles.unitDescription}>
-            Kernaufgaben der Unit Ad Tech & Programmatic sind Standardisierung und Marktaufklärung. Ziel der Unit ist es, die Durchführung digitaler Kampagnen für die Marktpartner so effizient wie möglich zu gestalten. Die Experten aus den OVK Mitgliedsunternehmen bewerten neue technologische Ansätze und Initiativen, konsolidieren die Sicht der Vermarkter auf Ad Tech-, Programmatic- und Data-Fragestellungen, formulieren Marktanforderungen und entwickeln Lösungen. Gemeinsam mit den Marktpartnern werden Standards definiert und Regulierungs- und Datenschutzinitiativen begleitet. Die Veröffentlichungen und Veranstaltungen der Unit liefern Hilfestellung und klären auf.
+            Kernaufgaben des Labs Ad Tech & Programmatic sind Standardisierung und Marktaufklärung. Ziel des Labs ist es, die Durchführung digitaler Kampagnen für die Marktpartner so effizient wie möglich zu gestalten. Die Experten aus den OVK Mitgliedsunternehmen bewerten neue technologische Ansätze und Initiativen, konsolidieren die Sicht der Vermarkter auf Ad Tech-, Programmatic- und Data-Fragestellungen, formulieren Marktanforderungen und entwickeln Lösungen. Gemeinsam mit den Marktpartnern werden Standards definiert und Regulierungs- und Datenschutzinitiativen begleitet. Die Veröffentlichungen und Veranstaltungen des Labs liefern Hilfestellung und klären auf.
           </p>
           <div className={styles.coreTaskPills}>
             {coreTasks.map((task) => (
@@ -192,7 +192,7 @@ function UnitSection() {
 
           <div className={styles.teamSection}>
             <span className={clsx(styles.eyebrow, styles.eyebrowCentered)}>Team</span>
-            <Heading as="h3" className={styles.teamSectionTitle}>Leiter der Unit Ad Tech & Programmatic</Heading>
+            <Heading as="h3" className={styles.teamSectionTitle}>Leiter des Labs Ad Tech & Programmatic</Heading>
             <div className={styles.teamGrid}>
               {unitLeaders.map((leader, idx) => (
                 <TeamMember key={idx} {...leader} />
