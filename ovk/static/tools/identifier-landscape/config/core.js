@@ -36,7 +36,7 @@ window.OVK_LANDSCAPE_CONFIG = {
       logo: "TTD",
       supportedUsecases: ["fc", "targeting", "targeting_pre"],
       supportedSSPs: ["pubmatic", "index_exchange", "magnite", "xandr", "yieldlab", "smartclip", "equativ"],
-      supportedVermarkter: ["ad_alliance", "seven_one_media", "media_impact", "uim", "iqd"],
+      supportedVermarkter: ["ad_alliance", "seven_one_media","bcn", "media_impact", "uim", "iqd"],
       supportedIds: ["utiq", "netid_utiq", "netid"]
     },
     {
@@ -45,7 +45,7 @@ window.OVK_LANDSCAPE_CONFIG = {
       logo: "AA",
       supportedUsecases: ["targeting", "targeting_pre"],
       supportedSSPs: ["pubmatic", "index_exchange", "magnite", "xandr", "yieldlab", "smartclip", "equativ"],
-      supportedVermarkter: ["ad_alliance", "media_impact", "stroeer", "uim", "iqd"],
+      supportedVermarkter: ["ad_alliance", "media_impact", "bcn","stroeer", "uim", "iqd"],
       supportedIds: ["utiq", "netid_utiq", "netid"]
     },
     {
@@ -54,7 +54,7 @@ window.OVK_LANDSCAPE_CONFIG = {
       logo: "AD",
       supportedUsecases: ["fc", "targeting_pre"],
       supportedSSPs: ["pubmatic", "index_exchange", "magnite", "xandr", "yieldlab", "smartclip"],
-      supportedVermarkter: ["media_impact", "seven_one_media", "uim"],
+      supportedVermarkter: ["media_impact", "bcn","seven_one_media", "uim"],
       supportedIds: ["utiq", "netid_utiq", "netid"]
     },
     {
@@ -63,7 +63,7 @@ window.OVK_LANDSCAPE_CONFIG = {
       logo: "DV360",
       supportedUsecases: ["targeting_pre"],
       supportedSSPs: ["pubmatic", "index_exchange", "magnite", "xandr", "yieldlab", "equativ"],
-      supportedVermarkter: ["media_impact", "seven_one_media", "uim", "iqd", "ad_alliance"],
+      supportedVermarkter: ["media_impact", "seven_one_media","bcn", "uim", "iqd", "ad_alliance"],
       supportedIds: []
     }
   ],
@@ -75,7 +75,7 @@ window.OVK_LANDSCAPE_CONFIG = {
       name: "Equativ",
       category: "curation",
       supportedUsecases: ["fc", "targeting", "targeting_pre"],
-      supportedVermarkter: ["ad_alliance", "seven_one_media", "uim"],
+      supportedVermarkter: ["ad_alliance", "seven_one_media","bcn", "uim"],
       supportedIds: ["utiq", "netid_utiq", "netid"]
     },
     {
@@ -83,7 +83,7 @@ window.OVK_LANDSCAPE_CONFIG = {
       name: "PubMatic",
       category: "curation",
       supportedUsecases: ["fc", "targeting", "targeting_pre"],
-      supportedVermarkter: ["ad_alliance", "seven_one_media", "uim"],
+      supportedVermarkter: ["ad_alliance", "seven_one_media","bcn", "uim"],
       supportedIds: ["utiq", "netid_utiq"]
     },
     {
@@ -91,7 +91,7 @@ window.OVK_LANDSCAPE_CONFIG = {
       name: "Index Exchange",
       category: "curation",
       supportedUsecases: ["targeting", "targeting_pre"],
-      supportedVermarkter: ["ad_alliance", "media_impact", "seven_one_media", "uim", "iqd"],
+      supportedVermarkter: ["ad_alliance", "media_impact","bcn", "seven_one_media", "uim", "iqd"],
       supportedIds: ["utiq", "netid_utiq"]
     },
     {
@@ -99,7 +99,7 @@ window.OVK_LANDSCAPE_CONFIG = {
       name: "Magnite",
       category: "curation",
       supportedUsecases: ["targeting", "targeting_pre"],
-      supportedVermarkter: ["seven_one_media", "stroeer", "uim"],
+      supportedVermarkter: ["seven_one_media", "stroeer", "bcn","uim"],
       supportedIds: ["utiq", "netid_utiq"]
     },
     {
@@ -107,7 +107,7 @@ window.OVK_LANDSCAPE_CONFIG = {
       name: "Xandr",
       category: "curation",
       supportedUsecases: ["targeting", "targeting_pre"],
-      supportedVermarkter: ["media_impact", "stroeer", "uim", "iqd"],
+      supportedVermarkter: ["media_impact", "stroeer", "uim","bcn", "iqd"],
       supportedIds: ["netid"]
     },
     {
@@ -115,7 +115,7 @@ window.OVK_LANDSCAPE_CONFIG = {
       name: "Yieldlab",
       category: "standard",
 supportedUsecases: ["targeting_pre"],
-      supportedVermarkter: ["media_impact", "stroeer", "uim", "iqd"],
+      supportedVermarkter: ["media_impact","bcn", "stroeer", "uim", "iqd"],
       supportedIds: ["netid", "utiq"]
     },
     {
