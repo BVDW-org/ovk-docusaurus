@@ -308,3 +308,189 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: 0;
   }
 }
+
+/* ==========================================================================
+   Identity / Contextual Standard / Werbeformen docs presentational polish.
+   These pages are plain Markdown maintained directly on GitHub by several
+   people (vendor tables, spec tables) - all rules below only restyle the
+   rendered output, scoped via the "docs-doc-id-<folder>/..." class
+   Docusaurus already puts on <html> for these routes. Status badges are
+   added client-side (src/clientModules/identitySolutionsEnhancer.js) since
+   CSS can't match table cells by text content. Nothing here requires any
+   change to how the Markdown itself is authored.
+
+   Generic rules (tables, heading rhythm) apply to all three sections.
+   Rules tied to the identitysolutions-specific "### <img/> ###" vendor-logo
+   heading pattern and the README legend stay scoped to identitysolutions
+   only, since that exact pattern doesn't occur elsewhere.
+   ========================================================================== */
+
+/* Status badges (built client-side from plain "Live" / "In-Progress" /
+   "No support" table cell text - see identitySolutionsEnhancer.js) */
+.id-status-badge {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+  line-height: 1.4;
+}
+
+.id-status-live {
+  background-color: rgba(34, 197, 94, 0.15);
+  color: #15803d;
+}
+
+.id-status-progress {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: #b45309;
+}
+
+.id-status-no {
+  background-color: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-600);
+}
+
+[data-theme='dark'] .id-status-live {
+  background-color: rgba(34, 197, 94, 0.18);
+  color: #4ade80;
+}
+
+[data-theme='dark'] .id-status-progress {
+  background-color: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+}
+
+[data-theme='dark'] .id-status-no {
+  background-color: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-700);
+}
+
+/* Matching color dot in front of legend bullets ("Live = ...") */
+.id-status-dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  margin-right: 0.55rem;
+  vertical-align: middle;
+}
+
+.id-status-dot.id-status-live { background-color: #22c55e; }
+.id-status-dot.id-status-progress { background-color: #f59e0b; }
+.id-status-dot.id-status-no { background-color: var(--ifm-color-emphasis-500); }
+
+/* Vendor logo headings (### <img .../> ###) - normalize wildly inconsistent
+   width= attributes editors put on the raw <img> tags into one tidy row */
+html[class*="docs-doc-id-identitysolutions"] .markdown h3 {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+html[class*="docs-doc-id-identitysolutions"] .markdown h2:first-of-type + h3,
+html[class*="docs-doc-id-identitysolutions"] .markdown > h3:first-of-type {
+  margin-top: 2rem;
+  padding-top: 0;
+  border-top: none;
+}
+
+html[class*="docs-doc-id-identitysolutions"] .markdown h3 img {
+  max-height: 28px;
+  width: auto !important;
+  max-width: 260px;
+  object-fit: contain;
+  /* A few hotlinked logos are white/transparent artwork meant for dark
+     backgrounds - a light, translucent chip gives them a tiny bit of
+     contrast without darkening/obscuring the (majority of) normal logos */
+  background-color: rgba(148, 163, 184, 0.14);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
+}
+
+/* The "[`Criteo Id`]" anchor right under each heading, styled as a small
+   uppercase eyebrow label instead of a raw inline-code link */
+html[class*="docs-doc-id-identitysolutions"] .markdown h3 + p {
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+}
+
+html[class*="docs-doc-id-identitysolutions"] .markdown h3 + p a {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ifm-color-emphasis-600);
+  text-decoration: none;
+}
+
+html[class*="docs-doc-id-identitysolutions"] .markdown h3 + p a code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  font-family: inherit;
+}
+
+/* Tables: horizontal scroll on narrow screens, sticky-feeling header, hover
+   row highlight - all purely cosmetic, table markup itself is untouched */
+html[class*="docs-doc-id-identitysolutions"] .markdown table,
+html[class*="docs-doc-id-contextualstandards"] .markdown table,
+html[class*="docs-doc-id-werbeformen"] .markdown table {
+  display: block;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+html[class*="docs-doc-id-identitysolutions"] .markdown table thead tr,
+html[class*="docs-doc-id-contextualstandards"] .markdown table thead tr,
+html[class*="docs-doc-id-werbeformen"] .markdown table thead tr {
+  background-color: var(--ifm-color-primary);
+}
+
+html[class*="docs-doc-id-identitysolutions"] .markdown table th,
+html[class*="docs-doc-id-contextualstandards"] .markdown table th,
+html[class*="docs-doc-id-werbeformen"] .markdown table th {
+  color: #ffffff;
+  border-color: var(--ifm-color-primary);
+  white-space: nowrap;
+}
+
+html[class*="docs-doc-id-identitysolutions"] .markdown table tbody tr:hover,
+html[class*="docs-doc-id-contextualstandards"] .markdown table tbody tr:hover,
+html[class*="docs-doc-id-werbeformen"] .markdown table tbody tr:hover {
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+/* Heading rhythm (Case Studies categories, Contextual Standard chapters,
+   Werbeformen "Technische Spezifikationen" etc.) */
+html[class*="docs-doc-id-identitysolutions"] .markdown h2,
+html[class*="docs-doc-id-contextualstandards"] .markdown h2,
+html[class*="docs-doc-id-werbeformen"] .markdown h2 {
+  margin-top: 3rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--ifm-color-secondary);
+}
+
+/* Numbered list rows (e.g. Case Studies) */
+html[class*="docs-doc-id-identitysolutions"] .markdown ol > li,
+html[class*="docs-doc-id-contextualstandards"] .markdown ol > li,
+html[class*="docs-doc-id-werbeformen"] .markdown ol > li {
+  padding: 0.6rem 0.75rem;
+  border-radius: 6px;
+  transition: background-color 0.15s ease;
+}
+
+html[class*="docs-doc-id-identitysolutions"] .markdown ol > li:hover,
+html[class*="docs-doc-id-contextualstandards"] .markdown ol > li:hover,
+html[class*="docs-doc-id-werbeformen"] .markdown ol > li:hover {
+  background-color: var(--ifm-color-emphasis-100);
+}
