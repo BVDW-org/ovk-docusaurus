@@ -29,7 +29,6 @@ Note: Score Media and Bauer use their Erstvermarkter's ID solutions. Azerion, ne
 | Ströer                       | In-Progress  |                                                                              |
 | UIM                          | Live         | Bid Stream (deal id/unrestricted), Data Marketplace (multiple), Data Clean Room|
 
-## ##
 ### <img src="https://www.first-id.fr/wp-content/uploads/First-id-master-logo-blanc-480x136.png" width="100"></img> ###
 [`First-Id`](#First-Id)
 | Vermarkter                   | Status     | Usable Via |
