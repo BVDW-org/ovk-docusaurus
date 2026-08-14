@@ -4,7 +4,7 @@
 window.OVK_LANDSCAPE_CONFIG = {
   // ID-Definitionen (Erweiterbar)
   ids: [
-    { id: "utiq", name: "Utiq", shortName: "Utiq", color: "#fde8e8", textColor: "#c81e1e", description: "Telekom-basiertes ID-System für sicheres Consent-Targeting." },
+    { id: "utiq", name: "Utiq", shortName: "Utiq", color: "#fde8e8", textColor: "#c81e1e", description: "Telco-basiertes ID-System für sicheres Consent-Targeting." },
     { id: "netid_utiq", name: "netID via Utiq", shortName: "netID / Utiq", color: "#e6f4ea", textColor: "#137333", description: "Targeting über das Utiq-Netzwerk unter Nutzung von netID-Daten." },
     { id: "netid", name: "netID", shortName: "netID", color: "#e6f4ea", textColor: "#137333", description: "Direktes, konsensbasiertes Login- und ID-System der European netID Foundation." }
   ],
@@ -82,7 +82,7 @@ window.OVK_LANDSCAPE_CONFIG = {
       id: "pubmatic",
       name: "PubMatic",
       category: "curation",
-      supportedUsecases: ["fc", "targeting", "targeting_pre"],
+      supportedUsecases: ["targeting_pre"],
       supportedVermarkter: ["ad_alliance", "seven_one_media","bcn", "uim"],
       supportedIds: ["utiq", "netid_utiq"]
     },
@@ -90,7 +90,7 @@ window.OVK_LANDSCAPE_CONFIG = {
       id: "index_exchange",
       name: "Index Exchange",
       category: "curation",
-      supportedUsecases: ["targeting", "targeting_pre"],
+      supportedUsecases: [],
       supportedVermarkter: ["ad_alliance", "media_impact","bcn", "seven_one_media", "uim", "iqd"],
       supportedIds: ["utiq", "netid_utiq"]
     },
