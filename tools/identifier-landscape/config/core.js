@@ -8,7 +8,7 @@ window.OVK_LANDSCAPE_CONFIG = {
     { id: "netid_utiq", name: "netID via Utiq", shortName: "netID / Utiq", color: "#e6f4ea", textColor: "#137333", description: "Targeting über das Utiq-Netzwerk unter Nutzung von netID-Daten." },
     { id: "netid", name: "netID", shortName: "netID", color: "#e6f4ea", textColor: "#137333", description: "Direktes, konsensbasiertes Login- und ID-System der European netID Foundation." }
   ],
-
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   // 1. Stufe: Usecases (Vorfilter)
   usecases: [
     {
@@ -24,10 +24,10 @@ window.OVK_LANDSCAPE_CONFIG = {
     {
       id: "targeting_pre",
       name: "Targeting (Pretargeted Pub. Deals)",
-      description: "Pre-Targeting auf Publisher-Seite gesteuert durch die SSP."
+      description: "Pre-Targeting auf Publisher-Seite (und Signalisierung ID der ID-Lösung) gesteuert durch die SSP."
     }
   ],
-
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   // 2. Stufe: DSP (Demand Side Platforms)
   dsps: [
     {
@@ -67,7 +67,8 @@ window.OVK_LANDSCAPE_CONFIG = {
       supportedIds: []
     }
   ],
-
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  //["ad_alliance", "seven_one_media","bcn", "uim", "media_impact", "stroeer", "visoon", "score"
   // 3. Stufe: SSP (Supply Side Platforms)
   ssps: [
     {
@@ -128,7 +129,7 @@ supportedUsecases: ["targeting_pre"],
   ],
   dataPartners: []
 };
-
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Für Node.js CommonJS-Umgebung (Validierung)
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = window.OVK_LANDSCAPE_CONFIG;

@@ -10,9 +10,9 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
   name: "BCN Brand Community Network GmbH",
   description: "Vermarkter für BurdaVerlag, BurdaForward, Funke, Klambt, Delius Klasing und Kouneli",
   supportedInventoryTypes: [
-    { type: "desktop", coverage: 100 },
-    { type: "mobile", coverage: 95 },
-    { type: "app", coverage: 30 }
+    { type: "desktop", coverage: },
+    { type: "mobile", coverage:  },
+    { type: "app", coverage:  }
   ],
   supportedIds: [
     { id: "utiq", coverage: 50 }
