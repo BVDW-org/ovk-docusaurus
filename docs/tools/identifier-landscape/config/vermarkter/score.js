@@ -6,14 +6,14 @@ if (!window.OVK_LANDSCAPE_CONFIG.vermarkter) {
 }
 
 window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
-  id: "iqd",
-  name: "IQ Digital Media",
-  description: "Vermarkter für IQ Digital Media.",
+  id: "score",
+  name: "Score Media Group",
+  description: "Score Media Group.",
   supportedInventoryTypes: [
     { type: "desktop", coverage:  },
     { type: "mobile", coverage:  }
   ],
   supportedIds: [
-    { id: "utiq", coverage: 75 }
+    { id: "utiq", coverage:  16}
   ]
 });

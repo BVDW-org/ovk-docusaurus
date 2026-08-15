@@ -10,13 +10,12 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
   name: "Seven.One Media",
   description: "Vermarkter der ProSiebenSat.1 Media SE.",
   supportedInventoryTypes: [
-    { type: "desktop", coverage: 80 },
-    { type: "mobile", coverage: 75 },
-    { type: "ctv", coverage: 90 },
-    { type: "app", coverage: 65 }
+    { type: "desktop", coverage:  },
+    { type: "mobile", coverage:  },
+    { type: "ctv", coverage:  },
+    { type: "app", coverage: }
   ],
   supportedIds: [
-    { id: "utiq", coverage: 90 },
-    { id: "netid_utiq", coverage: 75 }
+    { id: "netid_utiq", coverage: 60 }
   ]
 });
