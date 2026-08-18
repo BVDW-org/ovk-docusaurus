@@ -10,7 +10,7 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
   name: "Visoon Video Impact",
   description: "Visoon Video Impact.",
   supportedInventoryTypes: [
-    { type: "ctv", coverage:  }
+    { type: "ctv", coverage:  50}
   ],
   supportedIds: [
     { id: "utiq", coverage:  50}
