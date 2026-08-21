@@ -15,15 +15,13 @@ Pause Ads sind Banner, die ausgespielt werden, wenn ein Nutzer während des Stre
 | Ebene           | Video          |
 | Ebene 2         | In-Stream      |
 | Größe           | in px          |
-| Min. Breite     | 300            |
-| Max. Breite     | 640            |
-| Min. Höhe       | 250            |
-| Max. Höhe       | 480            |
-| Max. Dateigewicht| 200 kB        |
+| Min. Breite     | 1920            |
+| Min. Höhe       | 1080            |
+| Max. Dateigewicht| 800 kB        |
 
 
 
 
 
 ## Formate
-HTML5 oder Image
+Nur Image (.jpg, .png)
