@@ -6,23 +6,16 @@ if (!window.OVK_LANDSCAPE_CONFIG.vermarkter) {
 }
 
 window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
-  id: "stroeer",
-  name: "Ströer",
-  description: "Vermarkter für Out-of-Home und digitale Medien.",
+  id: "visoon",
+  name: "Visoon Video Impact",
+  description: "Visoon Video Impact.",
   supportedInventoryTypes: [
     {
-      type: "desktop",
+      type: "ctv",
       supportedIds: [
         {
-          id: "utiq"
-        }
-      ]
-    },
-    {
-      type: "mobile",
-      supportedIds: [
-        {
-          id: "utiq"
+          id: "utiq",
+          coverage: 50
         }
       ]
     }

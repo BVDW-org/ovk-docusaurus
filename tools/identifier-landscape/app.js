@@ -49,7 +49,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       "config/vermarkter/stroeer.js",
       "config/vermarkter/uim.js",
       "config/vermarkter/iqd.js",
-      "config/vermarkter/bcn.js",
       "config/data_partners.js"
     ];
     
@@ -114,12 +113,30 @@ document.addEventListener("DOMContentLoaded", async () => {
       // 5. Vermarkter normalisieren
       if (Array.isArray(window.OVK_LANDSCAPE_CONFIG.vermarkter)) {
         window.OVK_LANDSCAPE_CONFIG.vermarkter.forEach(v => {
-          if (Array.isArray(v.supportedIds)) {
-            v.supportedIds = v.supportedIds.map(idObj => {
-              if (typeof idObj === 'string') return idObj.toLowerCase();
-              return { ...idObj, id: idObj.id.toLowerCase() };
+          let aggregatedIds = [];
+          if (Array.isArray(v.supportedInventoryTypes)) {
+            v.supportedInventoryTypes.forEach(inv => {
+              if (Array.isArray(inv.supportedIds)) {
+                inv.supportedIds = inv.supportedIds.map(idObj => {
+                  let normalizedId;
+                  let newIdObj;
+                  if (typeof idObj === 'string') {
+                    normalizedId = idObj.toLowerCase();
+                    newIdObj = { id: normalizedId };
+                  } else {
+                    normalizedId = idObj.id.toLowerCase();
+                    newIdObj = { ...idObj, id: normalizedId };
+                  }
+                  
+                  if (!aggregatedIds.find(i => i.id === normalizedId)) {
+                    aggregatedIds.push(newIdObj);
+                  }
+                  return newIdObj;
+                });
+              }
             });
           }
+          v.supportedIds = aggregatedIds;
         });
       }
     }
@@ -216,7 +233,8 @@ document.addEventListener("DOMContentLoaded", async () => {
           item.supportedInventoryTypes.forEach(typeObj => {
             const typeStr = typeof typeObj === 'string' ? typeObj : typeObj.type;
             const coverage = typeof typeObj === 'string' ? null : typeObj.coverage;
-            const iconWrapper = getInventoryTypeIcon(typeStr, coverage);
+            const invSupportedIds = typeof typeObj === 'string' ? [] : (typeObj.supportedIds || []);
+            const iconWrapper = getInventoryTypeIcon(typeStr, coverage, invSupportedIds);
             if (iconWrapper) {
               iconsSpan.appendChild(iconWrapper);
             }
@@ -224,13 +242,13 @@ document.addEventListener("DOMContentLoaded", async () => {
           h3.appendChild(iconsSpan);
         }
       }
-
+      
       appendIdBadges(card, item.supportedIds);
       listVermarkters.appendChild(card);
     });
   }
 
-  function getInventoryTypeIcon(type, coverage = null) {
+  function getInventoryTypeIcon(type, coverage = null, supportedIds = []) {
     const wrapper = document.createElement("span");
     wrapper.className = `inventory-icon-wrapper icon-${type}`;
     
@@ -256,8 +274,16 @@ document.addEventListener("DOMContentLoaded", async () => {
         break;
     }
     
-    if (coverage !== null && coverage !== undefined) {
-      tooltip += ` ~ ${coverage}% Inventar mit ID verfügbar`;
+    if (supportedIds && supportedIds.length > 0) {
+      tooltip += "\n\nVerfügbare IDs:\n";
+      const idStrings = supportedIds.map(idObj => {
+        const idStr = typeof idObj === 'string' ? idObj : idObj.id;
+        const idCov = typeof idObj === 'string' ? null : idObj.coverage;
+        const idDef = window.OVK_LANDSCAPE_CONFIG.ids.find(i => i.id === idStr);
+        const name = idDef ? idDef.shortName : idStr;
+        return idCov !== null && idCov !== undefined ? `- ${name} (${idCov}%)` : `- ${name}`;
+      });
+      tooltip += idStrings.join("\n");
     }
     
     wrapper.innerHTML = svgContent;
@@ -316,7 +342,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             </span>
             <div>
               <span style="font-weight: 600; font-size: 0.9rem;">${idDef.name}</span>
-              ${coverage !== null && coverage !== undefined ? `<span style="font-size: 0.75rem; margin-left: 6px; padding: 2px 5px; background: #e0f2fe; color: #1A3D6A; border-radius: 4px; font-weight: 600;">${coverage}% Abdeckung</span>` : ""}
+              ${coverage !== null && coverage !== undefined ? `<span style="font-size: 0.75rem; margin-left: 6px; padding: 2px 5px; background: #e0f2fe; color: #0056cc; border-radius: 4px; font-weight: 600;">${coverage}% Abdeckung</span>` : ""}
               ${idDef.description ? `<div style="font-size: 0.8rem; color: var(--color-text-light); line-height: 1.3;">${idDef.description}</div>` : ""}
             </div>
           </div>
