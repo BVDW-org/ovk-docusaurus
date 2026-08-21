@@ -10,12 +10,39 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
   name: "Ad Alliance",
   description: "Vermarkter von RTL Deutschland, Gruner + Jahr etc.",
   supportedInventoryTypes: [
-    { type: "desktop", coverage: 30 },
-    { type: "mobile", coverage: 30 },
-    { type: "ctv", coverage: 30 }
-  ],
-  supportedIds: [
-    { id: "utiq", coverage: 30 },
-    { id: "netid_utiq", coverage: 30 }
+    {
+      type: "desktop",
+      supportedIds: [
+        {
+          id: "utiq",
+          coverage: 15
+        },
+        {
+          id: "netid_utiq"
+        }
+      ]
+    },
+    {
+      type: "mobile",
+      supportedIds: [
+        {
+          id: "utiq",
+          coverage: 15
+        },
+        {
+          id: "utiq",
+          coverage: 25
+        }
+      ]
+    },
+    {
+      type: "ctv",
+      supportedIds: [
+        {
+          id: "netid_utiq",
+          coverage: 30
+        }
+      ]
+    }
   ]
 });

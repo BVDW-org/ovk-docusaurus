@@ -10,10 +10,23 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
   name: "Score Media Group",
   description: "Score Media Group.",
   supportedInventoryTypes: [
-    { type: "desktop", coverage:  16},
-    { type: "mobile", coverage:  16}
-  ],
-  supportedIds: [
-    { id: "utiq", coverage:  16}
+    {
+      type: "desktop",
+      supportedIds: [
+        {
+          id: "utiq",
+          coverage: 16
+        }
+      ]
+    },
+    {
+      type: "mobile",
+      supportedIds: [
+        {
+          id: "utiq",
+          coverage: 16
+        }
+      ]
+    }
   ]
 });

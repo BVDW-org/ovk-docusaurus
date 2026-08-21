@@ -10,10 +10,23 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
   name: "IQ Digital Media",
   description: "Vermarkter für IQ Digital Media.",
   supportedInventoryTypes: [
-    { type: "desktop", coverage: 20},
-    { type: "mobile", coverage:  20}
-  ],
-  supportedIds: [
-    { id: "utiq", coverage: 20 }
+    {
+      type: "desktop",
+      supportedIds: [
+        {
+          id: "utiq",
+          coverage: 20
+        }
+      ]
+    },
+    {
+      type: "mobile",
+      supportedIds: [
+        {
+          id: "utiq",
+          coverage: 20
+        }
+      ]
+    }
   ]
 });

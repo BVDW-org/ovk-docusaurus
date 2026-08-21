@@ -10,12 +10,38 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
   name: "Media Impact",
   description: " Vermarkter von Axel Springer.",
   supportedInventoryTypes: [
-    { type: "desktop", coverage: 0},
-    { type: "mobile", coverage:  0},
-    { type: "app", coverage:  0}
-  ],
-  supportedIds: [
-    { id: "utiq", coverage:  0},
-    { id: "netid", coverage:  0}
+    {
+      type: "desktop",
+      supportedIds: [
+        {
+          id: "utiq"
+        },
+        {
+          id: "netid"
+        }
+      ]
+    },
+    {
+      type: "mobile",
+      supportedIds: [
+        {
+          id: "utiq"
+        },
+        {
+          id: "netid"
+        }
+      ]
+    },
+    {
+      type: "app",
+      supportedIds: [
+        {
+          id: "utiq"
+        },
+        {
+          id: "netid"
+        }
+      ]
+    }
   ]
 });
