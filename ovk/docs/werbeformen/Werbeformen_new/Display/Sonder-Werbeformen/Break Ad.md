@@ -3,7 +3,7 @@
 
 
 ## Beschreibung
-Das Break Ad ist geschaffen für eine Pause, die sich der User selbst im Surfverlauf nimmt, beispielsweise nach dem Versenden einer E-Mail, einer zeitweisen Inaktivität auf einer Website oder dem Logout.
+Das Break Ad ist geschaffen für eine Pause, die sich der User selbst im Surfverlauf nimmt, beispielsweise nach dem Versenden einer E-Mail, einer zeitweisen Inaktivität auf einer Website oder nach dem Logout.
 
 ## Technische Spezifikationen
 
