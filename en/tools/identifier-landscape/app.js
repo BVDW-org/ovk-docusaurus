@@ -44,17 +44,20 @@ document.addEventListener("DOMContentLoaded", async () => {
   async function loadConfigData() {
     const files = [
       "config/vermarkter/ad_alliance.js",
+      "config/vermarkter/bcn.js",
+      "config/vermarkter/iqd.js",
       "config/vermarkter/media_impact.js",
+      "config/vermarkter/score.js",
       "config/vermarkter/seven_one_media.js",
       "config/vermarkter/stroeer.js",
       "config/vermarkter/uim.js",
-      "config/vermarkter/iqd.js",
+      "config/vermarkter/visoon.js",
       "config/data_partners.js"
     ];
     
     for (const file of files) {
       try {
-        const response = await fetch(file + "?v=1.0.6");
+        const response = await fetch(`${file}?t=${Date.now()}`);
         if (!response.ok) {
           throw new Error(`HTTP ${response.status} beim Laden von ${file}`);
         }
@@ -299,7 +302,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     
     supportedIds.forEach(idObj => {
       const idStr = typeof idObj === 'string' ? idObj : idObj.id;
-      const coverage = typeof idObj === 'string' ? null : idObj.coverage;
       const idDef = OVK_LANDSCAPE_CONFIG.ids.find(i => i.id === idStr);
       if (idDef) {
         const badge = document.createElement("span");
@@ -307,12 +309,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         badge.style.backgroundColor = idDef.color;
         badge.style.color = idDef.textColor || "#ffffff";
         badge.textContent = idDef.shortName;
-        
-        let tooltip = idDef.name;
-        if (coverage !== null && coverage !== undefined) {
-          tooltip += ` ~ ${coverage}% Inventar mit ID verfügbar`;
-        }
-        badge.setAttribute("title", tooltip);
+        badge.setAttribute("title", idDef.name);
         
         badgeContainer.appendChild(badge);
       }
