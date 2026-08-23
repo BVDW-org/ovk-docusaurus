@@ -43,6 +43,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   async function loadConfigData() {
     const files = [
+      "config/core.js",
+      "config/data_partners.js",
       "config/vermarkter/ad_alliance.js",
       "config/vermarkter/bcn.js",
       "config/vermarkter/iqd.js",
@@ -51,22 +53,52 @@ document.addEventListener("DOMContentLoaded", async () => {
       "config/vermarkter/seven_one_media.js",
       "config/vermarkter/stroeer.js",
       "config/vermarkter/uim.js",
-      "config/vermarkter/visoon.js",
-      "config/data_partners.js"
+      "config/vermarkter/visoon.js"
     ];
     
+    let latestTimestamp = 0;
+
     for (const file of files) {
       try {
         const response = await fetch(`${file}?t=${Date.now()}`);
         if (!response.ok) {
           throw new Error(`HTTP ${response.status} beim Laden von ${file}`);
         }
+
+        const lastModified = response.headers.get("Last-Modified");
+        if (lastModified) {
+          const modTime = new Date(lastModified).getTime();
+          if (!isNaN(modTime) && modTime > latestTimestamp) {
+            latestTimestamp = modTime;
+          }
+        }
+
         const code = await response.text();
         (new Function(code))();
       } catch (err) {
         console.error(`Resilienz-Warnung: Konfigurationsdatei "${file}" konnte nicht geladen oder geparst werden. Der Rest der Anwendung wird geladen.`, err);
       }
     }
+
+    updateConfigStandDate(latestTimestamp);
+  }
+
+  function updateConfigStandDate(timestamp) {
+    const el = document.getElementById("config-stand-date");
+    if (!el) return;
+
+    let dateObj;
+    if (timestamp && timestamp > 0) {
+      dateObj = new Date(timestamp);
+    } else {
+      dateObj = new Date();
+    }
+
+    const day = String(dateObj.getDate()).padStart(2, '0');
+    const month = String(dateObj.getMonth() + 1).padStart(2, '0');
+    const year = dateObj.getFullYear();
+
+    el.textContent = `${day}.${month}.${year}`;
   }
 
   function normalizeConfigData() {
@@ -278,7 +310,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
     
     if (supportedIds && supportedIds.length > 0) {
-      tooltip += "\n\nVerfügbare IDs:\n";
+      tooltip += "\n\nVerfügbare IDs (ID Coverage):\n";
       const idStrings = supportedIds.map(idObj => {
         const idStr = typeof idObj === 'string' ? idObj : idObj.id;
         const idCov = typeof idObj === 'string' ? null : idObj.coverage;
@@ -329,7 +361,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     supportedIds.forEach(idObj => {
       const idStr = typeof idObj === 'string' ? idObj : idObj.id;
-      const coverage = typeof idObj === 'string' ? null : idObj.coverage;
       const idDef = OVK_LANDSCAPE_CONFIG.ids.find(i => i.id === idStr);
       if (idDef) {
         html += `
@@ -339,7 +370,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             </span>
             <div>
               <span style="font-weight: 600; font-size: 0.9rem;">${idDef.name}</span>
-              ${coverage !== null && coverage !== undefined ? `<span style="font-size: 0.75rem; margin-left: 6px; padding: 2px 5px; background: #e0f2fe; color: #0056cc; border-radius: 4px; font-weight: 600;">${coverage}% Abdeckung</span>` : ""}
               ${idDef.description ? `<div style="font-size: 0.8rem; color: var(--color-text-light); line-height: 1.3;">${idDef.description}</div>` : ""}
             </div>
           </div>
