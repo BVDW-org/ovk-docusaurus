@@ -1,22 +1,32 @@
 # OVK ID Landscape Map
 
-Dieses Projekt ist eine interaktive Visualisierung der 5 Stufen des OVK ID-Workflows: **Usecase**, **DSP**, **SSP**, **Vermarkter** und **Publisher**. 
+Projekt zur interaktiven Visualisierung und Filterung der Stufen der **OVK ID Landscape Map**:
+- **Stage 1**: Usecases
+- **Stage 1a**: Data Partner (aktiviere Usecase "Targeting (Data Partner)")
+- **Stage 2**: DSPs (Demand Side Platforms)
+- **Stage 3**: SSPs (Supply Side Platforms)
+- **Stage 4**: Vermarkter (Sales Houses inkl. Inventartypen & ID-Reichweiten)
+
 Das Design orientiert sich an den offiziellen Farben und Richtlinien von [ovk.de](https://www.ovk.de/).
 
+---
+
 ## Funktionsweise
-Durch Klick auf eine **Usecase** und/oder eine **DSP** werden inkompatible Partner in den nachgelagerten Stufen (SSP, Vermarkter, Publisher) ausgeblendet bzw. ausgegraut. Die Beziehungen werden über ein einfaches Datenmodell in `config.js` gesteuert.
+
+Durch Auswahl einer **Usecase**, eines **Data Partners** oder einer **DSP** werden inkompatible Partner in den nachgelagerten Stufen (SSP, Vermarkter) automatisch ausgeblendet bzw. ausgegraut. 
+
+In der Detailansicht (Info-Drawer) und in den Inventar-Icons (Desktop, Mobile, App, CTV) werden inventarspezifische ID-Abdeckungen (ID Coverage in %) und detaillierte Beschreibungen angezeigt.
 
 ---
 
 ## Konfiguration (`config/`)
 
-Die Konfiguration ist aufgeteilt, um die Pflege zu vereinfachen und Fehler zu reduzieren:
-- `config/core.js`: Enthält die zentralen Register-Arrays: `ids`, `usecases`, `dsps` und `ssps`.
-- `config/vermarkter/`: Ein Unterordner mit einer eigenen Konfigurationsdatei pro Vermarkter (z. B. `ad_alliance.js`, `media_impact.js`), in denen die Publisher direkt verschachtelt gepflegt werden.
+Die Konfiguration ist modular aufgebaut, um die Pflege übersichtlich zu halten:
+- **`config/core.js`**: Enthält die zentralen Register-Arrays: `ids`, `usecases`, `dsps` und `ssps`.
+- **`config/data_partners.js`**: Enthält die Konfiguration aller Data Partner (`dataPartners`).
+- **`config/vermarkter/`**: 9 eigenständige Konfigurationsdateien pro Vermarkter (`ad_alliance.js`, `bcn.js`, `iqd.js`, `media_impact.js`, `score.js`, `seven_one_media.js`, `stroeer.js`, `uim.js`, `visoon.js`).
 
 ### Datenstruktur
-
-Die Konfiguration besteht aus 6 zentralen Arrays, aufgeteilt auf die Dateien:
 
 #### 0. ID-Definitionen (`config/core.js`)
 Zentrale Registrierung aller ID-Systeme mit Name, Kurzname, Farbe und Beschreibung:
@@ -27,7 +37,7 @@ Zentrale Registrierung aller ID-Systeme mit Name, Kurzname, Farbe und Beschreibu
   shortName: "Utiq",
   color: "#e30613",
   textColor: "#ffffff",
-  description: "Telekom-basiertes ID-System..."
+  description: "Telco-basiertes ID System für sicheres Consent-Targeting."
 }
 ```
 
@@ -35,49 +45,61 @@ Zentrale Registrierung aller ID-Systeme mit Name, Kurzname, Farbe und Beschreibu
 ```javascript
 {
   id: "targeting",
-  name: "Targeting"
+  name: "Targeting (Third Party Data / Cookie-basiert)"
 }
 ```
 
 #### 2. DSPs (`config/core.js`)
-Eine DSP definiert, welche Usecases, SSPs, Vermarkter und ID-Systeme kompatibel sind.
 ```javascript
 {
   id: "ttd",
   name: "The Trade Desk",
-  supportedUsecases: ["fc", "targeting"],
-  supportedSSPs: ["pubmatic", "index_exchange"],
-  supportedVermarkter: ["ad_alliance"],
-  supportedIds: ["utiq", "netid_utiq"]
+  logo: "TTD",
+  supportedUsecases: ["fc", "targeting", "targeting_pre"],
+  supportedSSPs: ["pubmatic", "index_exchange", "magnite", "xandr"],
+  supportedVermarkter: ["ad_alliance", "bcn", "iqd", "media_impact", "score", "seven_one_media", "stroeer", "uim", "visoon"],
+  supportedIds: ["utiq", "netid_utiq", "netid"]
 }
 ```
 
 #### 3. SSPs (`config/core.js`)
-Eine SSP definiert, welche Usecases sie unterstützt, an welche Vermarkter sie angebunden ist und welche IDs sie unterstützt.
 ```javascript
 {
   id: "pubmatic",
   name: "PubMatic",
   category: "curation",
-  supportedUsecases: ["fc", "targeting"],
-  supportedVermarkter: ["ad_alliance", "media_impact"],
+  supportedUsecases: ["targeting_pre"],
+  supportedVermarkter: ["bcn", "iqd", "media_impact", "uim", "visoon"],
   supportedIds: ["utiq"]
 }
 ```
 
-#### 4. Vermarkter & Publisher (`config/vermarkter/*.js`)
-Publisher sind direkt hierarchisch in das jeweilige Vermarkter-Objekt verschachtelt, was Zuordnungsfehler (z. B. durch Tippfehler in einer `vermarkterId`) ausschließt:
+#### 4. Data Partner (`config/data_partners.js`)
+```javascript
+{
+  id: "iq_data",
+  name: "IQ digital data",
+  description: "Daten von IQ digital",
+  supportedIds: ["utiq"],
+  supportedDSPs: ["adform"],
+  supportedSSPs: ["index_exchange", "xandr"]
+}
+```
+
+#### 5. Vermarkter (`config/vermarkter/*.js`)
+Vermarkter definieren ihr unterstütztes Inventar (Desktop, Mobile, App, CTV) sowie die jew. ID-Systeme mit Reichweiten-Prozenten:
 ```javascript
 window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
   id: "ad_alliance",
   name: "Ad Alliance",
   description: "Vermarkter von RTL Deutschland, Gruner + Jahr etc.",
-  publishers: [
-    { 
-      id: "rtl", 
-      name: "RTL.de", 
-      supportedInventoryTypes: ["desktop", "mobile", "ctv"], 
-      supportedIds: ["utiq", "netid_utiq"] 
+  supportedInventoryTypes: [
+    {
+      type: "desktop",
+      supportedIds: [
+        { id: "utiq", coverage: 15 },
+        { id: "netid_utiq", coverage: 25 }
+      ]
     }
   ]
 });
@@ -85,27 +107,40 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
 
 ---
 
-## Vererbung von ID-Systemen
-Vermarkter-Kacheln deklarieren in ihren Konfigurationsdateien keine statischen ID-Systeme. Stattdessen berechnet die Anwendung (`app.js`) beim Rendern dynamisch die Vereinigungsmenge (Union) aller IDs, die von den dem Vermarkter zugeordneten Publishern unterstützt werden. Dies stellt sicher, dass ID-Daten nur an einer einzigen Stelle gepflegt werden müssen.
+## Interaktive Editoren
+
+Das Projekt bietet visuelle Web-Editoren zur einfachen Bearbeitung der Konfigurationen ohne Syntaxfehler:
+
+1. **`vermarkter_editor.html`**: Visual-Editor für Vermarkter-Dateien unter `config/vermarkter/*.js`.
+2. **`core_editor.html`**: Visual-Editor für die zentrale `config/core.js` (DSPs, SSPs, IDs, Usecases) sowie `config/data_partners.js` (Data Partner), inklusive dynamischer Vermarkter-Checkboxen und Live-Code-Vorschau.
+
+---
+
+## Cache-Busting & Dynamisches Stand-Datum
+
+- **Dynamisches Cache-Busting**: Alle Konfigurationsskripte und Fetch-Aufrufe verwenden `?t=${Date.now()}`, sodass Änderungen nach einem Neuladen der Seite (`F5`) sofort wirksam werden.
+- **Automatisches Stand-Datum**: Der Hinweistext am Seitenende (*"Stand: TT.MM.JJJJ"*) ermittelt dynamisch das Änderungsdatum (`Last-Modified`) der jüngsten Konfigurationsdatei.
 
 ---
 
 ## Automatisierte Konfigurationsvalidierung
-Um Fehler in der Konfiguration (Syntaxfehler, fehlerhafte ID-Referenzen) sofort zu erkennen, kann das Validierungsskript über Node.js ausgeführt werden:
+
+Prüfung aller Konfigurationsdateien auf Syntax und referenzielle Integrität über Node.js (oder WSL):
 ```bash
 node scripts/validate-config.js
 ```
-Dieses prüft:
-- Ob alle Dateien fehlerfrei geladen und geparst werden können.
-- Ob alle referenzierten IDs, SSPs und Vermarkter existieren (Referenzielle Integrität).
-- Ob Pflichtfelder auf allen Objekten gepflegt sind.
 
 ---
 
-## Projektdateien
-- `index.html` - Struktur der Webseite und Einbindung der Konfigurationen
-- `style.css` - Stylesheet (Farben, Grid-Layout, Responsive Layout)
-- `config/` - Ordner mit Core- und Vermarkter-Konfigurationen
-- `app.js` - Logik (Initialisierungs-Adapter zur Abflachung, Render-Schleife, Filterung, Interaktionslogik)
-- `scripts/validate-config.js` - Validierungsskript für die Konfigurationen
-- `docs/` - Dokumentation und ADRs
+## Projektstruktur
+
+- `index.html` - Hauptseite mit interaktiver Stufen-Visualisierung
+- `style.css` - Haupt-Stylesheet
+- `app.js` - Anwendungslogik, Filterung & dynamisches Konfigurationsladen
+- `vermarkter_editor.html` - Visueller Editor für Vermarkter-Konfigurationen
+- `core_editor.html` - Visueller Editor für Core- & Data-Partner-Konfigurationen
+- `config/core.js` - Zentrale Register-Konfiguration (IDs, Usecases, DSPs, SSPs)
+- `config/data_partners.js` - Data-Partner-Konfiguration
+- `config/vermarkter/` - 9 Vermarkter-Konfigurationsdateien
+- `scripts/validate-config.js` - Skript zur automatisierten Datenvalidierung
+- `docs/adr/` - Architecture Decision Records (ADRs 0001 - 0012)

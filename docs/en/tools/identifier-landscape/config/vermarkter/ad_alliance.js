@@ -14,8 +14,7 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
       type: "desktop",
       supportedIds: [
         {
-          id: "utiq",
-          coverage: 15
+          id: "utiq"
         },
         {
           id: "netid_utiq"
@@ -30,7 +29,7 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
           coverage: 15
         },
         {
-          id: "utiq",
+          id: "netid_utiq",
           coverage: 25
         }
       ]

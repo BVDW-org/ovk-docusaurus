@@ -8,18 +8,18 @@ if (!window.OVK_LANDSCAPE_CONFIG.vermarkter) {
 window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
   id: "uim",
   name: "United Internet Media",
-  description: "Vermarkter für Web.de und GMX.",
+  description: "Mediavermarkter der konzerneigenen Mail-Portale WEB.DE und GMX",
   supportedInventoryTypes: [
     {
       type: "desktop",
       supportedIds: [
         {
           id: "netid_utiq",
-          coverage: 70
+          coverage: 67
         },
         {
           id: "netid",
-          coverage: 97
+          coverage: 82
         }
       ]
     },
@@ -28,7 +28,7 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
       supportedIds: [
         {
           id: "netid_utiq",
-          coverage: 70
+          coverage: 76
         },
         {
           id: "netid",
@@ -41,11 +41,11 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
       supportedIds: [
         {
           id: "netid_utiq",
-          coverage: 70
+          coverage: 67
         },
         {
           id: "netid",
-          coverage: 97
+          coverage: 94
         }
       ]
     }

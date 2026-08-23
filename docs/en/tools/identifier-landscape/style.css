@@ -2,9 +2,9 @@
 
 /* Custom properties for consistency */
 :root {
-  --color-ovk-red: #FF4627;
-  --color-ovk-blue: #142F52;
-  --color-ovk-light-blue: #1A3D6A;
+  --color-ovk-red: #e2401c;
+  --color-ovk-blue: #004bb4;
+  --color-ovk-light-blue: #0056cc;
   --color-bg-light: #f6f8fa;
   --color-bg-sand: #edeae5;
   --color-bg-dark: #0b1c34;
@@ -645,7 +645,7 @@ a:hover {
 }
 
 /* Responsive Grid adjustments */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .landscape-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -715,7 +715,7 @@ a:hover {
 .inventory-icon-wrapper:hover {
   background-color: #e0f2fe;
   color: var(--color-ovk-blue);
-  border-color: var(--color-ovk-light-blue);
+  border-color: var(--color-ovk-blue-light);
   transform: translateY(-1px);
 }
 
@@ -753,21 +753,21 @@ a:hover {
 
 /* Stage 1a: Data Partner specific styling */
 .stage-datapartner-panel {
-  border-bottom: 3px solid var(--color-ovk-light-blue) !important;
+  border-bottom: 3px solid #0056cc !important; /* Blue color for Stage 1a */
 }
 
 .stage-datapartner-panel .stage-badge {
-  background-color: var(--color-ovk-light-blue) !important;
+  background-color: #0056cc !important;
   color: #ffffff !important;
 }
 
 .stage-datapartner-panel .partner-card.selected {
-  border: 2px solid var(--color-ovk-light-blue) !important;
-  background-color: rgba(26, 61, 106, 0.05) !important;
+  border: 2px solid #0056cc !important;
+  background-color: rgba(0, 86, 204, 0.03) !important;
 }
 
 .stage-datapartner-panel .partner-card.selected::after {
-  background-color: var(--color-ovk-light-blue) !important;
+  background-color: #0056cc !important;
 }
 
 /* Publisher Inventory Type Icons */
