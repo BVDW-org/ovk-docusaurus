@@ -24,12 +24,20 @@
         .remove-btn { background: #c81e1e; padding: 8px 12px; }
         .remove-btn:hover { background: #a01818; }
         .copy-btn { margin-top: 10px; background: #333; }
-        .copy-btn:hover { background: #444; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 15px; }
+        .nav-links a { color: #3b82f6; text-decoration: none; margin-left: 15px; font-weight: 500; }
+        .nav-links a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
 
-<h1>Vermarkter Config Editor</h1>
+<div class="header">
+    <h1>Vermarkter Config Editor</h1>
+    <div class="nav-links">
+        <a href="index.html" target="_blank">OVK Landscape Map öffnen</a>
+        <a href="core_editor.html" target="_blank">Core Editor öffnen</a>
+    </div>
+</div>
 <div class="container">
     <div class="form-section">
         <label for="vermarkterSelect">Vermarkter auswählen:</label>
@@ -77,17 +85,20 @@
     </div>
 </div>
 
-<!-- Load Configurations -->
-<script src="config/core.js"></script>
-<script src="config/vermarkter/ad_alliance.js"></script>
-<script src="config/vermarkter/bcn.js"></script>
-<script src="config/vermarkter/iqd.js"></script>
-<script src="config/vermarkter/media_impact.js"></script>
-<script src="config/vermarkter/score.js"></script>
-<script src="config/vermarkter/seven_one_media.js"></script>
-<script src="config/vermarkter/stroeer.js"></script>
-<script src="config/vermarkter/uim.js"></script>
-<script src="config/vermarkter/visoon.js"></script>
+<!-- Load Configurations with dynamic cache-busting -->
+<script>
+    document.write('<script src="config/core.js?t=' + Date.now() + '"><\/script>');
+    document.write('<script src="config/vermarkter/ad_alliance.js?t=' + Date.now() + '"><\/script>');
+    document.write('<script src="config/vermarkter/bcn.js?t=' + Date.now() + '"><\/script>');
+    document.write('<script src="config/vermarkter/iqd.js?t=' + Date.now() + '"><\/script>');
+    document.write('<script src="config/vermarkter/media_impact.js?t=' + Date.now() + '"><\/script>');
+    document.write('<script src="config/vermarkter/score.js?t=' + Date.now() + '"><\/script>');
+    document.write('<script src="config/vermarkter/seven_one_media.js?t=' + Date.now() + '"><\/script>');
+    document.write('<script src="config/vermarkter/stroeer.js?t=' + Date.now() + '"><\/script>');
+    document.write('<script src="config/vermarkter/uim.js?t=' + Date.now() + '"><\/script>');
+    document.write('<script src="config/vermarkter/visoon.js?t=' + Date.now() + '"><\/script>');
+    document.write('<script src="config/data_partners.js?t=' + Date.now() + '"><\/script>');
+</script>
 
 <script>
     const CONFIG = window.OVK_LANDSCAPE_CONFIG;
