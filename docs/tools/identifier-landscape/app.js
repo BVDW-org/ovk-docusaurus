@@ -52,9 +52,13 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (dirResponse.ok) {
         const dirHtml = await dirResponse.text();
         const matches = dirHtml.match(/href="([^"]+\.js)"/g);
-        if (matches) {
+        if (matches && matches.length) {
           const vermarkterFiles = matches.map(m => "config/vermarkter/" + m.match(/"([^"]+)"/)[1]);
           files = files.concat(vermarkterFiles);
+        } else {
+          // Kein echtes Directory-Listing (z.B. SPA-Fallback eines Dev-/Docs-Servers
+          // liefert hier die index.html statt einer Verzeichnisauflistung zurück).
+          throw new Error("Kein Directory-Listing im Response-Body gefunden.");
         }
       } else {
         throw new Error("HTTP Status " + dirResponse.status);
