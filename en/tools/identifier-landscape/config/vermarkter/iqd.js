@@ -7,15 +7,14 @@ if (!window.OVK_LANDSCAPE_CONFIG.vermarkter) {
 
 window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
   id: "iqd",
-  name: "IQ Digital Media",
-  description: "Vermarkter für IQ Digital Media.",
+  name: "iq digital media marketing GmbH",
+  description: " ",
   supportedInventoryTypes: [
     {
       type: "desktop",
       supportedIds: [
         {
-          id: "utiq",
-          coverage: 25
+          id: "utiq"
         }
       ]
     },
@@ -23,8 +22,7 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
       type: "mobile",
       supportedIds: [
         {
-          id: "utiq",
-          coverage: 20
+          id: "utiq"
         }
       ]
     }

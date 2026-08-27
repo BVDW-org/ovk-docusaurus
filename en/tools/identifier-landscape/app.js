@@ -42,20 +42,39 @@ document.addEventListener("DOMContentLoaded", async () => {
   // --- Dynamic Resilient Config Loading & Normalization ---
 
   async function loadConfigData() {
-    const files = [
+    let files = [
       "config/core.js",
-      "config/data_partners.js",
-      "config/vermarkter/ad_alliance.js",
-      "config/vermarkter/bcn.js",
-      "config/vermarkter/iqd.js",
-      "config/vermarkter/media_impact.js",
-      "config/vermarkter/score.js",
-      "config/vermarkter/seven_one_media.js",
-      "config/vermarkter/stroeer.js",
-      "config/vermarkter/uim.js",
-      "config/vermarkter/visoon.js"
+      "config/data_partners.js"
     ];
-    
+
+    try {
+      const dirResponse = await fetch("config/vermarkter/");
+      if (dirResponse.ok) {
+        const dirHtml = await dirResponse.text();
+        const matches = dirHtml.match(/href="([^"]+\.js)"/g);
+        if (matches) {
+          const vermarkterFiles = matches.map(m => "config/vermarkter/" + m.match(/"([^"]+)"/)[1]);
+          files = files.concat(vermarkterFiles);
+        }
+      } else {
+        throw new Error("HTTP Status " + dirResponse.status);
+      }
+    } catch (e) {
+      console.warn("Verzeichnis /config/vermarkter/ konnte nicht ausgelesen werden. Verwende Fallback-Liste.", e);
+      files = files.concat([
+        "config/vermarkter/ad_alliance.js",
+        "config/vermarkter/bcn.js",
+        "config/vermarkter/funke.js",
+        "config/vermarkter/iqd.js",
+        "config/vermarkter/media_impact.js",
+        "config/vermarkter/score.js",
+        "config/vermarkter/seven_one_media.js",
+        "config/vermarkter/stroeer.js",
+        "config/vermarkter/uim.js",
+        "config/vermarkter/visoon.js"
+      ]);
+    }
+
     let latestTimestamp = 0;
 
     for (const file of files) {
@@ -222,7 +241,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     
     // Group SSPs by category (Standard vs Curation)
     const categories = [
-      { id: "standard", name: "Standard SSP", description: "ID wird nur durchgereicht" },
+      { id: "standard", name: "Standard SSP", description: "ID wird zur DSP durchgereicht" },
       { id: "curation", name: "Curation SSP", description: "FC & Targeting möglich" }
     ];
     

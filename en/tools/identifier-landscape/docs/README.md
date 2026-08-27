@@ -107,6 +107,19 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
 
 ---
 
+## Lokalen Server starten
+
+Um Probleme mit CORS (Cross-Origin Resource Sharing) beim Laden der Konfigurationen zu vermeiden, muss das Projekt über einen lokalen Webserver ausgeführt werden. 
+
+**Über WSL (Windows Subsystem for Linux):**
+```bash
+# Im Projektverzeichnis ausführen:
+python3 -m http.server 8000
+```
+Das Projekt ist anschließend im Browser unter [http://localhost:8000](http://localhost:8000) erreichbar.
+
+---
+
 ## Interaktive Editoren
 
 Das Projekt bietet visuelle Web-Editoren zur einfachen Bearbeitung der Konfigurationen ohne Syntaxfehler:

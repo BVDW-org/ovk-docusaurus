@@ -7,8 +7,8 @@ if (!window.OVK_LANDSCAPE_CONFIG) {
 window.OVK_LANDSCAPE_CONFIG.dataPartners = [
   {
     id: "iq_data",
-    name: "IQ digital data",
-    description: "Daten von IQ digital",
+    name: "iq digital media marketing GmbH",
+    description: "Datensegmente von iq digital media marketing GmbH",
     supportedIds: [
       "utiq"
     ],
@@ -16,24 +16,22 @@ window.OVK_LANDSCAPE_CONFIG.dataPartners = [
       "adform"
     ],
     supportedSSPs: [
-      "index_exchange",
+      "equativ",
       "xandr"
     ]
   },
   {
     id: "bcn_data",
-    name: "BCN Data",
-    description: "Vermarktereigene Datensegmente des Burda Community Network.",
+    name: "BCN Brand Community Network",
+    description: "Datensegmente des Burda Community Network.",
     supportedIds: [
       "utiq"
     ],
     supportedDSPs: [
-      "ttd",
       "active_agent"
     ],
     supportedSSPs: [
-      "index_exchange",
-      "magnite"
+      "index_exchange"
     ]
   },
   {
@@ -51,6 +49,7 @@ window.OVK_LANDSCAPE_CONFIG.dataPartners = [
     ],
     supportedSSPs: [
       "equativ",
+      "pubmatic",
       "xandr"
     ]
   }
