@@ -8,7 +8,7 @@ if (!window.OVK_LANDSCAPE_CONFIG.vermarkter) {
 window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
   id: "stroeer",
   name: "Ströer",
-  description: "Vermarkter für Out-of-Home und digitale Medien.",
+  description: " ",
   supportedInventoryTypes: [
     {
       type: "desktop",

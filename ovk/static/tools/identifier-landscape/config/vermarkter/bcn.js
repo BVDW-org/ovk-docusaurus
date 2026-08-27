@@ -7,14 +7,15 @@ if (!window.OVK_LANDSCAPE_CONFIG.vermarkter) {
 
 window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
   id: "bcn",
-  name: "BCN Brand Community Network GmbH",
-  description: "Vermarkter für BurdaVerlag, BurdaForward, Funke, Klambt, Delius Klasinng",
+  name: "BCN Brand Community Network",
+  description: "Mediavermarkter für Burda, Funke, Klambt, DeliusKlasing, Kouneli",
   supportedInventoryTypes: [
     {
       type: "desktop",
       supportedIds: [
         {
-          id: "utiq"
+          id: "utiq",
+          coverage: 55
         }
       ]
     },
@@ -23,16 +24,7 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
       supportedIds: [
         {
           id: "utiq",
-          coverage: 50
-        }
-      ]
-    },
-    {
-      type: "app",
-      supportedIds: [
-        {
-          id: "utiq",
-          coverage: 50
+          coverage: 55
         }
       ]
     }
