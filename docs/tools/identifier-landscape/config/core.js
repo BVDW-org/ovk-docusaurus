@@ -14,7 +14,7 @@ window.OVK_LANDSCAPE_CONFIG = {
     {
       id: "netid_utiq",
       name: "netID via Utiq",
-      shortName: "netID / Utiq",
+      shortName: "netID via Utiq",
       color: "#e6f4ea",
       textColor: "#137333",
       description: "Targeting über das Utiq-Netzwerk unter Nutzung von netID-Daten."
@@ -68,6 +68,7 @@ window.OVK_LANDSCAPE_CONFIG = {
       supportedVermarkter: [
         "ad_alliance",
         "bcn",
+        "funke",
         "iqd",
         "media_impact",
         "score",
@@ -104,6 +105,7 @@ window.OVK_LANDSCAPE_CONFIG = {
       supportedVermarkter: [
         "ad_alliance",
         "bcn",
+        "funke",
         "iqd",
         "media_impact",
         "score",
@@ -140,6 +142,7 @@ window.OVK_LANDSCAPE_CONFIG = {
       supportedVermarkter: [
         "ad_alliance",
         "bcn",
+        "funke",
         "iqd",
         "media_impact",
         "score",
@@ -174,6 +177,7 @@ window.OVK_LANDSCAPE_CONFIG = {
       supportedVermarkter: [
         "ad_alliance",
         "bcn",
+        "funke",
         "iqd",
         "media_impact",
         "score",
@@ -197,6 +201,7 @@ window.OVK_LANDSCAPE_CONFIG = {
       ],
       supportedVermarkter: [
         "bcn",
+        "funke",
         "iqd",
         "media_impact",
         "score",
@@ -216,6 +221,7 @@ window.OVK_LANDSCAPE_CONFIG = {
       supportedUsecases: [],
       supportedVermarkter: [
         "bcn",
+        "funke",
         "iqd",
         "media_impact",
         "uim",
@@ -232,6 +238,7 @@ window.OVK_LANDSCAPE_CONFIG = {
       supportedUsecases: [],
       supportedVermarkter: [
         "bcn",
+        "funke",
         "iqd",
         "uim",
         "visoon"
@@ -250,6 +257,7 @@ window.OVK_LANDSCAPE_CONFIG = {
       ],
       supportedVermarkter: [
         "bcn",
+        "funke",
         "iqd",
         "uim",
         "visoon"
@@ -269,6 +277,7 @@ window.OVK_LANDSCAPE_CONFIG = {
       ],
       supportedVermarkter: [
         "bcn",
+        "funke",
         "iqd",
         "media_impact",
         "uim",
@@ -290,6 +299,7 @@ window.OVK_LANDSCAPE_CONFIG = {
       supportedVermarkter: [
         "ad_alliance",
         "bcn",
+        "funke",
         "iqd",
         "media_impact",
         "seven_one_media",
@@ -308,7 +318,8 @@ window.OVK_LANDSCAPE_CONFIG = {
       category: "standard",
       supportedVermarkter: [
         "ad_alliance",
-        "bcn"
+        "bcn",
+        "funke"
       ],
       supportedIds: [
         "utiq",
@@ -327,6 +338,7 @@ window.OVK_LANDSCAPE_CONFIG = {
       ],
       supportedVermarkter: [
         "bcn",
+        "funke",
         "iqd",
         "media_impact",
         "score",

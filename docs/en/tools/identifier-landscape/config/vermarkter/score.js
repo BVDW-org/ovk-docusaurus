@@ -8,7 +8,7 @@ if (!window.OVK_LANDSCAPE_CONFIG.vermarkter) {
 window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
   id: "score",
   name: "Score Media Group",
-  description: "Score Media Group.",
+  description: " ",
   supportedInventoryTypes: [
     {
       type: "desktop",

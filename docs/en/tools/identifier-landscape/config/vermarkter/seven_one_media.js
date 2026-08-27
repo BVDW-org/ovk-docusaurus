@@ -7,15 +7,14 @@ if (!window.OVK_LANDSCAPE_CONFIG.vermarkter) {
 
 window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
   id: "seven_one_media",
-  name: "Seven.One Media",
-  description: "Vermarkter der ProSiebenSat.1 Media SE.",
+  name: "SevenOne Media GmbH",
+  description: " ",
   supportedInventoryTypes: [
     {
       type: "desktop",
       supportedIds: [
         {
-          id: "netid_utiq",
-          coverage: 60
+          id: "netid_utiq"
         }
       ]
     },
@@ -23,8 +22,7 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
       type: "mobile",
       supportedIds: [
         {
-          id: "netid_utiq",
-          coverage: 60
+          id: "netid_utiq"
         }
       ]
     },
@@ -32,8 +30,7 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
       type: "ctv",
       supportedIds: [
         {
-          id: "netid_utiq",
-          coverage: 60
+          id: "netid_utiq"
         }
       ]
     },
@@ -41,8 +38,7 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
       type: "app",
       supportedIds: [
         {
-          id: "netid_utiq",
-          coverage: 60
+          id: "netid_utiq"
         }
       ]
     }

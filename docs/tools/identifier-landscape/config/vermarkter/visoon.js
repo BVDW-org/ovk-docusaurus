@@ -7,15 +7,15 @@ if (!window.OVK_LANDSCAPE_CONFIG.vermarkter) {
 
 window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
   id: "visoon",
-  name: "Visoon Video Impact",
-  description: "Visoon Video Impact.",
+  name: "Visoon Video Impact GmbH",
+  description: "Visoon Video Impact - TV & Streaming (Axel Springer & Paramount)",
   supportedInventoryTypes: [
     {
       type: "ctv",
       supportedIds: [
         {
           id: "utiq",
-          coverage: 50
+          coverage: 70
         }
       ]
     }

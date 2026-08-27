@@ -215,17 +215,50 @@
 
 <!-- Load all core and Vermarkter config files with dynamic cache-busting -->
 <script>
-  document.write('<script src="config/core.js?t=' + Date.now() + '"><\/script>');
-  document.write('<script src="config/vermarkter/ad_alliance.js?t=' + Date.now() + '"><\/script>');
-  document.write('<script src="config/vermarkter/bcn.js?t=' + Date.now() + '"><\/script>');
-  document.write('<script src="config/vermarkter/iqd.js?t=' + Date.now() + '"><\/script>');
-  document.write('<script src="config/vermarkter/media_impact.js?t=' + Date.now() + '"><\/script>');
-  document.write('<script src="config/vermarkter/score.js?t=' + Date.now() + '"><\/script>');
-  document.write('<script src="config/vermarkter/seven_one_media.js?t=' + Date.now() + '"><\/script>');
-  document.write('<script src="config/vermarkter/stroeer.js?t=' + Date.now() + '"><\/script>');
-  document.write('<script src="config/vermarkter/uim.js?t=' + Date.now() + '"><\/script>');
-  document.write('<script src="config/vermarkter/visoon.js?t=' + Date.now() + '"><\/script>');
-  document.write('<script src="config/data_partners.js?t=' + Date.now() + '"><\/script>');
+    (async function() {
+        let files = ['config/core.js', 'config/data_partners.js'];
+        try {
+            const dirRes = await fetch('config/vermarkter/');
+            if (dirRes.ok) {
+                const dirHtml = await dirRes.text();
+                const matches = dirHtml.match(/href="([^"]+\.js)"/g);
+                if (matches) {
+                    const vermarkterFiles = matches.map(m => 'config/vermarkter/' + m.match(/"([^"]+)"/)[1]);
+                    files = files.concat(vermarkterFiles);
+                }
+            } else {
+                throw new Error("HTTP Status " + dirRes.status);
+            }
+        } catch(e) {
+            console.warn("Verzeichnis /config/vermarkter/ konnte nicht ausgelesen werden. Verwende Fallback-Liste.", e);
+            files = files.concat([
+                'config/vermarkter/ad_alliance.js',
+                'config/vermarkter/bcn.js',
+                'config/vermarkter/funke.js',
+                'config/vermarkter/iqd.js',
+                'config/vermarkter/media_impact.js',
+                'config/vermarkter/score.js',
+                'config/vermarkter/seven_one_media.js',
+                'config/vermarkter/stroeer.js',
+                'config/vermarkter/uim.js',
+                'config/vermarkter/visoon.js'
+            ]);
+        }
+        
+        for (const f of files) {
+            try {
+                const res = await fetch(f + '?t=' + Date.now());
+                const code = await res.text();
+                (new Function(code))();
+            } catch(e) {
+                console.error("Fehler beim Laden von " + f, e);
+            }
+        }
+        
+        if (typeof init === 'function') {
+            init();
+        }
+    })();
 </script>
 
 <script>
@@ -235,6 +268,7 @@
   let currentItemId = null;
 
   function init() {
+    CONFIG = window.OVK_LANDSCAPE_CONFIG;
     if (!window.OVK_LANDSCAPE_CONFIG) {
       alert("Fehler: OVK_LANDSCAPE_CONFIG konnte nicht geladen werden.");
       return;
@@ -618,7 +652,7 @@
     URL.revokeObjectURL(url);
   }
 
-  window.onload = init;
+  // window.onload = init; (aufgerufen durch Async-Loader)
 </script>
 </body>
 </html>

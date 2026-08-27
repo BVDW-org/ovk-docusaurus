@@ -7,8 +7,8 @@ if (!window.OVK_LANDSCAPE_CONFIG.vermarkter) {
 
 window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
   id: "ad_alliance",
-  name: "Ad Alliance",
-  description: "Vermarkter von RTL Deutschland, Gruner + Jahr etc.",
+  name: "Ad Alliance GmbH",
+  description: " ",
   supportedInventoryTypes: [
     {
       type: "desktop",
@@ -25,12 +25,10 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
       type: "mobile",
       supportedIds: [
         {
-          id: "utiq",
-          coverage: 15
+          id: "utiq"
         },
         {
-          id: "netid_utiq",
-          coverage: 25
+          id: "netid_utiq"
         }
       ]
     },
@@ -38,8 +36,7 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
       type: "ctv",
       supportedIds: [
         {
-          id: "netid_utiq",
-          coverage: 30
+          id: "netid_utiq"
         }
       ]
     }
