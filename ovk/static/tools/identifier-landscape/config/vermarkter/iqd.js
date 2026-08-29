@@ -14,7 +14,8 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
       type: "desktop",
       supportedIds: [
         {
-          id: "utiq"
+          id: "utiq",
+          excludedDSPs: []
         }
       ]
     },
@@ -22,9 +23,19 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
       type: "mobile",
       supportedIds: [
         {
-          id: "utiq"
+          id: "utiq",
+          excludedDSPs: []
         }
       ]
     }
+  ],
+  supportedSSPs: [
+    "equativ",
+    "pubmatic",
+    "index_exchange",
+    "magnite",
+    "xandr",
+    "yieldlab",
+    "adform"
   ]
 });

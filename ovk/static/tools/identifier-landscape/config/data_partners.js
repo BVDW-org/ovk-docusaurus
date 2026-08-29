@@ -52,6 +52,20 @@ window.OVK_LANDSCAPE_CONFIG.dataPartners = [
       "pubmatic",
       "xandr"
     ]
+  },
+  {
+    id: "osds",
+    name: "Ströer / OS data solutions",
+    description: "Datensegmente von Ströer / OS data solutions",
+    supportedIds: [
+      "utiq"
+    ],
+    supportedDSPs: [
+      "ttd",
+      "active_agent",
+      "adform"
+    ],
+    supportedSSPs: []
   }
 ];
 

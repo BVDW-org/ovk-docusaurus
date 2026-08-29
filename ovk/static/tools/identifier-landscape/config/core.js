@@ -63,25 +63,15 @@ window.OVK_LANDSCAPE_CONFIG = {
         "xandr",
         "yieldlab",
         "smartclip",
-        "adform"
-      ],
-      supportedVermarkter: [
-        "ad_alliance",
-        "bcn",
-        "funke",
-        "iqd",
-        "media_impact",
-        "score",
-        "seven_one_media",
-        "stroeer",
-        "uim",
-        "visoon"
+        "adform",
+        "sroerssp"
       ],
       supportedIds: [
         "utiq",
         "netid_utiq",
         "netid"
-      ]
+      ],
+      supportedVermarkter: []
     },
     {
       id: "active_agent",
@@ -100,25 +90,15 @@ window.OVK_LANDSCAPE_CONFIG = {
         "xandr",
         "yieldlab",
         "smartclip",
-        "adform"
-      ],
-      supportedVermarkter: [
-        "ad_alliance",
-        "bcn",
-        "funke",
-        "iqd",
-        "media_impact",
-        "score",
-        "seven_one_media",
-        "stroeer",
-        "uim",
-        "visoon"
+        "adform",
+        "sroerssp"
       ],
       supportedIds: [
         "utiq",
         "netid_utiq",
         "netid"
-      ]
+      ],
+      supportedVermarkter: []
     },
     {
       id: "adform",
@@ -137,25 +117,15 @@ window.OVK_LANDSCAPE_CONFIG = {
         "xandr",
         "yieldlab",
         "smartclip",
-        "adform"
-      ],
-      supportedVermarkter: [
-        "ad_alliance",
-        "bcn",
-        "funke",
-        "iqd",
-        "media_impact",
-        "score",
-        "seven_one_media",
-        "stroeer",
-        "uim",
-        "visoon"
+        "adform",
+        "sroerssp"
       ],
       supportedIds: [
         "utiq",
         "netid_utiq",
         "netid"
-      ]
+      ],
+      supportedVermarkter: []
     },
     {
       id: "dv360",
@@ -174,18 +144,6 @@ window.OVK_LANDSCAPE_CONFIG = {
         "smartclip",
         "adform"
       ],
-      supportedVermarkter: [
-        "ad_alliance",
-        "bcn",
-        "funke",
-        "iqd",
-        "media_impact",
-        "score",
-        "seven_one_media",
-        "stroeer",
-        "uim",
-        "visoon"
-      ],
       supportedIds: []
     }
   ],
@@ -199,34 +157,18 @@ window.OVK_LANDSCAPE_CONFIG = {
         "targeting",
         "targeting_pre"
       ],
-      supportedVermarkter: [
-        "bcn",
-        "funke",
-        "iqd",
-        "media_impact",
-        "score",
-        "uim",
-        "visoon"
-      ],
       supportedIds: [
         "utiq",
         "netid_utiq",
         "netid"
-      ]
+      ],
+      supportedVermarkter: []
     },
     {
       id: "pubmatic",
       name: "PubMatic",
       category: "curation",
       supportedUsecases: [],
-      supportedVermarkter: [
-        "bcn",
-        "funke",
-        "iqd",
-        "media_impact",
-        "uim",
-        "visoon"
-      ],
       supportedIds: [
         "utiq"
       ]
@@ -236,13 +178,6 @@ window.OVK_LANDSCAPE_CONFIG = {
       name: "Index Exchange",
       category: "curation",
       supportedUsecases: [],
-      supportedVermarkter: [
-        "bcn",
-        "funke",
-        "iqd",
-        "uim",
-        "visoon"
-      ],
       supportedIds: [
         "utiq",
         "netid_utiq"
@@ -254,13 +189,6 @@ window.OVK_LANDSCAPE_CONFIG = {
       category: "curation",
       supportedUsecases: [
         "targeting_pre"
-      ],
-      supportedVermarkter: [
-        "bcn",
-        "funke",
-        "iqd",
-        "uim",
-        "visoon"
       ],
       supportedIds: [
         "utiq",
@@ -275,14 +203,6 @@ window.OVK_LANDSCAPE_CONFIG = {
       supportedUsecases: [
         "targeting_pre"
       ],
-      supportedVermarkter: [
-        "bcn",
-        "funke",
-        "iqd",
-        "media_impact",
-        "uim",
-        "visoon"
-      ],
       supportedIds: [
         "utiq",
         "netid_utiq",
@@ -296,16 +216,6 @@ window.OVK_LANDSCAPE_CONFIG = {
       supportedUsecases: [
         "targeting_pre"
       ],
-      supportedVermarkter: [
-        "ad_alliance",
-        "bcn",
-        "funke",
-        "iqd",
-        "media_impact",
-        "seven_one_media",
-        "uim",
-        "visoon"
-      ],
       supportedIds: [
         "utiq",
         "netid_utiq",
@@ -316,11 +226,6 @@ window.OVK_LANDSCAPE_CONFIG = {
       id: "smartclip",
       name: "Smartclip",
       category: "standard",
-      supportedVermarkter: [
-        "ad_alliance",
-        "bcn",
-        "funke"
-      ],
       supportedIds: [
         "utiq",
         "netid_utiq"
@@ -336,20 +241,24 @@ window.OVK_LANDSCAPE_CONFIG = {
       supportedUsecases: [
         "targeting_pre"
       ],
-      supportedVermarkter: [
-        "bcn",
-        "funke",
-        "iqd",
-        "media_impact",
-        "score",
-        "stroeer",
-        "uim",
-        "visoon"
-      ],
       supportedIds: [
         "utiq",
         "netid_utiq",
         "netid"
+      ]
+    },
+    {
+      id: "sroerssp",
+      name: "Ströer SSP",
+      category: "standard",
+      supportedUsecases: [
+        "targeting_pre"
+      ],
+      supportedVermarkter: [
+        "stroeer"
+      ],
+      supportedIds: [
+        "utiq"
       ]
     }
   ]

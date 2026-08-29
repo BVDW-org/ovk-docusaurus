@@ -8,16 +8,19 @@ if (!window.OVK_LANDSCAPE_CONFIG.vermarkter) {
 window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
   id: "ad_alliance",
   name: "Ad Alliance GmbH",
-  description: " ",
+  description: " Vermarkter für RTL, HBOmax, Bauer, Funke, Media Impact",
   supportedInventoryTypes: [
     {
       type: "desktop",
       supportedIds: [
         {
-          id: "utiq"
+          id: "utiq",
+          excludedDSPs: []
         },
         {
-          id: "netid_utiq"
+          id: "netid_utiq",
+          coverage: 30,
+          excludedDSPs: []
         }
       ]
     },
@@ -25,10 +28,14 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
       type: "mobile",
       supportedIds: [
         {
-          id: "utiq"
+          id: "utiq",
+          coverage: 30,
+          excludedDSPs: []
         },
         {
-          id: "netid_utiq"
+          id: "netid_utiq",
+          coverage: 30,
+          excludedDSPs: []
         }
       ]
     },
@@ -36,9 +43,15 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
       type: "ctv",
       supportedIds: [
         {
-          id: "netid_utiq"
+          id: "netid_utiq",
+          coverage: 30,
+          excludedDSPs: []
         }
       ]
     }
+  ],
+  supportedSSPs: [
+    "yieldlab",
+    "smartclip"
   ]
 });

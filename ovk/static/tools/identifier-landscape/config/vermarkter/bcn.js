@@ -15,7 +15,8 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
       supportedIds: [
         {
           id: "utiq",
-          coverage: 55
+          coverage: 55,
+          excludedDSPs: []
         }
       ]
     },
@@ -24,9 +25,20 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
       supportedIds: [
         {
           id: "utiq",
-          coverage: 55
+          coverage: 55,
+          excludedDSPs: []
         }
       ]
     }
+  ],
+  supportedSSPs: [
+    "equativ",
+    "pubmatic",
+    "index_exchange",
+    "magnite",
+    "xandr",
+    "yieldlab",
+    "smartclip",
+    "adform"
   ]
 });

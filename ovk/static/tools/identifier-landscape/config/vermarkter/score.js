@@ -8,14 +8,15 @@ if (!window.OVK_LANDSCAPE_CONFIG.vermarkter) {
 window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
   id: "score",
   name: "Score Media Group",
-  description: " ",
+  description: " Vermarkter Regionale Tageszeitungen in Deutschland",
   supportedInventoryTypes: [
     {
       type: "desktop",
       supportedIds: [
         {
           id: "utiq",
-          coverage: 16
+          coverage: 16,
+          excludedDSPs: []
         }
       ]
     },
@@ -24,9 +25,15 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
       supportedIds: [
         {
           id: "utiq",
-          coverage: 16
+          coverage: 16,
+          excludedDSPs: []
         }
       ]
     }
+  ],
+  supportedSSPs: [
+    "equativ",
+    "pubmatic",
+    "adform"
   ]
 });

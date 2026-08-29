@@ -14,7 +14,8 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
       type: "desktop",
       supportedIds: [
         {
-          id: "netid_utiq"
+          id: "netid_utiq",
+          excludedDSPs: []
         }
       ]
     },
@@ -22,7 +23,8 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
       type: "mobile",
       supportedIds: [
         {
-          id: "netid_utiq"
+          id: "netid_utiq",
+          excludedDSPs: []
         }
       ]
     },
@@ -30,7 +32,8 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
       type: "ctv",
       supportedIds: [
         {
-          id: "netid_utiq"
+          id: "netid_utiq",
+          excludedDSPs: []
         }
       ]
     },
@@ -38,9 +41,13 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
       type: "app",
       supportedIds: [
         {
-          id: "netid_utiq"
+          id: "netid_utiq",
+          excludedDSPs: []
         }
       ]
     }
+  ],
+  supportedSSPs: [
+    "yieldlab"
   ]
 });

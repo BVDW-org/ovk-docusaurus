@@ -8,13 +8,14 @@ if (!window.OVK_LANDSCAPE_CONFIG.vermarkter) {
 window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
   id: "funke",
   name: "FUNKE Digital GmbH",
-  description: "Vermarkter der Portale der FUNKE Mediengruppe",
+  description: "Vermarkter der Portale der FUNKE Mediengruppennnn",
   supportedInventoryTypes: [
     {
       type: "desktop",
       supportedIds: [
         {
-          id: "utiq"
+          id: "utiq",
+          excludedDSPs: []
         }
       ]
     },
@@ -22,9 +23,20 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
       type: "mobile",
       supportedIds: [
         {
-          id: "utiq"
+          id: "utiq",
+          excludedDSPs: []
         }
       ]
     }
+  ],
+  supportedSSPs: [
+    "equativ",
+    "pubmatic",
+    "index_exchange",
+    "magnite",
+    "xandr",
+    "yieldlab",
+    "smartclip",
+    "adform"
   ]
 });
