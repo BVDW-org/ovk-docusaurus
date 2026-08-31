@@ -1,375 +1,212 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
 .heroBanner {
   position: relative;
-  padding: 6rem 0;
-  text-align: center;
-  background: var(--ifm-color-primary);
-  color: white;
+  min-height: 365px;
+  display: flex;
+  align-items: center;
   overflow: hidden;
-}
-
-/* Subtle decorative backdrop - dot grid + soft orange glow, brand colors only */
-.heroPattern {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    radial-gradient(circle at 88% 18%, rgba(255, 70, 39, 0.25), transparent 42%),
-    radial-gradient(rgba(255, 255, 255, 0.14) 1px, transparent 1px);
-  background-size: auto, 22px 22px;
-  background-position: 0 0, 0 0;
-  opacity: 0.9;
-}
-
-[data-theme='dark'] .heroPattern {
-  background-image:
-    radial-gradient(circle at 88% 18%, rgba(255, 70, 39, 0.18), transparent 42%),
-    radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-  background-size: auto, 22px 22px;
+  color: #ffffff;
+  background-color: #010f2d;
+  background-image: url('/img/ovk-hero-technical-grid.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .heroContent {
   position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.8fr);
   align-items: center;
-  justify-content: center;
-  max-width: 1200px;
+  gap: clamp(3rem, 8vw, 8rem);
+  width: min(100% - 3rem, 1200px);
   margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.heroLogoContainer {
-  margin-bottom: 2rem;
-}
-
-.heroLogo {
-  width: 300px;
-  height: auto;
-  filter: brightness(0) invert(1);
-  transition: transform 0.3s ease;
-}
-
-.heroLogo:hover {
-  transform: scale(1.05);
+  padding: 4.5rem 0;
 }
 
 .heroText {
-  max-width: 800px;
+  max-width: 620px;
 }
 
 .heroTitle {
-  font-size: 3.25rem;
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(3.25rem, 5.5vw, 5rem);
   font-weight: 800;
-  letter-spacing: -0.02em;
-  margin-bottom: 1.25rem;
-  color: white;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+}
+
+.heroDivider {
+  display: block;
+  width: 52px;
+  height: 4px;
+  margin: 1.8rem 0 1.6rem;
+  background: #ff4627;
 }
 
 .heroSubtitle {
-  font-size: 1.2rem;
+  max-width: 610px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
   line-height: 1.6;
-  max-width: 560px;
-  margin-bottom: 2.25rem;
-  opacity: 0.85;
 }
 
-.heroButtons {
+.heroLogoContainer {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
   justify-content: center;
-  gap: 1rem;
-}
-
-.heroButtonPrimary,
-.heroButtonSecondary {
-  display: inline-flex;
   align-items: center;
-  padding: 0.8rem 2rem;
-  font-size: 1.05rem;
-  font-weight: 600;
-  border-radius: 30px;
-  transition: all 0.3s ease;
+  min-height: 180px;
 }
 
-.heroButtonPrimary {
-  background-color: #FF4627;
-  color: white;
-  border: 2px solid #FF4627;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.heroLogo {
+  width: min(100%, 370px);
+  height: auto;
 }
 
-.heroButtonPrimary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-  background-color: #e53a1c;
-  border-color: #e53a1c;
-  color: white;
-  text-decoration: none;
-}
-
-.heroButtonSecondary {
-  background-color: transparent;
-  color: white;
-  border: 2px solid rgba(255, 255, 255, 0.4);
-}
-
-.heroButtonSecondary:hover {
-  transform: translateY(-2px);
-  border-color: white;
-  background-color: rgba(255, 255, 255, 0.08);
-  color: white;
-  text-decoration: none;
+.scrollCue {
+  display: none;
 }
 
 .main {
   position: relative;
+  scroll-margin-top: 64px;
+  background: var(--ifm-background-color);
 }
 
-/* Dark mode adjustments */
-[data-theme='dark'] .heroBanner {
-  background: #010F2D;
-}
-
-[data-theme='dark'] .heroLogo {
-  filter: brightness(0) invert(1);
-}
-
-[data-theme='dark'] .heroButtonPrimary {
-  background-color: #FF4627;
-  border-color: #FF4627;
-  color: white;
-}
-
-[data-theme='dark'] .heroButtonPrimary:hover {
-  background-color: #e53a1c;
-  border-color: #e53a1c;
-  color: white;
-}
-
-/* Mobile Navigation Container */
-.mobileNavContainer {
-  width: 100%;
-  margin-top: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Segmented Control Styles */
-.segmentedControlContainer {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 0.5rem;
-}
-
-.segmentedControl {
-  display: flex;
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 30px;
-  padding: 3px;
-  width: 100%;
-  max-width: 320px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-.segment {
-  flex: 1;
-  text-align: center;
-  color: white;
-  padding: 10px 16px;
-  border-radius: 25px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.segment:hover {
-  color: white;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.segmentActive {
-  background: var(--ifm-color-secondary);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  color: white;
-}
-
-.segmentActive:hover {
-  color: white;
-}
-
-/* Add a subtle ripple effect on click */
-.segment:active::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  animation: ripple 0.6s linear;
-  opacity: 0;
-}
-
-@keyframes ripple {
-  0% {
-    transform: translate(-50%, -50%) scale(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(2.5);
-    opacity: 0;
-  }
-}
-
-/* Submenu Styles */
-.submenu {
-  width: 100%;
-  max-width: 320px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 0.5rem;
-  margin-top: 0.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-5px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.submenuMainLink {
-  display: block;
-  color: white;
-  font-weight: 600;
-  padding: 0.7rem 1rem;
-  border-radius: 8px;
-  background: var(--ifm-color-secondary);
-  text-decoration: none;
-  margin-bottom: 0.5rem;
-  text-align: center;
-  transition: all 0.2s ease;
-}
-
-.submenuMainLink:hover {
-  background: #e53a1c;
-  color: white;
-  text-decoration: none;
-  transform: translateY(-2px);
-}
-
-.submenuLinks {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-
-.submenuLink {
-  display: block;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  font-size: 0.9rem;
-}
-
-.submenuLink:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-  text-decoration: none;
-  transform: translateX(3px);
-}
-
-/* Desktop/Mobile visibility */
-.desktopOnly {
-  display: none;
-}
-
-.mobileOnly {
-  display: block;
-}
-
-/* Responsive styles */
-@media screen and (min-width: 768px) {
-  .heroContent {
-    flex-direction: row;
-    text-align: left;
-    gap: 3rem;
-  }
-
-  .heroLogoContainer {
-    margin-bottom: 0;
-  }
-
-  .heroButtons {
-    justify-content: flex-start;
-  }
-  
-  /* Show desktop button, hide mobile menu on desktop */
-  .desktopOnly {
-    display: block;
-  }
-  
-  .mobileOnly {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 767px) {
+@media (max-width: 996px) {
   .heroBanner {
+    min-height: auto;
+  }
+
+  .heroContent {
+    grid-template-columns: 1fr;
+    gap: 2.75rem;
+    width: min(100% - 2rem, 760px);
     padding: 4rem 0;
   }
 
-  .heroTitle {
-    font-size: 2.2rem;
+  .heroText {
+    max-width: 680px;
   }
 
-  .heroSubtitle {
-    font-size: 1.2rem;
+  .heroLogoContainer {
+    justify-content: flex-start;
+    min-height: auto;
   }
 
   .heroLogo {
-    width: 225px;
+    width: min(75%, 330px);
   }
 }
 
-@media screen and (max-width: 480px) {
+@media (max-width: 576px) {
   .heroBanner {
-    padding: 3rem 0;
+    min-height: calc(100vh - 64px);
+    min-height: calc(100svh - 64px);
+  }
+
+  .heroContent {
+    min-height: inherit;
+    align-content: space-between;
+    gap: clamp(1.75rem, 4svh, 2.5rem);
+    padding: clamp(2.25rem, 5.5svh, 3.25rem) 0
+      clamp(1.5rem, 4svh, 2.5rem);
+  }
+
+  .heroText {
+    max-width: 100%;
+    margin-top: clamp(1.75rem, 5svh, 3rem);
   }
 
   .heroTitle {
-    font-size: 1.8rem;
+    font-size: clamp(2.65rem, 13vw, 3.75rem);
+    text-wrap: balance;
+  }
+
+  .heroDivider {
+    margin: 1.6rem 0 1.35rem;
   }
 
   .heroSubtitle {
-    font-size: 1rem;
+    max-width: 35ch;
+    font-size: clamp(1.05rem, 4.4vw, 1.15rem);
+    line-height: 1.6;
+    text-wrap: pretty;
+  }
+
+  .heroLogoContainer {
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1.25rem;
   }
 
   .heroLogo {
-    width: 180px;
+    width: min(68%, 240px);
   }
 
-  .heroButtonPrimary,
-  .heroButtonSecondary {
-    padding: 0.6rem 1.5rem;
-    font-size: 1rem;
+  .scrollCue {
+    display: inline-flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.45rem;
+    color: rgba(255, 255, 255, 0.88);
+  }
+
+  .scrollCue:hover {
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  .scrollCue:focus-visible {
+    border-radius: 999px;
+    outline: 3px solid rgba(255, 70, 39, 0.8);
+    outline-offset: 5px;
+  }
+
+  .scrollCueLabel {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .scrollCueIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: scroll-cue 1.7s cubic-bezier(0.22, 1, 0.36, 1) 0.4s 4;
+    transition: background-color 200ms ease, border-color 200ms ease;
+  }
+
+  .scrollCue:hover .scrollCueIcon {
+    border-color: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+@keyframes scroll-cue {
+  0%,
+  100% {
+    opacity: 0.72;
+    transform: translateY(0);
+  }
+
+  45% {
+    opacity: 1;
+    transform: translateY(6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scrollCueIcon {
+    animation: none;
   }
 }

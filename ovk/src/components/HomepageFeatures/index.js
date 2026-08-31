@@ -1,105 +1,192 @@
 import React from 'react';
-import clsx from 'clsx';
-import Heading from '@theme/Heading';
 import Link from '@docusaurus/Link';
+import Heading from '@theme/Heading';
+import {ArrowRight} from '@phosphor-icons/react/dist/icons/ArrowRight';
+import {Article} from '@phosphor-icons/react/dist/icons/Article';
+import {BookOpenText} from '@phosphor-icons/react/dist/icons/BookOpenText';
+import {ChartBar} from '@phosphor-icons/react/dist/icons/ChartBar';
+import {CheckCircle} from '@phosphor-icons/react/dist/icons/CheckCircle';
+import {Flask} from '@phosphor-icons/react/dist/icons/Flask';
+import {IdentificationCard} from '@phosphor-icons/react/dist/icons/IdentificationCard';
+import {Info} from '@phosphor-icons/react/dist/icons/Info';
+import {Monitor} from '@phosphor-icons/react/dist/icons/Monitor';
+import {Play} from '@phosphor-icons/react/dist/icons/Play';
+import {Scales} from '@phosphor-icons/react/dist/icons/Scales';
+import {ShieldCheck} from '@phosphor-icons/react/dist/icons/ShieldCheck';
+import {StackSimple} from '@phosphor-icons/react/dist/icons/StackSimple';
+import {UserCircle} from '@phosphor-icons/react/dist/icons/UserCircle';
+import {UsersThree} from '@phosphor-icons/react/dist/icons/UsersThree';
 import styles from './styles.module.css';
 
-// Simple line icons drawn in-house so every feature card stays on the
-// OVK navy/orange palette (the previous stock illustrations pulled in
-// off-brand purple/teal accents).
-function AdFormatsIcon() {
-  return (
-    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="6" y="8" width="36" height="24" rx="3" stroke="currentColor" strokeWidth="2.5" />
-      <path d="M6 16h36" stroke="currentColor" strokeWidth="2.5" />
-      <rect x="11" y="21" width="10" height="6" rx="1.5" fill="currentColor" />
-      <path d="M25 22h12M25 27h8" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M14 38h20" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-function IdentityIcon() {
-  return (
-    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="6" y="10" width="36" height="28" rx="4" stroke="currentColor" strokeWidth="2.5" />
-      <circle cx="17" cy="22" r="5" stroke="currentColor" strokeWidth="2.5" />
-      <path d="M10 32c1.8-3.6 4.8-5.4 7-5.4s5.2 1.8 7 5.4" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M28 19h8M28 24h8M28 29h5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-function ContextualIcon() {
-  return (
-    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="22" cy="22" r="14" stroke="currentColor" strokeWidth="2.5" />
-      <circle cx="22" cy="22" r="7.5" stroke="currentColor" strokeWidth="2.5" />
-      <circle cx="22" cy="22" r="1.8" fill="currentColor" />
-      <path d="M35 35l7 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-// Feature List
-const FeatureList = [
+const topics = [
   {
     number: '01',
     title: 'Werbeformen',
-    Icon: AdFormatsIcon,
-    description: 'Übersicht aller standardisierten vermarkterübergreifenden Werbeformen inkl. Specs',
+    Icon: Article,
+    description:
+      'Übersicht aller standardisierten vermarkterübergreifenden Werbeformen inkl. Specs',
     to: '/docs/werbeformen/',
+    links: [
+      {
+        label: 'Werbeformen Intro',
+        to: '/docs/werbeformen/',
+        Icon: BookOpenText,
+      },
+      {
+        label: 'Display',
+        to: '/docs/werbeformen/Werbeformen_new/Display/Standard-Werbeformen/Billboard',
+        Icon: Monitor,
+      },
+      {
+        label: 'Video',
+        to: '/docs/werbeformen/Werbeformen_new/Video/In-Stream/Pre-Roll',
+        Icon: Play,
+      },
+    ],
   },
   {
     number: '02',
     title: 'Identity',
-    Icon: IdentityIcon,
-    description: 'Übersicht der aktiven ID Lösungen pro Vermarkter und verschiedene Case Studies.',
+    Icon: UserCircle,
+    description:
+      'Übersicht der aktiven ID Lösungen pro Vermarkter und verschiedene Case Studies.',
     to: '/docs/identitysolutions/',
+    links: [
+      {
+        label: 'Identity Intro',
+        to: '/docs/identitysolutions/',
+        Icon: Info,
+      },
+      {
+        label: 'Case Studies',
+        to: '/docs/identitysolutions/Case%20Studies',
+        Icon: ChartBar,
+      },
+      {
+        label: 'OVK Vermarkter ID-Overview',
+        to: '/docs/identitysolutions/ID-Support_OVK-Vermarkter/OVK-IdentifierSupport_byVendor',
+        Icon: IdentificationCard,
+      },
+    ],
   },
   {
     number: '03',
     title: 'OVK Contextual Standard',
-    Icon: ContextualIcon,
-    description: 'Specs zum kontextuellen Standard, den der OVK 2023 ins Leben gerufen hat und von all seinen Mitgliedern genutzt wird.',
+    Icon: StackSimple,
+    description:
+      'Specs zum kontextuellen Standard, den der OVK 2023 ins Leben gerufen hat und von all seinen Mitgliedern genutzt wird.',
     to: '/docs/contextualstandards/',
+    links: [
+      {
+        label: 'Contextual Intro',
+        to: '/docs/contextualstandards/',
+        Icon: BookOpenText,
+      },
+    ],
   },
 ];
 
-// Feature Component
-function Feature({ number, Icon, title, description, to }) {
+const unitLeaders = [
+  {
+    name: 'Alwin Viereck',
+    role: 'Leiter des Labs Ad Tech & Programmatic im OVK',
+    company: 'United Internet Media GmbH',
+    companyUrl: 'https://www.united-internet-media.de/de/home/',
+    image: 'https://www.ovk.de/wp-content/uploads/2025/09/Alwin-Viereck.jpg',
+  },
+  {
+    name: 'Carlos Bracho',
+    role: 'Leiter des Labs Ad Tech & Programmatic im OVK',
+    company: 'Media Impact GmbH und Co. KG',
+    companyUrl: 'https://www.mediaimpact.de/de/',
+    image:
+      'https://www.ovk.de/wp-content/uploads/2025/09/Carlos-Bracho-990x990.jpg',
+  },
+  {
+    name: 'Markus Letzner',
+    role: 'Leiter des Labs Ad Tech & Programmatic im OVK und Mitsprecher des Contextual Workstreams',
+    company: 'Ströer Digital Media GmbH',
+    companyUrl: 'https://www.stroeer.de/',
+    image: 'https://www.ovk.de/wp-content/uploads/2025/09/Markus-Letzner.jpg',
+  },
+];
+
+const workstreamLeaders = [
+  {
+    name: 'Alexander Peischl',
+    role: 'Leiter des OVK Workstreams "Werbeformen"',
+    company: 'United Internet Media GmbH',
+    companyUrl: 'https://www.united-internet-media.de/de/home/',
+    image: '/img/alexander.jpeg',
+  },
+  {
+    name: 'Nadeem Qureshi',
+    role: 'Leiter des OVK Workstreams "Identity"',
+    company: 'BCN Brand Community Network GmbH',
+    companyUrl: 'https://www.bcn.group',
+    image: '/img/nadeem.png',
+  },
+  {
+    name: 'Smaranda Dancu',
+    role: 'Co-Leiterin des OVK Workstreams "Contextual"',
+    company: 'BCN Brand Community Network GmbH',
+    companyUrl: 'https://www.bcn.group',
+    image: '/img/smaranda.jpeg',
+  },
+];
+
+const coreTasks = [
+  {label: 'Standardisierung', Icon: CheckCircle},
+  {label: 'Marktaufklärung', Icon: Scales},
+  {label: 'Regulierung & Datenschutz', Icon: ShieldCheck},
+];
+
+function TopicLink({to, label, Icon}) {
   return (
-    <Link to={to} className={styles.featureCard}>
-      <span className={styles.featureNumber}>{number}</span>
-      <div className={styles.featureIconBadge}>
-        <Icon />
-      </div>
-      <div className={styles.featureContent}>
-        <Heading as="h3" className={styles.featureTitle}>{title}</Heading>
-        <p className={styles.featureDescription}>{description}</p>
-        <span className={styles.featureLink}>
-          Mehr erfahren
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </span>
-      </div>
+    <Link to={to} className={styles.topicLink}>
+      <Icon size={21} weight="regular" aria-hidden="true" />
+      <span>{label}</span>
+      <ArrowRight
+        size={18}
+        weight="bold"
+        className={styles.topicLinkArrow}
+        aria-hidden="true"
+      />
     </Link>
   );
 }
 
-// Features Component
-function Features() {
+function Topic({number, title, Icon, description, to, links}) {
   return (
-    <section id="schwerpunkte" className={styles.featuresSection}>
+    <article className={styles.topic}>
+      <div className={styles.topicHeader}>
+        <span className={styles.topicNumber}>{number}</span>
+        <span className={styles.topicIcon}>
+          <Icon size={34} weight="regular" aria-hidden="true" />
+        </span>
+      </div>
+
+      <Heading as="h2" className={styles.topicTitle}>
+        <Link to={to}>{title}</Link>
+      </Heading>
+      <p className={styles.topicDescription}>{description}</p>
+
+      <nav className={styles.topicLinks} aria-label={`${title} Direktlinks`}>
+        {links.map((link) => (
+          <TopicLink key={link.label} {...link} />
+        ))}
+      </nav>
+    </article>
+  );
+}
+
+function TopicSection() {
+  return (
+    <section className={styles.topicSection} aria-label="OVK Tech Specs Bereiche">
       <div className="container">
-        <div className={styles.sectionTitle}>
-          <span className={styles.eyebrow}>Was Sie hier finden</span>
-          <Heading as="h2">Unsere Schwerpunkte</Heading>
-        </div>
-        <div className={styles.featuresGrid}>
-          {FeatureList.map((feature, idx) => (
-            <Feature key={idx} {...feature} />
+        <div className={styles.topicGrid}>
+          {topics.map((topic) => (
+            <Topic key={topic.number} {...topic} />
           ))}
         </div>
       </div>
@@ -107,122 +194,133 @@ function Features() {
   );
 }
 
-// Team Member Component
-function TeamMember({ image, name, role, company, companyUrl }) {
+function OverviewBand() {
   return (
-    <div className={styles.teamMember}>
-      <div className={styles.teamMemberImageContainer}>
-        <img src={image} alt={name} className={styles.teamMemberImage} />
-      </div>
-      <h3 className={styles.teamMemberName}>{name}</h3>
-      <p className={styles.teamMemberRole}>{role}</p>
-      <a href={companyUrl} target="_blank" rel="noopener noreferrer" className={styles.teamMemberCompany}>
-        {company}
-      </a>
-    </div>
-  );
-}
-
-// Lab Section Component
-function UnitSection() {
-  const unitLeaders = [
-    {
-      name: "Alwin Viereck",
-      role: "Leiter des Labs Ad Tech & Programmatic im OVK",
-      company: "United Internet Media GmbH",
-      companyUrl: "https://www.united-internet-media.de/de/home/",
-      image: "https://www.ovk.de/wp-content/uploads/2025/09/Alwin-Viereck.jpg"
-    },
-    {
-      name: "Carlos Bracho",
-      role: "Leiter des Labs Ad Tech & Programmatic im OVK",
-      company: "Media Impact GmbH und Co. KG",
-      companyUrl: "https://www.mediaimpact.de/de/",
-      image: "https://www.ovk.de/wp-content/uploads/2025/09/Carlos-Bracho-990x990.jpg"
-    },
-    {
-      name: "Markus Letzner",
-      role: "Leiter des Labs Ad Tech & Programmatic im OVK und Mitsprecher des Contextual Workstreams",
-      company: "Ströer Digital Media GmbH",
-      companyUrl: "https://www.stroeer.de/",
-      image: "https://www.ovk.de/wp-content/uploads/2025/09/Markus-Letzner.jpg"
-    }
-  ];
-
-  const workstreamLeaders = [
-    {
-      name: "Alexander Peischl",
-      role: "Leiter des OVK Workstreams \"Werbeformen\"",
-      company: "United Internet Media GmbH",
-      companyUrl: "https://www.united-internet-media.de/de/home/",
-      image: "/img/alexander.jpeg"
-    },
-    {
-      name: "Nadeem Qureshi",
-      role: "Leiter des OVK Workstreams \"Identity\"",
-      company: "BCN Brand Community Network GmbH",
-      companyUrl: "https://www.bcn.group",
-      image: "/img/nadeem.png"
-    },
-    {
-      name: "Smaranda Dancu",
-      role: "Co-Leiterin des OVK Workstreams \"Contextual\"",
-      company: "BCN Brand Community Network GmbH",
-      companyUrl: "https://www.bcn.group",
-      image: "/img/smaranda.jpeg"
-    }
-  ];
-
-  const coreTasks = ['Standardisierung', 'Marktaufklärung', 'Regulierung & Datenschutz'];
-
-  return (
-    <section className={styles.unitSection}>
+    <section className={styles.overviewSection} aria-label="Über das Projekt">
       <div className="container">
-        <div className={styles.unitContent}>
-          <span className={clsx(styles.eyebrow, styles.eyebrowCentered)}>Über uns</span>
-          <Heading as="h2" className={styles.unitTitle}>Ein Projekt des Labs "AdTech & Programmatic" des OVK</Heading>
-          <p className={styles.unitDescription}>
-            Kernaufgaben des Labs Ad Tech & Programmatic sind Standardisierung und Marktaufklärung. Ziel des Labs ist es, die Durchführung digitaler Kampagnen für die Marktpartner so effizient wie möglich zu gestalten. Die Experten aus den OVK Mitgliedsunternehmen bewerten neue technologische Ansätze und Initiativen, konsolidieren die Sicht der Vermarkter auf Ad Tech-, Programmatic- und Data-Fragestellungen, formulieren Marktanforderungen und entwickeln Lösungen. Gemeinsam mit den Marktpartnern werden Standards definiert und Regulierungs- und Datenschutzinitiativen begleitet. Die Veröffentlichungen und Veranstaltungen des Labs liefern Hilfestellung und klären auf.
-          </p>
-          <div className={styles.coreTaskPills}>
-            {coreTasks.map((task) => (
-              <span key={task} className={styles.coreTaskPill}>{task}</span>
-            ))}
-          </div>
+        <div className={styles.overviewBand}>
+          <a href="#lab" className={styles.overviewLink}>
+            <Flask size={28} weight="regular" aria-hidden="true" />
+            <span className={styles.overviewText}>
+              <span className={styles.overviewEyebrow}>Lab</span>
+              <strong>Lab Ad Tech &amp; Programmatic</strong>
+              <span>Standardisierung, Marktaufklärung sowie Regulierung &amp; Datenschutz.</span>
+            </span>
+            <ArrowRight size={20} weight="bold" aria-hidden="true" />
+          </a>
 
-          <div className={styles.teamSection}>
-            <span className={clsx(styles.eyebrow, styles.eyebrowCentered)}>Team</span>
-            <Heading as="h3" className={styles.teamSectionTitle}>Leiter des Labs Ad Tech & Programmatic</Heading>
-            <div className={styles.teamGrid}>
-              {unitLeaders.map((leader, idx) => (
-                <TeamMember key={idx} {...leader} />
-              ))}
-            </div>
-          </div>
-
-          <div className={styles.teamSection}>
-            <span className={clsx(styles.eyebrow, styles.eyebrowCentered)}>Workstreams</span>
-            <Heading as="h3" className={styles.teamSectionTitle}>Leiter der Workstreams</Heading>
-            <div className={styles.teamGrid}>
-              {workstreamLeaders.map((leader, idx) => (
-                <TeamMember key={idx} {...leader} />
-              ))}
-            </div>
-          </div>
+          <a href="#team" className={styles.overviewLink}>
+            <UsersThree size={30} weight="regular" aria-hidden="true" />
+            <span className={styles.overviewText}>
+              <span className={styles.overviewEyebrow}>Team</span>
+              <strong>Gemeinsam für Standards</strong>
+              <span>Die Leiterinnen und Leiter des Labs und seiner Workstreams.</span>
+            </span>
+            <ArrowRight size={20} weight="bold" aria-hidden="true" />
+          </a>
         </div>
       </div>
     </section>
   );
 }
 
-// Main Component
-function HomepageFeatures() {
+function TeamMember({image, name, role, company, companyUrl}) {
   return (
-    <>
-      <Features />
-      <UnitSection />
-    </>
+    <article className={styles.teamMember}>
+      <img
+        src={image}
+        alt={name}
+        className={styles.teamMemberImage}
+        loading="lazy"
+      />
+      <div className={styles.teamMemberContent}>
+        <Heading as="h4" className={styles.teamMemberName}>
+          {name}
+        </Heading>
+        <p className={styles.teamMemberRole}>{role}</p>
+        <a
+          href={companyUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.teamMemberCompany}>
+          {company}
+        </a>
+      </div>
+    </article>
   );
 }
 
-export default HomepageFeatures;
+function TeamGroup({title, people}) {
+  return (
+    <section className={styles.teamGroup}>
+      <Heading as="h3" className={styles.teamGroupTitle}>
+        {title}
+      </Heading>
+      <div className={styles.teamGrid}>
+        {people.map((person) => (
+          <TeamMember key={person.name} {...person} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function LabSection() {
+  return (
+    <section id="lab" className={styles.labSection}>
+      <div className="container">
+        <div className={styles.labIntro}>
+          <div>
+            <span className={styles.eyebrow}>Über uns</span>
+            <Heading as="h2" className={styles.labTitle}>
+              Ein Projekt des Labs &quot;AdTech &amp; Programmatic&quot; des OVK
+            </Heading>
+          </div>
+          <p className={styles.labDescription}>
+            Kernaufgaben des Labs Ad Tech &amp; Programmatic sind Standardisierung
+            und Marktaufklärung. Ziel des Labs ist es, die Durchführung digitaler
+            Kampagnen für die Marktpartner so effizient wie möglich zu gestalten.
+            Die Experten aus den OVK Mitgliedsunternehmen bewerten neue
+            technologische Ansätze und Initiativen, konsolidieren die Sicht der
+            Vermarkter auf Ad Tech-, Programmatic- und Data-Fragestellungen,
+            formulieren Marktanforderungen und entwickeln Lösungen. Gemeinsam mit
+            den Marktpartnern werden Standards definiert und Regulierungs- und
+            Datenschutzinitiativen begleitet. Die Veröffentlichungen und
+            Veranstaltungen des Labs liefern Hilfestellung und klären auf.
+          </p>
+        </div>
+
+        <div className={styles.coreTasks}>
+          {coreTasks.map(({label, Icon}) => (
+            <div key={label} className={styles.coreTask}>
+              <Icon size={27} weight="regular" aria-hidden="true" />
+              <span>{label}</span>
+            </div>
+          ))}
+        </div>
+
+        <div id="team" className={styles.teamSection}>
+          <span className={styles.eyebrow}>Team</span>
+          <Heading as="h2" className={styles.teamTitle}>
+            Die Menschen hinter den Standards
+          </Heading>
+          <TeamGroup
+            title="Leiter des Labs Ad Tech & Programmatic"
+            people={unitLeaders}
+          />
+          <TeamGroup title="Leiter der Workstreams" people={workstreamLeaders} />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default function HomepageFeatures() {
+  return (
+    <>
+      <TopicSection />
+      <OverviewBand />
+      <LabSection />
+    </>
+  );
+}

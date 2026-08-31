@@ -3,8 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "prestart": "node scripts/sync-font-assets.mjs",
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
+    "prebuild": "node scripts/sync-font-assets.mjs",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
@@ -16,7 +18,9 @@
   "dependencies": {
     "@docusaurus/core": "^3.8.1",
     "@docusaurus/preset-classic": "^3.8.1",
+    "@fontsource/inter": "5.3.0",
     "@mdx-js/react": "^3.0.0",
+    "@phosphor-icons/react": "^2.1.10",
     "clsx": "^2.1.1",
     "gh-pages": "^6.3.0",
     "prism-react-renderer": "^2.4.1",

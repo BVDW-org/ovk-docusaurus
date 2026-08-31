@@ -4,6 +4,58 @@
  * work well for content-centric websites.
  */
 
+/*
+ * Inter is bundled from @fontsource/inter and served from this site.
+ * No request is sent to Google Fonts or another font CDN.
+ */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url('/fonts/inter/inter-latin-300-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('/fonts/inter/inter-latin-400-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url('/fonts/inter/inter-latin-500-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url('/fonts/inter/inter-latin-600-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url('/fonts/inter/inter-latin-700-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src: url('/fonts/inter/inter-latin-800-normal.woff2') format('woff2');
+}
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #142F52;
@@ -71,6 +123,12 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   font-family: var(--ifm-font-family-base);
   -webkit-font-smoothing: antialiased;
@@ -79,12 +137,24 @@ body {
 
 /* Navbar styles */
 .navbar {
+  min-height: 70px;
+  padding: 0 1.5rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
   box-shadow: var(--ifm-navbar-shadow);
   backdrop-filter: blur(10px);
 }
 
 .navbar__brand {
   font-weight: 700;
+}
+
+.navbar__logo {
+  height: 38px;
+}
+
+.navbar__title {
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
 }
 
 .navbar__item {
@@ -232,21 +302,6 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--ifm-font-color-base) !important;
 }
 
-/* Ensure proper text flow on mobile */
-@media (max-width: 768px) {
-  * {
-    writing-mode: horizontal-tb !important;
-    text-orientation: mixed !important;
-    letter-spacing: normal !important;
-  }
-  
-  h1, h2, h3, h4, h5, h6, p, span, div {
-    display: block;
-    width: auto;
-    text-align: inherit;
-  }
-}
-
 /* Fix for mobile menu appearing behind content */
 .navbar-sidebar {
   z-index: 9999 !important;
@@ -276,9 +331,14 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 0 !important;
 }
 
-/* Hide the hamburger menu button on mobile */
-.navbar__toggle {
-  display: none !important;
+@media (max-width: 996px) {
+  .navbar {
+    min-height: 64px;
+    padding: 0 1rem;
+    /* A backdrop filter makes fixed descendants use the navbar as their
+       containing block, which clips Docusaurus' mobile drawer to 64px. */
+    backdrop-filter: none;
+  }
 }
 
 /* Die Breite des Inhalts vergößern, u.a. für die Tabellen */
