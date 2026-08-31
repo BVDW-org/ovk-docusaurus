@@ -1,0 +1,89 @@
+name: Build and publish OVK Tech Specs
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'ovk/**'
+      - '.github/workflows/build-and-publish.yml'
+  pull_request:
+    paths:
+      - 'ovk/**'
+      - '.github/workflows/build-and-publish.yml'
+      - '.github/workflows/sync-and-publish.yml'
+      - '.github/scripts/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.event_name == 'pull_request' && format('ovk-pages-pr-{0}', github.event.pull_request.number) || 'ovk-pages-publisher' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  build:
+    name: Validate and build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: ovk/package-lock.json
+
+      - name: Install locked dependencies
+        run: npm ci
+        working-directory: ovk
+
+      - name: Validate identifier-landscape configuration
+        run: node scripts/validate-identifier-config.mjs
+        working-directory: ovk
+
+      - name: Build production site
+        run: ./node_modules/.bin/docusaurus build --out-dir "${RUNNER_TEMP}/site"
+        working-directory: ovk
+        env:
+          CI: 'true'
+          NODE_ENV: production
+          NO_UPDATE_NOTIFIER: 'true'
+
+      - name: Verify build artifact
+        run: |
+          test -s "${RUNNER_TEMP}/site/index.html"
+          test -s "${RUNNER_TEMP}/site/404.html"
+          test -s "${RUNNER_TEMP}/site/CNAME"
+          test "$(tr -d '\r\n' < "${RUNNER_TEMP}/site/CNAME")" = "tech.ovk.de"
+
+      - name: Upload GitHub Pages artifact
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: ${{ runner.temp }}/site
+
+  deploy:
+    name: Deploy GitHub Pages
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0

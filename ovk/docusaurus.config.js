@@ -26,8 +26,13 @@ const config = {
   organizationName: 'OVK', // Usually your GitHub org/user name.
   projectName: 'tech-specs', // Usually your repo name.
 
-  onBrokenLinks: 'warn',// changed from throw to warm to skip
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'throw',
+  onBrokenAnchors: 'throw',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'throw',
+    },
+  },
 
   stylesheets: [
     {
@@ -60,6 +65,8 @@ const config = {
         },
         blog: {
           showReadingTime: true,
+          onInlineAuthors: 'ignore',
+          onUntruncatedBlogPosts: 'ignore',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
          // editUrl:

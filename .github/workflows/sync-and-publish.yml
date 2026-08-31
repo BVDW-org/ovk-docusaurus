@@ -1,0 +1,180 @@
+name: Sync upstream content and publish
+
+on:
+  schedule:
+    # GitHub schedules use UTC. Avoid the high-load start of the hour.
+    - cron: '23 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  # Shared with build-and-publish so only one production artifact is deployed at a time.
+  group: ovk-pages-publisher
+  cancel-in-progress: false
+
+jobs:
+  sync-build-publish:
+    name: Sync, validate, build, and publish
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: write
+
+    outputs:
+      source_changed: ${{ steps.prepare.outputs.changed }}
+
+    steps:
+      - name: Checkout target repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Checkout identity solutions source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: BVDW-org/ovk-identifiersupport
+          ref: main
+          path: _sources/identitysolutions
+          fetch-depth: 1
+          persist-credentials: false
+          # This secret should be a fine-grained, read-only token for the source repositories.
+          token: ${{ secrets.GH_TOKEN }}
+
+      - name: Checkout contextual standard source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: BVDW-org/ovk-contextualstandard
+          ref: main
+          path: _sources/contextualstandard
+          fetch-depth: 1
+          persist-credentials: false
+          token: ${{ secrets.GH_TOKEN }}
+
+      - name: Checkout advertising formats source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: BVDW-org/ovk-werbeformen
+          ref: main
+          path: _sources/werbeformen
+          fetch-depth: 1
+          persist-credentials: false
+          token: ${{ secrets.GH_TOKEN }}
+
+      - name: Synchronize upstream content
+        run: |
+          .github/scripts/sync-upstream-content.sh \
+            _sources/identitysolutions \
+            _sources/contextualstandard \
+            _sources/werbeformen/werbeformen.org/docs
+
+      - name: Prepare synchronized source commit
+        id: prepare
+        run: |
+          changed=false
+          git add -A -- \
+            ovk/docs/contextualstandards \
+            ovk/docs/identitysolutions \
+            ovk/docs/werbeformen \
+            ovk/static/tools/identifier-landscape
+
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "${GITHUB_OUTPUT}"
+          else
+            git diff --cached --check
+            git config --local user.name "github-actions[bot]"
+            git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Sync upstream OVK documentation [automated]"
+            changed=true
+            echo "changed=true" >> "${GITHUB_OUTPUT}"
+          fi
+
+          git fetch origin main
+          if [ "$(git rev-parse HEAD)" = "$(git rev-parse origin/main)" ]; then
+            exit 0
+          fi
+
+          if [ "${changed}" = "true" ]; then
+            git rebase origin/main
+          else
+            git merge --ff-only origin/main
+          fi
+
+      - name: Set up Node.js
+        if: steps.prepare.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: ovk/package-lock.json
+
+      - name: Install locked dependencies
+        if: steps.prepare.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        run: npm ci
+        working-directory: ovk
+
+      - name: Validate identifier-landscape configuration
+        if: steps.prepare.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        run: node scripts/validate-identifier-config.mjs
+        working-directory: ovk
+
+      - name: Build synchronized production site
+        if: steps.prepare.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        run: ./node_modules/.bin/docusaurus build --out-dir "${RUNNER_TEMP}/site"
+        working-directory: ovk
+        env:
+          CI: 'true'
+          NODE_ENV: production
+          NO_UPDATE_NOTIFIER: 'true'
+
+      - name: Verify build artifact
+        if: steps.prepare.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        run: |
+          test -s "${RUNNER_TEMP}/site/index.html"
+          test -s "${RUNNER_TEMP}/site/404.html"
+          test -s "${RUNNER_TEMP}/site/CNAME"
+          test "$(tr -d '\r\n' < "${RUNNER_TEMP}/site/CNAME")" = "tech.ovk.de"
+
+      - name: Push synchronized sources
+        if: steps.prepare.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git fetch origin main
+          if ! git merge-base --is-ancestor origin/main HEAD; then
+            echo "::error::main changed during validation; retry this workflow to resync safely"
+            exit 1
+          fi
+          gh auth setup-git
+          git push origin HEAD:main
+
+      - name: Upload GitHub Pages artifact
+        if: steps.prepare.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: ${{ runner.temp }}/site
+
+  deploy:
+    name: Deploy synchronized GitHub Pages site
+    needs: sync-build-publish
+    if: >-
+      github.ref == 'refs/heads/main' &&
+      needs.sync-build-publish.result == 'success' &&
+      (needs.sync-build-publish.outputs.source_changed == 'true' || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0
