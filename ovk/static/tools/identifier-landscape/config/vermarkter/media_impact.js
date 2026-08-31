@@ -8,7 +8,7 @@ if (!window.OVK_LANDSCAPE_CONFIG.vermarkter) {
 window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
   id: "media_impact",
   name: "Media Impact",
-  description: " Vermarkter von Axel Springer.",
+  description: " ",
   supportedInventoryTypes: [
     {
       type: "desktop",
