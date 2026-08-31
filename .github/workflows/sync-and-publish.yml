@@ -124,7 +124,7 @@ jobs:
 
       - name: Build synchronized production site
         if: steps.prepare.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
-        run: ./node_modules/.bin/docusaurus build --out-dir "${RUNNER_TEMP}/site"
+        run: npm run build -- --out-dir "${RUNNER_TEMP}/site"
         working-directory: ovk
         env:
           CI: 'true'

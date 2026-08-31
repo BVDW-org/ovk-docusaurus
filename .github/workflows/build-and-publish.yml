@@ -50,7 +50,7 @@ jobs:
         working-directory: ovk
 
       - name: Build production site
-        run: ./node_modules/.bin/docusaurus build --out-dir "${RUNNER_TEMP}/site"
+        run: npm run build -- --out-dir "${RUNNER_TEMP}/site"
         working-directory: ovk
         env:
           CI: 'true'
