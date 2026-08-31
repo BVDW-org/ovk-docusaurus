@@ -64,7 +64,6 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
   ],
   supportedSSPs: [
     "equativ",
-    "pubmatic",
     "xandr",
     "yieldlab",
     "adform"
