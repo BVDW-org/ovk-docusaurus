@@ -37,6 +37,7 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
     "xandr",
     "yieldlab",
     "smartclip",
-    "adform"
+    "adform",
+    "sroerssp"
   ]
 });
