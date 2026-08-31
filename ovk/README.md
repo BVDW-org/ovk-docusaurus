@@ -1,41 +1,45 @@
-# Website
+# Local Docusaurus development
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+This directory contains the Docusaurus application for the [OVK technical specifications website](https://tech.ovk.de/).
 
-### Installation
+For content ownership, synchronization, GitHub Actions, deployment, permissions, and troubleshooting, read the [repository guide](../README.md).
 
-```
-$ yarn
-```
+## Requirements
 
-### Local Development
+- Node.js 24 or newer
+- npm
 
-```
-$ yarn start
-```
+## Start the development server
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-### Build
-
-```
-$ yarn build
+```bash
+npm ci
+npm start
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+The command prints the local URL and reloads most source changes automatically.
 
-### Deployment
+## Validate and build
 
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=NadeemQu yarn deploy
+```bash
+npm ci
+node scripts/validate-identifier-config.mjs
+npm run build
+npm run serve
 ```
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+The production build is written to the ignored `build/` directory.
+
+## Content locations
+
+- `docs/` contains Docusaurus documentation sources.
+- `src/` contains pages, components, and styles.
+- `static/` contains assets copied directly into the build artifact.
+- `scripts/` contains synchronized-content normalization and Identifier Landscape validation.
+
+Some content under `docs/` and `static/tools/identifier-landscape/` is synchronized from other repositories. Make lasting content changes in the appropriate source repository described in the [root README](../README.md); the next sync may overwrite changes made directly to synchronized destinations.
+
+## Deployment
+
+Do not use `npm run deploy`, copy `build/` into the top-level `docs/` directory, or push generated output to a `gh-pages` branch.
+
+Production publishing is owned by the repository's GitHub Actions workflows. They install locked dependencies, validate the content, build a temporary artifact, verify the custom domain, and deploy through GitHub Pages.
