@@ -1,5 +1,9 @@
+---
+slug: /werbeformen/video/in-stream/bumper-ad
+---
+
 # Bumper Ad
-<img alt="OVK_WF_Video_Bumper_Ad 3" src="https://github.com/BVDW-org/ovk-docusaurus/blob/main/ovk/static/img/formats/OVK_WF_Video_Bumper_Ad.png?raw=true" />
+<img alt="OVK_WF_Video_Bumper_Ad 3" src="/img/formats/OVK_WF_Video_Bumper_Ad.png" />
 
 
 

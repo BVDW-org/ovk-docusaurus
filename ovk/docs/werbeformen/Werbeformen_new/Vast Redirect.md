@@ -1,3 +1,7 @@
+---
+slug: /werbeformen/vast-redirect
+---
+
 # VAST Redirect
 
 ## Protokoll

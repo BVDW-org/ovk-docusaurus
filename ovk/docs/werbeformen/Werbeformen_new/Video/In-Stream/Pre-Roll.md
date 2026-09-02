@@ -1,5 +1,9 @@
+---
+slug: /werbeformen/video/in-stream/pre-roll
+---
+
 # Pre-Roll Ad
-<img alt="image" src="https://github.com/BVDW-org/ovk-docusaurus/blob/main/ovk/static/img/formats/OVK_WF_Video_Pre_Roll.png?raw=true" />
+<img alt="image" src="/img/formats/OVK_WF_Video_Pre_Roll.png" />
 
 
 ## Beschreibung

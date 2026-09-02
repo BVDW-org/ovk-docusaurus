@@ -35,12 +35,12 @@ const topics = [
       },
       {
         label: 'Display',
-        to: '/docs/werbeformen/Werbeformen_new/Display/Standard-Werbeformen/Billboard',
+        to: '/docs/werbeformen/display/standard-werbeformen/billboard',
         Icon: Monitor,
       },
       {
         label: 'Video',
-        to: '/docs/werbeformen/Werbeformen_new/Video/In-Stream/Pre-Roll',
+        to: '/docs/werbeformen/video/in-stream/pre-roll',
         Icon: Play,
       },
     ],

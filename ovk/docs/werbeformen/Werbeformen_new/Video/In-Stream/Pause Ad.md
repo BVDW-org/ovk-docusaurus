@@ -1,5 +1,9 @@
+---
+slug: /werbeformen/video/in-stream/pause-ad
+---
+
 # Pause Ad
-<img alt="image" src="https://github.com/BVDW-org/ovk-docusaurus/blob/main/ovk/static/img/formats/OVK_WF_Video_Pause_Ad.png?raw=true" />
+<img alt="image" src="/img/formats/OVK_WF_Video_Pause_Ad.png" />
 
 ## Beschreibung
 Pause Ads sind Banner, die ausgespielt werden, wenn ein Nutzer während des Streamens auf „Pause“ klickt.

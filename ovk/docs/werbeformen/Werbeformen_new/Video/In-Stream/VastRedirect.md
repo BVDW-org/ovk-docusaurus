@@ -1,3 +1,7 @@
+---
+slug: /werbeformen/video/in-stream/vastredirect
+---
+
 # VAST Redirect
 
 ## Protokoll

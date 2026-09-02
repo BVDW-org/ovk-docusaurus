@@ -1,6 +1,10 @@
+---
+slug: /werbeformen/display/standard-werbeformen/super-banner
+---
+
 # Superbanner
 <span class="badge badge--success">Active</span>
-<img alt="OVK_WF_Desktop_Superbanner" src="https://github.com/BVDW-org/ovk-docusaurus/blob/main/ovk/static/img/formats/OVK_WF_Desktop_Superbanner.png?raw=true" />
+<img alt="OVK_WF_Desktop_Superbanner" src="/img/formats/OVK_WF_Desktop_Superbanner.png" />
 
 
 ## Beschreibung

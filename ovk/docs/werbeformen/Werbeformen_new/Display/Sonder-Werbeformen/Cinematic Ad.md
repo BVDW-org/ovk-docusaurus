@@ -1,6 +1,10 @@
+---
+slug: /werbeformen/display/sonder-werbeformen/cinematic-ad
+---
+
 # Cinematic Ad
 <span class="badge badge--success">Active</span>
-<img alt="OVK_WF_Desktop_CinematicAd" src="https://github.com/BVDW-org/ovk-docusaurus/blob/main/ovk/static/img/formats/OVK_WF_Desktop_CinematicAd.png?raw=true" />
+<img alt="OVK_WF_Desktop_CinematicAd" src="/img/formats/OVK_WF_Desktop_CinematicAd.png" />
 
 
 ## Beschreibung

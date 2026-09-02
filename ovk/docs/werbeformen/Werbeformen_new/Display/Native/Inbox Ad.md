@@ -1,6 +1,10 @@
+---
+slug: /werbeformen/display/native/inbox-ad
+---
+
 # InboxAd / Mail Ad
 <span class="badge badge--success">Active</span>
-<img alt="OVK_WF_Desktop_Mobil_InboxAdMailAd" src="https://github.com/BVDW-org/ovk-docusaurus/blob/main/ovk/static/img/formats/OVK_WF_Desktop_Mobil_InboxAdMailAd.png?raw=true" />
+<img alt="OVK_WF_Desktop_Mobil_InboxAdMailAd" src="/img/formats/OVK_WF_Desktop_Mobil_InboxAdMailAd.png" />
 
 
 ## Beschreibung

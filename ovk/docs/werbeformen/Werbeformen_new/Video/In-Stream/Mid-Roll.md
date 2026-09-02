@@ -1,5 +1,9 @@
+---
+slug: /werbeformen/video/in-stream/mid-roll
+---
+
 # Mid-Roll Ad
-<img alt="OVK_WF_Video_Mid_Roll 2" src="https://github.com/BVDW-org/ovk-docusaurus/blob/main/ovk/static/img/formats/OVK_WF_Video_Mid_Roll.png?raw=true" />
+<img alt="OVK_WF_Video_Mid_Roll 2" src="/img/formats/OVK_WF_Video_Mid_Roll.png" />
 
 
 ## Beschreibung

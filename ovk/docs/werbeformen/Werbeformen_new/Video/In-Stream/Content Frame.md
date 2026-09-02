@@ -1,5 +1,9 @@
+---
+slug: /werbeformen/video/in-stream/content-frame
+---
+
 # Content Frame/ Cutin XXL
-<img alt="OVK_WF_Video_Content_Frame_02 (002)" src="https://github.com/BVDW-org/ovk-docusaurus/blob/main/ovk/static/img/formats/OVK_WF_Video_Content_Frame_02.png?raw=true" />
+<img alt="OVK_WF_Video_Content_Frame_02 (002)" src="/img/formats/OVK_WF_Video_Content_Frame_02.png" />
 
 
 ## Beschreibung

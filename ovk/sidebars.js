@@ -3,7 +3,7 @@
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
   // Manually create a sidebar
-  tutorialSidebar: [
+  mainSidebar: [
     {
       type: 'category',
       label: 'Identity',

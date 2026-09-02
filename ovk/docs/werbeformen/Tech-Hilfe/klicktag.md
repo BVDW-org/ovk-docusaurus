@@ -1,3 +1,7 @@
+---
+slug: /werbeformen/tech-hilfe/klicktag
+---
+
 # Clicktag
 
 Die Schreibweise für Klicktags lautet: clicktag Die Schreibweise für Multi-Klicktags lautet: clicktag, clicktag2,

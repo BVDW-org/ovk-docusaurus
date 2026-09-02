@@ -1,6 +1,10 @@
+---
+slug: /werbeformen/display/standard-werbeformen/ad-bundle
+---
+
 # Ad Bundle
 <span class="badge badge--success">Active</span>
-<img alt="OVK_WF_Desktop_Adbundle" src="https://github.com/BVDW-org/ovk-docusaurus/blob/main/ovk/static/img/formats/OVK_WF_Desktop_Adbundle.png?raw=true" />
+<img alt="OVK_WF_Desktop_Adbundle" src="/img/formats/OVK_WF_Desktop_Adbundle.png" />
 
 
 ## Beschreibung

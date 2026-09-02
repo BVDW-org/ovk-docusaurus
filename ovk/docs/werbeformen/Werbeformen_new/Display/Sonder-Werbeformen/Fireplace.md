@@ -1,6 +1,10 @@
+---
+slug: /werbeformen/display/sonder-werbeformen/fireplace
+---
+
 # Fireplace / Skin (Pageskin)
 <span class="badge badge--success">Active</span>
-<img alt="OVK_WF_Desktop_Fireplace" src="https://github.com/BVDW-org/ovk-docusaurus/blob/main/ovk/static/img/formats/OVK_WF_Desktop_Fireplace.png?raw=true" />
+<img alt="OVK_WF_Desktop_Fireplace" src="/img/formats/OVK_WF_Desktop_Fireplace.png" />
 
 
 ## Beschreibung

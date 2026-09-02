@@ -1,6 +1,10 @@
+---
+slug: /werbeformen/display/sonder-werbeformen/mobile-understitial
+---
+
 # (Mobile) Understitial / Mobile Poster Ad
 <span class="badge badge--success">Active</span>
-<img alt="OVK_WF_Mobile_UnderstitialMobilePosterAd " src="https://github.com/BVDW-org/ovk-docusaurus/blob/main/ovk/static/img/formats/OVK_WF_Mobile_UnderstitialMobilePosterAd .png?raw=true" />
+<img alt="OVK_WF_Mobile_UnderstitialMobilePosterAd " src="/img/formats/OVK_WF_Mobile_UnderstitialMobilePosterAd.png" />
 
 
 ## Beschreibung

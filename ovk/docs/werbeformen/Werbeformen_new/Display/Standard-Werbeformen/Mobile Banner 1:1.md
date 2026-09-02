@@ -1,7 +1,11 @@
+---
+slug: /werbeformen/display/standard-werbeformen/mobile-banner-1-1
+---
+
 # Mobile Banner 1:1
 <span class="badge badge--success">Active</span>
 
-<img alt="OVK_WF_Mobil_Banner_1_1" src="https://github.com/BVDW-org/ovk-docusaurus/blob/main/ovk/static/img/formats/OVK_WF_Mobil_Banner_1_1.png?raw=true" />
+<img alt="OVK_WF_Mobil_Banner_1_1" src="/img/formats/OVK_WF_Mobil_Banner_1_1.png" />
 
 ## Beschreibung
 Der Mobile Banner ist ein Standard-Fomat, der sich in verschiedenen Größenverhältnissen aufmerksamkeitsstark in den Content einer Website auf dem Smartphone integriert und  eine Vielzahl an Gestaltungsmöglichkeiten zulässt.

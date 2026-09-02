@@ -1,3 +1,7 @@
+---
+slug: /werbeformen/display/sonder-werbeformen/break-ad
+---
+
 # Break Ad
 
 

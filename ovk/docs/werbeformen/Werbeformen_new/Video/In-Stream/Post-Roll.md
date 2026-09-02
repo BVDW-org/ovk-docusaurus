@@ -1,5 +1,9 @@
+---
+slug: /werbeformen/video/in-stream/post-roll
+---
+
 # Post-Roll Ad
-<img alt="image" src="https://github.com/BVDW-org/ovk-docusaurus/blob/main/ovk/static/img/formats/OVK_WF_Video_Post_Roll.png?raw=true" />
+<img alt="image" src="/img/formats/OVK_WF_Video_Post_Roll.png" />
 
 
 ## Beschreibung

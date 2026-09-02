@@ -1,6 +1,8 @@
-import { readFile, readdir, writeFile } from 'node:fs/promises';
+import { access, readFile, readdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+
+import { collectWerbeformenRoutes } from './werbeformen-routes.mjs';
 
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const ovkDirectory = path.resolve(scriptDirectory, '..');
@@ -40,6 +42,102 @@ async function normalizeLineEndings(directory) {
 
     if (normalized !== source) {
       await writeFile(entryPath, normalized);
+    }
+  }));
+}
+
+// Upstream documents embed images through github.com raw URLs even when the
+// referenced file is served by this site from /img. Rewriting them to local
+// paths keeps visitors off third-party hosts and lets missing images surface
+// at build time instead of 404ing silently in production. URLs whose target
+// does not exist locally are left untouched so the page keeps working.
+const hotlinkPattern =
+  /https:\/\/github\.com\/BVDW-org\/ovk-docusaurus\/blob\/[^/]+\/ovk\/static\/([^"'()?]+?)\?raw=true/g;
+
+function decodeHotlinkPath(rawPath) {
+  try {
+    return decodeURIComponent(rawPath);
+  } catch {
+    return rawPath;
+  }
+}
+
+async function rewriteImageHotlinks(directory) {
+  const entries = await readdir(directory, { withFileTypes: true });
+
+  await Promise.all(entries.map(async (entry) => {
+    const entryPath = path.join(directory, entry.name);
+
+    if (entry.isDirectory()) {
+      await rewriteImageHotlinks(entryPath);
+      return;
+    }
+
+    if (!entry.isFile() || !['.md', '.mdx'].includes(path.extname(entry.name))) {
+      return;
+    }
+
+    const source = await readFile(entryPath, 'utf8');
+    const replacements = new Map();
+
+    for (const match of source.matchAll(hotlinkPattern)) {
+      const localPath = decodeHotlinkPath(match[1])
+        // Repair known upstream filename defects such as a space before the
+        // file extension ("...PosterAd .png" is published as "...PosterAd.png").
+        .replace(/\s+(\.[a-z0-9]+)$/i, '$1');
+
+      try {
+        await access(path.join(ovkDirectory, 'static', localPath));
+        replacements.set(match[0], `/${localPath}`);
+      } catch {
+        console.warn(`Keeping hotlink without local counterpart: ${match[0]}`);
+      }
+    }
+
+    let rewritten = source;
+    for (const [hotlink, localSrc] of replacements) {
+      rewritten = rewritten.replaceAll(hotlink, localSrc);
+    }
+
+    // Local image paths copied from GitHub sometimes keep a leftover
+    // ?raw=true query string; static hosting ignores it, but it defeats
+    // caching normalization and reads as a mistake.
+    rewritten = rewritten.replace(/(src="\/img\/[^"?]+)\?raw=true"/g, '$1"');
+
+    if (rewritten !== source) {
+      await writeFile(entryPath, rewritten);
+    }
+  }));
+}
+
+// Werbeformen filenames contain spaces, umlauts, and colons, and the upstream
+// "Werbeformen_new" folder must not leak into public URLs. Inject the stable
+// ASCII slugs derived by werbeformen-routes.mjs as front matter on every sync;
+// docusaurus.config.js registers redirects from each legacy route.
+async function injectWerbeformenSlugs() {
+  await Promise.all(collectWerbeformenRoutes().map(async (entry) => {
+    if (entry.slug === null) {
+      return;
+    }
+
+    const file = path.join(ovkDirectory, 'docs/werbeformen', entry.relativePath);
+    const source = await readFile(file, 'utf8');
+    const slugLine = `slug: ${entry.slug}`;
+    let normalized;
+
+    const frontMatterMatch = source.match(/^---\n([\s\S]*?)\n---\n/);
+    if (frontMatterMatch) {
+      const body = frontMatterMatch[1];
+      const updatedBody = /^slug:.*$/m.test(body)
+        ? body.replace(/^slug:.*$/m, slugLine)
+        : `${body}\n${slugLine}`;
+      normalized = source.replace(frontMatterMatch[0], `---\n${updatedBody}\n---\n`);
+    } else {
+      normalized = `---\n${slugLine}\n---\n\n${source}`;
+    }
+
+    if (normalized !== source) {
+      await writeFile(file, normalized);
     }
   }));
 }
@@ -116,6 +214,14 @@ async function normalizeVendorAnchors() {
 
   await writeFile(file, `${normalized.join('\n').replace(/\n+$/, '')}\n`);
 }
+
+await Promise.all([
+  'docs/contextualstandards',
+  'docs/identitysolutions',
+  'docs/werbeformen',
+].map((directory) => rewriteImageHotlinks(path.join(ovkDirectory, directory))));
+
+await injectWerbeformenSlugs();
 
 await Promise.all([
   'docs/contextualstandards',

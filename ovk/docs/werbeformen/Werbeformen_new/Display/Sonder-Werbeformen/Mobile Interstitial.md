@@ -1,7 +1,11 @@
+---
+slug: /werbeformen/display/sonder-werbeformen/mobile-interstitial
+---
+
 # (Mobile) Pre-/Interstitial
 <span class="badge badge--success">Active</span>
 
-<img alt="OVK_WF_Mobile_Pre_Interstitial" src="https://github.com/BVDW-org/ovk-docusaurus/blob/main/ovk/static/img/formats/OVK_WF_Mobile_Pre_Interstitial.png?raw=true" />
+<img alt="OVK_WF_Mobile_Pre_Interstitial" src="/img/formats/OVK_WF_Mobile_Pre_Interstitial.png" />
 
 ## Beschreibung
 Das (Mobile) Pre-/Interstitial zieht die Aufmerksamkeit des Nutzers auf sich, indem es die Content-Nutzung unterbricht und einen großen Teil des Displays ausfüllt.

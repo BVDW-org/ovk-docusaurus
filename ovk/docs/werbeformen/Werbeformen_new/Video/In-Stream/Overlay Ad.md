@@ -1,5 +1,9 @@
+---
+slug: /werbeformen/video/in-stream/overlay-ad
+---
+
 # Overlay Ad
-<img alt="image" src="https://github.com/BVDW-org/ovk-docusaurus/blob/main/ovk/static/img/formats/OVK_WF_Video_Overlay_Ad.png?raw=true" />
+<img alt="image" src="/img/formats/OVK_WF_Video_Overlay_Ad.png" />
 
 
 ## Beschreibung

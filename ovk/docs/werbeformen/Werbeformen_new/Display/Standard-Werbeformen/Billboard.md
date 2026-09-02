@@ -1,6 +1,10 @@
+---
+slug: /werbeformen/display/standard-werbeformen/billboard
+---
+
 # Billboard Ad
 <span class="badge badge--success">Active</span>
-<img alt="OVK_WF_Desktop_BillboardAd" src="https://github.com/BVDW-org/ovk-docusaurus/blob/main/ovk/static/img/formats/OVK_WF_Desktop_BillboardAd.png?raw=true" />
+<img alt="OVK_WF_Desktop_BillboardAd" src="/img/formats/OVK_WF_Desktop_BillboardAd.png" />
 
 
 ## Beschreibung

@@ -1,6 +1,10 @@
+---
+slug: /werbeformen/display/sonder-werbeformen/bridge-ad
+---
+
 # Bridge Ad
 <span class="badge badge--success">Active</span>
-<img alt="OVK_WF_Desktop_BridgeAd" src="/img/formats/OVK_WF_Desktop_BridgeAd.png?raw=true" />
+<img alt="OVK_WF_Desktop_BridgeAd" src="/img/formats/OVK_WF_Desktop_BridgeAd.png" />
 
 
 ## Beschreibung

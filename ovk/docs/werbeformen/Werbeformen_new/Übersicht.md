@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+slug: /werbeformen/uebersicht
 ---
 
 # Display Advertising – Digitale Werbeformen und Standards des OVK

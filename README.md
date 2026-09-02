@@ -67,7 +67,7 @@ The sync workflow:
 1. checks out all three upstream repositories using `GH_TOKEN`, which should be scoped to read-only access;
 2. verifies that required files and Markdown content exist;
 3. synchronizes only the intended content, preserves the locally audited Identifier Landscape runtime, and removes files deleted upstream;
-4. normalizes text line endings plus known Markdown heading and anchor incompatibilities;
+4. normalizes text line endings and known Markdown heading and anchor incompatibilities, rewrites GitHub image hotlinks to locally served copies, and injects stable ASCII URL slugs for the Werbeformen documentation;
 5. commits synchronized source changes, rebasing safely if `main` moved;
 6. installs the locked Node.js dependencies;
 7. validates the Identifier Landscape configuration;
@@ -129,9 +129,11 @@ Official GitHub Actions are pinned to immutable commit SHAs. Checkout credential
 
 ### Special characters and URLs
 
-Synchronized files are copied as UTF-8 without transliterating their content. German characters such as `ä`, `ö`, `ü`, and `ß` are supported. Docusaurus URL-encodes spaces and non-ASCII path characters in generated routes.
+Synchronized files are copied as UTF-8 without transliterating their content. German characters such as `ä`, `ö`, `ü`, and `ß` are supported.
 
-For a permanent public URL, prefer a stable ASCII `slug` in the document front matter rather than relying on a filename. The strict build catches malformed links and anchors before deployment, while the normalization script handles known upstream heading/anchor patterns deterministically.
+For the Werbeformen documentation, the normalization script derives a stable ASCII `slug` for every document from its file path (spaces, umlauts, and colons are transliterated, and the upstream `Werbeformen_new` folder is dropped from public URLs). The slug rules live in [`ovk/scripts/werbeformen-routes.mjs`](ovk/scripts/werbeformen-routes.mjs); `@docusaurus/plugin-client-redirects` registers a redirect from every legacy route to its slugged replacement, so previously shared URLs keep working. Because slugs are re-derived on every sync, upstream renames automatically produce a new slug — the old route of a renamed document is not redirected, so prefer stable filenames upstream.
+
+The normalization script also rewrites upstream image references that hotlink `github.com/BVDW-org/ovk-docusaurus/...?raw=true` URLs to the locally served `/img/...` copies, keeping visitors off third-party hosts. The strict build catches malformed links and anchors before deployment, while the normalization script handles known upstream heading/anchor patterns deterministically.
 
 ## Deployment artifacts
 

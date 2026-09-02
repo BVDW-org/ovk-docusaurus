@@ -1,6 +1,10 @@
+---
+slug: /werbeformen/display/standard-werbeformen/mobile-banner-4-1
+---
+
 # Mobile Banner 4:1
 <span class="badge badge--success">Active</span>
-<img alt="OVK_WF_Mobil_Banner_1_4" src="https://github.com/BVDW-org/ovk-docusaurus/blob/main/ovk/static/img/formats/OVK_WF_Mobil_Banner_1_4.png?raw=true" />
+<img alt="OVK_WF_Mobil_Banner_1_4" src="/img/formats/OVK_WF_Mobil_Banner_1_4.png" />
 
 
 ## Beschreibung

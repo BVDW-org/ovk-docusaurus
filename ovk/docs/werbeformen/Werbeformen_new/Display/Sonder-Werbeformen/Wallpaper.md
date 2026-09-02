@@ -1,6 +1,10 @@
+---
+slug: /werbeformen/display/sonder-werbeformen/wallpaper
+---
+
 # Wallpaper
 <span class="badge badge--success">Active</span>
-<img alt="OVK_WF_Desktop_Wallpaper" src="https://github.com/BVDW-org/ovk-docusaurus/blob/main/ovk/static/img/formats/OVK_WF_Desktop_Wallpaper.png?raw=true" />
+<img alt="OVK_WF_Desktop_Wallpaper" src="/img/formats/OVK_WF_Desktop_Wallpaper.png" />
 
 
 ## Beschreibung

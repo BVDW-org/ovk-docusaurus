@@ -1,5 +1,9 @@
+---
+slug: /werbeformen/video/accompanying-content/content-roll
+---
+
 # Content Roll
-<img alt="OVK_WF_Video_Content_Roll" src="https://github.com/BVDW-org/ovk-docusaurus/blob/main/ovk/static/img/formats/OVK_WF_Video_Content_Roll.png?raw=true" />
+<img alt="OVK_WF_Video_Content_Roll" src="/img/formats/OVK_WF_Video_Content_Roll.png" />
 
 
 ## Beschreibung

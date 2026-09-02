@@ -184,6 +184,28 @@ body {
   width: 100%;
 }
 
+/* Dropdown parents reuse the same ::after pseudo-element for Infima's caret
+   triangle, which collides with the animated underline above and renders as
+   a broken red bar. Replace the caret with the same underline treatment the
+   plain navbar links get. */
+.dropdown > .navbar__link::after {
+  border: none;
+  margin-left: 0;
+  top: auto;
+  transform: none;
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--ifm-color-secondary);
+  transition: width 0.3s ease;
+}
+
+.dropdown > .navbar__link:hover::after {
+  width: 100%;
+}
+
 /* Footer styles */
 .footer {
   background-color: var(--ifm-footer-background-color);

@@ -1,5 +1,9 @@
+---
+slug: /werbeformen/video/out-stream/in-text-video-ad
+---
+
 # In-Text Video Ad
-<img alt="image" src="https://github.com/BVDW-org/ovk-docusaurus/blob/main/ovk/static/img/formats/OVK_WF_Video_Intext_VideoAd.png?raw=true" />
+<img alt="image" src="/img/formats/OVK_WF_Video_Intext_VideoAd.png" />
 
 ## Beschreibung
 Der Werbespot startet muted im Autoplay. Der Player ist zwischen zwei Absätzen innerhalb eines Artikels platziert. Das Format ist somit sehr aufmerksamkeitsstark. Je nach Größe des Viewports skaliert der Player seine Werbefläche im idealen Verhältnis zum Rest der Website bzw. des Viewports. Der Videostart erfolgt erst dann, wenn mindestens 50% der Werbefläche im sichtbaren Bereich ist.
