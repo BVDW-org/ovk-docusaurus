@@ -1,7 +1,7 @@
 # ADR 0001: Architecture Decision Record for OVK ID Landscape Map
 
 - **Status**: Accepted
-- **Kontext**: 
+- **Kontext**:
   Es soll eine interaktive, 5-stufige Workflow-Karte ("OVK ID Landscape Map") erstellt werden, die Partner in den Stufen Usecase, DSP, SSP, Vermarkter und Publisher darstellt. Bei Klick auf einen Usecase und eine DSP sollen inkompatible Partner ausgeblendet/ausgegraut werden.
   Die Liste der Partner sowie deren Beziehungen untereinander (Kompatibilitäten, Zuordnungen) müssen einfach konfigurierbar und erweiterbar sein. Das Design soll sich eng an den Farben und dem Layout von ovk.de (BVDW) orientieren.
 

@@ -9,39 +9,37 @@ import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Tech Specs',
-  tagline: '',
+  title: 'OVK Tech Specs',
+  tagline: 'Technische Standards des Online-Vermarkterkreises',
   favicon: 'img/logo_ovk_mobile.png',
 
-  // Set the production url of your site here
-  url: 'https://tech.ovk.de', // Changed from url tech.ovk.de to test
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
+  url: 'https://tech.ovk.de',
   baseUrl: '/',
-  trailingSlash: false, // oder true je nach Wunsch
-  
+  trailingSlash: false,
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'OVK', // Usually your GitHub org/user name.
-  projectName: 'tech-specs', // Usually your repo name.
+  organizationName: 'BVDW-org',
+  projectName: 'ovk-docusaurus',
 
   onBrokenLinks: 'throw',
   onBrokenAnchors: 'throw',
   markdown: {
     hooks: {
+      onBrokenMarkdownImages: 'throw',
       onBrokenMarkdownLinks: 'throw',
     },
   },
 
   clientModules: [require.resolve('./src/clientModules/identitySolutionsEnhancer.js')],
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'de',
-    locales: ['de','en'],
+    locales: ['de'],
+    localeConfigs: {
+      de: {
+        htmlLang: 'de-DE',
+        label: 'Deutsch',
+      },
+    },
   },
 
   presets: [
@@ -51,20 +49,9 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-         // editUrl:
-           //   'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          exclude: ['tutorial-basics/**', 'tutorial-extras/**'],
         },
-        blog: {
-          showReadingTime: true,
-          onInlineAuthors: 'ignore',
-          onUntruncatedBlogPosts: 'ignore',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-         // editUrl:
-           //   'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
+        blog: false,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -75,8 +62,14 @@ const config = {
   themeConfig:
   /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
       ({
-        // Replace with your project's social card
-        image: 'img/logo_ovk_mobile.png',
+        image: 'img/ovk-hero-technical-grid.png',
+        metadata: [
+          {
+            name: 'keywords',
+            content:
+              'OVK, Tech Specs, Identity, Contextual Standard, Werbeformen, digitale Werbung',
+          },
+        ],
         colorMode: {
           defaultMode: 'light',
           disableSwitch: false,
@@ -157,7 +150,7 @@ const config = {
             },
           ],
          
-          copyright: `Copyright © ${new Date().getFullYear()} OVK, Built with Docusaurus.`,
+          copyright: `Copyright © ${new Date().getFullYear()} Online-Vermarkterkreis (OVK).`,
         },
         prism: {
           theme: prismThemes.github,

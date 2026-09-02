@@ -255,6 +255,7 @@ window.OVK_LANDSCAPE_CONFIG = {
         "targeting_pre"
       ],
       supportedVermarkter: [
+        "funke",
         "stroeer"
       ],
       supportedIds: [

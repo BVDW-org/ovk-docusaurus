@@ -5,8 +5,6 @@
 
 This repository builds and publishes the [OVK technical specifications website](https://tech.ovk.de/). The site combines documentation maintained here with content synchronized from other BVDW/OVK repositories.
 
-> **Important:** the top-level `docs/` directory is legacy generated output. It is no longer the GitHub Pages publishing source. Current deployments use a validated GitHub Pages artifact, so the age shown beside `docs/` in GitHub does not indicate the age of the live website.
-
 ## Which section should I read?
 
 - **Content contributor:** start with [Where content comes from](#where-content-comes-from) and [When will a change be live?](#when-will-a-change-be-live).
@@ -49,13 +47,12 @@ The workflows share one concurrency group, so two production deployments cannot 
 
 | Source of truth | Published content | Destination in this repository | Live location |
 |---|---|---|---|
-| [`BVDW-org/ovk-identifiersupport`](https://github.com/BVDW-org/ovk-identifiersupport) | Identity documentation | `ovk/docs/identitysolutions/` | [`/docs/identitysolutions`](https://tech.ovk.de/docs/identitysolutions) |
-| [`BVDW-org/ovk-identifiersupport`](https://github.com/BVDW-org/ovk-identifiersupport) | Identifier Landscape tool | `ovk/static/tools/identifier-landscape/` | [`/tools/identifier-landscape/`](https://tech.ovk.de/tools/identifier-landscape/) |
+| [`BVDW-org/ovk-identifiersupport`](https://github.com/BVDW-org/ovk-identifiersupport) | Identity documentation and Identifier Landscape data | `ovk/docs/identitysolutions/`, `ovk/static/tools/identifier-landscape/config/` | [`/docs/identitysolutions`](https://tech.ovk.de/docs/identitysolutions), [`/tools/identifier-landscape/`](https://tech.ovk.de/tools/identifier-landscape/) |
 | [`BVDW-org/ovk-contextualstandard`](https://github.com/BVDW-org/ovk-contextualstandard) | Contextual Standard README | `ovk/docs/contextualstandards/index.md` | [`/docs/contextualstandards`](https://tech.ovk.de/docs/contextualstandards) |
 | [`BVDW-org/ovk-werbeformen`](https://github.com/BVDW-org/ovk-werbeformen) | Advertising-format documentation | `ovk/docs/werbeformen/` | [`/docs/werbeformen`](https://tech.ovk.de/docs/werbeformen) |
-| This repository | Site configuration, navigation, pages, components, and translations | `ovk/` | Various routes |
+| This repository | Site configuration, navigation, pages, components, translations, and the audited Identifier Landscape runtime | `ovk/`, including `ovk/static/tools/identifier-landscape/{index.html,app.js,style.css}` | Various routes |
 
-For synchronized areas, edit the source repository rather than the copied destination. A later sync deliberately makes the destination match its source and may overwrite direct edits.
+For synchronized areas, edit the source repository rather than the copied destination. A later sync deliberately makes the destination match its source and may overwrite direct edits. The Identifier Landscape HTML, JavaScript application, and stylesheet are the exception: their production-hardened versions are maintained here while data and reference files continue to synchronize from the identity repository.
 
 Repository metadata such as `.git`, `.github`, `.idea`, and `.DS_Store` is never copied into published content. Symbolic links from synchronized documentation are rejected.
 
@@ -69,8 +66,8 @@ The sync workflow:
 
 1. checks out all three upstream repositories using `GH_TOKEN`, which should be scoped to read-only access;
 2. verifies that required files and Markdown content exist;
-3. synchronizes only the intended content and removes files deleted upstream;
-4. normalizes known Markdown heading and anchor incompatibilities;
+3. synchronizes only the intended content, preserves the locally audited Identifier Landscape runtime, and removes files deleted upstream;
+4. normalizes text line endings plus known Markdown heading and anchor incompatibilities;
 5. commits synchronized source changes, rebasing safely if `main` moved;
 6. installs the locked Node.js dependencies;
 7. validates the Identifier Landscape configuration;
@@ -120,6 +117,7 @@ Every production artifact must pass all of these checks:
 - clean installation from `ovk/package-lock.json` using `npm ci` and Node.js 24;
 - Identifier Landscape relationship, duplicate-ID, and reference validation;
 - strict Docusaurus builds for the configured locales;
+- normalized LF line endings for synchronized text before Git whitespace checks;
 - failure on broken links, broken Markdown links, and broken anchors;
 - required `index.html`, `404.html`, and `CNAME` artifact files;
 - exact custom-domain value `tech.ovk.de`;
@@ -135,14 +133,13 @@ Synchronized files are copied as UTF-8 without transliterating their content. Ge
 
 For a permanent public URL, prefer a stable ASCII `slug` in the document front matter rather than relying on a filename. The strict build catches malformed links and anchors before deployment, while the normalization script handles known upstream heading/anchor patterns deterministically.
 
-## Deployment artifacts versus the legacy `docs/` directory
+## Deployment artifacts
 
-GitHub Pages is configured with `build_type: workflow`. The live site comes from the temporary artifact uploaded by the successful workflow—not from `main:/docs`, a `gh-pages` branch, or `npm run deploy`.
+GitHub Pages is configured with `build_type: workflow`. The live site comes from the temporary artifact uploaded by the successful workflow—not from a generated directory committed to `main`, a `gh-pages` branch, or `npm run deploy`.
 
 Consequences:
 
 - publishing does not create large generated-site commits;
-- `docs/` timestamps in the repository do not change after a deployment;
 - the GitHub Actions run and deployment history are the authoritative freshness indicators; and
 - each deployed artifact comes from the exact source state that passed validation.
 
@@ -198,7 +195,7 @@ npm run build
 npm run serve
 ```
 
-`npm run build` writes ignored local output to `ovk/build/`. Do not copy that output into the top-level `docs/` directory and do not use `npm run deploy`; GitHub Actions owns production deployment.
+`npm run build` writes ignored local output to `ovk/build/`. Do not commit that generated output or use `npm run deploy`; GitHub Actions owns production deployment.
 
 ## Troubleshooting
 
@@ -208,7 +205,6 @@ npm run serve
 | Authentication fails during an upstream checkout | Confirm `GH_TOKEN` exists, has not expired, and has read access to all three source repositories. |
 | A pull-request build is red | Open the failed step. Dependency-resolution failures, Markdown failures, and identifier validation failures are intentionally blocked before merge. |
 | Production did not deploy after a pull request | Expected: pull requests validate but never deploy. Merge the reviewed change to `main`. |
-| `docs/` looks older than the website | Expected: `docs/` is legacy output. Check the latest successful Pages workflow run instead. |
 | A URL with spaces or umlauts is difficult to share | Add a stable ASCII front-matter `slug` in the source document and update inbound links. |
 | Scheduled sync reports no change | The synchronized destinations already match their upstream sources. No commit or deployment is needed. |
 | `main` changes during an automated sync | The workflow stops rather than overwriting newer work. Rerun it to synchronize against the new head. |
@@ -220,7 +216,6 @@ npm run serve
 ├── .github/
 │   ├── scripts/                 # Deterministic upstream synchronization
 │   └── workflows/               # Validation, synchronization, and Pages deployment
-├── docs/                        # Legacy generated site; not a publishing source
 └── ovk/
     ├── docs/                    # Docusaurus documentation sources
     ├── scripts/                 # Normalization and configuration validation

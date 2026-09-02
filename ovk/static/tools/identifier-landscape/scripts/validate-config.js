@@ -124,7 +124,7 @@ try {
       }
       if (!Array.isArray(dsp.supportedSSPs)) logError(`DSP '${dspName}': supportedSSPs muss ein Array sein.`);
       if (!Array.isArray(dsp.supportedVermarkter)) logError(`DSP '${dspName}': supportedVermarkter muss ein Array sein.`);
-      
+
       if (Array.isArray(dsp.supportedIds)) {
         dsp.supportedIds.forEach(id => {
           if (!registeredIds.has(id.toLowerCase())) {
@@ -219,13 +219,13 @@ try {
       if (Array.isArray(v.supportedIds)) {
         v.supportedIds.forEach((idObj, idIdx) => {
           const idStr = typeof idObj === 'string' ? idObj : idObj.id;
-          
+
           if (!idStr) {
             logError(`Vermarkter '${vName}', supportedIds Index ${idIdx}: fehlt 'id'.`);
           } else if (!registeredIds.has(idStr.toLowerCase())) {
             logError(`Vermarkter '${vName}' verweist auf nicht registriertes ID-System: '${idStr}'`);
           }
-          
+
           if (typeof idObj === 'object' && idObj !== null) {
             if (idObj.coverage !== undefined && typeof idObj.coverage !== 'number') {
               logError(`Vermarkter '${vName}', supportedIds Index ${idIdx}: 'coverage' muss eine Zahl sein.`);
@@ -279,7 +279,7 @@ try {
       const dpName = dp.name || `Data Partner Index ${idx}`;
       if (!dp.id) logError(`Data Partner an Index ${idx} fehlt 'id'.`);
       if (!dp.name) logError(`Data Partner '${dp.id || idx}' fehlt 'name'.`);
-      
+
       if (!Array.isArray(dp.supportedIds)) {
         logError(`Data Partner '${dpName}': supportedIds muss ein Array sein.`);
       } else {

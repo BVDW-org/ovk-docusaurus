@@ -27,7 +27,7 @@ export default {
       const passwords = JSON.parse(env.VERMARKTER_PASSWORDS || '{}');
       // Erlaubt sowohl das alte JSON-Format als auch individuelle Variablen (z.B. env.PWD_funke)
       const expectedPassword = env[`PWD_${vermarkterId}`] || passwords[vermarkterId];
-      
+
       const isAdmin = (env.ADMIN_PASSWORD && password === env.ADMIN_PASSWORD);
       const isUser = (vermarkterId && expectedPassword && expectedPassword === password);
 
@@ -37,8 +37,8 @@ export default {
 
       // Login Check Route
       if (url.pathname === '/login') {
-        return new Response(JSON.stringify({ success: true, isAdmin }), { 
-          status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+        return new Response(JSON.stringify({ success: true, isAdmin }), {
+          status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' }
         });
       }
 
@@ -107,15 +107,15 @@ export default {
         return new Response(`GitHub API Fehler: ${errorText}`, { status: 502, headers: corsHeaders });
       }
 
-      return new Response(JSON.stringify({ success: true, message: 'Erfolgreich gespeichert!' }), { 
-        status: 200, 
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+      return new Response(JSON.stringify({ success: true, message: 'Erfolgreich gespeichert!' }), {
+        status: 200,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
       });
 
     } catch (error) {
-      return new Response(JSON.stringify({ error: error.message }), { 
-        status: 500, 
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+      return new Response(JSON.stringify({ error: error.message }), {
+        status: 500,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
       });
     }
   }

@@ -35,9 +35,9 @@
     <div style="background: #1e1e1e; padding: 40px; border-radius: 8px; width: 100%; max-width: 400px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); text-align: center;">
         <h2 id="loginTitle" style="margin-top:0;">OVK Editor Login</h2>
         <p style="color:#aaa; font-size:0.9em; margin-bottom: 20px;" id="loginSubtitle">Bitte gib dein Passwort ein.</p>
-        
+
         <input type="password" id="loginPassword" placeholder="Passwort" style="width:100%; margin-bottom: 20px; padding: 12px; background: #2c2c2c; border: 1px solid #444; color:#fff; border-radius:4px; font-size:16px;" onkeydown="if(event.key==='Enter') performLogin()">
-        
+
         <button onclick="performLogin()" id="loginBtn" style="width:100%; background: #2563eb; color:white; padding:12px; font-size:16px; border:none; border-radius:4px; cursor:pointer;">Anmelden</button>
         <div id="loginError" style="color:#c81e1e; margin-top:15px; font-weight:bold; display:none;">Falsches Passwort</div>
     </div>
@@ -61,10 +61,10 @@
             <h2>Vermarkter Details</h2>
             <label>ID (nicht änderbar)</label>
             <input type="text" id="v_id" disabled>
-            
+
             <label>Name</label>
             <input type="text" id="v_name" oninput="generateCode()">
-            
+
             <label style="display: flex; justify-content: space-between;">
                 <span>Beschreibung</span>
                 <span id="v_desc_counter" style="font-weight: normal; color: #888;">0/65</span>
@@ -80,11 +80,11 @@
             <div class="checkbox-group" id="ssp_opt_in"></div>
         </div>
     </div>
-    
+
     <div class="code-section">
         <h2>Veröffentlichen</h2>
         <p style="font-size: 0.9em; color: #aaa;">Speichere die Änderungen direkt im OVK ID Landscape (Live-Update).</p>
-        
+
         <div style="background: #222; padding: 15px; border-radius: 6px; margin-bottom: 15px; border: 1px solid #444;">
             <p style="margin-top: 0; margin-bottom: 15px; font-size: 0.9em;">Änderungen für <strong><span id="pwdVermarkterName">...</span></strong> speichern.</p>
             <button id="publishBtn" onclick="publishConfig()" style="width: 100%; background: #2563eb; padding: 12px; font-size: 1em;">Änderungen speichern & veröffentlichen</button>
@@ -128,7 +128,7 @@
                 'config/vermarkter/visoon.js'
             ]);
         }
-        
+
         for (const f of files) {
             try {
                 const res = await fetch(f + '?t=' + Date.now());
@@ -138,7 +138,7 @@
                 console.error("Fehler beim Laden von " + f, e);
             }
         }
-        
+
         if (typeof init === 'function') {
             init();
         }
@@ -149,7 +149,7 @@
     let CONFIG;
     let currentVermarkter = null;
     let initialCoreState = {}; // To track changes in core.js
-    
+
     // Auth State
     let sessionPassword = "";
     let isAdmin = false;
@@ -162,14 +162,14 @@
 
     // Cloudflare URL
     const WORKER_URL = "https://ovk-ladscape.friedrich-schenk.workers.dev";
-    
+
     async function performLogin() {
         const pwd = document.getElementById('loginPassword').value;
         const btn = document.getElementById('loginBtn');
         const err = document.getElementById('loginError');
-        
+
         if(!pwd) return;
-        
+
         btn.disabled = true;
         btn.textContent = "Prüfe...";
         err.style.display = 'none';
@@ -185,9 +185,9 @@
                 const data = await res.json();
                 sessionPassword = pwd;
                 isAdmin = data.isAdmin;
-                
+
                 document.getElementById('loginOverlay').style.display = 'none';
-                
+
                 // Wenn es ein regulärer Vermarkter ist
                 if (!isAdmin && urlId) {
                     select.disabled = true;
@@ -211,11 +211,11 @@
             err.style.display = 'block';
             err.textContent = "Netzwerkfehler: " + e.message;
         }
-        
+
         btn.disabled = false;
         btn.textContent = "Anmelden";
     }
-    
+
     function init() {
         CONFIG = window.OVK_LANDSCAPE_CONFIG;
         if (!CONFIG || !CONFIG.vermarkter) {
@@ -233,7 +233,7 @@
 
         // Event Listeners
         select.addEventListener('change', (e) => loadVermarkter(e.target.value));
-        
+
         // URL Handling for Login Form
         if (urlId) {
             const vMatch = CONFIG.vermarkter.find(v => v.id === urlId);
@@ -257,7 +257,7 @@
         filenamePreview.textContent = id;
         document.getElementById('pwdVermarkterName').textContent = currentVermarkter.name;
         document.getElementById('publishStatus').style.display = 'none';
-        
+
         document.getElementById('v_id').value = currentVermarkter.id;
         document.getElementById('v_name').value = currentVermarkter.name || '';
         document.getElementById('v_description').value = currentVermarkter.description || '';
@@ -265,9 +265,9 @@
 
         const invContainer = document.getElementById('v_inventory');
         invContainer.innerHTML = '';
-        
+
         document.getElementById('addInventoryBtn').onclick = () => addInventoryRow();
-        
+
         if (currentVermarkter.supportedInventoryTypes) {
             currentVermarkter.supportedInventoryTypes.forEach(inv => {
                 addInventoryRow(inv.type, inv.coverage, inv.supportedIds);
@@ -276,7 +276,7 @@
 
         renderSSPOptIn();
         editorForm.style.display = 'block';
-        
+
         generateCode();
     }
 
@@ -289,10 +289,10 @@
         div.style.background = '#2c2c2c';
         div.style.borderRadius = '6px';
         div.style.border = '1px solid #444';
-        
+
         const mainRow = document.createElement('div');
         mainRow.className = 'row-item';
-        
+
         const keyInput = document.createElement('select');
         const inventoryTypes = [
             { id: 'desktop', name: 'Desktop' },
@@ -320,21 +320,21 @@
         mainRow.appendChild(keyInput);
         mainRow.appendChild(removeBtn);
         div.appendChild(mainRow);
-        
+
         const idsContainer = document.createElement('div');
         idsContainer.className = 'nested-ids-container';
         idsContainer.style.marginLeft = '20px';
         idsContainer.style.marginTop = '10px';
         idsContainer.style.borderLeft = '2px solid #555';
         idsContainer.style.paddingLeft = '15px';
-        
+
         const addIdBtn = document.createElement('button');
         addIdBtn.type = 'button';
         addIdBtn.textContent = '+ ID hinzufügen';
         addIdBtn.style.marginTop = '5px';
         addIdBtn.style.fontSize = '0.8em';
         addIdBtn.onclick = () => addNestedIdRow(idsContainer, '', '');
-        
+
         if (supportedIds && supportedIds.length > 0) {
             supportedIds.forEach(idObj => {
                 const idStr = typeof idObj === 'string' ? idObj : idObj.id;
@@ -343,11 +343,11 @@
                 addNestedIdRow(idsContainer, idStr, idCov, excludedDSPs);
             });
         }
-        
+
         div.appendChild(idsContainer);
         div.appendChild(addIdBtn);
         container.appendChild(div);
-        
+
         generateCode();
     }
 
@@ -355,12 +355,12 @@
         const div = document.createElement('div');
         div.className = 'nested-id-item';
         div.style.marginTop = '5px';
-        
+
         const topRow = document.createElement('div');
         topRow.style.display = 'flex';
         topRow.style.gap = '10px';
         topRow.style.alignItems = 'center';
-        
+
         const keyInput = document.createElement('select');
         CONFIG.ids.forEach(idDef => {
             const opt = document.createElement('option');
@@ -388,7 +388,7 @@
         excludeBtn.style.padding = '5px 8px';
         excludeBtn.style.fontSize = '0.8em';
         excludeBtn.style.background = excludedDSPs.length > 0 ? '#c81e1e' : '#333';
-        
+
         const dspListDiv = document.createElement('div');
         dspListDiv.className = 'dsp-exclusion-list';
         dspListDiv.style.display = 'none';
@@ -398,7 +398,7 @@
         dspListDiv.style.width = '100%';
         dspListDiv.style.padding = '10px';
         dspListDiv.style.background = '#222';
-        
+
         let currentExcluded = [...excludedDSPs];
 
         function renderDSPs() {
@@ -409,17 +409,17 @@
             CONFIG.dsps.forEach(dsp => {
                 const dspSupportsId = dsp.supportedIds && dsp.supportedIds.some(i => (typeof i === 'string' ? i : i.id) === currentId);
                 if (!dspSupportsId) return;
-                
+
                 availableCount++;
                 const isExcluded = currentExcluded.includes(dsp.id);
-                
+
                 const lbl = document.createElement('label');
                 lbl.style.display = 'flex';
                 lbl.style.alignItems = 'center';
                 lbl.style.gap = '5px';
                 lbl.style.fontSize = '0.8em';
                 lbl.style.marginTop = '0';
-                
+
                 const cb = document.createElement('input');
                 cb.type = 'checkbox';
                 cb.value = dsp.id;
@@ -437,29 +437,29 @@
                     excludeBtn.style.background = checkedCount > 0 ? '#c81e1e' : '#333';
                     generateCode();
                 };
-                
+
                 lbl.appendChild(cb);
                 lbl.appendChild(document.createTextNode(dsp.name));
                 dspListDiv.appendChild(lbl);
             });
-            
+
             if (availableCount === 0) {
                 dspListDiv.innerHTML = '<div style="color:#aaa; font-size:0.8em; width:100%;">Keine DSP unterstützt diese ID.</div>';
             }
-            
+
             const checkedCount = dspListDiv.querySelectorAll('.dsp-exclude-cb:checked').length;
             excludeBtn.textContent = 'DSPs ausschließen (' + checkedCount + ')';
             excludeBtn.style.background = checkedCount > 0 ? '#c81e1e' : '#333';
         }
-        
+
         renderDSPs();
-        
+
         keyInput.onchange = () => {
             currentExcluded = [];
             renderDSPs();
             generateCode();
         };
-        
+
         excludeBtn.onclick = () => {
             dspListDiv.style.display = dspListDiv.style.display === 'none' ? 'flex' : 'none';
         };
@@ -475,11 +475,11 @@
         topRow.appendChild(covInput);
         topRow.appendChild(excludeBtn);
         topRow.appendChild(removeBtn);
-        
+
         div.appendChild(topRow);
         div.appendChild(dspListDiv);
         container.appendChild(div);
-        
+
         generateCode();
     }
 
@@ -502,7 +502,7 @@
         cb.checked = isChecked;
         cb.dataset.type = type;
         cb.onchange = generateCode;
-        
+
         lbl.appendChild(cb);
         lbl.appendChild(document.createTextNode(label));
         return lbl;
@@ -522,9 +522,9 @@
         // Get Inventory
         document.querySelectorAll('.inventory-block').forEach(block => {
             const typeKey = block.querySelector('.inv-type-key').value;
-            
+
             const invObj = { type: typeKey };
-            
+
             const idsList = [];
             block.querySelectorAll('.nested-id-item').forEach(idRow => {
                 const idKey = idRow.querySelector('.nested-id-key').value;
@@ -533,20 +533,20 @@
                 if (idCov !== '') {
                     idObj.coverage = parseInt(idCov);
                 }
-                
+
                 const excludedDSPs = [];
                 idRow.querySelectorAll('.dsp-exclude-cb:checked').forEach(cb => {
                     excludedDSPs.push(cb.value);
                 });
-                
+
                 idObj.excludedDSPs = excludedDSPs;
                 idsList.push(idObj);
             });
-            
+
             if (idsList.length > 0) {
                 invObj.supportedIds = idsList;
             }
-            
+
             vObj.supportedInventoryTypes.push(invObj);
         });
 
@@ -565,7 +565,7 @@ if (!window.OVK_LANDSCAPE_CONFIG.vermarkter) {
 }
 
 window.OVK_LANDSCAPE_CONFIG.vermarkter.push(${JSON.stringify(vObj, null, 2).replace(/"([^"]+)":/g, '$1:')});`;
-        
+
         document.getElementById('codeVermarkter').textContent = jsCode;
     }
 
@@ -584,7 +584,7 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push(${JSON.stringify(vObj, null, 2).repl
     async function publishConfig() {
         const code = document.getElementById('codeVermarkter').textContent;
         const statusEl = document.getElementById('publishStatus');
-        
+
         if (!currentVermarkter) {
             alert("Kein Vermarkter ausgewählt!");
             return;
@@ -624,7 +624,7 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push(${JSON.stringify(vObj, null, 2).repl
             statusEl.textContent = "Netzwerkfehler: " + e.message;
             statusEl.style.color = "#c81e1e";
         }
-        
+
         btn.disabled = false;
         btn.textContent = "Änderungen speichern & veröffentlichen";
     }

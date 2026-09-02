@@ -41,7 +41,10 @@ function badgeStatusCells() {
     const variant = STATUS_MAP[key];
     if (!variant) return;
     td.dataset.idBadged = '1';
-    td.innerHTML = `<span class="id-status-badge id-status-${variant}">${text}</span>`;
+    const badge = document.createElement('span');
+    badge.className = `id-status-badge id-status-${variant}`;
+    badge.textContent = text;
+    td.replaceChildren(badge);
   });
 }
 
@@ -76,20 +79,10 @@ function enhance() {
   }
 }
 
-if (typeof window !== 'undefined') {
-  enhance();
+const clientModule = {
+  onRouteDidUpdate() {
+    enhance();
+  },
+};
 
-  // Docusaurus is a client-rendered SPA - re-run after each route change.
-  // A MutationObserver on <html> catches both the doc-id class swap and the
-  // new page content; every mutation this script itself makes is guarded by
-  // a data-attribute, so it converges after one extra pass.
-  const observer = new MutationObserver(() => enhance());
-  observer.observe(document.documentElement, {
-    childList: true,
-    subtree: true,
-    attributes: true,
-    attributeFilter: ['class'],
-  });
-}
-
-export default function () {};
+export default clientModule;

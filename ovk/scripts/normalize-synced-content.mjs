@@ -1,9 +1,48 @@
-import { readFile, writeFile } from 'node:fs/promises';
+import { readFile, readdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const ovkDirectory = path.resolve(scriptDirectory, '..');
+const synchronizedTextExtensions = new Set([
+  '.css',
+  '.html',
+  '.js',
+  '.json',
+  '.md',
+  '.mdx',
+  '.txt',
+  '.yaml',
+  '.yml',
+]);
+
+async function normalizeLineEndings(directory) {
+  const entries = await readdir(directory, { withFileTypes: true });
+
+  await Promise.all(entries.map(async (entry) => {
+    const entryPath = path.join(directory, entry.name);
+
+    if (entry.isDirectory()) {
+      await normalizeLineEndings(entryPath);
+      return;
+    }
+
+    if (!entry.isFile() || !synchronizedTextExtensions.has(path.extname(entry.name))) {
+      return;
+    }
+
+    const source = await readFile(entryPath, 'utf8');
+    const normalized = source
+      .replace(/\r\n?/g, '\n')
+      .split('\n')
+      .map((line) => line.replace(/[\t ]+$/, ''))
+      .join('\n');
+
+    if (normalized !== source) {
+      await writeFile(entryPath, normalized);
+    }
+  }));
+}
 
 async function normalizeContextualStandard() {
   const file = path.join(ovkDirectory, 'docs/contextualstandards/index.md');
@@ -77,5 +116,12 @@ async function normalizeVendorAnchors() {
 
   await writeFile(file, `${normalized.join('\n').replace(/\n+$/, '')}\n`);
 }
+
+await Promise.all([
+  'docs/contextualstandards',
+  'docs/identitysolutions',
+  'docs/werbeformen',
+  'static/tools/identifier-landscape',
+].map((directory) => normalizeLineEndings(path.join(ovkDirectory, directory))));
 
 await Promise.all([normalizeContextualStandard(), normalizeVendorAnchors()]);

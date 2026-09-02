@@ -1,7 +1,7 @@
 # OVK Vermarkter ID-Overview #
 
 The following tables show which ID vendor is supported by which German OVK Vermarkter (Sales House).<br></br>
-Note: Score Media and Bauer use their Erstvermarkter's ID solutions. Azerion, netpointmedia haven't added their data yet. 
+Note: Score Media and Bauer use their Erstvermarkter's ID solutions. Azerion, netpointmedia haven't added their data yet.
 
 ### Criteo {#Criteo}
 <img src="https://www.criteo.com/wp-content/uploads/2021/10/criteo-logo-2021.jpeg" width="100"></img>
@@ -26,7 +26,7 @@ Note: Score Media and Bauer use their Erstvermarkter's ID solutions. Azerion, ne
 |------------------------------|--------------|-------------------------------------------------------------------------------|
 | Ad Alliance                  | No Support   |                                                                              |
 | BCN Brand Community Network  | Live         | Bid Stream (unrestricted)                                                    |
-| iq digital                   | In-Progress  | 
+| iq digital                   | In-Progress  |
 | SevenOne                     | Live         |                                                                              |
 | Ströer                       | In-Progress  |                                                                              |
 | UIM                          | Live         | Bid Stream (deal id/unrestricted), Data Marketplace (multiple), Data Clean Room|

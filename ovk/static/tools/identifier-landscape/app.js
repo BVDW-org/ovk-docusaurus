@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   let selectedDspId = null;
   let selectedSspId = null;
   let selectedVermarkterId = null;
+  let lastFocusedCard = null;
 
   // DOM Elements
   const listUsecases = document.getElementById("list-usecases");
@@ -21,10 +22,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   const listDsps = document.getElementById("list-dsps");
   const listSsps = document.getElementById("list-ssps");
   const listVermarkters = document.getElementById("list-vermarkters");
-  
+
   const activeChipsContainer = document.getElementById("active-chips");
   const btnReset = document.getElementById("btn-reset");
-  
+
   const detailDrawer = document.getElementById("detail-drawer");
   const drawerTitle = document.getElementById("drawer-title");
   const drawerContent = document.getElementById("drawer-content");
@@ -41,65 +42,58 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // --- Dynamic Resilient Config Loading & Normalization ---
 
+  function loadScript(file) {
+    return new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.src = file;
+      script.async = false;
+      script.addEventListener("load", resolve, { once: true });
+      script.addEventListener(
+        "error",
+        () => reject(new Error(`HTTP-Fehler beim Laden von ${file}`)),
+        { once: true }
+      );
+      document.head.appendChild(script);
+    });
+  }
+
   async function loadConfigData() {
-    let files = [
+    const files = [
       "config/core.js",
       "config/data_partners.js"
     ];
 
     try {
-      const dirResponse = await fetch("config/vermarkter/");
-      if (dirResponse.ok) {
-        const dirHtml = await dirResponse.text();
-        const matches = dirHtml.match(/href="([^"]+\.js)"/g);
-        if (matches) {
-          const vermarkterFiles = matches.map(m => "config/vermarkter/" + m.match(/"([^"]+)"/)[1]);
-          files = files.concat(vermarkterFiles);
-        }
-      } else {
-        throw new Error("HTTP Status " + dirResponse.status);
+      const manifestResponse = await fetch("config/vermarkter-manifest.json", {
+        cache: "no-store"
+      });
+      if (!manifestResponse.ok) {
+        throw new Error(`HTTP ${manifestResponse.status}`);
       }
-    } catch (e) {
-      console.warn("Verzeichnis /config/vermarkter/ konnte nicht ausgelesen werden. Verwende Fallback-Liste.", e);
-      files = files.concat([
-        "config/vermarkter/ad_alliance.js",
-        "config/vermarkter/bcn.js",
-        "config/vermarkter/funke.js",
-        "config/vermarkter/iqd.js",
-        "config/vermarkter/media_impact.js",
-        "config/vermarkter/score.js",
-        "config/vermarkter/seven_one_media.js",
-        "config/vermarkter/stroeer.js",
-        "config/vermarkter/uim.js",
-        "config/vermarkter/visoon.js"
-      ]);
+      const manifest = await manifestResponse.json();
+      if (!Array.isArray(manifest.files) || manifest.files.length === 0) {
+        throw new Error("Manifest enthält keine Vermarkter-Konfigurationen");
+      }
+      manifest.files.forEach(file => {
+        if (!/^[a-z0-9_-]+\.js$/i.test(file)) {
+          throw new Error(`Ungültiger Dateiname im Manifest: ${file}`);
+        }
+        files.push(`config/vermarkter/${file}`);
+      });
+    } catch (error) {
+      console.error("Die Vermarkter-Konfiguration konnte nicht geladen werden.", error);
+      return;
     }
-
-    let latestTimestamp = 0;
 
     for (const file of files) {
       try {
-        const response = await fetch(`${file}?t=${Date.now()}`);
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status} beim Laden von ${file}`);
-        }
-
-        const lastModified = response.headers.get("Last-Modified");
-        if (lastModified) {
-          const modTime = new Date(lastModified).getTime();
-          if (!isNaN(modTime) && modTime > latestTimestamp) {
-            latestTimestamp = modTime;
-          }
-        }
-
-        const code = await response.text();
-        (new Function(code))();
+        await loadScript(file);
       } catch (err) {
         console.error(`Resilienz-Warnung: Konfigurationsdatei "${file}" konnte nicht geladen oder geparst werden. Der Rest der Anwendung wird geladen.`, err);
       }
     }
 
-    updateConfigStandDate(latestTimestamp);
+    updateConfigStandDate(new Date(document.lastModified).getTime());
   }
 
   function updateConfigStandDate(timestamp) {
@@ -172,7 +166,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             uniqueV.set(v.id, v);
         });
         window.OVK_LANDSCAPE_CONFIG.vermarkter = Array.from(uniqueV.values());
-        
+
         window.OVK_LANDSCAPE_CONFIG.vermarkter.forEach(v => {
           let aggregatedIds = [];
           if (Array.isArray(v.supportedInventoryTypes)) {
@@ -188,7 +182,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                     normalizedId = idObj.id.toLowerCase();
                     newIdObj = { ...idObj, id: normalizedId };
                   }
-                  
+
                   if (!aggregatedIds.find(i => i.id === normalizedId)) {
                     aggregatedIds.push(newIdObj);
                   }
@@ -245,35 +239,42 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   function renderSsps() {
     listSsps.innerHTML = "";
-    
+
     // Group SSPs by category (Standard vs Curation)
     const categories = [
       { id: "standard", name: "Standard SSP", description: "ID wird zur DSP durchgereicht" },
       { id: "curation", name: "Curation SSP", description: "FC & Targeting möglich" }
     ];
-    
+
     categories.forEach(cat => {
       const groupHeader = document.createElement("div");
       groupHeader.className = "ssp-group-header";
       groupHeader.setAttribute("data-group-category", cat.id);
-      groupHeader.innerHTML = `${cat.name} <span class="ssp-group-subtitle">(${cat.description})</span>`;
+      groupHeader.append(document.createTextNode(`${cat.name} `));
+      const subtitle = document.createElement("span");
+      subtitle.className = "ssp-group-subtitle";
+      subtitle.textContent = `(${cat.description})`;
+      groupHeader.appendChild(subtitle);
       listSsps.appendChild(groupHeader);
-      
+
       const catSsps = OVK_LANDSCAPE_CONFIG.ssps.filter(s => s.category === cat.id);
       const sorted = [...catSsps].sort((a, b) => a.name.localeCompare(b.name, 'de'));
       sorted.forEach(item => {
         const card = createCard(item.id, item.name, "", "ssp");
-        
+
         // Show usecases as subtext ONLY for Curation SSPs (where usecases are actively steered)
         if (item.category === "curation") {
           const ucNames = item.supportedUsecases.map(uid => {
             const uc = OVK_LANDSCAPE_CONFIG.usecases.find(u => u.id === uid);
             return uc ? uc.name : uid;
           }).join(", ");
-          card.innerHTML += `<div class="partner-card-desc">Usecases: ${ucNames}</div>`;
+          const description = document.createElement("div");
+          description.className = "partner-card-desc";
+          description.textContent = `Usecases: ${ucNames}`;
+          card.appendChild(description);
           appendIdBadges(card, item.supportedIds);
         }
-        
+
         listSsps.appendChild(card);
       });
     });
@@ -284,7 +285,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const sorted = [...OVK_LANDSCAPE_CONFIG.vermarkter].sort((a, b) => a.name.localeCompare(b.name, 'de'));
     sorted.forEach(item => {
       const card = createCard(item.id, item.name, item.description, "vermarkter");
-      
+
       // Add inventory type icons behind name
       if (item.supportedInventoryTypes && item.supportedInventoryTypes.length > 0) {
         const h3 = card.querySelector("h3");
@@ -303,7 +304,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           h3.appendChild(iconsSpan);
         }
       }
-      
+
       appendIdBadges(card, item.supportedIds);
       listVermarkters.appendChild(card);
     });
@@ -312,10 +313,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   function getInventoryTypeIcon(type, coverage = null, supportedIds = []) {
     const wrapper = document.createElement("span");
     wrapper.className = `inventory-icon-wrapper icon-${type}`;
-    
+
     let svgContent = "";
     let tooltip = "";
-    
+
     switch (type) {
       case "ctv":
         tooltip = "CTV (Big Screen)";
@@ -334,7 +335,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         svgContent = `<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>`;
         break;
     }
-    
+
     if (supportedIds && supportedIds.length > 0) {
       tooltip += "\n\nVerfügbare IDs (ID Coverage):\n";
       const idStrings = supportedIds.map(idObj => {
@@ -346,7 +347,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       });
       tooltip += idStrings.join("\n");
     }
-    
+
     wrapper.innerHTML = svgContent;
     wrapper.setAttribute("title", tooltip);
     return wrapper;
@@ -354,10 +355,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   function appendIdBadges(card, supportedIds) {
     if (!supportedIds || supportedIds.length === 0) return;
-    
+
     const badgeContainer = document.createElement("div");
     badgeContainer.className = "partner-card-ids";
-    
+
     supportedIds.forEach(idObj => {
       const idStr = typeof idObj === 'string' ? idObj : idObj.id;
       const idDef = OVK_LANDSCAPE_CONFIG.ids.find(i => i.id === idStr);
@@ -368,11 +369,11 @@ document.addEventListener("DOMContentLoaded", async () => {
         badge.style.color = idDef.textColor || "#ffffff";
         badge.textContent = idDef.shortName;
         badge.setAttribute("title", idDef.name);
-        
+
         badgeContainer.appendChild(badge);
       }
     });
-    
+
     card.appendChild(badgeContainer);
   }
 
@@ -391,12 +392,12 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (idDef) {
         html += `
           <div style="display: flex; align-items: flex-start; gap: 8px;">
-            <span class="id-badge" style="background-color: ${idDef.color}; color: ${idDef.textColor || '#ffffff'}; margin-top: 2px; padding: 1px 5px; font-size: 0.65rem; font-weight: 600; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.02em; display: inline-block; white-space: nowrap;">
-              ${idDef.shortName}
+            <span class="id-badge" style="background-color: ${escapeHtml(idDef.color)}; color: ${escapeHtml(idDef.textColor || '#ffffff')}; margin-top: 2px; padding: 1px 5px; font-size: 0.65rem; font-weight: 600; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.02em; display: inline-block; white-space: nowrap;">
+              ${escapeHtml(idDef.shortName)}
             </span>
             <div>
-              <span style="font-weight: 600; font-size: 0.9rem;">${idDef.name}</span>
-              ${idDef.description ? `<div style="font-size: 0.8rem; color: var(--color-text-light); line-height: 1.3;">${idDef.description}</div>` : ""}
+              <span style="font-weight: 600; font-size: 0.9rem;">${escapeHtml(idDef.name)}</span>
+              ${idDef.description ? `<div style="font-size: 0.8rem; color: var(--color-text-light); line-height: 1.3;">${escapeHtml(idDef.description)}</div>` : ""}
             </div>
           </div>
         `;
@@ -408,15 +409,31 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   // Card element helper creator
+  function escapeHtml(value) {
+    return String(value ?? "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+
   function createCard(id, name, description, stageType) {
-    const card = document.createElement("div");
+    const card = document.createElement("button");
     card.className = "partner-card";
+    card.type = "button";
     card.setAttribute("data-id", id);
     card.setAttribute("data-type", stageType);
-    
-    card.innerHTML = `<h3>${name}</h3>`;
+    card.setAttribute("aria-pressed", "false");
+
+    const heading = document.createElement("h3");
+    heading.textContent = name;
+    card.appendChild(heading);
     if (description) {
-      card.innerHTML += `<div class="partner-card-desc">${description}</div>`;
+      const descriptionElement = document.createElement("div");
+      descriptionElement.className = "partner-card-desc";
+      descriptionElement.textContent = description;
+      card.appendChild(descriptionElement);
     }
 
     card.addEventListener("click", (e) => {
@@ -435,14 +452,21 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // Close Drawer
     btnCloseDrawer.addEventListener("click", closeDrawer);
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && detailDrawer.classList.contains("open")) {
+        closeDrawer();
+      }
+    });
   }
 
   function handleCardClick(id, type) {
+    const cardEl = document.querySelector(`.partner-card[data-type="${type}"][data-id="${id}"]`);
+    lastFocusedCard = cardEl;
+
     // Show details in the drawer
     showDetails(id, type);
 
     // Check if clicked card is inactive (if so, ignore click)
-    const cardEl = document.querySelector(`.partner-card[data-type="${type}"][data-id="${id}"]`);
     if (cardEl && cardEl.classList.contains("inactive")) {
       return;
     }
@@ -460,7 +484,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     } else if (type === "vermarkter") {
       selectedVermarkterId = (selectedVermarkterId === id) ? null : id;
     }
- 
+
     updateFiltering();
   }
 
@@ -513,6 +537,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     const allCards = [...usecaseCards, ...datapartnerCards, ...dspCards, ...sspCards, ...vermarkterCards];
     allCards.forEach(c => {
       c.className = "partner-card";
+      c.setAttribute("aria-pressed", "false");
+      c.removeAttribute("aria-disabled");
+      c.tabIndex = 0;
     });
     sspGroupHeaders.forEach(h => {
       h.className = "ssp-group-header";
@@ -577,14 +604,14 @@ document.addEventListener("DOMContentLoaded", async () => {
         OVK_LANDSCAPE_CONFIG.ssps.forEach(s => {
           // Check DSP-SSP compatibility
           if (!d.supportedSSPs.includes(s.id)) return;
-          
+
           OVK_LANDSCAPE_CONFIG.vermarkter.forEach(v => {
             // Vermarkter must explicitly opt into the SSP
             if (!v.supportedSSPs || !v.supportedSSPs.includes(s.id)) return;
-            
+
             // Check if there is at least one valid ID overlap (considering DSP opt-outs)
             let hasValidId = false;
-            
+
             const vIds = new Map();
             if (v.supportedInventoryTypes) {
                 v.supportedInventoryTypes.forEach(inv => {
@@ -601,10 +628,10 @@ document.addEventListener("DOMContentLoaded", async () => {
                     }
                 });
             }
-            
+
             const sspIds = s.supportedIds.map(i => typeof i === 'string' ? i : i.id);
             const dspIds = d.supportedIds.map(i => typeof i === 'string' ? i : i.id);
-            
+
             for (let [idStr, exclusions] of vIds.entries()) {
                 if (sspIds.includes(idStr) && dspIds.includes(idStr)) {
                     if (!exclusions.has(d.id)) {
@@ -613,9 +640,9 @@ document.addEventListener("DOMContentLoaded", async () => {
                     }
                 }
             }
-            
+
             if (!hasValidId) return;
-            
+
             allPaths.push({
               usecase: u.id,
               dsp: d.id,
@@ -632,17 +659,17 @@ document.addEventListener("DOMContentLoaded", async () => {
       const uIdToCheck = uId || path.usecase;
       const d = OVK_LANDSCAPE_CONFIG.dsps.find(item => item.id === path.dsp);
       const s = OVK_LANDSCAPE_CONFIG.ssps.find(item => item.id === path.ssp);
-      
+
       // Strict rule: if checking targeting_pre, the SSP in the path must support targeting_pre
       if (uIdToCheck === "targeting_pre") {
         if (!s || !(s.supportedUsecases || []).includes("targeting_pre")) {
           return false;
         }
       }
-      
+
       const selectedSsp = sId ? OVK_LANDSCAPE_CONFIG.ssps.find(item => item.id === sId) : null;
       const selectedDsp = dId ? OVK_LANDSCAPE_CONFIG.dsps.find(item => item.id === dId) : null;
-      
+
       if (selectedSsp && selectedSsp.category === "curation" && (selectedSsp.supportedUsecases || []).includes(uIdToCheck)) {
         // A Curation SSP supporting this usecase is selected:
         // This SSP steers the usecase, so any DSP connected to this SSP is valid.
@@ -663,7 +690,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           } else {
             // If neither Usecase nor DSP nor Curation SSP is selected:
             // The path is compatible if either the DSP supports it OR the SSP is Curation supporting it
-            return (d.supportedUsecases || []).includes(uIdToCheck) || 
+            return (d.supportedUsecases || []).includes(uIdToCheck) ||
                    (s.category === "curation" && (s.supportedUsecases || []).includes(uIdToCheck));
           }
         }
@@ -714,7 +741,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (isPathUsecaseCompatible(path, path.usecase, selectedDspId, selectedSspId)) {
         activeUsecaseIds.add(path.usecase);
       }
-      
+
       // 2. For the other columns (DSP, SSP, Vermarkter):
       // If a usecase filter is active, we only consider usecase-compatible paths.
       // If no usecase filter is active, any physically connected path is valid!
@@ -739,7 +766,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (dp) {
         const dpDSPs = new Set(dp.supportedDSPs || []);
         const dpSSPs = new Set(dp.supportedSSPs || []);
-        
+
         for (let dId of activeDspIds) {
           if (!dpDSPs.has(dId)) activeDspIds.delete(dId);
         }
@@ -759,12 +786,15 @@ document.addEventListener("DOMContentLoaded", async () => {
         const id = c.getAttribute("data-id");
         if (id === selectedId) {
           c.classList.add("selected");
+          c.setAttribute("aria-pressed", "true");
         } else if (activeSet.has(id)) {
           if (isAnyFilterActive) {
             c.classList.add("highlighted");
           }
         } else {
           c.classList.add("inactive");
+          c.setAttribute("aria-disabled", "true");
+          c.tabIndex = -1;
         }
       });
     }
@@ -793,7 +823,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   function updateControlPanel() {
     activeChipsContainer.innerHTML = "";
-    
+
     const activeFilters = [];
     if (selectedUsecaseId) activeFilters.push({ type: "usecase", id: selectedUsecaseId, name: "Usecase", findFn: id => OVK_LANDSCAPE_CONFIG.usecases.find(u => u.id === id) });
     if (selectedDataPartnerId) activeFilters.push({ type: "datapartner", id: selectedDataPartnerId, name: "Data Partner", findFn: id => OVK_LANDSCAPE_CONFIG.dataPartners.find(dp => dp.id === id) });
@@ -802,7 +832,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (selectedVermarkterId) activeFilters.push({ type: "vermarkter", id: selectedVermarkterId, name: "Vermarkter", findFn: id => OVK_LANDSCAPE_CONFIG.vermarkter.find(v => v.id === id) });
 
     if (activeFilters.length === 0) {
-      activeChipsContainer.innerHTML = `<span class="no-filter-text">Keine Filter aktiv</span>`;
+      const noFilterText = document.createElement("span");
+      noFilterText.className = "no-filter-text";
+      noFilterText.textContent = "Keine Filter aktiv";
+      activeChipsContainer.appendChild(noFilterText);
       btnReset.disabled = true;
       return;
     }
@@ -817,11 +850,15 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (f.type !== "usecase") {
           chip.style.borderLeft = "3px solid var(--color-ovk-blue)";
         }
-        chip.innerHTML = `
-          ${f.name}: ${item.name}
-          <button class="btn-remove-filter" title="Filter entfernen">&times;</button>
-        `;
-        chip.querySelector(".btn-remove-filter").addEventListener("click", () => removeFilter(f.type));
+        chip.append(document.createTextNode(`${f.name}: ${item.name}`));
+        const removeButton = document.createElement("button");
+        removeButton.type = "button";
+        removeButton.className = "btn-remove-filter";
+        removeButton.title = `${f.name}-Filter entfernen`;
+        removeButton.setAttribute("aria-label", `${f.name}-Filter ${item.name} entfernen`);
+        removeButton.textContent = "×";
+        removeButton.addEventListener("click", () => removeFilter(f.type));
+        chip.appendChild(removeButton);
         activeChipsContainer.appendChild(chip);
       }
     });
@@ -837,39 +874,39 @@ document.addEventListener("DOMContentLoaded", async () => {
       const item = OVK_LANDSCAPE_CONFIG.usecases.find(u => u.id === id);
       title = `Usecase: ${item.name}`;
       htmlContent = `
-        <p><strong>Beschreibung:</strong> ${item.description}</p>
+        <p><strong>Beschreibung:</strong> ${escapeHtml(item.description)}</p>
         <p style="margin-top: 0.5rem;"><em>Klicken Sie auf den Usecase, um die Ansicht auf diesen Filter einzuschränken.</em></p>
       `;
     } else if (type === "datapartner") {
       const item = OVK_LANDSCAPE_CONFIG.dataPartners.find(dp => dp.id === id);
       title = `Data Partner: ${item.name}`;
-      
+
       const dspNames = (item.supportedDSPs || []).map(sid => {
         const dsp = OVK_LANDSCAPE_CONFIG.dsps.find(d => d.id === sid);
         return dsp ? dsp.name : sid;
       }).join(", ");
-      
+
       const sspNames = (item.supportedSSPs || []).map(sid => {
         const ssp = OVK_LANDSCAPE_CONFIG.ssps.find(s => s.id === sid);
         return ssp ? ssp.name : sid;
       }).join(", ");
 
       htmlContent = `
-        <p><strong>Beschreibung:</strong> ${item.description}</p>
+        <p><strong>Beschreibung:</strong> ${escapeHtml(item.description)}</p>
         ${getIdsDetailsHtml(item.supportedIds)}
-        <p style="margin-top: 0.5rem;"><strong>Verfügbare DSPs:</strong> ${dspNames || "Keine"}</p>
-        <p style="margin-top: 0.5rem;"><strong>Verfügbare Curation SSPs:</strong> ${sspNames || "Keine"}</p>
+        <p style="margin-top: 0.5rem;"><strong>Verfügbare DSPs:</strong> ${escapeHtml(dspNames || "Keine")}</p>
+        <p style="margin-top: 0.5rem;"><strong>Verfügbare Curation SSPs:</strong> ${escapeHtml(sspNames || "Keine")}</p>
         <p style="margin-top: 0.8rem;"><em>Klicken Sie auf den Data Partner, um die Ansicht auf diesen Filter einzuschränken.</em></p>
       `;
     } else if (type === "dsp") {
       const item = OVK_LANDSCAPE_CONFIG.dsps.find(d => d.id === id);
       title = `DSP: ${item.name}`;
-      
+
       const ucNames = (item.supportedUsecases || []).map(uid => {
         const uc = OVK_LANDSCAPE_CONFIG.usecases.find(u => u.id === uid);
         return uc ? uc.name : uid;
       }).join(", ");
-      
+
       const sspNames = item.supportedSSPs.map(sid => {
         const ssp = OVK_LANDSCAPE_CONFIG.ssps.find(s => s.id === sid);
         return ssp ? ssp.name : sid;
@@ -914,9 +951,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       const idsHtml = getIdsDetailsHtml(item.supportedIds);
 
       htmlContent = `
-        <p><strong>Unterstützte Usecases:</strong> ${ucNames}</p>
-        <p><strong>Kompatible SSPs:</strong> ${sspNames}</p>
-        <p><strong>Kompatible Vermarkter:</strong> ${vNames}</p>
+        <p><strong>Unterstützte Usecases:</strong> ${escapeHtml(ucNames)}</p>
+        <p><strong>Kompatible SSPs:</strong> ${escapeHtml(sspNames)}</p>
+        <p><strong>Kompatible Vermarkter:</strong> ${escapeHtml(vNames)}</p>
         ${idsHtml}
         <p style="margin-top: 0.5rem;"><em>Klicken Sie auf die DSP, um die Ansicht auf diesen Filter einzuschränken.</em></p>
       `;
@@ -928,36 +965,36 @@ document.addEventListener("DOMContentLoaded", async () => {
         .filter(v => v.supportedSSPs && v.supportedSSPs.includes(item.id))
         .map(v => v.name).join(", ");
 
-      const catLabel = item.category === "curation" 
-        ? "Curation SSP (FC & Data Targeting möglich)" 
+      const catLabel = item.category === "curation"
+        ? "Curation SSP (FC & Data Targeting möglich)"
         : "Standard SSP (ID wird nur durchgereicht)";
 
       htmlContent = `<p><strong>Kategorie:</strong> ${catLabel}</p>`;
-      
+
       // Only show usecases in details if curation
       if (item.category === "curation") {
         const ucNames = (item.supportedUsecases || []).map(uid => {
           const uc = OVK_LANDSCAPE_CONFIG.usecases.find(u => u.id === uid);
           return uc ? uc.name : uid;
         }).join(", ");
-        htmlContent += `<p><strong>Unterstützte Usecases:</strong> ${ucNames}</p>`;
+        htmlContent += `<p><strong>Unterstützte Usecases:</strong> ${escapeHtml(ucNames)}</p>`;
       }
-      
+
       const idsHtml = getIdsDetailsHtml(item.supportedIds);
 
       htmlContent += `
-        <p><strong>Angebundene Vermarkter:</strong> ${vNames}</p>
+        <p><strong>Angebundene Vermarkter:</strong> ${escapeHtml(vNames)}</p>
         ${idsHtml}
         <p style="margin-top: 0.5rem;"><em>Klicken Sie auf die SSP, um die Ansicht auf diesen Filter einzuschränken.</em></p>
       `;
     } else if (type === "vermarkter") {
       const item = OVK_LANDSCAPE_CONFIG.vermarkter.find(v => v.id === id);
       title = `Vermarkter: ${item.name}`;
-      
+
       const idsHtml = getIdsDetailsHtml(item.supportedIds);
 
       htmlContent = `
-        <p><strong>Beschreibung:</strong> ${item.description}</p>
+        <p><strong>Beschreibung:</strong> ${escapeHtml(item.description)}</p>
         ${idsHtml}
         <p style="margin-top: 0.5rem;"><em>Klicken Sie auf den Vermarkter, um die Ansicht auf diesen Filter einzuschränken.</em></p>
       `;
@@ -966,9 +1003,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     drawerTitle.textContent = title;
     drawerContent.innerHTML = htmlContent;
     detailDrawer.classList.add("open");
+    detailDrawer.setAttribute("aria-hidden", "false");
+    btnCloseDrawer.focus({ preventScroll: true });
   }
 
   function closeDrawer() {
     detailDrawer.classList.remove("open");
+    detailDrawer.setAttribute("aria-hidden", "true");
+    if (lastFocusedCard?.isConnected) {
+      lastFocusedCard.focus({ preventScroll: true });
+    }
   }
 });

@@ -40,6 +40,6 @@ Some content under `docs/` and `static/tools/identifier-landscape/` is synchroni
 
 ## Deployment
 
-Do not use `npm run deploy`, copy `build/` into the top-level `docs/` directory, or push generated output to a `gh-pages` branch.
+Do not use `npm run deploy`, commit generated `build/` output, or push generated output to a `gh-pages` branch.
 
 Production publishing is owned by the repository's GitHub Actions workflows. They install locked dependencies, validate the content, build a temporary artifact, verify the custom domain, and deploy through GitHub Pages.

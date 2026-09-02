@@ -1,25 +1,20 @@
 import React from 'react';
-import BrowserOnly from '@docusaurus/BrowserOnly';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import styles from './styles.module.css';
 
-function ToolEmbedContent({src, title, height}) {
+export default function ToolEmbed({src, title, height}) {
+  const resolvedSrc = useBaseUrl(src);
+
   return (
     <div className="id-landscape-fullbleed">
       <iframe
-        src={src}
+        src={resolvedSrc}
         title={title}
-        style={{
-          width: '100%',
-          height: height || 'calc(100vh - 140px)',
-          minHeight: '700px',
-          border: 'none',
-          borderRadius: '8px',
-          display: 'block',
-        }}
+        className={styles.frame}
+        style={height ? {height} : undefined}
+        loading="lazy"
+        referrerPolicy="strict-origin-when-cross-origin"
       />
     </div>
   );
-}
-
-export default function ToolEmbed(props) {
-  return <BrowserOnly>{() => <ToolEmbedContent {...props} />}</BrowserOnly>;
 }

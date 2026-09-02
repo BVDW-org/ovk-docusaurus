@@ -8,6 +8,7 @@
 .docusaurus
 .cache-loader
 /static/fonts/inter
+/static/tools/identifier-landscape/config/vermarkter-manifest.json
 
 # Misc
 .DS_Store

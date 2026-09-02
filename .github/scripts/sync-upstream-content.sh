@@ -62,6 +62,36 @@ sync_tree() {
     "$destination/"
 }
 
+sync_identifier_landscape() {
+  local source="$1"
+  local destination="$2"
+
+  mkdir -p "$destination"
+
+  # The production runtime is hardened and maintained in this repository.
+  # Preserve it while synchronizing upstream reference files and configuration.
+  rsync -a \
+    --delete \
+    --exclude='.git/' \
+    --exclude='.github/' \
+    --exclude='.idea/' \
+    --exclude='.DS_Store' \
+    --exclude='/app.js' \
+    --exclude='/index.html' \
+    --exclude='/style.css' \
+    --exclude='/config/vermarkter/' \
+    "$source/" \
+    "$destination/"
+
+  # Only JavaScript configuration modules are publishable vendor inputs.
+  # Keeping this as a separate strict sync also deletes malformed filenames.
+  sync_tree \
+    "$source/config/vermarkter" \
+    "$destination/config/vermarkter" \
+    --include='*.js' \
+    --exclude='*'
+}
+
 require_directory "$identity_source"
 require_directory "$identity_source/tools/identifier-landscape"
 require_file "$identity_source/README.md"
@@ -74,14 +104,19 @@ require_document_content "$werbeformen_source"
 require_no_symlinks "$identity_source"
 require_no_symlinks "$werbeformen_source"
 
+identifier_destination="$repository_root/ovk/static/tools/identifier-landscape"
+require_file "$identifier_destination/app.js"
+require_file "$identifier_destination/index.html"
+require_file "$identifier_destination/style.css"
+
 sync_tree \
   "$identity_source" \
   "$repository_root/ovk/docs/identitysolutions" \
   --exclude='/tools/'
 
-sync_tree \
+sync_identifier_landscape \
   "$identity_source/tools/identifier-landscape" \
-  "$repository_root/ovk/static/tools/identifier-landscape"
+  "$identifier_destination"
 
 mkdir -p "$repository_root/ovk/docs/contextualstandards"
 cp "$contextual_source/README.md" "$repository_root/ovk/docs/contextualstandards/index.md"

@@ -28,7 +28,7 @@
       font-weight: 500;
     }
     .nav-links a:hover { text-decoration: underline; }
-    
+
     .container {
       max-width: 1400px;
       margin: 0 auto;
@@ -51,7 +51,7 @@
     }
     h2, h3 { color: #fff; margin-top: 0; }
     h3 { margin-top: 20px; border-bottom: 1px solid #333; padding-bottom: 5px; font-size: 1.1rem; }
-    
+
     .tabs {
       display: flex;
       gap: 8px;
@@ -73,7 +73,7 @@
       color: #fff;
       border-color: #0056cc;
     }
-    
+
     label { display: block; margin-top: 15px; font-weight: bold; font-size: 0.9em; color: #aaa; }
     select, input[type="text"], input[type="color"], textarea {
       width: 100%;
@@ -100,7 +100,7 @@
     .color-picker-row input[type="text"] {
       flex: 1;
     }
-    
+
     .checkbox-group {
       display: flex;
       flex-wrap: wrap;
@@ -119,7 +119,7 @@
     }
     .checkbox-item:hover { background: #383838; }
     .checkbox-item input { margin: 0; cursor: pointer; }
-    
+
     .btn-group {
       display: flex;
       gap: 10px;
@@ -141,7 +141,7 @@
     .add-btn:hover { background: #004199; }
     .copy-btn { margin-top: 10px; background: #333; }
     .copy-btn:hover { background: #444; }
-    
+
     pre {
       background: #000;
       padding: 15px;
@@ -165,9 +165,9 @@
     <div style="background: #1e1e1e; padding: 40px; border-radius: 8px; width: 100%; max-width: 400px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); text-align: center;">
         <h2 id="loginTitle" style="margin-top:0;">OVK Admin Login</h2>
         <p style="color:#aaa; font-size:0.9em; margin-bottom: 20px;" id="loginSubtitle">Bitte gib dein Passwort ein.</p>
-        
+
         <input type="password" id="loginPassword" placeholder="Passwort" style="width:100%; margin-bottom: 20px; padding: 12px; background: #2c2c2c; border: 1px solid #444; color:#fff; border-radius:4px; font-size:16px;" onkeydown="if(event.key==='Enter') performLogin()">
-        
+
         <button onclick="performLogin()" id="loginBtn" style="width:100%; background: #2563eb; color:white; padding:12px; font-size:16px; border:none; border-radius:4px; cursor:pointer;">Anmelden</button>
         <div id="loginError" style="color:#c81e1e; margin-top:15px; font-weight:bold; display:none;">Falsches Passwort</div>
     </div>
@@ -202,7 +202,7 @@
 
     <div id="editorForm" style="display:none; margin-top: 25px;">
       <h2 id="editorFormTitle">Eintrag bearbeiten</h2>
-      
+
       <div id="dynamicFormFields"></div>
 
       <div class="btn-group">
@@ -216,7 +216,7 @@
   <div class="code-section">
     <h2 id="previewTitle">Vorschau: `config/core.js`</h2>
     <p id="previewSubtitle" style="font-size: 0.85em; color: #aaa;">Generierter Inhalt der vollständigen <code>config/core.js</code>.</p>
-    
+
     <div style="background: #222; padding: 15px; border-radius: 6px; margin-bottom: 15px; border: 1px solid #444;">
         <p style="margin-top: 0; margin-bottom: 15px; font-size: 0.9em;">Änderungen live im Repository speichern.</p>
         <button id="publishBtn" onclick="publishConfig()" style="width: 100%; background: #2563eb; padding: 12px; font-size: 1em;">Änderungen speichern & veröffentlichen</button>
@@ -262,7 +262,7 @@
                 'config/vermarkter/visoon.js'
             ]);
         }
-        
+
         for (const f of files) {
             try {
                 const res = await fetch(f + '?t=' + Date.now());
@@ -272,7 +272,7 @@
                 console.error("Fehler beim Laden von " + f, e);
             }
         }
-        
+
         if (typeof init === 'function') {
             init();
         }
@@ -284,7 +284,7 @@
   let coreConfig = null;
   let availableVermarkter = [];
   let currentItemId = null;
-  
+
   // Auth State
   let sessionPassword = "";
   let isAdmin = false;
@@ -295,9 +295,9 @@
       const pwd = document.getElementById('loginPassword').value;
       const btn = document.getElementById('loginBtn');
       const err = document.getElementById('loginError');
-      
+
       if(!pwd) return;
-      
+
       btn.disabled = true;
       btn.textContent = "Prüfe...";
       err.style.display = 'none';
@@ -313,15 +313,15 @@
               const data = await res.json();
               sessionPassword = pwd;
               isAdmin = data.isAdmin;
-              
+
               document.getElementById('loginOverlay').style.display = 'none';
-              
+
               if (!isAdmin && urlId) {
                   // Data Partner Login
                   switchTab('dataPartners');
                   document.querySelector('.tabs').style.display = 'none';
                   document.querySelector('.add-btn').style.display = 'none';
-                  
+
                   const itemSel = document.getElementById('itemSelect');
                   itemSel.value = urlId;
                   itemSel.disabled = true;
@@ -344,7 +344,7 @@
           err.style.display = 'block';
           err.textContent = "Netzwerkfehler: " + e.message;
       }
-      
+
       btn.disabled = false;
       btn.textContent = "Anmelden";
   }
@@ -357,7 +357,7 @@
     }
     // Deep clone core config to allow interactive editing
     coreConfig = JSON.parse(JSON.stringify(window.OVK_LANDSCAPE_CONFIG));
-    
+
     // Deduplicate dataPartners if any duplicates exist
     if (Array.isArray(coreConfig.dataPartners)) {
       const seenDp = new Set();
@@ -400,9 +400,9 @@
   function populateSelect() {
     const select = document.getElementById('itemSelect');
     select.innerHTML = '';
-    
+
     const items = coreConfig[activeTab] || [];
-    
+
     if (items.length === 0) {
       const opt = document.createElement('option');
       opt.value = '';
@@ -454,16 +454,16 @@
 
       container.appendChild(createCheckboxGroup('supportedUsecases', 'Unterstützte Usecases', coreConfig.usecases, item.supportedUsecases || []));
       container.appendChild(createCheckboxGroup('supportedSSPs', 'Kompatible SSPs', coreConfig.ssps, item.supportedSSPs || []));
-      
+
       // Dynamic Vermarkter Options loaded from vermarkter configs
       container.appendChild(createCheckboxGroup('supportedVermarkter', 'Kompatible Vermarkter (aus Vermarkter-Configs)', availableVermarkter, item.supportedVermarkter || []));
-      
+
       container.appendChild(createCheckboxGroup('supportedIds', 'Unterstützte ID-Systeme', coreConfig.ids, item.supportedIds || []));
 
     } else if (activeTab === 'ssps') {
       container.appendChild(createInputField('id', 'ID (technischer Schlüssel)', item.id, true));
       container.appendChild(createInputField('name', 'SSP Name', item.name));
-      
+
       const catOptions = [
         { id: 'standard', name: 'Standard SSP (ID wird nur durchgereicht)' },
         { id: 'curation', name: 'Curation SSP (FC & Targeting möglich)' }
@@ -471,21 +471,21 @@
       container.appendChild(createSelectField('category', 'Kategorie', catOptions, item.category || 'standard'));
 
       container.appendChild(createCheckboxGroup('supportedUsecases', 'Unterstützte Usecases', coreConfig.usecases, item.supportedUsecases || []));
-      
+
       // Dynamic Vermarkter Options loaded from vermarkter configs
       container.appendChild(createCheckboxGroup('supportedVermarkter', 'Angebundene Vermarkter (aus Vermarkter-Configs)', availableVermarkter, item.supportedVermarkter || []));
-      
+
       container.appendChild(createCheckboxGroup('supportedIds', 'Unterstützte ID-Systeme', coreConfig.ids, item.supportedIds || []));
 
     } else if (activeTab === 'ids') {
       container.appendChild(createInputField('id', 'ID (technischer Schlüssel)', item.id, true));
       container.appendChild(createInputField('name', 'Vollständiger Name', item.name));
       container.appendChild(createInputField('shortName', 'Kurzname (Badge-Text)', item.shortName));
-      
+
       // Color pickers with hex text input
       container.appendChild(createColorPickerField('color', 'Hintergrundfarbe (Color)', item.color || '#e0f2fe'));
       container.appendChild(createColorPickerField('textColor', 'Textfarbe (Text Color)', item.textColor || '#0056cc'));
-      
+
       container.appendChild(createTextareaField('description', 'Beschreibung', item.description || ''));
 
     } else if (activeTab === 'usecases') {
@@ -558,19 +558,19 @@
     const div = document.createElement('div');
     const lbl = document.createElement('label');
     lbl.textContent = labelText;
-    
+
     const row = document.createElement('div');
     row.className = 'color-picker-row';
-    
+
     const colorInput = document.createElement('input');
     colorInput.type = 'color';
     colorInput.value = hexValue;
-    
+
     const textInput = document.createElement('input');
     textInput.type = 'text';
     textInput.dataset.field = fieldKey;
     textInput.value = hexValue;
-    
+
     colorInput.oninput = () => {
       textInput.value = colorInput.value;
       saveCurrentItemToMemory();
@@ -641,7 +641,7 @@
   function createNewItem() {
     const newId = prompt("Bitte eindeutige ID (technischer Schlüssel, z. B. 'my_new_dsp') eingeben:");
     if (!newId) return;
-    
+
     const cleanId = newId.trim().toLowerCase().replace(/\s+/g, '_');
     const existing = (coreConfig[activeTab] || []).find(i => i.id === cleanId);
     if (existing) {
@@ -737,7 +737,7 @@
       const code = document.getElementById('codePreview').textContent;
       const statusEl = document.getElementById('publishStatus');
       const target = activeTab === 'dataPartners' ? 'data_partners' : 'core';
-      
+
       if (!sessionPassword) {
           alert("Nicht angemeldet!");
           return;
@@ -774,7 +774,7 @@
           statusEl.textContent = "Netzwerkfehler: " + e.message;
           statusEl.style.color = "#c81e1e";
       }
-      
+
       btn.disabled = false;
       btn.textContent = "Änderungen speichern & veröffentlichen";
   }

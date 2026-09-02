@@ -119,7 +119,7 @@ jobs:
 
       - name: Validate identifier-landscape configuration
         if: steps.prepare.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
-        run: node scripts/validate-identifier-config.mjs
+        run: npm run validate
         working-directory: ovk
 
       - name: Build synchronized production site
@@ -137,7 +137,14 @@ jobs:
           test -s "${RUNNER_TEMP}/site/index.html"
           test -s "${RUNNER_TEMP}/site/404.html"
           test -s "${RUNNER_TEMP}/site/CNAME"
+          test -s "${RUNNER_TEMP}/site/robots.txt"
+          test -s "${RUNNER_TEMP}/site/sitemap.xml"
           test "$(tr -d '\r\n' < "${RUNNER_TEMP}/site/CNAME")" = "tech.ovk.de"
+          test ! -e "${RUNNER_TEMP}/site/en"
+          test ! -e "${RUNNER_TEMP}/site/blog"
+          test ! -e "${RUNNER_TEMP}/site/blog.html"
+          test ! -e "${RUNNER_TEMP}/site/docs/tutorial-basics"
+          test ! -e "${RUNNER_TEMP}/site/docs/tutorial-extras"
 
       - name: Push synchronized sources
         if: steps.prepare.outputs.changed == 'true'

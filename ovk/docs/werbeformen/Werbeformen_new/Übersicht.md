@@ -10,7 +10,7 @@ Display Advertising ist eine effektive Form des Online-Marketings, bei der visue
 Die digitalen Werbeanzeigen erscheinen in verschiedenen Formaten und bieten Unternehmen die Möglichkeit, ihre Zielgruppe direkt im Internet zu erreichen. Der Online-Vermarkterkreis (OVK) im Bundesverband Digitale Wirtschaft (BVDW) e.V. schafft mit seinen Richtlinien und Rahmenbedingungen die Grundlage für einen professionellen und leistungsstarken digitalen Display-Werbemarkt.
 
 ## Übersicht der digitalen Werbeformen
-Die Werbeformen im Display Advertising lassen sich in folgende Hauptkategorien gliedern: 
+Die Werbeformen im Display Advertising lassen sich in folgende Hauptkategorien gliedern:
 
 - Display-Werbeformen
 - Video Werbeformen

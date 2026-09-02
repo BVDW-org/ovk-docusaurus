@@ -13,7 +13,7 @@ Das Design orientiert sich an den offiziellen Farben und Richtlinien von [ovk.de
 
 ## Funktionsweise
 
-Durch Auswahl einer **Usecase**, eines **Data Partners** oder einer **DSP** werden inkompatible Partner in den nachgelagerten Stufen (SSP, Vermarkter) automatisch ausgeblendet bzw. ausgegraut. 
+Durch Auswahl einer **Usecase**, eines **Data Partners** oder einer **DSP** werden inkompatible Partner in den nachgelagerten Stufen (SSP, Vermarkter) automatisch ausgeblendet bzw. ausgegraut.
 
 In der Detailansicht (Info-Drawer) und in den Inventar-Icons (Desktop, Mobile, App, CTV) werden inventarspezifische ID-Abdeckungen (ID Coverage in %) und detaillierte Beschreibungen angezeigt.
 
@@ -109,7 +109,7 @@ window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
 
 ## Lokalen Server starten
 
-Um Probleme mit CORS (Cross-Origin Resource Sharing) beim Laden der Konfigurationen zu vermeiden, muss das Projekt über einen lokalen Webserver ausgeführt werden. 
+Um Probleme mit CORS (Cross-Origin Resource Sharing) beim Laden der Konfigurationen zu vermeiden, muss das Projekt über einen lokalen Webserver ausgeführt werden.
 
 **Über WSL (Windows Subsystem for Linux):**
 ```bash

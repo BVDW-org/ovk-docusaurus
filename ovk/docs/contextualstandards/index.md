@@ -28,7 +28,7 @@ Inhalt:
    - [Implementierungsübersicht und Dokumentationen](#implementierungsübersicht-und-dokumentationen)
 
 [5. Laufende Projeke](#laufende-projekte)
-     
+
 
 ## Motivation
 
@@ -58,7 +58,7 @@ Wichtigste Grundsätze
 -  Transparenz
 -  Nachvollziehbare Qualität für Marktteilnehmer
 
- 
+
 ### 1.1 Direktanbindung
 -  Die verwendete Technologie wird direkt vom Publisher oder Vermarkter der Inhalte angebunden.
 
@@ -79,12 +79,12 @@ Wichtigste Grundsätze
  ### 2.1 Dokumentation der Systemfunktionalität<br />
  -  Die Funktionsweise des/der verwendeten Klassifikationssystems/e wird in Form einer Dokumentation beschrieben (zugrunde liegende Architektur, Verbindung zu den Inhalten, welche Daten verwendet werden, wie die Daten verarbeitet werden, usw.).
  -  Die Dokumentation wird auf der Website des Anbieters veröffentlicht.
- 
-   
+
+
  ### 2.2 Dokumentation der Qualitätssicherung<br />
  -  Die Systeme und Daten werden laufend überprüft und optimiert.
  -  Die Prozesse und Methoden zur Qualitätssicherung werden dokumentiert und auf der Website des Anbieters veröffentlicht.
- 
+
 
 ## 3. DATENSCHUTZ UND PRIVACY
  Wichtigste Grundsätze
@@ -163,9 +163,9 @@ Wichtigste Grundsätze
  ## 4. TECHNOLOGIE
  Wichtigste Grundsätze
 -  Transparenz
-  
+
  ### 4.1 Taxonomie-Standard
- - Es wird die IAB-Content Taxonomy, mindestens Version 2.1, verwendet. Sensitive Kategorien werden ausgeschlossen (siehe Datenschutz) 
+ - Es wird die IAB-Content Taxonomy, mindestens Version 2.1, verwendet. Sensitive Kategorien werden ausgeschlossen (siehe Datenschutz)
    [IAB Content Taxonony 2.1](https://github.com/InteractiveAdvertisingBureau/Taxonomies/blob/main/Content%20Taxonomies/Content%20Taxonomy%202.1.tsv)
 
  ### 4.2 Open RTB Standard
@@ -180,9 +180,9 @@ Liste der Mitglieder und deren Dokumentationen, die den OVK-Contextual Standard 
 
 |        **Vermarkter**          | `Dokumentation nach 2.1 & 2.2 ` |
 | ---------------------------------- |--------------|
-| `Ad Alliance`           |https://osdatasolutions.de/contextual-ovk/  
+| `Ad Alliance`           |https://osdatasolutions.de/contextual-ovk/
 | `BCN`                   |https://bcn.group/fileadmin/Assets/02_Werbeloesungen/Digital/Programmatic_Contextual_Targeting_2025.pdf
-| `Media Impact`          |https://osdatasolutions.de/contextual-ovk/ 
+| `Media Impact`          |https://osdatasolutions.de/contextual-ovk/
 | `SevenOne`              |https://www.seven.one/werbeprodukte/contextual-targeting
 | `Ströer`                |https://osdatasolutions.de/contextual-ovk/
 | `UIM`                   |https://www.united-internet-media.de/de/produkteundloesungen/data-targeting/zielgruppen/smart-contextual-targeting/
@@ -191,6 +191,3 @@ Liste der Mitglieder und deren Dokumentationen, die den OVK-Contextual Standard 
 ## Laufende Projekte
 
 -  Kontextueller Standard für Video
-  
-  
-  

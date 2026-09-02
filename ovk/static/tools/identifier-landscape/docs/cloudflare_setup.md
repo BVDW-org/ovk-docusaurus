@@ -11,7 +11,7 @@ Der Worker benötigt Schreibrechte für dein GitHub Repository.
 4. Gib dem Token einen Namen (z.B. "OVK Gatekeeper").
 5. Wähle bei Expiration am besten "No expiration" (oder denke daran, ihn später zu erneuern).
 6. Hake bei den Scopes **`repo`** (Full control of private repositories) an. *(Damit darf das Token Dateien bearbeiten).*
-7. Klicke auf **Generate token**. 
+7. Klicke auf **Generate token**.
 8. **WICHTIG:** Kopiere diesen Token (z.B. `ghp_xxxxx...`) und speichere ihn zwischen. Du siehst ihn danach nie wieder!
 
 ## Schritt 2: Cloudflare Account erstellen
@@ -72,5 +72,5 @@ Füge nun folgende Variablen hinzu (Wähle immer den Button `Encrypt` aus, damit
 ## Schritt 6: URL kopieren
 1. Gehe in deinem Cloudflare Worker auf den Reiter **Triggers**.
 2. Dort siehst du eine URL unter "Routes", die ähnlich aussieht wie `https://ovk-gatekeeper.<dein-username>.workers.dev`.
-3. Kopiere diese URL! 
+3. Kopiere diese URL!
 4. Diese URL müssen wir im nächsten Schritt im HTML Editor (`vermarkter_editor.html`) eintragen, damit der Editor weiß, wohin er die Passwörter und den Code senden muss.

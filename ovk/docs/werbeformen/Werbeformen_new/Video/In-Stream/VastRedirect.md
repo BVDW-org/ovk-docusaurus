@@ -18,7 +18,7 @@
 
 | Lautheitsnorm     |
 |-------------------|
-| EBU R 128         
+| EBU R 128
 
 ## Audio Eigenschaften
 
@@ -27,7 +27,7 @@
 | 48 / 44,1 kHz | Stereo | AAC (LC) | konstant       |
 
 
-# Mezzanine-File (optional, ab VAST 4.0 oder höher, nur für SSAI benötigt, z.B. Ausspielung während Live-Streams)		
+# Mezzanine-File (optional, ab VAST 4.0 oder höher, nur für SSAI benötigt, z.B. Ausspielung während Live-Streams)
 
 ## Video Settings (min.)
 

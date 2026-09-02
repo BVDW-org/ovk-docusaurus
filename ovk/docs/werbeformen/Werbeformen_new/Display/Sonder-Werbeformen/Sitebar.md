@@ -7,7 +7,7 @@
 Die Sitebar bietet eine großflächige und kreative Bühne für Rich Media Inhalte sowie eine permanente Präsenz der Werbebotschaft. Das Werbemittel passt sich dabei dynamisch an die Bildschirmgröße an, was eine optimale Darstellung gewährleistet. Zusätzlich bleibt die Sitebar beim Scrollen immer im sichtbaren Bereich des Nutzers.
 
 ## Weitere Spezifikationen
-Die Sitebar spannt sich seitlich des Contents auf und nutzt dabei den zur Verfügung stehenden Platz, wobei das Fallbackwerbemittel als Orientierung für das Seitenverhältnis dient.  
+Die Sitebar spannt sich seitlich des Contents auf und nutzt dabei den zur Verfügung stehenden Platz, wobei das Fallbackwerbemittel als Orientierung für das Seitenverhältnis dient.
 **Fallbackanlieferung:** 120 x 600, 160 x 600 oder 200 x 600 (gif, jpg, png) – nicht skalierend.
 
 ## Technische Spezifikationen

@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Heading from '@theme/Heading';
 import {ArrowRight} from '@phosphor-icons/react/dist/icons/ArrowRight';
 import {Article} from '@phosphor-icons/react/dist/icons/Article';
@@ -92,22 +93,21 @@ const unitLeaders = [
     role: 'Leiter des Labs Ad Tech & Programmatic im OVK',
     company: 'United Internet Media GmbH',
     companyUrl: 'https://www.united-internet-media.de/de/home/',
-    image: 'https://www.ovk.de/wp-content/uploads/2025/09/Alwin-Viereck.jpg',
+    image: '/img/team/alwin-viereck.jpg',
   },
   {
     name: 'Carlos Bracho',
     role: 'Leiter des Labs Ad Tech & Programmatic im OVK',
     company: 'Media Impact GmbH und Co. KG',
     companyUrl: 'https://www.mediaimpact.de/de/',
-    image:
-      'https://www.ovk.de/wp-content/uploads/2025/09/Carlos-Bracho-990x990.jpg',
+    image: '/img/team/carlos-bracho.jpg',
   },
   {
     name: 'Markus Letzner',
     role: 'Leiter des Labs Ad Tech & Programmatic im OVK und Mitsprecher des Contextual Workstreams',
     company: 'Ströer Digital Media GmbH',
     companyUrl: 'https://www.stroeer.de/',
-    image: 'https://www.ovk.de/wp-content/uploads/2025/09/Markus-Letzner.jpg',
+    image: '/img/team/markus-letzner.jpg',
   },
 ];
 
@@ -225,13 +225,18 @@ function OverviewBand() {
 }
 
 function TeamMember({image, name, role, company, companyUrl}) {
+  const imageUrl = useBaseUrl(image);
+
   return (
     <article className={styles.teamMember}>
       <img
-        src={image}
-        alt={name}
+        src={imageUrl}
+        alt={`Porträt von ${name}`}
         className={styles.teamMemberImage}
+        width="88"
+        height="88"
         loading="lazy"
+        decoding="async"
       />
       <div className={styles.teamMemberContent}>
         <Heading as="h4" className={styles.teamMemberName}>
@@ -242,6 +247,7 @@ function TeamMember({image, name, role, company, companyUrl}) {
           href={companyUrl}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={`${company} (öffnet in einem neuen Tab)`}
           className={styles.teamMemberCompany}>
           {company}
         </a>

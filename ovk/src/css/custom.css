@@ -141,7 +141,6 @@ body {
   padding: 0 1.5rem;
   border-bottom: 1px solid var(--ifm-color-emphasis-200);
   box-shadow: var(--ifm-navbar-shadow);
-  backdrop-filter: blur(10px);
 }
 
 .navbar__brand {
@@ -224,7 +223,8 @@ body {
 .button {
   border-radius: 30px;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    box-shadow 0.3s ease, transform 0.3s ease;
   border: none;
   padding: 0.8rem 2rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -295,61 +295,23 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--ifm-background-color);
 }
 
-/* Fix for any elements with inline background styles */
-[data-theme='dark'] [style*="background-color"],
-[data-theme='dark'] [style*="background"] {
-  background-color: var(--ifm-background-color) !important;
-  color: var(--ifm-font-color-base) !important;
-}
-
-/* Fix for mobile menu appearing behind content */
-.navbar-sidebar {
-  z-index: 9999 !important;
-  position: fixed !important;
-}
-
-.navbar-sidebar__backdrop {
-  z-index: 9998 !important;
-  position: fixed !important;
-}
-
-.navbar-sidebar__close {
-  z-index: 10000 !important;
-  position: relative !important;
-}
-
-.navbar-sidebar__brand {
-  z-index: 9999 !important;
-}
-
-.navbar-sidebar__items {
-  z-index: 9999 !important;
-}
-
-/* Ensure content doesn't overlap with the menu */
-.navbar-sidebar-shown .main-wrapper {
-  z-index: 0 !important;
-}
-
 @media (max-width: 996px) {
   .navbar {
     min-height: 64px;
     padding: 0 1rem;
-    /* A backdrop filter makes fixed descendants use the navbar as their
-       containing block, which clips Docusaurus' mobile drawer to 64px. */
-    backdrop-filter: none;
   }
 }
 
-/* Die Breite des Inhalts vergößern, u.a. für die Tabellen */
-:root .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module {
-  max-width: 100% !important;
-}
+/* Documentation tables need the full content width. Keep this scoped to the
+   docs layout so ordinary three-column grids remain intact. */
+@media (min-width: 997px) {
+  [class*='docItemCol_'] {
+    max-width: 100% !important;
+  }
 
-/* Seitenleiste (Inhaltsverzechnis) ausblenden */
-.col--3 {
-  max-width: none !important;
-  display: none !important;
+  .col:has(> .theme-doc-toc-desktop) {
+    display: none;
+  }
 }
 
 /* Vollbreite für eingebettete Tools (z.B. ID Landscape Map), damit deren
@@ -366,6 +328,17 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     margin-left: 0;
     margin-right: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
