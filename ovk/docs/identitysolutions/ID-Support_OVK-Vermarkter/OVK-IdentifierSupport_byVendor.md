@@ -27,6 +27,7 @@ Note: Score Media and Bauer use their Erstvermarkter's ID solutions. Azerion, ne
 | Ad Alliance                  | No Support   |                                                                              |
 | BCN Brand Community Network  | Live         | Bid Stream (unrestricted)                                                    |
 | iq digital                   | In-Progress  |
+| Media Impact                 | Live         |                                                                              |
 | SevenOne                     | Live         |                                                                              |
 | Ströer                       | In-Progress  |                                                                              |
 | UIM                          | Live         | Bid Stream (deal id/unrestricted), Data Marketplace (multiple), Data Clean Room|
@@ -47,7 +48,7 @@ Note: Score Media and Bauer use their Erstvermarkter's ID solutions. Azerion, ne
 | Ad Alliance                  | No support |                                                        |
 | BCN Brand Community Network  | Live       | Bid Stream (unrestricted)                               |
 | iq digital                   | Live       | Bid Stream (unrestricted), Data Marketplace (Curation-SSP), Data Marketplace (DSP)                               |
-| Media Impact                 | No support |                                                        |
+| Media Impact                 | Live       |                                                        |
 | mobile.de                    | Live       | Bid Stream (unrestricted)                               |
 | Quarter Media                | Live       | Bid Stream (unrestricted)                               |
 | SevenOne                     | No support |                                                        |
@@ -152,3 +153,4 @@ Note: Score Media and Bauer use their Erstvermarkter's ID solutions. Azerion, ne
 | Ad Alliance                  | RTL Household IDs           | Internal only (audiences and martech)       |
 | BCN Brand Community Network  | Own email hash based id     | IO only (Adserver), Data Clean Room         |
 | iq Digital                   | iq Profile IDs              | Internal only (audiences and martech)       |
+| Media Impact                 | AS own stable ID            |                                             |
