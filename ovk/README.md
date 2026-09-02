@@ -22,9 +22,8 @@ The command prints the local URL and reloads most source changes automatically.
 
 ```bash
 npm ci
-node scripts/validate-identifier-config.mjs
-npm run build
-npm run serve
+npm run check   # both validators plus a strict production build
+npm run serve   # serves the produced build/ directory locally
 ```
 
 The production build is written to the ignored `build/` directory.
@@ -34,7 +33,7 @@ The production build is written to the ignored `build/` directory.
 - `docs/` contains Docusaurus documentation sources.
 - `src/` contains pages, components, and styles.
 - `static/` contains assets copied directly into the build artifact.
-- `scripts/` contains synchronized-content normalization and Identifier Landscape validation.
+- `scripts/` contains synchronized-content normalization, the Werbeformen URL/menu generator (`werbeformen-routes.mjs`), and Identifier Landscape validation.
 
 Some content under `docs/` and `static/tools/identifier-landscape/` is synchronized from other repositories. Make lasting content changes in the appropriate source repository described in the [root README](../README.md); the next sync may overwrite changes made directly to synchronized destinations.
 

@@ -206,6 +206,57 @@ body {
   width: 100%;
 }
 
+/* Two-level navbar dropdown (custom-nestedDropdown component). Infima clips
+   dropdown panels with overflow-y and reveals every descendant panel via an
+   ancestor :hover rule; both need overrides for side flyouts to work. */
+.dropdown__menu--allow-flyout {
+  overflow: visible;
+  max-height: none;
+  min-width: 13rem;
+}
+
+.dropdown__item--nested {
+  position: relative;
+}
+
+.dropdown__link--nested-parent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  cursor: default;
+}
+
+.dropdown__link--nested-parent::after {
+  content: '';
+  border: 4px solid transparent;
+  border-left-color: currentColor;
+  flex-shrink: 0;
+}
+
+.dropdown__menu--flyout {
+  left: 100%;
+  top: -0.5rem;
+  min-width: 15rem;
+}
+
+/* Keep flyouts closed while only an ancestor is hovered ... */
+.dropdown--hoverable:hover .dropdown__menu--flyout,
+.dropdown--show .dropdown__menu--flyout {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+/* ... and open one only while its own parent row is hovered or focused. */
+.dropdown__item--nested:hover > .dropdown__menu--flyout,
+.dropdown__item--nested:focus-within > .dropdown__menu--flyout {
+  opacity: 1;
+  pointer-events: all;
+  visibility: visible;
+}
+
 /* Footer styles */
 .footer {
   background-color: var(--ifm-footer-background-color);

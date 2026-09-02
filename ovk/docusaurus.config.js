@@ -6,7 +6,10 @@
 
 import { themes as prismThemes } from 'prism-react-renderer';
 
-import { collectWerbeformenRedirects } from './scripts/werbeformen-routes.mjs';
+import {
+  collectWerbeformenMenu,
+  collectWerbeformenRedirects,
+} from './scripts/werbeformen-routes.mjs';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -151,19 +154,14 @@ const config = {
             },
             { to: '/docs/contextualstandards/', label: 'OVK Contextual Standard', position: 'left' },
             {
-              type: 'dropdown',
-              to: '/docs/werbeformen/',
+              // Two-level dropdown rendered by src/components/NestedDropdownNavbarItem.
+              // The nested tree is derived from the synced Werbeformen files,
+              // so upstream additions appear automatically after a sync.
+              type: 'custom-nestedDropdown',
+              to: '/docs/werbeformen',
               label: 'Werbeformen',
               position: 'left',
-              items: [
-                { type: 'doc', docId: 'werbeformen/index', label: 'Einführung' },
-                {
-                  type: 'doc',
-                  docId: 'werbeformen/Werbeformen_new/Übersicht',
-                  label: 'Digitale Werbeformen',
-                },
-                { type: 'doc', docId: 'werbeformen/Tech-Hilfe/readme', label: 'Tech-Hilfe' },
-              ],
+              items: collectWerbeformenMenu(),
             },
           ],
         },

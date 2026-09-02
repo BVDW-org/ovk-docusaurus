@@ -3,10 +3,31 @@
 [![Build and publish](https://github.com/BVDW-org/ovk-docusaurus/actions/workflows/build-and-publish.yml/badge.svg?branch=main)](https://github.com/BVDW-org/ovk-docusaurus/actions/workflows/build-and-publish.yml)
 [![Sync upstream content](https://github.com/BVDW-org/ovk-docusaurus/actions/workflows/sync-and-publish.yml/badge.svg?branch=main)](https://github.com/BVDW-org/ovk-docusaurus/actions/workflows/sync-and-publish.yml)
 
-This repository builds and publishes the [OVK technical specifications website](https://tech.ovk.de/). The site combines documentation maintained here with content synchronized from other BVDW/OVK repositories.
+**[tech.ovk.de](https://tech.ovk.de/)** is the central technical reference of the **Online-Vermarkterkreis (OVK)**, the circle of the leading German digital advertising sales houses (Vermarkter) within the Bundesverband Digitale Wirtschaft (BVDW) e.V. The site bundles the technical standards the German digital advertising market works with — identity solutions, contextual targeting, and standardized advertising formats — in one place, in German, for sales houses, publishers, agencies, and advertisers.
+
+This repository builds and publishes that website. It combines documentation maintained here with content synchronized hourly from other BVDW/OVK repositories, validates everything, and deploys the verified result to GitHub Pages.
+
+## What is on the site
+
+| Section | Content |
+|---|---|
+| [Identity](https://tech.ovk.de/docs/identitysolutions) | Which identity solutions (netID, ID5, Utiq, …) each OVK sales house, SSP, and DSP supports for post-cookie addressability — including case studies and the interactive [ID Landscape Map](https://tech.ovk.de/docs/tools/id-landscape-map). |
+| [OVK Contextual Standard](https://tech.ovk.de/docs/contextualstandards) | The OVK standard for contextual targeting: criteria, quality assurance, and documentation requirements. |
+| [Werbeformen](https://tech.ovk.de/docs/werbeformen) | Technical specifications for the standardized OVK advertising formats — display and video, desktop and mobile — plus technical help on clicktags and redirects. |
+
+## Site features
+
+- German-language documentation with full-text search that runs entirely in the browser — no external search service.
+- Stable, readable URLs for every specification, with automatic redirects from previously shared links.
+- Navigation menus — including the nested Werbeformen submenus — are generated from the synchronized content, so new upstream documents appear automatically.
+- No third-party requests: fonts and images are served by the site itself.
+- Light and dark mode, responsive layout with a mobile navigation drawer, and the embedded interactive Identifier Landscape tool.
+
+The site is built with [Docusaurus](https://docusaurus.io/) 3 (with the Rspack/SWC "faster" build), React 19, and GitHub Pages.
 
 ## Which section should I read?
 
+- **New here:** [What is on the site](#what-is-on-the-site) and [Site features](#site-features) above.
 - **Content contributor:** start with [Where content comes from](#where-content-comes-from) and [When will a change be live?](#when-will-a-change-be-live).
 - **Reviewer:** read [Validation and safety checks](#validation-and-safety-checks).
 - **Repository maintainer:** read [The two workflows](#the-two-workflows), [Authentication and permissions](#authentication-and-permissions), and [Troubleshooting](#troubleshooting).
@@ -119,6 +140,7 @@ Every production artifact must pass all of these checks:
 - strict Docusaurus builds for the configured locales;
 - normalized LF line endings for synchronized text before Git whitespace checks;
 - failure on broken links, broken Markdown links, and broken anchors;
+- Werbeformen URL slugs, redirects, and navigation menus derived deterministically from the synchronized files, with slug collisions failing the build;
 - required `index.html`, `404.html`, and `CNAME` artifact files;
 - exact custom-domain value `tech.ovk.de`;
 - Git diff whitespace validation before synchronized commits;
@@ -181,20 +203,18 @@ Requirements:
 ```bash
 cd ovk
 npm ci
-node scripts/validate-identifier-config.mjs
 npm start
 ```
 
-The development server prints its local URL and reloads most changes automatically.
+The development server prints its local URL and reloads most changes automatically. Full-text search and the legacy-URL redirects only exist in the production build, not in the development server.
 
 Run the production checks before opening a pull request:
 
 ```bash
 cd ovk
 npm ci
-node scripts/validate-identifier-config.mjs
-npm run build
-npm run serve
+npm run check   # runs both validators and a strict production build
+npm run serve   # serves the produced build/ directory locally
 ```
 
 `npm run build` writes ignored local output to `ovk/build/`. Do not commit that generated output or use `npm run deploy`; GitHub Actions owns production deployment.
@@ -219,9 +239,9 @@ npm run serve
 │   ├── scripts/                 # Deterministic upstream synchronization
 │   └── workflows/               # Validation, synchronization, and Pages deployment
 └── ovk/
-    ├── docs/                    # Docusaurus documentation sources
-    ├── scripts/                 # Normalization and configuration validation
-    ├── src/                     # Docusaurus pages, components, and styles
+    ├── docs/                    # Docusaurus documentation sources (partly synchronized)
+    ├── scripts/                 # Sync normalization, URL/menu generation, validation
+    ├── src/                     # Pages, components (nested navbar menu), styles, theme
     ├── static/                  # Files copied directly into the site artifact
     ├── docusaurus.config.js
     ├── package.json
