@@ -1,7 +1,7 @@
 # OVK Tech Specifications
 
-[![Build and publish](https://github.com/BVDW-org/ovk-docusaurus/actions/workflows/build-and-publish.yml/badge.svg)](https://github.com/BVDW-org/ovk-docusaurus/actions/workflows/build-and-publish.yml)
-[![Sync upstream content](https://github.com/BVDW-org/ovk-docusaurus/actions/workflows/sync-and-publish.yml/badge.svg)](https://github.com/BVDW-org/ovk-docusaurus/actions/workflows/sync-and-publish.yml)
+[![Build and publish](https://github.com/BVDW-org/ovk-docusaurus/actions/workflows/build-and-publish.yml/badge.svg?branch=main)](https://github.com/BVDW-org/ovk-docusaurus/actions/workflows/build-and-publish.yml)
+[![Sync upstream content](https://github.com/BVDW-org/ovk-docusaurus/actions/workflows/sync-and-publish.yml/badge.svg?branch=main)](https://github.com/BVDW-org/ovk-docusaurus/actions/workflows/sync-and-publish.yml)
 
 This repository builds and publishes the [OVK technical specifications website](https://tech.ovk.de/). The site combines documentation maintained here with content synchronized from other BVDW/OVK repositories.
 
