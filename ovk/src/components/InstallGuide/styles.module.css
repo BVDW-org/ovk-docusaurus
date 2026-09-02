@@ -1,0 +1,221 @@
+.positioner {
+  position: fixed;
+  z-index: 1000;
+  top: 86px;
+  right: 18px;
+  width: min(370px, calc(100vw - 36px));
+  pointer-events: none;
+}
+
+.dialog {
+  position: relative;
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid rgba(20, 47, 82, 0.14);
+  border-radius: 16px;
+  color: #142f52;
+  background: #ffffff;
+  box-shadow: 0 12px 34px rgba(1, 15, 45, 0.16);
+  pointer-events: auto;
+  animation: notice-in 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.closeButton {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  display: inline-grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  color: #55708f;
+  background: transparent;
+  cursor: pointer;
+  transition: color 160ms ease, background-color 160ms ease;
+}
+
+.closeButton:hover {
+  color: #142f52;
+  background: #eef2f7;
+}
+
+.closeButton svg {
+  width: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-width: 2;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-right: 2rem;
+}
+
+.appIcon {
+  flex: 0 0 auto;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  box-shadow: 0 5px 14px rgba(1, 15, 45, 0.18);
+}
+
+.title {
+  margin: 0;
+  color: #010f2d;
+  font-size: 1rem;
+  font-weight: 750;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+.description {
+  margin: 0.18rem 0 0;
+  color: #60748d;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin-top: 0.85rem;
+  padding: 0.7rem;
+  border-radius: 11px;
+  color: #526a86;
+  background: #f3f6f9;
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.tip strong {
+  color: #142f52;
+  font-weight: 700;
+}
+
+.tipIcon {
+  display: inline-grid;
+  flex: 0 0 auto;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  border-radius: 8px;
+  color: #142f52;
+  background: #ffffff;
+}
+
+.tipIcon svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.tipIcon svg rect,
+.tipIcon svg path {
+  fill: none;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.45rem;
+  margin-top: 0.85rem;
+}
+
+.primaryButton,
+.secondaryButton {
+  min-height: 36px;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 160ms ease, background-color 160ms ease,
+    border-color 160ms ease;
+}
+
+.primaryButton {
+  display: inline-flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  border: 1px solid #ff4627;
+  color: #ffffff;
+  background: #ff4627;
+}
+
+.primaryButton:hover {
+  border-color: #e72d0e;
+  color: #ffffff;
+  background: #e72d0e;
+}
+
+.primaryButton svg {
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.secondaryButton {
+  border: 1px solid transparent;
+  color: #60748d;
+  background: transparent;
+}
+
+.secondaryButton:hover {
+  color: #142f52;
+  background: #eef2f7;
+}
+
+.closeButton:focus-visible,
+.primaryButton:focus-visible,
+.secondaryButton:focus-visible {
+  outline: 3px solid rgba(255, 70, 39, 0.34);
+  outline-offset: 2px;
+}
+
+@keyframes notice-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+  }
+}
+
+@media (max-width: 576px) {
+  .positioner {
+    top: 76px;
+    right: 10px;
+    width: calc(100vw - 20px);
+  }
+
+  .dialog {
+    padding: 0.9rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dialog {
+    animation: none;
+  }
+
+  .closeButton,
+  .primaryButton,
+  .secondaryButton {
+    transition: none;
+  }
+}

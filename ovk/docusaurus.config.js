@@ -92,6 +92,48 @@ const config = {
 
   plugins: [
     [
+      '@docusaurus/plugin-pwa',
+      {
+        offlineModeActivationStrategies: [
+          'appInstalled',
+          'standalone',
+          'queryString',
+        ],
+        pwaHead: [
+          {
+            tagName: 'link',
+            rel: 'manifest',
+            href: '/manifest.json',
+          },
+          {
+            tagName: 'link',
+            rel: 'apple-touch-icon',
+            href: '/img/pwa/apple-touch-icon.png',
+          },
+          {
+            tagName: 'meta',
+            name: 'theme-color',
+            content: '#010f2d',
+          },
+          {
+            tagName: 'meta',
+            name: 'apple-mobile-web-app-capable',
+            content: 'yes',
+          },
+          {
+            tagName: 'meta',
+            name: 'apple-mobile-web-app-status-bar-style',
+            content: 'default',
+          },
+          {
+            tagName: 'meta',
+            name: 'apple-mobile-web-app-title',
+            content: 'OVK Tech Specs',
+          },
+        ],
+      },
+    ],
+    [
       '@docusaurus/plugin-client-redirects',
       {
         // Legacy Werbeformen routes (spaces, umlauts, "Werbeformen_new")
