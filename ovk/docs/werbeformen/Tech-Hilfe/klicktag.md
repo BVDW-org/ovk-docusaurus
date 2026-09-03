@@ -1,5 +1,8 @@
 ---
 slug: /werbeformen/tech-hilfe/klicktag
+title: "Clicktag richtig implementieren"
+description: "OVK-Anleitung für Clicktags in digitalen Werbemitteln: Funktionsweise, korrekte Implementierung, Code-Beispiele und Adserver-Anforderungen."
+keywords: ["Clicktag", "Werbemittel", "Adserver", "HTML5 Werbung"]
 ---
 
 # Clicktag

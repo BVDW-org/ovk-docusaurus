@@ -43,9 +43,12 @@ function DesktopNestedDropdown({label, to, items}) {
                   {item.label}
                 </Link>
               ) : (
-                <span className="dropdown__link dropdown__link--nested-parent">
+                <button
+                  type="button"
+                  aria-haspopup="menu"
+                  className="dropdown__link dropdown__link--nested-parent">
                   {item.label}
-                </span>
+                </button>
               )}
               <ul className="dropdown__menu dropdown__menu--flyout">
                 {item.items.map((child) => (

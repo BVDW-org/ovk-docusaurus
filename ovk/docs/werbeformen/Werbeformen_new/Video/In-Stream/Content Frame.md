@@ -1,15 +1,18 @@
 ---
 slug: /werbeformen/video/in-stream/content-frame
+title: "Content Frame/ Cutin XXL"
+description: "Technische Spezifikationen für das OVK-Werbeformat Content Frame/ Cutin XXL: Beschreibung, Abmessungen, Dateiformate und Anforderungen für digitale Kampagnen."
+keywords: ["Content Frame/ Cutin XXL", "OVK Werbeform", "technische Spezifikationen", "digitale Werbung"]
 ---
 
 # Content Frame/ Cutin XXL
-<img alt="OVK_WF_Video_Content_Frame_02 (002)" src="/img/formats/OVK_WF_Video_Content_Frame_02.png" />
+<img alt="Beispieldarstellung des OVK-Werbeformats Content Frame/ Cutin XXL" src="/img/formats/OVK_WF_Video_Content_Frame_02.png" />
 
 
-## Beschreibung
+## Was ist das OVK-Werbeformat Content Frame/ Cutin XXL?
 Der Content Frame bzw. Cut In legt sich als "Band" horizontal oder vertikal während eines Videos an den Bildrand.
 
-## Technische Spezifikationen
+## Welche technischen Spezifikationen gelten?
 
 | Name            | Overlay Ad     |
 |-----------------|----------------|
@@ -27,5 +30,5 @@ Der Content Frame bzw. Cut In legt sich als "Band" horizontal oder vertikal wä
 
 
 
-## Formate
+## Welche Dateiformate werden unterstützt?
 HTML5 oder Image

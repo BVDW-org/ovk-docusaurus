@@ -1,3 +1,9 @@
+---
+title: "Identity Case Studies aus dem OVK-Markt"
+description: "Praxisbeispiele zu netID, ID5 und Utiq: Kampagnen, Vermarkter, Werbekunden und messbare Identity-Anwendungsfälle im deutschen Werbemarkt."
+keywords: ["Identity Case Studies", "netID", "ID5", "Utiq", "adressierbare Werbung"]
+---
+
 # Case Studies
 
 ## netId

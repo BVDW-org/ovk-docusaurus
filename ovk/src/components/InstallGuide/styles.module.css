@@ -152,15 +152,15 @@
   align-items: center;
   justify-content: center;
   gap: 0.35rem;
-  border: 1px solid #ff4627;
+  border: 1px solid #c92f18;
   color: #ffffff;
-  background: #ff4627;
+  background: #c92f18;
 }
 
 .primaryButton:hover {
-  border-color: #e72d0e;
+  border-color: #a92310;
   color: #ffffff;
-  background: #e72d0e;
+  background: #a92310;
 }
 
 .primaryButton svg {

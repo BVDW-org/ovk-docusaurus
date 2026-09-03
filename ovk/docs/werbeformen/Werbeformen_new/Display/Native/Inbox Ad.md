@@ -1,19 +1,22 @@
 ---
 slug: /werbeformen/display/native/inbox-ad
+title: "InboxAd / Mail Ad"
+description: "Technische Spezifikationen für das OVK-Werbeformat InboxAd / Mail Ad: Beschreibung, Abmessungen, Dateiformate und Anforderungen für digitale Kampagnen."
+keywords: ["InboxAd / Mail Ad", "OVK Werbeform", "technische Spezifikationen", "digitale Werbung"]
 ---
 
 # InboxAd / Mail Ad
 <span class="badge badge--success">Active</span>
-<img alt="OVK_WF_Desktop_Mobil_InboxAdMailAd" src="/img/formats/OVK_WF_Desktop_Mobil_InboxAdMailAd.png" />
+<img alt="Beispieldarstellung des OVK-Werbeformats InboxAd / Mail Ad" src="/img/formats/OVK_WF_Desktop_Mobil_InboxAdMailAd.png" />
 
 
-## Beschreibung
+## Was ist das OVK-Werbeformat InboxAd / Mail Ad?
 Inbox / Mail Ads werden im Email-Posteingang der Nutzer angezeigt. Sie werden als E-Mails angezeigt, können Text, Bilder, Videos oder interaktive Elemente enthalten und werden im persönlichen Posteingang vom Nutzer wahrgenommen.
 
-## Weitere Spezifikationen
+## Welche weiteren Spezifikationen gelten?
 Platzierung in der E-Mailliste. Größe in Abhängigkeit von Darstellung der E-Mailbetreffzeilen.
 
-## Technische Spezifikationen
+## Welche technischen Spezifikationen gelten?
 
 | Name           | InboxAd / Mail Ad |
 |----------------|-------------------|
@@ -27,8 +30,8 @@ Platzierung in der E-Mailliste. Größe in Abhängigkeit von Darstellung der E-M
 
 
 
-## Größe
+## Welche Größen sind erlaubt?
 (Abhängig von der Darstellung im E-Mail-Posteingang.)
 
-## Formate
+## Welche Dateiformate werden unterstützt?
 Text, JPEG, GIF, HTML5, Video, interaktive Elemente

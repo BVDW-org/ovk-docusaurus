@@ -1,19 +1,22 @@
 ---
 slug: /werbeformen/display/sonder-werbeformen/bridge-ad
+title: "Bridge Ad"
+description: "Technische Spezifikationen für das OVK-Werbeformat Bridge Ad: Beschreibung, Abmessungen, Dateiformate und Anforderungen für digitale Kampagnen."
+keywords: ["Bridge Ad", "OVK Werbeform", "technische Spezifikationen", "digitale Werbung"]
 ---
 
 # Bridge Ad
 <span class="badge badge--success">Active</span>
-<img alt="OVK_WF_Desktop_BridgeAd" src="/img/formats/OVK_WF_Desktop_BridgeAd.png" />
+<img alt="Beispieldarstellung des OVK-Werbeformats Bridge Ad" src="/img/formats/OVK_WF_Desktop_BridgeAd.png" />
 
 
-## Beschreibung
+## Was ist das OVK-Werbeformat Bridge Ad?
 Das Bridge Ad ist eine erweiterte Form des Fireplace Ads.
 
-## Weitere Spezifikationen
+## Welche weiteren Spezifikationen gelten?
 Besondere Form des Fireplace Ads (Site-/Vermarkter-individuell).
 
-## Technische Spezifikationen
+## Welche technischen Spezifikationen gelten?
 
 | Name           | Bridge Ad    |
 |----------------|--------------|
@@ -32,8 +35,8 @@ Besondere Form des Fireplace Ads (Site-/Vermarkter-individuell).
 
 
 
-## Größe
+## Welche Größen sind erlaubt?
 200 kB (von uns gehostet), max. 2MB nachgeladen (polite Download aus externen Quellen)
 
-## Formate
+## Welche Dateiformate werden unterstützt?
 JPEG, GIF, HTML5 und Video

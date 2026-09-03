@@ -1,18 +1,21 @@
 ---
 slug: /werbeformen/video/in-stream/mid-roll
+title: "Mid-Roll Ad"
+description: "Technische Spezifikationen für das OVK-Werbeformat Mid-Roll Ad: Beschreibung, Abmessungen, Dateiformate und Anforderungen für digitale Kampagnen."
+keywords: ["Mid-Roll Ad", "OVK Werbeform", "technische Spezifikationen", "digitale Werbung"]
 ---
 
 # Mid-Roll Ad
-<img alt="OVK_WF_Video_Mid_Roll 2" src="/img/formats/OVK_WF_Video_Mid_Roll.png" />
+<img alt="Beispieldarstellung des OVK-Werbeformats Mid-Roll Ad" src="/img/formats/OVK_WF_Video_Mid_Roll.png" />
 
 
-## Beschreibung
+## Was ist das OVK-Werbeformat Mid-Roll Ad?
 Mid-Rolls sind Werbespots, die während eines redaktionellen Videos geschaltet werden, dieses unterbrechen und somit eine hohe Aufmerksamkeit der Nutzer auf sich ziehen.
 
-## Weitere Spezifikationen
+## Welche weiteren Spezifikationen gelten?
 Werbespot, der linear zwischen Contentvideos platziert wird. Bei Long Form (> 5 Minuten) Contentvideos können auch mehrere Mid-Rolls platziert werden.
 
-## Technische Spezifikationen
+## Welche technischen Spezifikationen gelten?
 
 | Name            | Mid-Roll       |
 |-----------------|----------------|
@@ -35,8 +38,8 @@ Werbespot, der linear zwischen Contentvideos platziert wird. Bei Long Form (> 5 
 
 
 
-## Größe
+## Welche Größen sind erlaubt?
 (Abhängig von der Videolänge und Platzierung)
 
-## Formate
+## Welche Dateiformate werden unterstützt?
 MOV,MXF,MP4

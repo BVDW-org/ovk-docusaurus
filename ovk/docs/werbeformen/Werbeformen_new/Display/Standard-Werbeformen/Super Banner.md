@@ -1,17 +1,20 @@
 ---
 slug: /werbeformen/display/standard-werbeformen/super-banner
+title: "Superbanner"
+description: "Technische Spezifikationen für das OVK-Werbeformat Superbanner: Beschreibung, Abmessungen, Dateiformate und Anforderungen für digitale Kampagnen."
+keywords: ["Superbanner", "OVK Werbeform", "technische Spezifikationen", "digitale Werbung"]
 ---
 
 # Superbanner
 <span class="badge badge--success">Active</span>
-<img alt="OVK_WF_Desktop_Superbanner" src="/img/formats/OVK_WF_Desktop_Superbanner.png" />
+<img alt="Beispieldarstellung des OVK-Werbeformats Superbanner" src="/img/formats/OVK_WF_Desktop_Superbanner.png" />
 
 
-## Beschreibung
+## Was ist das OVK-Werbeformat Superbanner?
 Der Super Banner ist ein Standardformat und wird prominent am oberen Rand der Site platziert und kann eine hohe Werbewirkung erzielen.
 
 
-## Technische Spezifikationen
+## Welche technischen Spezifikationen gelten?
 
 | Name           | Superbanner   |
 |----------------|--------------|
@@ -27,8 +30,8 @@ Der Super Banner ist ein Standardformat und wird prominent am oberen Rand der Si
 | Sizes          | 728x90          |
 
 
-## Größe
+## Welche Größen sind erlaubt?
 200 kB (von uns gehostet), max. 2MB nachgeladen (polite Download aus externen Quellen)
 
-## Formate
+## Welche Dateiformate werden unterstützt?
 JPEG, GIF, HTML5 und Video

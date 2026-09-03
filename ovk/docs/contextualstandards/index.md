@@ -1,4 +1,10 @@
-# Einführung
+---
+title: "OVK Contextual Standard v1.0"
+description: "Der OVK Contextual Standard v1.0 definiert Qualitäts-, Datenschutz-, Dokumentations- und Technikvorgaben für kontextuelles Targeting."
+keywords: ["OVK Contextual Standard", "kontextuelles Targeting", "IAB Content Taxonomy", "OpenRTB"]
+---
+
+# OVK Contextual Standard für digitale Werbung
 Inhalt:
 
 [1. Motivation](#motivation)
@@ -27,7 +33,7 @@ Inhalt:
 [4. Dokumentation](#dokumentation)
    - [Implementierungsübersicht und Dokumentationen](#implementierungsübersicht-und-dokumentationen)
 
-[5. Laufende Projeke](#laufende-projekte)
+[5. Laufende Projekte](#laufende-projekte)
 
 
 ## Motivation
@@ -76,12 +82,12 @@ Wichtigste Grundsätze
 -  Vertrauen
 
 
- ### 2.1 Dokumentation der Systemfunktionalität<br />
+ ### 2.1 Dokumentation der Systemfunktionalität
  -  Die Funktionsweise des/der verwendeten Klassifikationssystems/e wird in Form einer Dokumentation beschrieben (zugrunde liegende Architektur, Verbindung zu den Inhalten, welche Daten verwendet werden, wie die Daten verarbeitet werden, usw.).
  -  Die Dokumentation wird auf der Website des Anbieters veröffentlicht.
 
 
- ### 2.2 Dokumentation der Qualitätssicherung<br />
+ ### 2.2 Dokumentation der Qualitätssicherung
  -  Die Systeme und Daten werden laufend überprüft und optimiert.
  -  Die Prozesse und Methoden zur Qualitätssicherung werden dokumentiert und auf der Website des Anbieters veröffentlicht.
 
@@ -166,7 +172,7 @@ Wichtigste Grundsätze
 
  ### 4.1 Taxonomie-Standard
  - Es wird die IAB-Content Taxonomy, mindestens Version 2.1, verwendet. Sensitive Kategorien werden ausgeschlossen (siehe Datenschutz)
-   [IAB Content Taxonony 2.1](https://github.com/InteractiveAdvertisingBureau/Taxonomies/blob/main/Content%20Taxonomies/Content%20Taxonomy%202.1.tsv)
+   [IAB Content Taxonomy 2.1](https://github.com/InteractiveAdvertisingBureau/Taxonomies/blob/main/Content%20Taxonomies/Content%20Taxonomy%202.1.tsv)
 
  ### 4.2 Open RTB Standard
  - Die Signalisierung erfolgt nach dem Open RTB-Standard im programmatischen Prozess. Dies ist kein verpflichtendes Kriterium.

@@ -1,6 +1,9 @@
 ---
 slug: /werbeformen/tech-hilfe/redirect
+title: "Redirect-Spezifikationen für Werbemittel"
+description: "Technische OVK-Anforderungen für Redirect-Werbemittel: sichere Auslieferung, zulässige Requests, SSL-Kompatibilität und Dateigewichte."
+keywords: ["Redirect-Werbemittel", "Redirect-Spezifikationen", "Adserver", "OVK"]
 ---
 
 # Redirect-Spezifikationen
-Alle auszuliefernden Skripte, auch nachträglich geladene (3rd HTTPS fähig sein. Bitte achten Sie daher darauf, dass die Redirects auch in verschlüsselten Bereichen (https://) ausgeliefert werden )Skipte, müssen können. Bei der Nutzung von Redirect s bitten wir Sie darum, dass die angelieferten Skripte lediglich ein statisches Bild in angegebener Größe zurückliefern. Bei responsiven Elementen ist dafür zu sorgen, dass 100% der zur Verfügung gestellten Fläche ausgefüllt wird. Dies bedeutet auch, das s die Skripte keine Änderungen an den HTMLElementen vornehmen, die nicht durch die Skripte erstellt wurden. Die Positionierung, Berechnung und weitere Notwendigkeiten werden vom Publisher vorgenommen. 1
+Alle auszuliefernden Skripte, auch nachträglich geladene Drittanbieter-Skripte, müssen HTTPS-fähig sein. Bitte achten Sie darauf, dass Redirects auch in verschlüsselten Bereichen (https://) ausgeliefert werden können. Die angelieferten Skripte dürfen lediglich ein statisches Bild in der angegebenen Größe zurückliefern. Bei responsiven Elementen müssen 100 % der bereitgestellten Fläche ausgefüllt werden. Die Skripte dürfen keine HTML-Elemente verändern, die sie nicht selbst erstellt haben. Positionierung, Berechnung und weitere technische Anforderungen werden vom Publisher vorgegeben.

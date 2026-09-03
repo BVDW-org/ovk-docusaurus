@@ -1,19 +1,22 @@
 ---
 slug: /werbeformen/display/sonder-werbeformen/cinematic-ad
+title: "Cinematic Ad"
+description: "Technische Spezifikationen für das OVK-Werbeformat Cinematic Ad: Beschreibung, Abmessungen, Dateiformate und Anforderungen für digitale Kampagnen."
+keywords: ["Cinematic Ad", "OVK Werbeform", "technische Spezifikationen", "digitale Werbung"]
 ---
 
 # Cinematic Ad
 <span class="badge badge--success">Active</span>
-<img alt="OVK_WF_Desktop_CinematicAd" src="/img/formats/OVK_WF_Desktop_CinematicAd.png" />
+<img alt="Beispieldarstellung des OVK-Werbeformats Cinematic Ad" src="/img/formats/OVK_WF_Desktop_CinematicAd.png" />
 
 
-## Beschreibung
+## Was ist das OVK-Werbeformat Cinematic Ad?
 Das Cinematic Ad ist eine Erweiterung des klassischen Billboards und schafft maximale visuelle Präsenz.
 
-## Weitere Spezifikationen
+## Welche weiteren Spezifikationen gelten?
 Erweitertes Billboard, skaliert dynamisch in Breite.
 
-## Technische Spezifikationen
+## Welche technischen Spezifikationen gelten?
 
 | Name           | Cinematic Ad   |
 |----------------|----------------|
@@ -33,8 +36,8 @@ Erweitertes Billboard, skaliert dynamisch in Breite.
 
 
 
-## Größe
+## Welche Größen sind erlaubt?
 200 kB (von uns gehostet), max. 2MB nachgeladen (polite Download aus externen Quellen)
 
-## Formate
+## Welche Dateiformate werden unterstützt?
 JPEG, GIF, HTML5 und Video

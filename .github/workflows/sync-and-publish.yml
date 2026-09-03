@@ -131,6 +131,11 @@ jobs:
           NODE_ENV: production
           NO_UPDATE_NOTIFIER: 'true'
 
+      - name: Validate SEO artifact
+        if: steps.prepare.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        run: npm run validate:seo -- "${RUNNER_TEMP}/site"
+        working-directory: ovk
+
       - name: Verify build artifact
         if: steps.prepare.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
         run: |
@@ -139,6 +144,8 @@ jobs:
           test -s "${RUNNER_TEMP}/site/CNAME"
           test -s "${RUNNER_TEMP}/site/robots.txt"
           test -s "${RUNNER_TEMP}/site/sitemap.xml"
+          test -s "${RUNNER_TEMP}/site/llms.txt"
+          test -s "${RUNNER_TEMP}/site/llms-full.txt"
           test "$(tr -d '\r\n' < "${RUNNER_TEMP}/site/CNAME")" = "tech.ovk.de"
           test ! -e "${RUNNER_TEMP}/site/en"
           test ! -e "${RUNNER_TEMP}/site/blog"

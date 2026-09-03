@@ -1,19 +1,22 @@
 ---
 slug: /werbeformen/display/sonder-werbeformen/maxi-ad
+title: "Maxi Ad"
+description: "Technische Spezifikationen für das OVK-Werbeformat Maxi Ad: Beschreibung, Abmessungen, Dateiformate und Anforderungen für digitale Kampagnen."
+keywords: ["Maxi Ad", "OVK Werbeform", "technische Spezifikationen", "digitale Werbung"]
 ---
 
 # Maxi Ad
 <span class="badge badge--success">Active</span>
-<img alt="OVK_WF_Desktop_Mobil_MaxiAd" src="/img/formats/OVK_WF_Desktop_Mobil_MaxiAd.png" />
+<img alt="Beispieldarstellung des OVK-Werbeformats Maxi Ad" src="/img/formats/OVK_WF_Desktop_Mobil_MaxiAd.png" />
 
 
-## Beschreibung
+## Was ist das OVK-Werbeformat Maxi Ad?
 Maxi Ads erscheinen großflächig auf einer Premium-Platzierung im Logout-Bereich und sind sehr aufmerksamkeitsstark.
 
-## Weitere Spezifikationen
+## Welche weiteren Spezifikationen gelten?
 Zentral positioniert.
 
-## Technische Spezifikationen
+## Welche technischen Spezifikationen gelten?
 
 | Name           | Maxi Ad      |
 |----------------|--------------|
@@ -31,8 +34,8 @@ Zentral positioniert.
 
 
 
-## Größe
+## Welche Größen sind erlaubt?
 200 kB (von uns gehostet), max. 2MB nachgeladen (polite Download aus externen Quellen)
 
-## Formate
+## Welche Dateiformate werden unterstützt?
 JPEG, GIF, HTML5 und Video

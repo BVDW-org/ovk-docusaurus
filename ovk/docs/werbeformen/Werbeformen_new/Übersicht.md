@@ -1,6 +1,9 @@
 ---
 sidebar_position: 1
 slug: /werbeformen/uebersicht
+title: "Digitale OVK Werbeformen im Überblick"
+description: "Vergleich der standardisierten OVK Werbeformen für Display, Mobile, Native und Video mit direktem Zugang zu allen technischen Spezifikationen."
+keywords: ["digitale Werbeformen", "OVK Standards", "Display Werbung", "Video Werbung"]
 ---
 
 # Display Advertising – Digitale Werbeformen und Standards des OVK

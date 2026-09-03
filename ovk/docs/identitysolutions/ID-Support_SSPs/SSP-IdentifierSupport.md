@@ -1,9 +1,15 @@
-# SSP Overview #
+---
+title: "Identifier-Unterstützung deutscher SSPs"
+description: "Aktuelle OVK-Übersicht zur Unterstützung von Identity-Lösungen und Identifiern durch Supply-Side-Plattformen im deutschen Werbemarkt."
+keywords: ["SSP Identifier Support", "Supply-Side-Plattform", "Identity-Lösungen", "OVK"]
+---
+
+# Welche SSPs unterstützen welche Identifier?
 This overview only contains SSPs that:
 - at least support one identifier
 - process EU traffic
 - Crawled from: https://docs.prebid.org/dev-docs/bidders.html
-- Last updated: February 2024
+- Datenstand der zugrunde liegenden Anbieterabfrage: Februar 2024
 - All information without guarantee!
 
 

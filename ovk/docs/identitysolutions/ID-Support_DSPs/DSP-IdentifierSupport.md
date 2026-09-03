@@ -1,4 +1,10 @@
-# DSP Overview #
+---
+title: "Identifier-Unterstützung deutscher DSPs"
+description: "Aktuelle OVK-Übersicht zur Unterstützung von Identity-Lösungen und Identifiern durch Demand-Side-Plattformen im deutschen Werbemarkt."
+keywords: ["DSP Identifier Support", "Demand-Side-Plattform", "Identity-Lösungen", "OVK"]
+---
+
+# Welche DSPs unterstützen welche Identifier?
 
 - The information displayed is based on individual inquiries made by German sales houses to the DSPs
 - All information without guarantee!
