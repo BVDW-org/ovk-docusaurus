@@ -1,19 +1,22 @@
 ---
 slug: /werbeformen/display/standard-werbeformen/ad-bundle
+title: "Ad Bundle"
+description: "Technische Spezifikationen für das OVK-Werbeformat Ad Bundle: Beschreibung, Abmessungen, Dateiformate und Anforderungen für digitale Kampagnen."
+keywords: ["Ad Bundle", "OVK Werbeform", "technische Spezifikationen", "digitale Werbung"]
 ---
 
 # Ad Bundle
 <span class="badge badge--success">Active</span>
-<img alt="OVK_WF_Desktop_Adbundle" src="/img/formats/OVK_WF_Desktop_Adbundle.png" />
+<img alt="Beispieldarstellung des OVK-Werbeformats Ad Bundle" src="/img/formats/OVK_WF_Desktop_Adbundle.png" />
 
 
-## Beschreibung
+## Was ist das OVK-Werbeformat Ad Bundle?
 Ein Ad Bundle besteht aus den Standardwerbeformen Superbanner, Skyscraper und Medium Rectangle, die sich ein gemeinsames Volumen teilen und mit einem gegenseitigen Werbemittelausschluss belegt werden.
 
-## Weitere Spezifikationen
+## Welche weiteren Spezifikationen gelten?
 Mindestens drei der folgenden Werbeformen: Super-Banner/Medium Rectange/Skyscraper/Wide Skyscraper. Werbemittel eines Adbundles müssen nicht innerhalb derselben Pageimpression zu sehen sein, sind aber vom selben Kunden und teilen sich ein gemeinsames Volumen. Inventarverteilung innerhalb des Bundles liegt beim Vermarkter.
 
-## Technische Spezifikationen
+## Welche technischen Spezifikationen gelten?
 
 | Name           | Adbundle  |
 |----------------|-----------|
@@ -32,5 +35,5 @@ Mindestens drei der folgenden Werbeformen: Super-Banner/Medium Rectange/Skyscrap
 
 
 
-## Formate
+## Welche Dateiformate werden unterstützt?
 JPEG, GIF, HTML5 und Video

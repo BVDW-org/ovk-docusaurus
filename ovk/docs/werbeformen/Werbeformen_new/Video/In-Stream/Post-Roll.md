@@ -1,18 +1,21 @@
 ---
 slug: /werbeformen/video/in-stream/post-roll
+title: "Post-Roll Ad"
+description: "Technische Spezifikationen für das OVK-Werbeformat Post-Roll Ad: Beschreibung, Abmessungen, Dateiformate und Anforderungen für digitale Kampagnen."
+keywords: ["Post-Roll Ad", "OVK Werbeform", "technische Spezifikationen", "digitale Werbung"]
 ---
 
 # Post-Roll Ad
-<img alt="image" src="/img/formats/OVK_WF_Video_Post_Roll.png" />
+<img alt="Beispieldarstellung des OVK-Werbeformats Post-Roll Ad" src="/img/formats/OVK_WF_Video_Post_Roll.png" />
 
 
-## Beschreibung
+## Was ist das OVK-Werbeformat Post-Roll Ad?
 Post-Rolls sind Werbespots, die am Ende eines redaktionellen Videos geschaltet werden und eine hohe Aufmerksamkeit der Nutzer auf sich ziehen.
 
-## Weitere Spezifikationen
+## Welche weiteren Spezifikationen gelten?
 Werbespot, der linear nach Contentvideos platziert wird.
 
-## Technische Spezifikationen
+## Welche technischen Spezifikationen gelten?
 
 | Name            | Post-Roll      |
 |-----------------|----------------|
@@ -35,8 +38,8 @@ Werbespot, der linear nach Contentvideos platziert wird.
 
 
 
-## Größe
+## Welche Größen sind erlaubt?
 Abhängig von der Videolänge und Platzierung
 
-## Formate
+## Welche Dateiformate werden unterstützt?
 MOV, MXF,MP4

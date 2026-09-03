@@ -1,17 +1,20 @@
 ---
 slug: /werbeformen/video/in-stream/bumper-ad
+title: "Bumper Ad"
+description: "Technische Spezifikationen für das OVK-Werbeformat Bumper Ad: Beschreibung, Abmessungen, Dateiformate und Anforderungen für digitale Kampagnen."
+keywords: ["Bumper Ad", "OVK Werbeform", "technische Spezifikationen", "digitale Werbung"]
 ---
 
 # Bumper Ad
-<img alt="OVK_WF_Video_Bumper_Ad 3" src="/img/formats/OVK_WF_Video_Bumper_Ad.png" />
+<img alt="Beispieldarstellung des OVK-Werbeformats Bumper Ad" src="/img/formats/OVK_WF_Video_Bumper_Ad.png" />
 
 
 
-## Beschreibung
+## Was ist das OVK-Werbeformat Bumper Ad?
 Bumper Ads laufen als Pre-Roll und sind mit maximal 10 Sekunden ideal, um die Werbebotschaft kurz und knackig zu vermitteln und die Aufmerksamkeit des Users aufrecht zu erhalten.
 
 
-## Technische Spezifikationen
+## Welche technischen Spezifikationen gelten?
 
 | Name            | Bumper Ad      |
 |-----------------|----------------|
@@ -33,9 +36,8 @@ Bumper Ads laufen als Pre-Roll und sind mit maximal 10 Sekunden ideal, um die We
 | Lautheit        | Lautheitsnorm EBU R 128 |
 
 
-## Größe
+## Welche Größen sind erlaubt?
 (Maximal 10 Sekunden Laufzeit)
 
-## Formate
+## Welche Dateiformate werden unterstützt?
 MOV,MXF,MP4
-

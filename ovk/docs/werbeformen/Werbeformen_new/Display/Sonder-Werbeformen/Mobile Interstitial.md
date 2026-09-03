@@ -1,17 +1,20 @@
 ---
 slug: /werbeformen/display/sonder-werbeformen/mobile-interstitial
+title: "(Mobile) Pre-/Interstitial"
+description: "Technische Spezifikationen für das OVK-Werbeformat (Mobile) Pre-/Interstitial: Beschreibung, Abmessungen, Dateiformate und Anforderungen für digitale Kampagnen."
+keywords: ["(Mobile) Pre-/Interstitial", "OVK Werbeform", "technische Spezifikationen", "digitale Werbung"]
 ---
 
 # (Mobile) Pre-/Interstitial
 <span class="badge badge--success">Active</span>
 
-<img alt="OVK_WF_Mobile_Pre_Interstitial" src="/img/formats/OVK_WF_Mobile_Pre_Interstitial.png" />
+<img alt="Beispieldarstellung des OVK-Werbeformats (Mobile) Pre-/Interstitial" src="/img/formats/OVK_WF_Mobile_Pre_Interstitial.png" />
 
-## Beschreibung
+## Was ist das OVK-Werbeformat (Mobile) Pre-/Interstitial?
 Das (Mobile) Pre-/Interstitial zieht die Aufmerksamkeit des Nutzers auf sich, indem es die Content-Nutzung unterbricht und einen großen Teil des Displays ausfüllt.
 Vollflächige Werbeunterbrechung zwischen zwei Landingpages einer Website
 
-## Technische Spezifikationen
+## Welche technischen Spezifikationen gelten?
 
 
 | Name         | Pre-/Interstitial |
@@ -30,7 +33,7 @@ Vollflächige Werbeunterbrechung zwischen zwei Landingpages einer Website
 | Dateigewicht | 75 KB             |
 
 
-## Größe
+## Welche Größen sind erlaubt?
 200 kB (von uns gehostet), max. 2MB nachgeladen (polite Download aus externen Quellen)
-## Formate
+## Welche Dateiformate werden unterstützt?
 JPEG, GIF, HTML5 und Video

@@ -1,3 +1,5 @@
+# Die OVK Tech Specs sind öffentlich. Diese Regel erlaubt klassischen
+# Suchmaschinen sowie KI-gestützten Such- und Antwortsystemen den Abruf.
 User-agent: *
 Allow: /
 

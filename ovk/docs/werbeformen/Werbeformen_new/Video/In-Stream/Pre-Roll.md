@@ -1,18 +1,21 @@
 ---
 slug: /werbeformen/video/in-stream/pre-roll
+title: "Pre-Roll Ad"
+description: "Technische Spezifikationen für das OVK-Werbeformat Pre-Roll Ad: Beschreibung, Abmessungen, Dateiformate und Anforderungen für digitale Kampagnen."
+keywords: ["Pre-Roll Ad", "OVK Werbeform", "technische Spezifikationen", "digitale Werbung"]
 ---
 
 # Pre-Roll Ad
-<img alt="image" src="/img/formats/OVK_WF_Video_Pre_Roll.png" />
+<img alt="Beispieldarstellung des OVK-Werbeformats Pre-Roll Ad" src="/img/formats/OVK_WF_Video_Pre_Roll.png" />
 
 
-## Beschreibung
+## Was ist das OVK-Werbeformat Pre-Roll Ad?
 Prerolls sind Werbespots, die vor Videoinhalten geschaltet werden und so eine hohe Awareness bei den Usern erzeugen.
 
-## Weitere Spezifikationen
+## Welche weiteren Spezifikationen gelten?
 Werbespot, der linear vor Contentvideos platziert wird.
 
-## Technische Spezifikationen
+## Welche technischen Spezifikationen gelten?
 
 | Name            | Pre-Roll       |
 |-----------------|----------------|
@@ -34,8 +37,8 @@ Werbespot, der linear vor Contentvideos platziert wird.
 | Lautheit        | Lautheitsnorm EBU R 128 |
 
 
-## Größe
+## Welche Größen sind erlaubt?
 Abhängig von der Videolänge und Platzierung
 
-## Formate
+## Welche Dateiformate werden unterstützt?
 MOV,MXF,MP4

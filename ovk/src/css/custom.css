@@ -215,6 +215,12 @@ body {
   min-width: 13rem;
 }
 
+.dropdown:focus-within > .dropdown__menu--allow-flyout {
+  opacity: 1;
+  pointer-events: all;
+  visibility: visible;
+}
+
 .dropdown__item--nested {
   position: relative;
 }
@@ -225,6 +231,11 @@ body {
   justify-content: space-between;
   gap: 0.5rem;
   width: 100%;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
   cursor: default;
 }
 

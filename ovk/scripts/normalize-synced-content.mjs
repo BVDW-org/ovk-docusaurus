@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { collectWerbeformenRoutes } from './werbeformen-routes.mjs';
+import { getDocSeo } from '../src/utils/seo.mjs';
 
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const ovkDirectory = path.resolve(scriptDirectory, '..');
@@ -17,6 +18,190 @@ const synchronizedTextExtensions = new Set([
   '.yaml',
   '.yml',
 ]);
+const markdownExtensions = new Set(['.md', '.mdx']);
+
+async function collectMarkdownFiles(directory) {
+  const entries = await readdir(directory, { withFileTypes: true });
+  const nested = await Promise.all(entries.map(async (entry) => {
+    const entryPath = path.join(directory, entry.name);
+    if (entry.isDirectory()) {
+      return collectMarkdownFiles(entryPath);
+    }
+    return entry.isFile() && markdownExtensions.has(path.extname(entry.name))
+      ? [entryPath]
+      : [];
+  }));
+  return nested.flat();
+}
+
+function parseYamlScalar(value) {
+  const trimmed = value?.trim();
+  if (!trimmed) return undefined;
+  try {
+    return JSON.parse(trimmed);
+  } catch {
+    return trimmed.replace(/^['"]|['"]$/g, '');
+  }
+}
+
+function frontMatterValue(source, key) {
+  const body = source.match(/^---\n([\s\S]*?)\n---\n/)?.[1];
+  return parseYamlScalar(body?.match(new RegExp(`^${key}:\\s*(.+)$`, 'm'))?.[1]);
+}
+
+function hasFrontMatterKey(source, key) {
+  const body = source.match(/^---\n([\s\S]*?)\n---\n/)?.[1];
+  return new RegExp(`^${key}:`, 'm').test(body ?? '');
+}
+
+function appendFrontMatter(source, lines) {
+  if (lines.length === 0) return source;
+  const match = source.match(/^---\n([\s\S]*?)\n---\n/);
+  if (!match) {
+    return `---\n${lines.join('\n')}\n---\n\n${source}`;
+  }
+  const body = match[1].trimEnd();
+  return source.replace(match[0], `---\n${body}\n${lines.join('\n')}\n---\n`);
+}
+
+function firstHeading(source) {
+  const body = source.replace(/^---\n[\s\S]*?\n---\n/, '');
+  return body.match(/^#\s+(.+?)\s*#*\s*$/m)?.[1].trim();
+}
+
+async function injectSeoMetadata() {
+  const docsDirectory = path.join(ovkDirectory, 'docs');
+  const files = await collectMarkdownFiles(docsDirectory);
+
+  await Promise.all(files.map(async (file) => {
+    const source = await readFile(file, 'utf8');
+    const id = path.relative(docsDirectory, file)
+      .split(path.sep)
+      .join('/')
+      .replace(/\.mdx?$/, '');
+    const sourceTitle = frontMatterValue(source, 'title') ?? firstHeading(source) ?? path.basename(id);
+    const sourceDescription = frontMatterValue(source, 'description') ?? '';
+    const seo = getDocSeo({ id, title: sourceTitle, description: sourceDescription }, {});
+    const additions = [];
+
+    if (!hasFrontMatterKey(source, 'title')) {
+      additions.push(`title: ${JSON.stringify(seo.title)}`);
+    }
+    if (!hasFrontMatterKey(source, 'description')) {
+      additions.push(`description: ${JSON.stringify(seo.description)}`);
+    }
+    if (!hasFrontMatterKey(source, 'keywords')) {
+      additions.push(`keywords: [${seo.keywords.map((keyword) => JSON.stringify(keyword)).join(', ')}]`);
+    }
+
+    const normalized = appendFrontMatter(source, additions);
+    if (normalized !== source) {
+      await writeFile(file, normalized);
+    }
+  }));
+}
+
+async function normalizeMarkdownSemantics() {
+  const docsDirectory = path.join(ovkDirectory, 'docs');
+  const files = await collectMarkdownFiles(docsDirectory);
+
+  await Promise.all(files.map(async (file) => {
+    const source = await readFile(file, 'utf8');
+    const id = path.relative(docsDirectory, file)
+      .split(path.sep)
+      .join('/')
+      .replace(/\.mdx?$/, '');
+    const title = frontMatterValue(source, 'title') ?? firstHeading(source) ?? 'digitale Werbung';
+    let levelOneHeadingSeen = false;
+    let currentLevelThreeHeading = '';
+    let identityLegendSeen = false;
+
+    const normalizedLines = source.split(/\r?\n/).map((line) => {
+      let normalized = line
+        .replace(/^(\s*#{1,6}\s+.+?)<br\s*\/?>(\s*)$/i, '$1$2')
+        .replaceAll('Standard-Fomat', 'Standard-Format')
+        .replaceAll('Laufende Projeke', 'Laufende Projekte')
+        .replaceAll('Content Taxonony', 'Content Taxonomy');
+
+      if (id === 'identitysolutions/README') {
+        if (normalized === '# Einführung') {
+          normalized = '# Identity-Lösungen im deutschen Werbemarkt';
+        }
+        if (normalized === '**Legende:**') {
+          if (identityLegendSeen) {
+            normalized = '**Legende für die Nutzungsübersicht:**';
+          }
+          identityLegendSeen = true;
+        }
+      }
+
+      if (
+        id === 'identitysolutions/ID-Support_SSPs/SSP-IdentifierSupport' &&
+        normalized === '- Last updated: February 2024'
+      ) {
+        normalized = '- Datenstand der zugrunde liegenden Anbieterabfrage: Februar 2024';
+      }
+
+      const primaryHeadings = new Map([
+        ['identitysolutions/ID-Support_SSPs/SSP-IdentifierSupport', '# Welche SSPs unterstützen welche Identifier?'],
+        ['identitysolutions/ID-Support_DSPs/DSP-IdentifierSupport', '# Welche DSPs unterstützen welche Identifier?'],
+        ['identitysolutions/ID-Support_OVK-Vermarkter/OVK-IdentifierSupport_byVendor', '# Welche Identifier unterstützen OVK-Vermarkter?'],
+        ['contextualstandards/index', '# OVK Contextual Standard für digitale Werbung'],
+      ]);
+      if (normalized.startsWith('# ') && primaryHeadings.has(id) && !levelOneHeadingSeen) {
+        normalized = primaryHeadings.get(id);
+      }
+
+      if (
+        id === 'werbeformen/Tech-Hilfe/redirect' &&
+        normalized.startsWith('Alle auszuliefernden Skripte,')
+      ) {
+        normalized = 'Alle auszuliefernden Skripte, auch nachträglich geladene Drittanbieter-Skripte, müssen HTTPS-fähig sein. Bitte achten Sie darauf, dass Redirects auch in verschlüsselten Bereichen (https://) ausgeliefert werden können. Die angelieferten Skripte dürfen lediglich ein statisches Bild in der angegebenen Größe zurückliefern. Bei responsiven Elementen müssen 100 % der bereitgestellten Fläche ausgefüllt werden. Die Skripte dürfen keine HTML-Elemente verändern, die sie nicht selbst erstellt haben. Positionierung, Berechnung und weitere technische Anforderungen werden vom Publisher vorgegeben.';
+      }
+
+      if (normalized.startsWith('# ')) {
+        if (levelOneHeadingSeen) normalized = `#${normalized}`;
+        levelOneHeadingSeen = true;
+      }
+
+      const h3 = normalized.match(/^###\s+(.+?)(?:\s+\{#[^}]+\})?\s*#*$/);
+      if (h3) currentLevelThreeHeading = h3[1].replace(/[`*_]/g, '').trim();
+
+      if (id.startsWith('werbeformen/Werbeformen_new/')) {
+        const questionHeadings = new Map([
+          ['## Beschreibung', `## Was ist das OVK-Werbeformat ${title}?`],
+          ['## Weitere Spezifikationen', '## Welche weiteren Spezifikationen gelten?'],
+          ['## Technische Spezifikationen', '## Welche technischen Spezifikationen gelten?'],
+          ['## Größe', '## Welche Größen sind erlaubt?'],
+          ['## Formate', '## Welche Dateiformate werden unterstützt?'],
+        ]);
+        normalized = questionHeadings.get(normalized) ?? normalized;
+        normalized = normalized.replace(
+          /<img\s+([^>]*?)alt="[^"]*"([^>]*)>/i,
+          `<img $1alt="Beispieldarstellung des OVK-Werbeformats ${title}"$2>`,
+        );
+      }
+
+      if (
+        id === 'identitysolutions/ID-Support_OVK-Vermarkter/OVK-IdentifierSupport_byVendor' &&
+        /<img\b/i.test(normalized) &&
+        !/\balt=/i.test(normalized)
+      ) {
+        normalized = normalized.replace(
+          /<img\b/i,
+          `<img alt="Logo: ${currentLevelThreeHeading || 'Identity-Anbieter'}"`,
+        );
+      }
+
+      return normalized;
+    });
+
+    const normalized = `${normalizedLines.join('\n').replace(/\n+$/, '')}\n`;
+    if (normalized !== source) {
+      await writeFile(file, normalized);
+    }
+  }));
+}
 
 async function normalizeLineEndings(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -223,6 +408,15 @@ await Promise.all([
 
 await injectWerbeformenSlugs();
 
+await injectSeoMetadata();
+
+// Upstream vendor headings embed the logo image inside the heading. Split
+// those headings before the generic semantic/alt-text pass so an <img> tag
+// can never be copied into another image's alt attribute during a fresh sync.
+await normalizeVendorAnchors();
+
+await normalizeMarkdownSemantics();
+
 await Promise.all([
   'docs/contextualstandards',
   'docs/identitysolutions',
@@ -230,4 +424,4 @@ await Promise.all([
   'static/tools/identifier-landscape',
 ].map((directory) => normalizeLineEndings(path.join(ovkDirectory, directory))));
 
-await Promise.all([normalizeContextualStandard(), normalizeVendorAnchors()]);
+await normalizeContextualStandard();

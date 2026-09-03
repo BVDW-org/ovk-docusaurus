@@ -1,19 +1,22 @@
 ---
 slug: /werbeformen/display/standard-werbeformen/skyscraper
+title: "Skyscraper"
+description: "Technische Spezifikationen für das OVK-Werbeformat Skyscraper: Beschreibung, Abmessungen, Dateiformate und Anforderungen für digitale Kampagnen."
+keywords: ["Skyscraper", "OVK Werbeform", "technische Spezifikationen", "digitale Werbung"]
 ---
 
 # Skyscraper
 <span class="badge badge--success">Active</span>
-<img alt="OVK_WF_Desktop_Skyscraper" src="/img/formats/OVK_WF_Desktop_Skyscraper.png" />
+<img alt="Beispieldarstellung des OVK-Werbeformats Skyscraper" src="/img/formats/OVK_WF_Desktop_Skyscraper.png" />
 
 
-## Beschreibung
+## Was ist das OVK-Werbeformat Skyscraper?
 Der Skyscraper ist ein hochformatiges Werbemittel. Er wird meist rechts neben dem Content eingesetzt. Durch seine Länge erlaubt der Skyscraper interessante Effekte.
 
-## Weitere Spezifikationen
+## Welche weiteren Spezifikationen gelten?
 Optional in der Breite 120, 160 oder 200 Pixel.
 
-## Technische Spezifikationen
+## Welche technischen Spezifikationen gelten?
 
 | Name           | Skyscraper     |
 |----------------|---------------|
@@ -31,8 +34,8 @@ Optional in der Breite 120, 160 oder 200 Pixel.
 
 
 
-## Größe
+## Welche Größen sind erlaubt?
 200 kB (von uns gehostet), max. 2MB nachgeladen (polite Download aus externen Quellen)
 
-## Formate
+## Welche Dateiformate werden unterstützt?
 JPEG, GIF, HTML5 und Video

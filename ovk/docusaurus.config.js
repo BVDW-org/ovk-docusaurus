@@ -15,7 +15,7 @@ import {
 const config = {
   title: 'OVK Tech Specs',
   tagline: 'Technische Standards des Online-Vermarkterkreises',
-  favicon: 'img/logo_ovk_mobile.png',
+  favicon: 'img/logo_ovk_favicon.png',
 
   url: 'https://tech.ovk.de',
   baseUrl: '/',
@@ -74,6 +74,14 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
+          showLastUpdateTime: true,
+          exclude: [
+            '**/_*.{js,jsx,ts,tsx,md,mdx}',
+            '**/_*/**',
+            '**/*.test.{js,jsx,ts,tsx}',
+            '**/__tests__/**',
+            'werbeformen/Werbeformen_new/Vast Redirect.md',
+          ],
           // Synchronized sections must be edited in their upstream source
           // repositories, so only documentation that is maintained in this
           // repository gets an edit link.
@@ -86,11 +94,18 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        sitemap: {
+          changefreq: null,
+          priority: null,
+          lastmod: 'date',
+          ignorePatterns: ['/search'],
+        },
       }),
     ],
   ],
 
   plugins: [
+    require.resolve('./plugins/seo-artifacts/index.mjs'),
     [
       '@docusaurus/plugin-pwa',
       {
@@ -99,6 +114,20 @@ const config = {
           'standalone',
           'queryString',
         ],
+        injectManifestConfig: {
+          globPatterns: [
+            '**/*.{html,js,css,json,png,jpg,jpeg,webp,svg,gif,ico,eot,otf,ttf,woff,woff2}',
+          ],
+          globIgnores: [
+            'tools/identifier-landscape/docs/**',
+            'tools/identifier-landscape/scripts/**',
+            'tools/identifier-landscape/*_editor.html',
+            'docs/werbeformen/Werbeformen_new/**',
+            'img/ovk-hero-technical-grid.png',
+            'img/logo_ovk_mobile.png',
+            'img/team/*.jpg',
+          ],
+        },
         pwaHead: [
           {
             tagName: 'link',
@@ -158,12 +187,23 @@ const config = {
   themeConfig:
   /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
       ({
-        image: 'img/ovk-hero-technical-grid.png',
+        image: 'img/ovk-social-card.jpg',
         metadata: [
           {
-            name: 'keywords',
-            content:
-              'OVK, Tech Specs, Identity, Contextual Standard, Werbeformen, digitale Werbung',
+            name: 'robots',
+            content: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
+          },
+          {
+            name: 'author',
+            content: 'Online-Vermarkterkreis (OVK) im BVDW',
+          },
+          {
+            name: 'application-name',
+            content: 'OVK Tech Specs',
+          },
+          {
+            property: 'og:site_name',
+            content: 'OVK Tech Specs',
           },
         ],
         colorMode: {
@@ -175,7 +215,9 @@ const config = {
           title: 'Tech Specs',
           logo: {
             alt: 'OVK Logo',
-            src: 'img/logo_ovk_mobile.png',
+            src: 'img/logo_ovk_mobile.webp',
+            width: 38,
+            height: 38,
           },
           items: [
             {
@@ -205,6 +247,7 @@ const config = {
               position: 'left',
               items: collectWerbeformenMenu(),
             },
+            { to: '/about', label: 'Über uns', position: 'right' },
           ],
         },
         footer: {
@@ -215,6 +258,10 @@ const config = {
               {
                 label: 'Der OVK',
                 href: 'https://www.ovk.de/der-ovk/',
+              },
+              {
+                label: 'Über diese Tech Specs',
+                to: '/about',
               },
               {
                 label: 'Projekte',

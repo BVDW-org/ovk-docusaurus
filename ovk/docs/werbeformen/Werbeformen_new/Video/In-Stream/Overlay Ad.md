@@ -1,16 +1,19 @@
 ---
 slug: /werbeformen/video/in-stream/overlay-ad
+title: "Overlay Ad"
+description: "Technische Spezifikationen für das OVK-Werbeformat Overlay Ad: Beschreibung, Abmessungen, Dateiformate und Anforderungen für digitale Kampagnen."
+keywords: ["Overlay Ad", "OVK Werbeform", "technische Spezifikationen", "digitale Werbung"]
 ---
 
 # Overlay Ad
-<img alt="image" src="/img/formats/OVK_WF_Video_Overlay_Ad.png" />
+<img alt="Beispieldarstellung des OVK-Werbeformats Overlay Ad" src="/img/formats/OVK_WF_Video_Overlay_Ad.png" />
 
 
-## Beschreibung
+## Was ist das OVK-Werbeformat Overlay Ad?
 Ein Overlay Ad wird während der Wiedergabe eines Videos über dem Inhalt angezeigt, ähnlich wie ein Banner, und ist oftmals am unteren Bildschirmrand oder in einer bestimmten Ecke des Videos platziert.
 
 
-## Technische Spezifikationen
+## Welche technischen Spezifikationen gelten?
 
 | Name            | Overlay Ad     |
 |-----------------|----------------|
@@ -34,5 +37,5 @@ Ein Overlay Ad wird während der Wiedergabe eines Videos über dem Inhalt angeze
 
 
 
-## Formate
+## Welche Dateiformate werden unterstützt?
 MOV,MXF,MP4

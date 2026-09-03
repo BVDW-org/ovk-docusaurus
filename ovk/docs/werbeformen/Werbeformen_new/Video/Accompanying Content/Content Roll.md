@@ -1,16 +1,19 @@
 ---
 slug: /werbeformen/video/accompanying-content/content-roll
+title: "Content Roll"
+description: "Technische Spezifikationen für das OVK-Werbeformat Content Roll: Beschreibung, Abmessungen, Dateiformate und Anforderungen für digitale Kampagnen."
+keywords: ["Content Roll", "OVK Werbeform", "technische Spezifikationen", "digitale Werbung"]
 ---
 
 # Content Roll
-<img alt="OVK_WF_Video_Content_Roll" src="/img/formats/OVK_WF_Video_Content_Roll.png" />
+<img alt="Beispieldarstellung des OVK-Werbeformats Content Roll" src="/img/formats/OVK_WF_Video_Content_Roll.png" />
 
 
-## Beschreibung
+## Was ist das OVK-Werbeformat Content Roll?
 Der Content-Roll ist eine Mischung aus In-Stream und Out-Stream. Der Spot ist unmittelbar im hochwertigen Content integriert und sorgt damit für einen starke Wahrnehmung. Der Videoplayer startet, wenn 50 Prozent des Werbemittels sichtbar sind.
 
 
-## Technische Spezifikationen
+## Welche technischen Spezifikationen gelten?
 
 | Name            | Content Roll   |
 |-----------------|----------------|
@@ -34,5 +37,5 @@ Der Content-Roll ist eine Mischung aus In-Stream und Out-Stream. Der Spot ist un
 
 
 
-## Formate
+## Welche Dateiformate werden unterstützt?
 MOV,MXF,MP4

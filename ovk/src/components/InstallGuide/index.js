@@ -112,7 +112,7 @@ export default function InstallGuide({
         <div className={styles.header}>
           <img
             className={styles.appIcon}
-            src="/img/pwa/icon-192.png"
+            src="/img/pwa/icon-96.webp"
             alt=""
             width="48"
             height="48"

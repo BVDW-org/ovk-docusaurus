@@ -1,15 +1,18 @@
 ---
 slug: /werbeformen/display/sonder-werbeformen/break-ad
+title: "Break Ad"
+description: "Technische Spezifikationen für das OVK-Werbeformat Break Ad: Beschreibung, Abmessungen, Dateiformate und Anforderungen für digitale Kampagnen."
+keywords: ["Break Ad", "OVK Werbeform", "technische Spezifikationen", "digitale Werbung"]
 ---
 
 # Break Ad
 
 
 
-## Beschreibung
+## Was ist das OVK-Werbeformat Break Ad?
 Das Break Ad ist geschaffen für eine Pause, die sich der User selbst im Surfverlauf nimmt, beispielsweise nach dem Versenden einer E-Mail, einer zeitweisen Inaktivität auf einer Website oder nach dem Logout.
 
-## Technische Spezifikationen
+## Welche technischen Spezifikationen gelten?
 
 | Name           | Break Ad    |
 |----------------|--------------|
@@ -27,9 +30,8 @@ Das Break Ad ist geschaffen für eine Pause, die sich der User selbst im Surfver
 
 
 
-## Größe
+## Welche Größen sind erlaubt?
 max. 800 kB , max. 2MB nachgeladen (polite Download aus externen Quellen)
 
-## Formate
+## Welche Dateiformate werden unterstützt?
 JPEG, GIF, HTML5 und Video
-

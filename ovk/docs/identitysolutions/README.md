@@ -1,4 +1,10 @@
-# Einführung
+---
+title: "Identity-Lösungen im deutschen Werbemarkt"
+description: "Überblick über cookielose Identity-Lösungen, unterstützte Identifier, OVK-Vermarkter, SSPs, DSPs und Case Studies im deutschen Werbemarkt."
+keywords: ["Identity-Lösungen", "Identifier", "Post-Cookie", "OVK Vermarkter"]
+---
+
+# Identity-Lösungen im deutschen Werbemarkt
 ### Dieses Repository enthält:
 - Eine [Übersicht](https://tech.ovk.de/docs/identitysolutions/ID-Support_OVK-Vermarkter/OVK-IdentifierSupport_byVendor) der OVK Häuser welche Identifier ihre Publisher unterstützen, um so Addressability in der Postcookie Ära sicherzustellen.
 
@@ -22,7 +28,7 @@
   - Data Clean Room = ID can be activated through DCR workflow
 
 
-**Legende:**
+**Legende für die Nutzungsübersicht:**
   - Status: Der Release Status der ID Lösung (Live = ausgerollt, In-Progress = Eine Integration ist beabsichtigt und Gespräche laufen, No Support = Derzeit keine Integration vorgesehen)
   - Usage:
     - Frequency Capping: Wird die ID bei einer DSP für Frequency Capping genutzt?

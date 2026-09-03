@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
     }
 
-    updateConfigStandDate(new Date(document.lastModified).getTime());
+    updateConfigStandDate(window.OVK_LANDSCAPE_CONFIG?.lastUpdated);
   }
 
   function updateConfigStandDate(timestamp) {
@@ -101,10 +101,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (!el) return;
 
     let dateObj;
-    if (timestamp && timestamp > 0) {
+    if (timestamp && !Number.isNaN(new Date(timestamp).getTime())) {
       dateObj = new Date(timestamp);
     } else {
-      dateObj = new Date();
+      el.textContent = "siehe Versionshistorie";
+      return;
     }
 
     const day = String(dateObj.getDate()).padStart(2, '0');

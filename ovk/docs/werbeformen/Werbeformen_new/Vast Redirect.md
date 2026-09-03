@@ -1,5 +1,8 @@
 ---
 slug: /werbeformen/vast-redirect
+title: "VAST Redirect: technische Spezifikation"
+description: "Technische OVK-Spezifikation für VAST Redirects in der Video-Werbung mit Anforderungen an VAST-Version, Dateiformate und Auslieferung."
+keywords: ["VAST Redirect", "Video-Werbung", "VAST", "OVK Spezifikation"]
 ---
 
 # VAST Redirect
@@ -31,11 +34,10 @@ slug: /werbeformen/vast-redirect
 | 48 / 44,1 kHz | Stereo | AAC (LC) | konstant       |
 
 
-# Mezzanine-File (optional, ab VAST 4.0 oder höher, nur für SSAI benötigt, z.B. Ausspielung während Live-Streams)
+## Mezzanine-File (optional, ab VAST 4.0 oder höher, nur für SSAI benötigt, z.B. Ausspielung während Live-Streams)
 
 ## Video Settings (min.)
 
 | Format | Codec | Profile      | Level | Max. Bitrate | Auflösung  | Framerate | Bitrate Video/Audio |
 |--------|--------|--------------|--------|---------------|-------------|-----------|----------------------|
 | MP4    | H.264  | Main or High | –      | 30 Mbps       | 1920x1080   | 25 fps    | 30 Mbps              |
-

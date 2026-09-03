@@ -1,15 +1,18 @@
 ---
 slug: /werbeformen/video/in-stream/pause-ad
+title: "Pause Ad"
+description: "Technische Spezifikationen für das OVK-Werbeformat Pause Ad: Beschreibung, Abmessungen, Dateiformate und Anforderungen für digitale Kampagnen."
+keywords: ["Pause Ad", "OVK Werbeform", "technische Spezifikationen", "digitale Werbung"]
 ---
 
 # Pause Ad
-<img alt="image" src="/img/formats/OVK_WF_Video_Pause_Ad.png" />
+<img alt="Beispieldarstellung des OVK-Werbeformats Pause Ad" src="/img/formats/OVK_WF_Video_Pause_Ad.png" />
 
-## Beschreibung
+## Was ist das OVK-Werbeformat Pause Ad?
 Pause Ads sind Banner, die ausgespielt werden, wenn ein Nutzer während des Streamens auf „Pause“ klickt.
 
 
-## Technische Spezifikationen
+## Welche technischen Spezifikationen gelten?
 
 | Name            | Overlay Ad     |
 |-----------------|----------------|
@@ -27,5 +30,5 @@ Pause Ads sind Banner, die ausgespielt werden, wenn ein Nutzer während des Stre
 
 
 
-## Formate
+## Welche Dateiformate werden unterstützt?
 Nur Image (.jpg, .png)

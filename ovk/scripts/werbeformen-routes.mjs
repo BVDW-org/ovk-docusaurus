@@ -25,6 +25,16 @@ const documentExtensions = new Set(['.md', '.mdx']);
 // The upstream container folder that must not appear in public URLs.
 const HIDDEN_SEGMENTS = new Set(['Werbeformen_new']);
 
+// The upstream repository currently contains the same VAST Redirect document
+// twice. Publish only the correctly nested In-Stream page and keep both former
+// routes as redirects so search engines see one canonical resource.
+const CANONICAL_ALIASES = new Map([
+  [
+    'Werbeformen_new/Vast Redirect.md',
+    '/docs/werbeformen/video/in-stream/vastredirect',
+  ],
+]);
+
 const TRANSLITERATIONS = new Map([
   ['ä', 'ae'],
   ['ö', 'oe'],
@@ -103,6 +113,7 @@ export function collectWerbeformenRoutes() {
       legacyRoute,
       slug: route === legacyRoute ? null : slug,
       route,
+      redirectTo: CANONICAL_ALIASES.get(segments.join('/')),
     });
   }
 
@@ -115,8 +126,16 @@ export function collectWerbeformenRoutes() {
  */
 export function collectWerbeformenRedirects() {
   return collectWerbeformenRoutes()
-    .filter((entry) => entry.slug !== null)
-    .map((entry) => ({ from: entry.legacyRoute, to: entry.route }));
+    .flatMap((entry) => {
+      if (entry.redirectTo) {
+        return [...new Set([entry.legacyRoute, entry.route])]
+          .filter((from) => from !== entry.redirectTo)
+          .map((from) => ({ from, to: entry.redirectTo }));
+      }
+      return entry.slug === null
+        ? []
+        : [{ from: entry.legacyRoute, to: entry.route }];
+    });
 }
 
 function documentTitle(absolutePath, fallback) {
@@ -173,6 +192,8 @@ export function collectWerbeformenMenu() {
   const groups = new Map();
 
   for (const entry of collectWerbeformenRoutes()) {
+    if (entry.redirectTo) continue;
+
     const segments = entry.relativePath.split('/');
     const directorySegments = segments.slice(0, -1);
     const baseName = path.basename(segments.at(-1), path.extname(segments.at(-1)));

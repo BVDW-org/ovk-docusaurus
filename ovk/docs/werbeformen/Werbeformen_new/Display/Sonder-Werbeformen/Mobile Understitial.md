@@ -1,19 +1,22 @@
 ---
 slug: /werbeformen/display/sonder-werbeformen/mobile-understitial
+title: "(Mobile) Understitial / Mobile Poster Ad"
+description: "OVK-Spezifikation für Mobile Understitial und Mobile Poster Ads: Abmessungen, Dateiformate, Einsatz und technische Anforderungen."
+keywords: ["Mobile Understitial", "Mobile Poster Ad", "OVK Werbeform", "technische Spezifikationen"]
 ---
 
 # (Mobile) Understitial / Mobile Poster Ad
 <span class="badge badge--success">Active</span>
-<img alt="OVK_WF_Mobile_UnderstitialMobilePosterAd " src="/img/formats/OVK_WF_Mobile_UnderstitialMobilePosterAd.png" />
+<img alt="Beispieldarstellung des OVK-Werbeformats (Mobile) Understitial / Mobile Poster Ad" src="/img/formats/OVK_WF_Mobile_UnderstitialMobilePosterAd.png" />
 
 
-## Beschreibung
+## Was ist das OVK-Werbeformat (Mobile) Understitial / Mobile Poster Ad?
 Das (Mobile) Understitial ist ein aufmerksamkeitsstarkes responsives Format, das in den Content integriert ist und vom Nutzer mittels Scrollen freigelegt wird.
 
-## Weitere Spezifikationen
+## Welche weiteren Spezifikationen gelten?
 Das Seitenverhältnis 2:3 muss eingehalten werden. Werbemittel liegt hinter dem Content und wird durch Scrollen im Sichtfenster der Werbeplatzierung angezeigt und dabei nie vollständig freigelegt (Sichtfenster für Werbemittel beträgt mind. 20% der Viewporthöhe).
 
-## Technische Spezifikationen
+## Welche technischen Spezifikationen gelten?
 
 | Name           | (Mobile) Understitial / Mobile Poster Ad |
 |----------------|------------------------------------------|
@@ -33,8 +36,8 @@ Das Seitenverhältnis 2:3 muss eingehalten werden. Werbemittel liegt hinter dem 
 
 
 
-## Größe
+## Welche Größen sind erlaubt?
 200 kB (von uns gehostet), max. 2MB nachgeladen (polite Download aus externen Quellen)
 
-## Formate
+## Welche Dateiformate werden unterstützt?
 JPEG, GIF, HTML5 und Video

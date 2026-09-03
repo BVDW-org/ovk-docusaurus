@@ -17,6 +17,7 @@ import {ShieldCheck} from '@phosphor-icons/react/dist/icons/ShieldCheck';
 import {StackSimple} from '@phosphor-icons/react/dist/icons/StackSimple';
 import {UserCircle} from '@phosphor-icons/react/dist/icons/UserCircle';
 import {UsersThree} from '@phosphor-icons/react/dist/icons/UsersThree';
+import {homepageFaqs} from '@site/src/utils/seo.mjs';
 import styles from './styles.module.css';
 
 const topics = [
@@ -75,7 +76,7 @@ const topics = [
     title: 'OVK Contextual Standard',
     Icon: StackSimple,
     description:
-      'Specs zum kontextuellen Standard, den der OVK 2023 ins Leben gerufen hat und von all seinen Mitgliedern genutzt wird.',
+      'Anbieter- und technologieunabhängige Qualitätskriterien für kontextuelles Targeting im deutschen Werbemarkt.',
     to: '/docs/contextualstandards/',
     links: [
       {
@@ -93,21 +94,21 @@ const unitLeaders = [
     role: 'Leiter des Labs Ad Tech & Programmatic im OVK',
     company: 'United Internet Media GmbH',
     companyUrl: 'https://www.united-internet-media.de/de/home/',
-    image: '/img/team/alwin-viereck.jpg',
+    image: '/img/team/alwin-viereck.webp',
   },
   {
     name: 'Carlos Bracho',
     role: 'Leiter des Labs Ad Tech & Programmatic im OVK',
     company: 'Media Impact GmbH und Co. KG',
     companyUrl: 'https://www.mediaimpact.de/de/',
-    image: '/img/team/carlos-bracho.jpg',
+    image: '/img/team/carlos-bracho.webp',
   },
   {
     name: 'Markus Letzner',
     role: 'Leiter des Labs Ad Tech & Programmatic im OVK und Mitsprecher des Contextual Workstreams',
     company: 'Ströer Digital Media GmbH',
     companyUrl: 'https://www.stroeer.de/',
-    image: '/img/team/markus-letzner.jpg',
+    image: '/img/team/markus-letzner.webp',
   },
 ];
 
@@ -321,12 +322,36 @@ function LabSection() {
   );
 }
 
+function FaqSection() {
+  return (
+    <section id="faq" className={styles.faqSection} aria-labelledby="faq-title">
+      <div className="container">
+        <span className={styles.eyebrow}>Häufige Fragen</span>
+        <Heading as="h2" id="faq-title" className={styles.faqTitle}>
+          Antworten zu den OVK Tech Specs
+        </Heading>
+        <div className={styles.faqGrid}>
+          {homepageFaqs.map(({question, answer}) => (
+            <article key={question} className={styles.faqItem}>
+              <Heading as="h3" className={styles.faqQuestion}>
+                {question}
+              </Heading>
+              <p>{answer}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function HomepageFeatures() {
   return (
     <>
       <TopicSection />
       <OverviewBand />
       <LabSection />
+      <FaqSection />
     </>
   );
 }
