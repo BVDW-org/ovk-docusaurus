@@ -4,6 +4,7 @@ sidebar_label: FAQ
 sidebar_position: 99
 slug: /identitysolutions/faq
 description: Antworten auf häufige Fragen zu deterministischen IDs – Datenschutz, programmatisches Setup, Kosten, Reichweite, Formate und Case Studies.
+keywords: ["FAQ", "OVK", "technische Standards", "digitale Werbung"]
 ---
 
 # FAQ

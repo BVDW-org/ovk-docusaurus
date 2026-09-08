@@ -7,6 +7,7 @@ keywords: ["Identity-Lösungen", "Identifier", "Post-Cookie", "OVK Vermarkter"]
 # Identity-Lösungen im deutschen Werbemarkt
 ### Dieses Repository enthält:
 - Eine [Übersicht](https://tech.ovk.de/docs/identitysolutions/ID-Support_OVK-Vermarkter/OVK-IdentifierSupport_byVendor) der OVK Häuser welche Identifier ihre Publisher unterstützen, um so Addressability in der Postcookie Ära sicherzustellen.
+- [FAQ](./FAQ.md) mit Antworten auf häufige Fragen zum Einsatz deterministischer IDs in programmatischen Kampagnen.
 
 
 ## Erläuterung der Vermarkter ID Übersicht:
