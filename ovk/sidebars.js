@@ -14,6 +14,7 @@ const sidebars = {
         { type: 'doc', id: 'identitysolutions/ID-Support_SSPs/SSP-IdentifierSupport' },
         { type: 'doc', id: 'identitysolutions/ID-Support_DSPs/DSP-IdentifierSupport' },
         { type: 'doc', id: 'tools/id-landscape-map' },
+        { type: 'doc', id: 'identitysolutions/FAQ' },
       ],
     },
     {

@@ -234,6 +234,7 @@ const config = {
                   label: 'Vermarkter ID-Übersicht',
                 },
                 { type: 'doc', docId: 'tools/id-landscape-map', label: 'ID Landscape Map' },
+                { type: 'doc', docId: 'identitysolutions/FAQ', label: 'FAQ' },
               ],
             },
             { to: '/docs/contextualstandards/', label: 'OVK Contextual Standard', position: 'left' },
