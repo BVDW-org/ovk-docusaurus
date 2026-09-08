@@ -12,6 +12,7 @@ import {IdentificationCard} from '@phosphor-icons/react/dist/icons/Identificatio
 import {Info} from '@phosphor-icons/react/dist/icons/Info';
 import {Monitor} from '@phosphor-icons/react/dist/icons/Monitor';
 import {Play} from '@phosphor-icons/react/dist/icons/Play';
+import {Question} from '@phosphor-icons/react/dist/icons/Question';
 import {Scales} from '@phosphor-icons/react/dist/icons/Scales';
 import {ShieldCheck} from '@phosphor-icons/react/dist/icons/ShieldCheck';
 import {StackSimple} from '@phosphor-icons/react/dist/icons/StackSimple';
@@ -68,6 +69,11 @@ const topics = [
         label: 'OVK Vermarkter ID-Overview',
         to: '/docs/identitysolutions/ID-Support_OVK-Vermarkter/OVK-IdentifierSupport_byVendor',
         Icon: IdentificationCard,
+      },
+      {
+        label: 'FAQ',
+        to: '/docs/identitysolutions/faq',
+        Icon: Question,
       },
     ],
   },
