@@ -6,57 +6,51 @@ if (!window.OVK_LANDSCAPE_CONFIG.vermarkter) {
 }
 
 window.OVK_LANDSCAPE_CONFIG.vermarkter.push({
-  id: "uim",
-  name: "United Internet Media",
-  description: "Mediavermarkter der konzerneigenen Mail-Portale WEB.DE und GMX",
-  supportedInventoryTypes: [
+  "id": "uim",
+  "name": "United Internet Media",
+  "description": "Mediavermarkter der konzerneigenen Mail-Portale WEB.DE und GMX",
+  "supportedInventoryTypes": [
     {
-      type: "desktop",
-      supportedIds: [
+      "type": "desktop",
+      "supportedIds": [
         {
-          id: "netid_utiq",
-          coverage: 72,
-          excludedDSPs: []
+          "id": "netid_utiq",
+          "coverage": 73
         },
         {
-          id: "netid",
-          coverage: 82,
-          excludedDSPs: []
+          "id": "netid",
+          "coverage": 82
         }
       ]
     },
     {
-      type: "mobile",
-      supportedIds: [
+      "type": "mobile",
+      "supportedIds": [
         {
-          id: "netid_utiq",
-          coverage: 76,
-          excludedDSPs: []
+          "id": "netid_utiq",
+          "coverage": 76
         },
         {
-          id: "netid",
-          coverage: 97,
-          excludedDSPs: []
+          "id": "netid",
+          "coverage": 97
         }
       ]
     },
     {
-      type: "app",
-      supportedIds: [
+      "type": "app",
+      "supportedIds": [
         {
-          id: "netid_utiq",
-          coverage: 67,
-          excludedDSPs: []
+          "id": "netid_utiq",
+          "coverage": 67
         },
         {
-          id: "netid",
-          coverage: 94,
-          excludedDSPs: []
+          "id": "netid",
+          "coverage": 94
         }
       ]
     }
   ],
-  supportedSSPs: [
+  "supportedSSPs": [
     "equativ",
     "pubmatic",
     "index_exchange",

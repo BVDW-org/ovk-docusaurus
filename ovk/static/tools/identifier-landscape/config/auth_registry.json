@@ -1,0 +1,51 @@
+{
+  "partners": {
+    "friedrich.schenk@united-internet-media.de": {
+      "email": "friedrich.schenk@united-internet-media.de",
+      "name": "Friedrich Schenk",
+      "salt": "15eca4114dcf395e4b099399f317dad3",
+      "hash": "5a6bfa99572b51c1be5e48b90fd7bb539617231d5f6a2d3c421f734918528a6b",
+      "roles": [
+        {
+          "role": "admin",
+          "partnerId": null
+        },
+        {
+          "role": "vermarkter",
+          "partnerId": "uim"
+        },
+        {
+          "role": "data_partner",
+          "partnerId": "uim_data"
+        }
+      ],
+      "updatedAt": "2026-10-13T19:17:34.196Z"
+    },
+    "kontakt@marionkoelling.de": {
+      "email": "kontakt@marionkoelling.de",
+      "name": "Marion Kölling",
+      "salt": "dac0f63a44a52a5ccef8330485a0a421",
+      "hash": "e89d2d071201f51fec71910d4f66b434403f7623c5125211d650e8df80468dd8",
+      "roles": [
+        {
+          "role": "admin",
+          "partnerId": null
+        }
+      ],
+      "updatedAt": "2026-10-13T16:19:17.553Z"
+    },
+    "friedrich.schenk@uim.de": {
+      "email": "friedrich.schenk@uim.de",
+      "name": "Friedrich Schenk (UIM)",
+      "salt": "0eda80f28132fc9ddcc537d8abaa30c6",
+      "hash": "3bb4d81b13040faa1c9cd78ff930550f5e18eaca6068509a74b4a4ef679e05bd",
+      "roles": [
+        {
+          "role": "vermarkter",
+          "partnerId": "uim"
+        }
+      ],
+      "updatedAt": "2026-10-13T16:30:18.846Z"
+    }
+  }
+}
