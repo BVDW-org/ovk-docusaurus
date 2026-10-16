@@ -3,11 +3,19 @@ id: index
 title: OVK Open Parks
 sidebar_label: OVK Open Parks
 slug: /identitysolutions/openparks
-description: "OVK Open Parks: vermarkterübergreifende, deterministisch adressierbare Premium-Reichweite im Open Web mit Utiq und netID – Ziel, Buchungsprozess und aktueller Stand."
+description: "OVK Open Parks macht Premium-Reichweite im Open Web mit Utiq und netID vermarkterübergreifend adressierbar. Ziel, Buchungsprozess und aktueller Stand."
 keywords: ["OVK Open Parks", "Open Parks", "deterministische IDs", "Utiq", "netID", "Frequency Capping", "Open Web"]
 hide_table_of_contents: true
+# Bis zur Freigabe: nicht in Navigation, Sitemap und Suchindex.
+unlisted: true
 ---
 
+import AccessGate from '@site/src/components/AccessGate';
 import OpenParks from '@site/src/components/OpenParks';
 
-<OpenParks />
+<AccessGate
+  title="OVK Open Parks"
+  storageKey="ovk-openparks-access"
+  hash="d12fe65ddc99e140d6519cdeac4e637a6f6859f1e239cd43836e5fd435cf541f">
+  <OpenParks />
+</AccessGate>

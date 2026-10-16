@@ -730,3 +730,10 @@ html[class*="docs-doc-id-werbeformen"] .markdown ol > li:hover {
     margin-left: 1.5rem;
   }
 }
+
+/* OVK Open Parks is unlisted only until approval and sits behind its own
+   access gate (src/components/AccessGate); the generic English banner
+   would confuse reviewers. Remove this rule together with `unlisted`. */
+html[class*='docs-doc-id-openparks/'] .theme-unlisted-banner {
+  display: none;
+}

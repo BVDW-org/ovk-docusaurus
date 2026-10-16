@@ -50,8 +50,8 @@ const topics = [
     title: 'Identity',
     Icon: UserCircle,
     description:
-      'OVK Open Parks, aktive ID-Lösungen pro Vermarkter und die interaktive ID Landscape Map.',
-    to: '/docs/identitysolutions/openparks',
+      'Aktive ID-Lösungen pro Vermarkter, die interaktive ID Landscape Map und Antworten auf häufige Fragen.',
+    to: '/docs/identitysolutions/',
     links: [
       {
         label: 'Identity Intro',
@@ -59,8 +59,8 @@ const topics = [
         Icon: Info,
       },
       {
-        label: 'OVK Open Parks',
-        to: '/docs/identitysolutions/openparks',
+        label: 'ID Landscape Map',
+        to: '/docs/tools/id-landscape-map',
         Icon: Path,
       },
       {

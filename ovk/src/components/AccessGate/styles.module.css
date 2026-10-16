@@ -1,0 +1,95 @@
+.placeholder {
+  min-height: 60vh;
+}
+
+.gate {
+  max-width: 28rem;
+  margin: 3rem auto;
+  padding: 2rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  background: var(--ifm-background-surface-color);
+  text-align: center;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  color: var(--ifm-color-secondary);
+  background: rgba(255, 70, 39, 0.1);
+}
+
+.title {
+  margin: 0 0 0.5rem;
+  color: var(--ifm-color-primary);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+[data-theme='dark'] .title {
+  color: #ffffff;
+}
+
+.text {
+  margin: 0 0 1.25rem;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.form input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 6px;
+  color: var(--ifm-font-color-base);
+  background: var(--ifm-background-color);
+  font: inherit;
+}
+
+.form input:focus-visible,
+.form button:focus-visible {
+  outline: 3px solid rgba(255, 70, 39, 0.45);
+  outline-offset: 2px;
+}
+
+.form button {
+  padding: 0.6rem 1.1rem;
+  border: 0;
+  border-radius: 6px;
+  color: #ffffff;
+  background: var(--ifm-color-secondary);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.form button:hover {
+  background: #e43a1d;
+}
+
+.error {
+  margin: 0.75rem 0 0;
+  color: #c7361d;
+  font-size: 0.9rem;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

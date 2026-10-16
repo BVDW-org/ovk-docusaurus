@@ -229,14 +229,14 @@ const config = {
           items: [
             {
               type: 'dropdown',
-              to: '/docs/identitysolutions/openparks',
+              to: '/docs/identitysolutions/',
               label: 'Identity',
               position: 'left',
               items: [
                 // Plain links instead of type 'doc': doc items count as active
                 // whenever the current page shares their sidebar (all docs live
                 // in mainSidebar), which highlighted every entry at once.
-                { to: '/docs/identitysolutions/openparks', label: 'OVK Open Parks' },
+                // { to: '/docs/identitysolutions/openparks', label: 'OVK Open Parks' }, // nach Freigabe
                 { to: '/docs/identitysolutions', label: 'Einführung', activeBaseRegex: '^/docs/identitysolutions/?$' },
                 {
                   to: '/docs/identitysolutions/ID-Support_OVK-Vermarkter/OVK-IdentifierSupport_byVendor',
