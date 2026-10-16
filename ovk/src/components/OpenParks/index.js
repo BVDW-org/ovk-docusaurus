@@ -40,20 +40,23 @@ const kpis = [
   {value: 'max. 5 Tage', label: 'vom RFP bis zu den Deals', note: 'mit einem Ansprechpartner beim OVK'},
 ];
 
-// Logos are optional: drop a file into static/img/brands/ and set `logo`.
-// Until then the brand name is shown as a neutral wordmark.
+// OVK members, logos cut from the member overview on ovk.de.
 const brands = [
-  {name: 'Ad Alliance'},
-  {name: 'BCN'},
-  {name: 'FUNKE'},
-  {name: 'iq digital'},
-  {name: 'Media Impact'},
-  {name: 'Score Media'},
-  {name: 'Seven.One Media'},
-  {name: 'Ströer'},
-  {name: 'United Internet Media'},
-  {name: 'Visoon'},
-];
+  ['Ad Alliance', 'ad-alliance'],
+  ['audienzz', 'audienzz'],
+  ['Azerion', 'azerion'],
+  ['BCN', 'bcn'],
+  ['FUNKE', 'funke'],
+  ['iq digital', 'iq-digital'],
+  ['Media Impact', 'media-impact'],
+  ['mobile.de Advertising', 'mobile-de'],
+  ['Quarter Media', 'quarter-media'],
+  ['Score Media Group', 'score-media'],
+  ['Seven.One Media', 'seven-one-media'],
+  ['Ströer', 'stroeer'],
+  ['United Internet Media', 'united-internet-media'],
+  ['Visoon', 'visoon'],
+].map(([name, slug]) => ({name, logo: `/img/brands/vermarkter/${slug}.png`}));
 
 const benefits = [
   {
@@ -358,7 +361,7 @@ function BrandLogo({name, logo}) {
   const src = useBaseUrl(logo || '/');
   return (
     <li className={styles.brand}>
-      {logo ? <img src={src} alt={name} loading="lazy" /> : <span>{name}</span>}
+      {logo ? <img src={src} alt={name} decoding="async" /> : <span>{name}</span>}
     </li>
   );
 }
@@ -405,7 +408,7 @@ function Hero() {
 function BrandStrip() {
   return (
     <section className={styles.brandStrip} aria-label="Vermarkter im OVK">
-      <p className={styles.brandStripLabel}>Premium-Reichweite der OVK-Vermarkter</p>
+      <p className={styles.brandStripLabel}>Die Mitglieder des OVK</p>
       <ul className={styles.brandList}>
         {brands.map((brand) => (
           <BrandLogo key={brand.name} {...brand} />
