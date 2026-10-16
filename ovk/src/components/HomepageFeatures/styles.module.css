@@ -28,15 +28,16 @@
 .topicHeader {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
-  margin-bottom: 1.6rem;
+  justify-content: space-between;
+  margin-bottom: 1.1rem;
 }
 
 .topicNumber {
   color: #ff4627;
-  font-size: clamp(2.8rem, 4vw, 3.6rem);
-  font-weight: 500;
-  letter-spacing: -0.055em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.12em;
   line-height: 1;
 }
 
@@ -44,22 +45,22 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 58px;
-  height: 58px;
-  flex: 0 0 58px;
-  border-radius: 50%;
-  color: #ffffff;
-  background: #142f52;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  border-radius: 12px;
+  color: #142f52;
+  background: rgba(20, 47, 82, 0.07);
 }
 
 .topicTitle {
-  min-height: 2.2em;
-  margin: 0 0 0.75rem;
+  min-height: 2.4em;
+  margin: 0 0 0.6rem;
   color: #142f52;
-  font-size: clamp(1.45rem, 2vw, 1.75rem);
-  font-weight: 750;
-  letter-spacing: -0.025em;
-  line-height: 1.15;
+  font-size: clamp(1.2rem, 1.6vw, 1.35rem);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
 }
 
 .topicTitle a {
@@ -377,6 +378,15 @@
   color: #ffffff;
 }
 
+[data-theme='dark'] .topicIcon {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme='dark'] .topicNumber {
+  color: #ff8a75;
+}
+
 [data-theme='dark'] .faqTitle,
 [data-theme='dark'] .faqQuestion {
   color: #ffffff;
@@ -461,20 +471,6 @@
 @media (max-width: 680px) {
   .topicSection {
     padding: 2.75rem 0 1.5rem;
-  }
-
-  .topicHeader {
-    margin-bottom: 1.3rem;
-  }
-
-  .topicNumber {
-    font-size: 3rem;
-  }
-
-  .topicIcon {
-    width: 54px;
-    height: 54px;
-    flex-basis: 54px;
   }
 
   .overviewSection {

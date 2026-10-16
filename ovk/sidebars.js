@@ -10,8 +10,9 @@ const sidebars = {
       link: { type: 'doc', id: 'identitysolutions/README' },
       items: [
         { type: 'doc', id: 'identitysolutions/Case Studies' },
-        { type: 'doc', id: 'identitysolutions/ID-Support_OVK-Vermarkter/OVK-IdentifierSupport_byVendor' },
-        { type: 'doc', id: 'identitysolutions/ID-Support_SSPs/SSP-IdentifierSupport' },
+        // Bewusst ausgeblendet (per Direktlink weiter erreichbar):
+        // identitysolutions/ID-Support_OVK-Vermarkter/OVK-IdentifierSupport_byVendor
+        // identitysolutions/ID-Support_SSPs/SSP-IdentifierSupport
         { type: 'doc', id: 'identitysolutions/ID-Support_DSPs/DSP-IdentifierSupport' },
         { type: 'doc', id: 'tools/id-landscape-map' },
         { type: 'doc', id: 'identitysolutions/FAQ' },

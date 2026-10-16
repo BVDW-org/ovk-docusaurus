@@ -167,10 +167,10 @@ function Topic({number, title, Icon, description, to, links}) {
   return (
     <article className={styles.topic}>
       <div className={styles.topicHeader}>
-        <span className={styles.topicNumber}>{number}</span>
         <span className={styles.topicIcon}>
-          <Icon size={34} weight="regular" aria-hidden="true" />
+          <Icon size={22} weight="regular" aria-hidden="true" />
         </span>
+        <span className={styles.topicNumber}>{number}</span>
       </div>
 
       <Heading as="h2" className={styles.topicTitle}>

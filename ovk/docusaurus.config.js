@@ -228,11 +228,6 @@ const config = {
               items: [
                 { type: 'doc', docId: 'identitysolutions/README', label: 'Einführung' },
                 { type: 'doc', docId: 'identitysolutions/Case Studies', label: 'Case Studies' },
-                {
-                  type: 'doc',
-                  docId: 'identitysolutions/ID-Support_OVK-Vermarkter/OVK-IdentifierSupport_byVendor',
-                  label: 'Vermarkter ID-Übersicht',
-                },
                 { type: 'doc', docId: 'tools/id-landscape-map', label: 'ID Landscape Map' },
                 { type: 'doc', docId: 'identitysolutions/FAQ', label: 'FAQ' },
               ],
