@@ -1112,6 +1112,16 @@
 }
 
 @container openparks (max-width: 520px) {
+  .heroTop {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    gap: 1rem;
+  }
+
+  .heroEyebrow {
+    align-self: flex-start;
+  }
+
   .brandList {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
