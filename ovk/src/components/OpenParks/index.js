@@ -537,24 +537,6 @@ function ProcessSection() {
         </div>
       </div>
 
-      <div className={styles.templates}>
-        <article>
-          <h3>Briefing-Template</h3>
-          <p>
-            Füllt der OVK-Vertreter aus und verteilt es an alle Häuser. Es
-            enthält Kampagneninfos, DSP und Seat ID oder SSP Curator Seat, ID
-            Provider, Formate, Laufzeit, Pretargeting und Deadline.
-          </p>
-        </article>
-        <article>
-          <h3>Deal-Template</h3>
-          <p>
-            Füllen die Vermarkter aus, ganz ohne Preisinformation. Es enthält
-            Deal ID, SSP, Go-Live-Datum, Status und einen Dealnamen nach
-            einheitlicher Namenskonvention.
-          </p>
-        </article>
-      </div>
     </Section>
   );
 }
