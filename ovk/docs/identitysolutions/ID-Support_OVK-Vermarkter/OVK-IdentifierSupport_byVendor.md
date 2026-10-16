@@ -9,6 +9,18 @@ keywords: ["OVK Vermarkter", "Identifier Support", "Identity-Lösungen", "Post-C
 The following tables show which ID vendor is supported by which German OVK Vermarkter (Sales House).<br></br>
 Note: Score Media and Bauer use their Erstvermarkter's ID solutions. Azerion, netpointmedia haven't added their data yet.
 
+**Legende:**
+- Status: Der Release Status der ID Lösung (Live = ausgerollt, In-Progress = Eine Integration ist beabsichtigt und Gespräche laufen, No Support = Derzeit keine Integration vorgesehen)
+- Usable via:
+  - Bid Stream (deal id) = ID is only available in form of pre-targeted deals
+  - Bid Stream (unrestricted) = ID is sent to all demand partners without restriction
+  - Bid Stream (restricted) = Only selected demand partners receive the ID
+  - IO only (Adserver) = ID is used for IO campaigns in the publisher's Ad Server
+  - Data Marketplace (Curation-SSP) = ID is used for data activation through the data marketplace of a SSP
+  - Data Marketplace (DSP) = ID is used for data activation through the data marketplace of a DSP
+  - Data Clean Room = ID can be activated through DCR workflow
+
+
 ### Criteo {#Criteo}
 <img alt="Logo: Criteo" src="https://www.criteo.com/wp-content/uploads/2021/10/criteo-logo-2021.jpeg" width="100"></img>
 [`Criteo Id`](#Criteo)
