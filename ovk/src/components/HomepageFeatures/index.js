@@ -5,12 +5,12 @@ import Heading from '@theme/Heading';
 import {ArrowRight} from '@phosphor-icons/react/dist/icons/ArrowRight';
 import {Article} from '@phosphor-icons/react/dist/icons/Article';
 import {BookOpenText} from '@phosphor-icons/react/dist/icons/BookOpenText';
-import {ChartBar} from '@phosphor-icons/react/dist/icons/ChartBar';
 import {CheckCircle} from '@phosphor-icons/react/dist/icons/CheckCircle';
 import {Flask} from '@phosphor-icons/react/dist/icons/Flask';
 import {IdentificationCard} from '@phosphor-icons/react/dist/icons/IdentificationCard';
 import {Info} from '@phosphor-icons/react/dist/icons/Info';
 import {Monitor} from '@phosphor-icons/react/dist/icons/Monitor';
+import {Path} from '@phosphor-icons/react/dist/icons/Path';
 import {Play} from '@phosphor-icons/react/dist/icons/Play';
 import {Question} from '@phosphor-icons/react/dist/icons/Question';
 import {Scales} from '@phosphor-icons/react/dist/icons/Scales';
@@ -27,11 +27,11 @@ const topics = [
     Icon: Article,
     description:
       'Übersicht aller standardisierten vermarkterübergreifenden Werbeformen inkl. Specs',
-    to: '/docs/werbeformen/',
+    to: '/docs/werbeformen/uebersicht',
     links: [
       {
         label: 'Werbeformen Intro',
-        to: '/docs/werbeformen/',
+        to: '/docs/werbeformen/uebersicht',
         Icon: BookOpenText,
       },
       {
@@ -50,8 +50,8 @@ const topics = [
     title: 'Identity',
     Icon: UserCircle,
     description:
-      'Übersicht der aktiven ID Lösungen pro Vermarkter und verschiedene Case Studies.',
-    to: '/docs/identitysolutions/',
+      'OVK Open Parks, aktive ID-Lösungen pro Vermarkter und die interaktive ID Landscape Map.',
+    to: '/docs/identitysolutions/openparks',
     links: [
       {
         label: 'Identity Intro',
@@ -59,9 +59,9 @@ const topics = [
         Icon: Info,
       },
       {
-        label: 'Case Studies',
-        to: '/docs/identitysolutions/Case%20Studies',
-        Icon: ChartBar,
+        label: 'OVK Open Parks',
+        to: '/docs/identitysolutions/openparks',
+        Icon: Path,
       },
       {
         label: 'OVK Vermarkter ID-Overview',

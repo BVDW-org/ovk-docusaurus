@@ -7,11 +7,12 @@ const sidebars = {
     {
       type: 'category',
       label: 'Identity',
-      link: { type: 'doc', id: 'identitysolutions/README' },
+      link: { type: 'doc', id: 'openparks/index' },
       items: [
-        { type: 'doc', id: 'identitysolutions/Case Studies' },
+        { type: 'doc', id: 'identitysolutions/README', label: 'Einführung' },
         { type: 'doc', id: 'identitysolutions/ID-Support_OVK-Vermarkter/OVK-IdentifierSupport_byVendor' },
         // Bewusst ausgeblendet (per Direktlink weiter erreichbar):
+        // identitysolutions/Case Studies
         // identitysolutions/ID-Support_SSPs/SSP-IdentifierSupport
         // identitysolutions/ID-Support_DSPs/DSP-IdentifierSupport
         { type: 'doc', id: 'tools/id-landscape-map' },

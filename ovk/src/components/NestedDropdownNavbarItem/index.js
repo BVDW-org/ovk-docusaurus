@@ -21,9 +21,10 @@ function containsActive(items, pathname) {
   );
 }
 
-function DesktopNestedDropdown({label, to, items}) {
+function DesktopNestedDropdown({label, to, activeBasePath = to, items}) {
   const {pathname} = useLocation();
-  const sectionActive = pathname === to || pathname.startsWith(`${to}/`);
+  const sectionActive =
+    pathname === activeBasePath || pathname.startsWith(`${activeBasePath}/`);
 
   return (
     <div className="navbar__item dropdown dropdown--hoverable">
@@ -141,7 +142,7 @@ function MobileSubmenu({item, pathname}) {
   );
 }
 
-function MobileNestedDropdown({label, to, items}) {
+function MobileNestedDropdown({label, to, activeBasePath: _activeBasePath, items}) {
   const {pathname} = useLocation();
   const [open, setOpen] = useState(
     () => containsActive(items, pathname) || isActive(pathname, to),

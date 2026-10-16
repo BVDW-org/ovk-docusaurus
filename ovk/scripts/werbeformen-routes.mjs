@@ -207,6 +207,8 @@ export function collectWerbeformenMenu() {
     );
 
     if (visibleDirectories.length === 0) {
+      // werbeformen/index.md is an empty intro page; keep it out of the menu.
+      if (documentId === 'index') continue;
       topLinks.push({
         label,
         to: entry.route,

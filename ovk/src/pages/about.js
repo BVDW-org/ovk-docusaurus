@@ -74,7 +74,7 @@ export default function About() {
               auffindbar, vergleichbar und direkt verlinkbar – für Vermarkter,
               Publisher, Agenturen, Werbetreibende, Kreativ- und Ad-Tech-Anbieter.
               Inhaltliche Schwerpunkte sind{' '}
-              <Link to="/docs/werbeformen">standardisierte Werbeformen</Link>,{' '}
+              <Link to="/docs/werbeformen/uebersicht">standardisierte Werbeformen</Link>,{' '}
               <Link to="/docs/identitysolutions">Identity-Lösungen</Link> und der{' '}
               <Link to="/docs/contextualstandards">OVK Contextual Standard</Link>.
             </p>
