@@ -231,6 +231,10 @@ const config = {
                 // in mainSidebar), which highlighted every entry at once.
                 { to: '/docs/identitysolutions', label: 'Einführung', activeBaseRegex: '^/docs/identitysolutions/?$' },
                 { to: '/docs/identitysolutions/Case Studies', label: 'Case Studies' },
+                {
+                  to: '/docs/identitysolutions/ID-Support_OVK-Vermarkter/OVK-IdentifierSupport_byVendor',
+                  label: 'Vermarkter ID-Übersicht',
+                },
                 { to: '/docs/tools/id-landscape-map', label: 'ID Landscape Map' },
                 { to: '/docs/identitysolutions/faq', label: 'FAQ' },
               ],
