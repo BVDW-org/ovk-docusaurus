@@ -226,10 +226,13 @@ const config = {
               label: 'Identity',
               position: 'left',
               items: [
-                { type: 'doc', docId: 'identitysolutions/README', label: 'Einführung' },
-                { type: 'doc', docId: 'identitysolutions/Case Studies', label: 'Case Studies' },
-                { type: 'doc', docId: 'tools/id-landscape-map', label: 'ID Landscape Map' },
-                { type: 'doc', docId: 'identitysolutions/FAQ', label: 'FAQ' },
+                // Plain links instead of type 'doc': doc items count as active
+                // whenever the current page shares their sidebar (all docs live
+                // in mainSidebar), which highlighted every entry at once.
+                { to: '/docs/identitysolutions', label: 'Einführung', activeBaseRegex: '^/docs/identitysolutions/?$' },
+                { to: '/docs/identitysolutions/Case Studies', label: 'Case Studies' },
+                { to: '/docs/tools/id-landscape-map', label: 'ID Landscape Map' },
+                { to: '/docs/identitysolutions/faq', label: 'FAQ' },
               ],
             },
             { to: '/docs/contextualstandards/', label: 'OVK Contextual Standard', position: 'left' },

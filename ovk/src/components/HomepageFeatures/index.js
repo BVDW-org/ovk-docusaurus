@@ -23,7 +23,6 @@ import styles from './styles.module.css';
 
 const topics = [
   {
-    number: '01',
     title: 'Werbeformen',
     Icon: Article,
     description:
@@ -48,7 +47,6 @@ const topics = [
     ],
   },
   {
-    number: '02',
     title: 'Identity',
     Icon: UserCircle,
     description:
@@ -78,7 +76,6 @@ const topics = [
     ],
   },
   {
-    number: '03',
     title: 'OVK Contextual Standard',
     Icon: StackSimple,
     description:
@@ -163,19 +160,17 @@ function TopicLink({to, label, Icon}) {
   );
 }
 
-function Topic({number, title, Icon, description, to, links}) {
+function Topic({title, Icon, description, to, links}) {
   return (
     <article className={styles.topic}>
       <div className={styles.topicHeader}>
         <span className={styles.topicIcon}>
           <Icon size={22} weight="regular" aria-hidden="true" />
         </span>
-        <span className={styles.topicNumber}>{number}</span>
+        <Heading as="h2" className={styles.topicTitle}>
+          <Link to={to}>{title}</Link>
+        </Heading>
       </div>
-
-      <Heading as="h2" className={styles.topicTitle}>
-        <Link to={to}>{title}</Link>
-      </Heading>
       <p className={styles.topicDescription}>{description}</p>
 
       <nav className={styles.topicLinks} aria-label={`${title} Direktlinks`}>
@@ -193,7 +188,7 @@ function TopicSection() {
       <div className="container">
         <div className={styles.topicGrid}>
           {topics.map((topic) => (
-            <Topic key={topic.number} {...topic} />
+            <Topic key={topic.title} {...topic} />
           ))}
         </div>
       </div>

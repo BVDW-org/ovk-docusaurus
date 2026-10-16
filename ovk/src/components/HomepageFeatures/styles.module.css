@@ -28,17 +28,9 @@
 .topicHeader {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1.1rem;
-}
-
-.topicNumber {
-  color: #ff4627;
-  font-size: 0.8rem;
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0.12em;
-  line-height: 1;
+  gap: 0.85rem;
+  min-height: 3.3rem;
+  margin-bottom: 0.9rem;
 }
 
 .topicIcon {
@@ -49,13 +41,12 @@
   height: 44px;
   flex: 0 0 44px;
   border-radius: 12px;
-  color: #142f52;
-  background: rgba(20, 47, 82, 0.07);
+  color: #ff4627;
+  background: rgba(255, 70, 39, 0.1);
 }
 
 .topicTitle {
-  min-height: 2.4em;
-  margin: 0 0 0.6rem;
+  margin: 0;
   color: #142f52;
   font-size: clamp(1.2rem, 1.6vw, 1.35rem);
   font-weight: 700;
@@ -379,12 +370,8 @@
 }
 
 [data-theme='dark'] .topicIcon {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.08);
-}
-
-[data-theme='dark'] .topicNumber {
   color: #ff8a75;
+  background: rgba(255, 138, 117, 0.14);
 }
 
 [data-theme='dark'] .faqTitle,

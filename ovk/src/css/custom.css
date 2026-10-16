@@ -234,7 +234,11 @@ body {
   border: 0;
   background: transparent;
   color: inherit;
-  font: inherit;
+  /* Match plain .dropdown__link rows; `font: inherit` pulled in the 16px
+     navbar size and made flyout parents look larger than their siblings. */
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: inherit;
   text-align: left;
   cursor: default;
 }
@@ -610,4 +614,119 @@ html[class*="docs-doc-id-identitysolutions"] .markdown ol > li:hover,
 html[class*="docs-doc-id-contextualstandards"] .markdown ol > li:hover,
 html[class*="docs-doc-id-werbeformen"] .markdown ol > li:hover {
   background-color: var(--ifm-color-emphasis-100);
+}
+
+/* Contextual Standard table of contents, built from the synced "Inhalt:"
+   block by src/clientModules/identitySolutionsEnhancer.js */
+.markdown .ctx-toc {
+  margin: 1.5rem 0 2.5rem;
+  padding: 1.25rem 1.5rem 0.75rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  background: var(--ifm-background-surface-color);
+}
+
+.markdown .ctx-toc__eyebrow {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-color-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.markdown .ctx-toc ol,
+.markdown .ctx-toc ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.markdown .ctx-toc li {
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+}
+
+.markdown .ctx-toc li:hover {
+  background: none;
+}
+
+.markdown .ctx-toc__chapter + .ctx-toc__chapter {
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.markdown .ctx-toc__link {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.3rem 0.5rem;
+  margin: 0 -0.5rem;
+  border-radius: 6px;
+  color: var(--ifm-color-emphasis-800);
+  font-size: 0.92rem;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.markdown .ctx-toc__link:hover {
+  color: var(--ifm-color-secondary);
+  background: var(--ifm-color-emphasis-100);
+  text-decoration: none;
+}
+
+.markdown .ctx-toc__link--chapter {
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  color: var(--ifm-color-primary);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.markdown .ctx-toc__num {
+  flex: 0 0 auto;
+  min-width: 2.25rem;
+  color: var(--ifm-color-emphasis-500);
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+
+.markdown .ctx-toc__link--chapter .ctx-toc__num {
+  min-width: 1.75rem;
+  color: var(--ifm-color-secondary);
+  letter-spacing: 0.06em;
+}
+
+.markdown .ctx-toc .ctx-toc__sub--1 {
+  margin: -0.25rem 0 0.6rem 2.5rem;
+}
+
+.markdown .ctx-toc .ctx-toc__sub--2 {
+  margin: 0 0 0.25rem 3rem;
+}
+
+.markdown .ctx-toc__sub--2 .ctx-toc__link {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.86rem;
+}
+
+[data-theme='dark'] .markdown .ctx-toc__link--chapter {
+  color: #ffffff;
+}
+
+@media (max-width: 680px) {
+  .markdown .ctx-toc {
+    padding: 1rem 1rem 0.5rem;
+  }
+
+  .markdown .ctx-toc .ctx-toc__sub--1 {
+    margin-left: 1.25rem;
+  }
+
+  .markdown .ctx-toc .ctx-toc__sub--2 {
+    margin-left: 1.5rem;
+  }
 }
