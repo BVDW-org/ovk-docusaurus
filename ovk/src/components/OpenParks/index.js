@@ -9,6 +9,7 @@ import {Buildings} from '@phosphor-icons/react/dist/icons/Buildings';
 import {Browsers} from '@phosphor-icons/react/dist/icons/Browsers';
 import {ChartLineUp} from '@phosphor-icons/react/dist/icons/ChartLineUp';
 import {Clock} from '@phosphor-icons/react/dist/icons/Clock';
+import {Crosshair} from '@phosphor-icons/react/dist/icons/Crosshair';
 import {Gauge} from '@phosphor-icons/react/dist/icons/Gauge';
 import {Devices} from '@phosphor-icons/react/dist/icons/Devices';
 import {Handshake} from '@phosphor-icons/react/dist/icons/Handshake';
@@ -17,6 +18,7 @@ import {Plant} from '@phosphor-icons/react/dist/icons/Plant';
 import {ShieldCheck} from '@phosphor-icons/react/dist/icons/ShieldCheck';
 import {Target} from '@phosphor-icons/react/dist/icons/Target';
 import {UserCheck} from '@phosphor-icons/react/dist/icons/UserCheck';
+import {Vault} from '@phosphor-icons/react/dist/icons/Vault';
 import styles from './styles.module.css';
 
 // Content source: OVK Sales Workshop "Deterministische ID-Lösungen"
@@ -59,44 +61,22 @@ const brands = [
 ].map(([name, slug]) => ({name, logo: `/img/brands/vermarkter/${slug}.png`}));
 
 const benefits = [
-  {
-    Icon: Handshake,
-    title: 'Einfachere Buchung',
-    text: 'Sie buchen über einen Weg und haben einen zentralen Ansprechpartner beim OVK, statt jeden Vermarkter einzeln abzustimmen.',
-  },
-  {
-    Icon: Target,
-    title: 'Mehr Reichweite',
-    text: 'Sie erreichen die Premium-Reichweite aller OVK-Vermarkter über Browser, Geräte und Websites hinweg.',
-  },
-  {
-    Icon: Gauge,
-    title: 'Volle Kontrolle',
-    text: 'Sie steuern die Frequenz über alle Vermarkter hinweg und können sie sauber verifizieren.',
-  },
-  {
-    Icon: Plant,
-    title: 'Mehr Wirkung pro Budget',
-    text: 'Ihre Kampagnen erreichen echte Menschen statt Bots, in Qualitätsumfeldern und mit weniger Streuverlust.',
-  },
+  {Icon: Handshake, title: 'Ein Buchungsweg', text: 'Ein Ansprechpartner statt vieler Einzelabstimmungen'},
+  {Icon: Target, title: 'Mehr Reichweite', text: 'Premium-Umfelder aller OVK-Vermarkter'},
+  {Icon: Gauge, title: 'Volle Kontrolle', text: 'Frequenzsteuerung über alle Vermarkter hinweg'},
+  {Icon: Plant, title: 'Mehr Wirkung', text: 'Echte Menschen und weniger Streuverlust'},
 ];
 
-const reasons = [
+const roadmap = [
   {
-    title: 'Skalierung schlägt Insellösung',
-    text: 'Erst die gebündelte Reichweite aller Vermarkter hat die Größe, die im Mediaplan gegen Walled Gardens besteht.',
+    Icon: Crosshair,
+    title: 'Pretargeted Deals mit Audience-Daten',
+    text: 'Die Vermarkter steuern Deals vorab auf Zielgruppen aus und signalisieren die ID im Bid Stream. So verbinden Sie Audience-Daten mit der vermarkterübergreifenden Frequenzsteuerung.',
   },
   {
-    title: 'Frequenzsteuerung geht nur gemeinsam',
-    text: 'Frequency Capping über Publisher, Browser und Apps braucht eine vermarkterübergreifende Kennung.',
-  },
-  {
-    title: 'Ein Standard statt vieler Sonderwege',
-    text: 'Eine einheitliche Deal-Nomenklatur und ein einziges Briefing machen die Angebote für Sie vergleichbar.',
-  },
-  {
-    title: 'Unabhängigkeit durch Netzwerkeffekt',
-    text: 'Je breiter die IDs verbaut sind, desto größer werden Reichweite, Marktakzeptanz und Unabhängigkeit von Gatekeepern.',
+    Icon: Vault,
+    title: 'Data Clean Room für Retailer und Werbekunden',
+    text: 'Retailer und Werbekunden gleichen ihre eigenen Daten über deterministische IDs mit der Reichweite der Vermarkter ab, ohne Rohdaten zu teilen.',
   },
 ];
 
@@ -311,6 +291,13 @@ function SectionNav() {
 function Section({id, index, eyebrow, title, lead, children}) {
   return (
     <section id={id} className={styles.section}>
+      {index !== '1' && (
+        <div className={styles.divider} aria-hidden="true">
+          <span className={styles.dividerLine} />
+          <span className={styles.dividerMark} />
+          <span className={styles.dividerLine} />
+        </div>
+      )}
       <header className={styles.sectionHead}>
         <span className={styles.eyebrow}>
           <span className={styles.eyebrowNum}>{index}</span>
@@ -418,28 +405,24 @@ function BrandStrip() {
 
 function GoalSection() {
   return (
-    <Section
-      id="ziel"
-      index="1"
-      eyebrow="Ziel"
-      title="Eine gemeinsame Antwort auf die Walled Gardens"
-      lead="Cookie-basierte Adressierbarkeit nimmt ab und Budgets wandern zu den großen Plattformen. Ihre Kunden erwarten trotzdem effiziente, kontrollierbare und einfach buchbare Kampagnen. Open Parks macht die Premium-Reichweite im Open Web für Sie wieder adressierbar.">
-      <div className={styles.benefitGrid}>
-        {benefits.map(({Icon, title, text}) => (
-          <article key={title} className={styles.benefit}>
-            <Icon size={24} weight="regular" aria-hidden="true" />
-            <h3>{title}</h3>
-            <p>{text}</p>
-          </article>
-        ))}
-      </div>
-      <div className={styles.reasonPanel}>
-        <h3 className={styles.reasonPanelTitle}>Warum ein OVK-Ansatz und kein Einzelprodukt</h3>
-        <ul className={styles.reasonList}>
-          {reasons.map(({title, text}) => (
+    <Section id="ziel" index="1" eyebrow="Ziel" title="Eine gemeinsame Antwort auf die Walled Gardens">
+      <div className={styles.goal}>
+        <p className={styles.goalText}>
+          Budgets wandern zu den großen Plattformen, weil Reichweite, Steuerung
+          und Buchung dort einfach sind. Open Parks bietet genau das im Open Web,
+          gebündelt über alle OVK-Vermarkter. Was kein Vermarkter allein
+          schafft, gelingt gemeinsam.
+        </p>
+        <ul className={styles.goalList}>
+          {benefits.map(({Icon, title, text}) => (
             <li key={title}>
-              <strong>{title}</strong>
-              <span>{text}</span>
+              <span className={styles.goalIcon}>
+                <Icon size={20} weight="bold" aria-hidden="true" />
+              </span>
+              <span>
+                <strong>{title}</strong>
+                {text}
+              </span>
             </li>
           ))}
         </ul>
@@ -588,6 +571,24 @@ function StatusSection() {
               <strong>{r.value}</strong>
               <span>{r.label}</span>
             </div>
+          ))}
+        </div>
+      </div>
+
+      <div className={styles.roadmap}>
+        <h3 className={styles.roadmapTitle}>Woran wir arbeiten</h3>
+        <div className={styles.roadmapGrid}>
+          {roadmap.map(({Icon, title, text}) => (
+            <article key={title} className={styles.roadmapItem}>
+              <div className={styles.roadmapHead}>
+                <span className={styles.goalIcon}>
+                  <Icon size={20} weight="bold" aria-hidden="true" />
+                </span>
+                <span className={styles.roadmapTag}>In Arbeit</span>
+              </div>
+              <h4>{title}</h4>
+              <p>{text}</p>
+            </article>
           ))}
         </div>
       </div>
