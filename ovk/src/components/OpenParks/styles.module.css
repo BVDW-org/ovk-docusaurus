@@ -710,16 +710,6 @@
   line-height: 1.5;
 }
 
-.flowHint {
-  margin-top: auto !important;
-  padding: 0.55rem 0.65rem;
-  border-radius: 8px;
-  color: var(--op-navy);
-  background: var(--op-orange-soft);
-  font-size: 0.78rem;
-  line-height: 1.45;
-}
-
 /* ---------- Status timeline ---------- */
 
 .timeline {

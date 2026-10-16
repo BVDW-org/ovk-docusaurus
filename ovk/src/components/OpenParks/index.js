@@ -37,7 +37,7 @@ const kpis = [
     label: 'IDs Reichweite pro Woche',
     note: 'über alle Vermarkter, gemessen in den DSPs',
   },
-  {value: 'max. 5 Tage', label: 'vom RFP bis zu den Deals', note: 'mit einem Ansprechpartner beim OVK'},
+  {value: 'max. 5 Tage', label: 'vom RFP bis zu den Deals', note: 'mit einem Ansprechpartner für Sie'},
 ];
 
 // OVK members, logos cut from the member overview on ovk.de.
@@ -62,22 +62,22 @@ const benefits = [
   {
     Icon: Handshake,
     title: 'Einfachere Buchung',
-    text: 'Ein Buchungsweg und ein zentraler Ansprechpartner beim OVK statt Abstimmung mit jedem Vermarkter einzeln.',
+    text: 'Sie buchen über einen Weg und haben einen zentralen Ansprechpartner beim OVK, statt jeden Vermarkter einzeln abzustimmen.',
   },
   {
     Icon: Target,
     title: 'Mehr Reichweite',
-    text: 'Premium-Reichweite aller OVK-Vermarkter über Browser, Geräte und Websites hinweg.',
+    text: 'Sie erreichen die Premium-Reichweite aller OVK-Vermarkter über Browser, Geräte und Websites hinweg.',
   },
   {
     Icon: Gauge,
     title: 'Volle Kontrolle',
-    text: 'Frequenzsteuerung über Vermarkter hinweg, sauber verifizierbar.',
+    text: 'Sie steuern die Frequenz über alle Vermarkter hinweg und können sie sauber verifizieren.',
   },
   {
     Icon: Plant,
     title: 'Mehr Wirkung pro Budget',
-    text: 'Echte Menschen statt Bots, Qualitätsumfelder und weniger Streuverlust.',
+    text: 'Ihre Kampagnen erreichen echte Menschen statt Bots, in Qualitätsumfeldern und mit weniger Streuverlust.',
   },
 ];
 
@@ -92,7 +92,7 @@ const reasons = [
   },
   {
     title: 'Ein Standard statt vieler Sonderwege',
-    text: 'Einheitliche Deal-Nomenklatur und ein einziges Briefing machen Angebote vergleichbar.',
+    text: 'Eine einheitliche Deal-Nomenklatur und ein einziges Briefing machen die Angebote für Sie vergleichbar.',
   },
   {
     title: 'Unabhängigkeit durch Netzwerkeffekt',
@@ -148,24 +148,23 @@ const bookingSteps = [
   {
     actor: 'agentur',
     title: 'RFP an den OVK',
-    text: 'Die Agentur schickt ihren RFP per E-Mail an den OVK-Vertreter.',
-    hint: 'Individuelle RFPs an einzelne Vermarkter werden an den OVK-Vertreter verwiesen.',
+    text: 'Sie schicken Ihren RFP per E-Mail an Ihren Ansprechpartner beim OVK.',
   },
   {
     actor: 'ovk',
     title: 'Gebündelte Anfrage',
-    text: 'Der OVK fragt alle Vermarkter mit einem einheitlichen Briefing-Template an.',
+    text: 'Der OVK leitet Ihre Anfrage in einem einheitlichen Briefing an alle Vermarkter weiter.',
   },
   {
     actor: 'vermarkter',
     title: 'Rückmeldung',
-    text: 'Die Vermarkter legen die Deals an und melden die Dealinfos zurück, ganz ohne Preise.',
+    text: 'Die Vermarkter legen Ihre Deals an und melden sie innerhalb von 72 Stunden an den OVK zurück.',
     badge: '72 Std.',
   },
   {
     actor: 'ovk',
     title: 'Gebündeltes Angebot',
-    text: 'Der OVK fasst alle Rückmeldungen in einer Deal-Übersicht für die Agentur zusammen.',
+    text: 'Sie erhalten vom OVK eine Übersicht mit allen Deals und können direkt in Ihrer DSP starten.',
   },
 ];
 
@@ -173,12 +172,12 @@ const liveSteps = [
   {
     actor: 'ovk',
     title: 'Go-Live-Check',
-    text: 'Der OVK meldet fehlende Auslieferung direkt an die Vermarkter, damit sie schnell nachsteuern.',
+    text: 'Liefert ein Deal nicht aus, klärt der OVK das direkt mit dem Vermarkter. Sie müssen sich nicht darum kümmern.',
   },
   {
     actor: 'ovk',
     title: 'Review',
-    text: 'Der OVK holt die Kampagnenergebnisse bei der Agentur ein und dokumentiert die Learnings.',
+    text: 'Nach der Kampagne wertet der OVK die Ergebnisse mit Ihnen aus und hält die Learnings fest.',
   },
 ];
 
@@ -207,8 +206,8 @@ const milestones = [
   },
   {
     date: 'September 2026',
-    title: 'Buchungsprozess abgestimmt',
-    text: 'Der einheitliche OVK-Buchungsweg mit Briefing- und Deal-Template ist mit den Vermarktern verabschiedet.',
+    title: 'Buchbar über den OVK',
+    text: 'Alle beteiligten Vermarkter arbeiten nach einem einheitlichen Buchungsweg. Agenturen können Open Parks ab sofort über den OVK buchen.',
     current: true,
   },
 ];
@@ -230,15 +229,15 @@ const faqs = [
       <>
         Nein, solange der Einkauf über The Trade Desk, Active Agent oder Adform
         als DSP erfolgt. Zusätzliche technische Anforderungen auf Kundenseite
-        gibt es nicht. Soll eine andere DSP zum Einsatz kommen, klären wir einen
-        möglichen technischen Workaround im Vorfeld. Details zeigt die{' '}
+        gibt es nicht. Möchten Sie eine andere DSP nutzen, klärt der OVK einen
+        möglichen technischen Workaround gemeinsam im Vorfeld. Details zeigt die{' '}
         <Link to="/docs/tools/id-landscape-map">ID Landscape Map</Link>.
       </>
     ),
   },
   {
     q: 'Was kostet die Nutzung deterministischer IDs zusätzlich?',
-    a: 'Es entstehen keine zusätzlichen Kosten. Die IDs liegen im bestehenden programmatischen Deal. Verkauft wird Reichweite, nicht Technik.',
+    a: 'Es entstehen keine zusätzlichen Kosten. Die IDs liegen im bestehenden programmatischen Deal. Sie bezahlen für Reichweite, nicht für Technik.',
   },
   {
     q: 'Erhöhen sich die Preise?',
@@ -352,7 +351,6 @@ function FlowStep({step, number}) {
       <ActorChip actor={step.actor} />
       <h3 className={styles.flowTitle}>{step.title}</h3>
       <p className={styles.flowText}>{step.text}</p>
-      {step.hint && <p className={styles.flowHint}>{step.hint}</p>}
     </li>
   );
 }
@@ -390,7 +388,7 @@ function Hero() {
         Mit OVK Open Parks setzen die deutschen Premium-Vermarkter das Open
         Parks Konzept der OWM um. Deterministisch adressierbare Reichweite über
         Utiq und netID, vermarkterübergreifend steuerbar und über einen einzigen
-        Buchungsweg erreichbar.
+        Buchungsweg für Sie erreichbar.
       </p>
       <dl className={styles.kpiGrid}>
         {kpis.map((kpi) => (
@@ -425,7 +423,7 @@ function GoalSection() {
       index="1"
       eyebrow="Ziel"
       title="Eine gemeinsame Antwort auf die Walled Gardens"
-      lead="Cookie-basierte Adressierbarkeit nimmt ab und Budgets wandern zu den großen Plattformen. Werbungtreibende erwarten trotzdem effiziente, kontrollierbare und einfach buchbare Kampagnen. Open Parks macht die Premium-Reichweite im Open Web dafür wieder adressierbar.">
+      lead="Cookie-basierte Adressierbarkeit nimmt ab und Budgets wandern zu den großen Plattformen. Ihre Kunden erwarten trotzdem effiziente, kontrollierbare und einfach buchbare Kampagnen. Open Parks macht die Premium-Reichweite im Open Web für Sie wieder adressierbar.">
       <div className={styles.benefitGrid}>
         {benefits.map(({Icon, title, text}) => (
           <article key={title} className={styles.benefit}>
@@ -501,7 +499,7 @@ function ProcessSection() {
       index="3"
       eyebrow="Buchung"
       title="So läuft eine Buchung über den OVK"
-      lead="Ein Weg, ein Ansprechpartner, ein Angebot. Vom RFP bis zur Übermittlung der Deals dauert es höchstens fünf Tage.">
+      lead="Ein Weg, ein Ansprechpartner, ein Angebot. Von Ihrem RFP bis zu den fertigen Deals vergehen höchstens fünf Tage.">
       <div className={styles.flow}>
         <div className={styles.flowLegend} aria-label="Beteiligte">
           {Object.keys(actors).map((key) => (
@@ -604,7 +602,7 @@ function FaqSection() {
       index="5"
       eyebrow="FAQ"
       title="Häufige Fragen"
-      lead="Antworten auf die Fragen, die uns Werbungtreibende und Agenturen am häufigsten stellen.">
+      lead="Antworten auf die Fragen, die Agenturen und Werbungtreibende am häufigsten stellen.">
       <div className={styles.faq}>
         {faqs.map(({q, a}) => (
           <details key={q} className={styles.faqItem}>

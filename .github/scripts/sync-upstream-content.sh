@@ -70,12 +70,15 @@ sync_identifier_landscape() {
 
   # The production runtime is hardened and maintained in this repository.
   # Preserve it while synchronizing upstream reference files and configuration.
+  # auth_registry.json holds editor accounts (emails, salts, password hashes)
+  # and must never be published as a static asset.
   rsync -a \
     --delete \
     --exclude='.git/' \
     --exclude='.github/' \
     --exclude='.idea/' \
     --exclude='.DS_Store' \
+    --exclude='/config/auth_registry.json' \
     --exclude='/app.js' \
     --exclude='/index.html' \
     --exclude='/style.css' \
