@@ -7,6 +7,7 @@
 # Generated files
 .docusaurus
 .cache-loader
+.next/
 /static/fonts/inter
 /static/tools/identifier-landscape/config/vermarkter-manifest.json
 

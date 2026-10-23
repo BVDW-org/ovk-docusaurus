@@ -6,7 +6,7 @@ For content ownership, synchronization, GitHub Actions, deployment, permissions,
 
 ## Requirements
 
-- Node.js 24 or newer
+- Node.js 24.22.1+ within 24.x, or 26.12.1+ within 26.x (see [SECURITY.md](../SECURITY.md#nodejs-runtime-and-node2shell))
 - npm
 
 ## Start the development server
@@ -22,7 +22,7 @@ The command prints the local URL and reloads most source changes automatically.
 
 ```bash
 npm ci
-npm run check   # both validators plus a strict production build
+npm run check   # dependency audit, security tests, validators and a strict production build
 npm run serve   # serves the produced build/ directory locally
 ```
 

@@ -82,7 +82,7 @@ if (unsafeImages.length > 0) {
     console.error(`- ${image}`);
   }
   throw new Error(
-    'Unsafe image formats are blocked because the Docusaurus image-size dependency has unpatched denial-of-service advisories.',
+    'ICNS, JPEG XL, and HEIF-family images are blocked by the repository image policy; convert them to a supported format before building.',
   );
 }
 

@@ -135,7 +135,8 @@ The workflow performs its own build and deployment because commits made by GitHu
 
 Every production artifact must pass all of these checks:
 
-- clean installation from `ovk/package-lock.json` using `npm ci` and Node.js 24;
+- a patched Node.js runtime (Node 24.22.1+ within 24.x in CI) and clean installation from `ovk/package-lock.json` using `npm ci`;
+- dependency auditing at every severity and regression tests for security checks;
 - Identifier Landscape relationship, duplicate-ID, and reference validation;
 - strict Docusaurus builds for the configured locales;
 - normalized LF line endings for synchronized text before Git whitespace checks;
@@ -196,7 +197,7 @@ Do not place a personal token in the repository, documentation, workflow files, 
 
 Requirements:
 
-- Node.js 24 or newer;
+- Node.js 24.22.1+ within 24.x, or 26.12.1+ within 26.x (see [runtime security requirements](SECURITY.md#nodejs-runtime-and-node2shell));
 - npm; and
 - a checkout of this repository.
 
@@ -213,7 +214,7 @@ Run the production checks before opening a pull request:
 ```bash
 cd ovk
 npm ci
-npm run check   # runs both validators and a strict production build
+npm run check   # audits dependencies, tests security checks, validates and builds
 npm run serve   # serves the produced build/ directory locally
 ```
 

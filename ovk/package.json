@@ -3,16 +3,21 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "preinstall": "node scripts/validate-runtime.mjs",
     "prestart": "node scripts/sync-font-assets.mjs && npm run validate",
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "prebuild": "node scripts/sync-font-assets.mjs && npm run validate",
     "build": "docusaurus build",
-    "validate": "node scripts/validate-image-assets.mjs && node scripts/validate-identifier-config.mjs",
-    "check": "npm run validate && npm run build && npm run validate:seo",
+    "validate": "npm run validate:runtime && node scripts/validate-image-assets.mjs && node scripts/validate-identifier-config.mjs",
+    "validate:runtime": "node scripts/validate-runtime.mjs",
+    "test": "node --test scripts/*.test.mjs",
+    "audit:dependencies": "npm audit --audit-level=low",
+    "check": "npm run audit:dependencies && npm test && npm run validate && npm run build && npm run validate:seo",
     "validate:seo": "node scripts/validate-seo.mjs",
     "swizzle": "docusaurus swizzle",
     "clear": "docusaurus clear",
+    "preserve": "npm run validate:runtime",
     "serve": "node scripts/serve-build.mjs",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids"
@@ -33,7 +38,8 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.10.2",
-    "@docusaurus/types": "^3.10.2"
+    "@docusaurus/types": "^3.10.2",
+    "parse5": "^8.0.1"
   },
   "browserslist": {
     "production": [
@@ -48,11 +54,13 @@
     ]
   },
   "engines": {
-    "node": ">=24.0"
+    "node": "^24.22.1 || ^26.12.1"
   },
   "overrides": {
     "serialize-javascript": "^7.1.1",
     "uuid": "^11.1.1",
-    "webpack-dev-server": "^5.2.2"
+    "webpack-dev-server": "^5.2.2",
+    "postcss-selector-parser": "^7.1.7",
+    "tinypool": "^2.1.2"
   }
 }

@@ -1,19 +1,7 @@
 import {access, readFile} from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
-
-function parseAttributes(tag) {
-  const attributes = {};
-  const pattern = /([^\s=<>]+)(?:\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'=<>`]+)))?/g;
-  for (const match of tag.matchAll(pattern)) {
-    attributes[match[1].toLowerCase()] = match[2] ?? match[3] ?? match[4] ?? '';
-  }
-  return attributes;
-}
-
-function tags(html, name) {
-  return html.match(new RegExp(`<${name}\\b[^>]*>`, 'gi')) ?? [];
-}
+import {parse} from 'parse5';
 
 function normalizedUrl(value) {
   return new URL(value).href;
@@ -31,32 +19,35 @@ async function resolveHtmlFile(outDir, url) {
   }
 }
 
-function extractPageSignals(html) {
-  const titleMatches = [...html.matchAll(/<title\b[^>]*>([\s\S]*?)<\/title>/gi)];
-  const descriptionTags = tags(html, 'meta').filter((tag) => {
-    const attrs = parseAttributes(tag);
-    return attrs.name?.toLowerCase() === 'description';
-  });
-  const canonicalTags = tags(html, 'link').filter((tag) => {
-    const attrs = parseAttributes(tag);
-    return attrs.rel?.toLowerCase().split(/\s+/).includes('canonical');
-  });
-  const robots = tags(html, 'meta')
-    .map(parseAttributes)
-    .filter((attrs) => attrs.name?.toLowerCase() === 'robots')
+export function extractPageSignals(html) {
+  const elements = [];
+  function visit(node) {
+    if (node.tagName) elements.push(node);
+    for (const child of node.childNodes ?? []) visit(child);
+  }
+  visit(parse(html));
+  const attributes = (node) => Object.fromEntries(node.attrs.map(({name, value}) => [name, value]));
+  const text = (node) => node.value ?? (node.childNodes ?? []).map(text).join('');
+  const titles = elements.filter((node) => node.tagName === 'title');
+  const meta = elements.filter((node) => node.tagName === 'meta').map(attributes);
+  const descriptions = meta.filter((attrs) => attrs.name?.toLowerCase() === 'description');
+  const canonicals = elements.filter((node) => node.tagName === 'link')
+    .map(attributes)
+    .filter((attrs) => attrs.rel?.toLowerCase().split(/\s+/).includes('canonical'));
+  const robots = meta.filter((attrs) => attrs.name?.toLowerCase() === 'robots')
     .map((attrs) => attrs.content?.toLowerCase() ?? '');
-  const jsonLd = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)]
-    .filter((match) => parseAttributes(match[1]).type?.toLowerCase() === 'application/ld+json')
-    .map((match) => match[2]);
+  const jsonLd = elements.filter((node) => node.tagName === 'script' &&
+      attributes(node).type?.toLowerCase() === 'application/ld+json')
+    .map(text);
 
   return {
-    titleCount: titleMatches.length,
-    title: titleMatches[0]?.[1]?.trim() ?? '',
-    descriptionCount: descriptionTags.length,
-    description: descriptionTags[0] ? parseAttributes(descriptionTags[0]).content ?? '' : '',
-    canonicalCount: canonicalTags.length,
-    canonical: canonicalTags[0] ? parseAttributes(canonicalTags[0]).href ?? '' : '',
-    h1Count: (html.match(/<h1\b/gi) ?? []).length,
+    titleCount: titles.length,
+    title: titles[0] ? text(titles[0]).trim() : '',
+    descriptionCount: descriptions.length,
+    description: descriptions[0]?.content ?? '',
+    canonicalCount: canonicals.length,
+    canonical: canonicals[0]?.href ?? '',
+    h1Count: elements.filter((node) => node.tagName === 'h1').length,
     robots,
     jsonLd,
   };

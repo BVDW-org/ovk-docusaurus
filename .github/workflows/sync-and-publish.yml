@@ -34,6 +34,17 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version-file: .nvmrc
+          check-latest: true
+          cache: npm
+          cache-dependency-path: ovk/package-lock.json
+
+      - name: Verify patched Node.js runtime
+        run: node ovk/scripts/validate-runtime.mjs
+
       - name: Checkout identity solutions source
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -104,17 +115,19 @@ jobs:
             git merge --ff-only origin/main
           fi
 
-      - name: Set up Node.js
-        if: steps.prepare.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
-        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
-        with:
-          node-version: '24'
-          cache: npm
-          cache-dependency-path: ovk/package-lock.json
-
       - name: Install locked dependencies
         if: steps.prepare.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
         run: npm ci
+        working-directory: ovk
+
+      - name: Test security checks
+        if: steps.prepare.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        run: npm test
+        working-directory: ovk
+
+      - name: Audit dependency vulnerabilities
+        if: steps.prepare.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        run: npm run audit:dependencies
         working-directory: ovk
 
       - name: Validate identifier-landscape configuration

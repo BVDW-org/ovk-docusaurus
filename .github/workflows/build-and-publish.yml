@@ -6,10 +6,12 @@ on:
       - main
     paths:
       - 'ovk/**'
+      - '.nvmrc'
       - '.github/workflows/build-and-publish.yml'
   pull_request:
     paths:
       - 'ovk/**'
+      - '.nvmrc'
       - '.github/workflows/build-and-publish.yml'
       - '.github/workflows/sync-and-publish.yml'
       - '.github/scripts/**'
@@ -38,12 +40,24 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
-          node-version: '24'
+          node-version-file: .nvmrc
+          check-latest: true
           cache: npm
           cache-dependency-path: ovk/package-lock.json
 
+      - name: Verify patched Node.js runtime
+        run: node ovk/scripts/validate-runtime.mjs
+
       - name: Install locked dependencies
         run: npm ci
+        working-directory: ovk
+
+      - name: Test security checks
+        run: npm test
+        working-directory: ovk
+
+      - name: Audit dependency vulnerabilities
+        run: npm run audit:dependencies
         working-directory: ovk
 
       - name: Validate identifier-landscape configuration
