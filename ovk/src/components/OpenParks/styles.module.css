@@ -706,80 +706,95 @@
 
 .flowStep {
   --step: var(--op-blue);
+  --step-soft: var(--op-blue-soft);
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 0.55rem;
+  gap: 0.6rem;
   margin: 0;
-  padding: 1.15rem 1.1rem 1.25rem;
-  border: 1px solid var(--op-line);
-  border-top: 3px solid var(--step);
+  padding: 1.25rem 1.25rem 1.35rem;
   border-radius: 10px;
-  background: var(--ifm-background-color);
-  box-shadow: 0 8px 24px rgba(20, 47, 82, 0.06);
+  background: var(--op-surface);
+  box-shadow:
+    0 1px 2px rgba(20, 47, 82, 0.06),
+    0 6px 18px rgba(20, 47, 82, 0.06);
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
+[data-theme='dark'] .flowStep {
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: none;
+}
+
 .flowStep:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 32px rgba(20, 47, 82, 0.12);
+  transform: translateY(-2px);
+  box-shadow:
+    0 1px 2px rgba(20, 47, 82, 0.06),
+    0 12px 28px rgba(20, 47, 82, 0.1);
 }
 
 .flowStep_agentur {
   --step: var(--op-orange);
+  --step-soft: var(--op-orange-soft);
 }
 
 .flowStep_vermarkter {
   --step: #0f8a6a;
+  --step-soft: rgba(15, 138, 106, 0.12);
 }
 
-/* Connector arrow between consecutive steps in a row. */
+[data-theme='dark'] .flowStep_vermarkter {
+  --step: #4fd1ab;
+  --step-soft: rgba(79, 209, 171, 0.14);
+}
+
+/* Connector between consecutive steps in a row: thin line, small chevron. */
 .flowStep + .flowStep::before {
   content: '';
   position: absolute;
-  top: 2.05rem;
-  left: -1.6rem;
-  width: 1.45rem;
-  height: 2px;
-  background: var(--op-orange);
+  top: 2.3rem;
+  left: -1.45rem;
+  width: 1.15rem;
+  height: 1.5px;
+  background: var(--ifm-color-emphasis-400);
 }
 
 .flowStep + .flowStep::after {
   content: '';
   position: absolute;
-  top: calc(2.05rem - 5px);
-  left: -0.35rem;
-  border: 6px solid transparent;
-  border-left: 7px solid var(--op-orange);
-  border-right-width: 0;
+  top: calc(2.3rem - 3.5px);
+  left: -0.45rem;
+  width: 8px;
+  height: 8px;
+  border-top: 1.5px solid var(--ifm-color-emphasis-400);
+  border-right: 1.5px solid var(--ifm-color-emphasis-400);
+  transform: rotate(45deg);
 }
 
 .flowStepTop {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 2.1rem;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
 }
 
 .flowNumber {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.1rem;
-  height: 2.1rem;
-  border-radius: 50%;
-  color: #ffffff;
-  background: var(--step);
-  font-size: 0.82rem;
+  color: var(--step);
+  font-size: 1.6rem;
   font-weight: 750;
   font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+  line-height: 1;
 }
 
 .flowBadge {
   display: inline-flex;
+  align-self: flex-start;
   align-items: center;
-  gap: 0.25rem;
-  padding: 0.2rem 0.55rem;
+  gap: 0.3rem;
+  margin-top: auto;
+  padding: 0.2rem 0.6rem;
   border-radius: 999px;
   color: var(--op-orange);
   background: var(--op-orange-soft);
@@ -1141,22 +1156,20 @@
     gap: 1.5rem;
   }
 
-  /* Vertical flow: arrows point down between stacked cards. */
+  /* Vertical flow: chevron points down between stacked cards. */
   .flowStep + .flowStep::before {
     display: block !important;
-    top: -1.45rem;
-    left: 2.05rem;
-    width: 2px;
-    height: 1.35rem;
+    top: -1.35rem;
+    left: 50%;
+    width: 1.5px;
+    height: 1.1rem;
   }
 
   .flowStep + .flowStep::after {
     display: block !important;
-    top: -0.4rem;
-    left: calc(2.05rem - 5px);
-    border: 6px solid transparent;
-    border-top: 7px solid var(--op-orange);
-    border-bottom-width: 0;
+    top: -0.55rem;
+    left: calc(50% - 3.5px);
+    transform: rotate(135deg);
   }
 
   .milestone {

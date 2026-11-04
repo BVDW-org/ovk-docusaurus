@@ -327,17 +327,17 @@ function FlowStep({step, number}) {
   return (
     <li className={clsx(styles.flowStep, styles[`flowStep_${step.actor}`])}>
       <div className={styles.flowStepTop}>
-        <span className={styles.flowNumber}>{number}</span>
-        {step.badge && (
-          <span className={styles.flowBadge}>
-            <Clock size={13} weight="bold" aria-hidden="true" />
-            {step.badge}
-          </span>
-        )}
+        <span className={styles.flowNumber}>{String(number).padStart(2, '0')}</span>
+        <ActorChip actor={step.actor} />
       </div>
-      <ActorChip actor={step.actor} />
       <h3 className={styles.flowTitle}>{step.title}</h3>
       <p className={styles.flowText}>{step.text}</p>
+      {step.badge && (
+        <span className={styles.flowBadge}>
+          <Clock size={13} weight="bold" aria-hidden="true" />
+          {step.badge}
+        </span>
+      )}
     </li>
   );
 }
