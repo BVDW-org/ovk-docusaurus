@@ -737,3 +737,9 @@ html[class*="docs-doc-id-werbeformen"] .markdown ol > li:hover {
 html[class*='docs-doc-id-openparks/'] .theme-unlisted-banner {
   display: none;
 }
+
+/* Open Parks is a landing page without a sidebar; give it more width than
+   the regular 1200px docs container. */
+html[class*='docs-doc-id-openparks/'] main[class*='docMainContainer'] > .container {
+  max-width: 1440px;
+}

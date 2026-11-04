@@ -271,11 +271,20 @@
 
 /* ---------- Section navigation ---------- */
 
+/* Chapter jump bar: only useful on small screens, where the page gets
+   long and the headings scroll far apart. */
 .sectionNav {
+  display: none;
   position: sticky;
   top: calc(var(--ifm-navbar-height) + 0.5rem);
   z-index: 5;
   margin-top: -2.75rem;
+}
+
+@media (max-width: 996px) {
+  .sectionNav {
+    display: block;
+  }
 }
 
 .sectionNav ol {
