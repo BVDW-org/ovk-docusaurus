@@ -16,7 +16,9 @@ Production is a static GitHub Pages artifact, with no application Node.js server
 
 ## Dependencies and validation
 
-`npm run audit:dependencies` fails on any advisory severity. Both publishing workflows run it before building, and `npm run check` includes it locally. Dependabot checks npm and GitHub Actions weekly. The audit is a point-in-time registry check, not proof that all possible vulnerabilities are absent.
+`npm run audit:dependencies` (`ovk/scripts/audit-dependencies.mjs`) fails on any advisory severity unless `ovk/audit-exceptions.json` lists the advisory's GHSA ID with a reason and an expiry date. Expired exceptions fail the check too, and exceptions that no longer match an advisory are reported for removal. Only add an exception when no non-breaking fix exists and the affected code is limited to build tooling. Both publishing workflows run the check before building, and `npm run check` includes it locally.
+
+On 4 November 2026 `follow-redirects` 1.16.2 and `joi` 17.13.9 were pulled in through the lockfile. Exceptions until 31 January 2027 cover `deepmerge` (GHSA-gcqx-w48m-w2h4, no patched release), `glob` (GHSA-3g3m-2fjr-6pw4) and `minimatch` (GHSA-g3hv-75wg-m249). The latter two are fixed only in new majors that `workbox-build`, `filelist` and `serve-handler` do not support yet. All three are reached only through build and local-preview tooling. Dependabot checks npm and GitHub Actions weekly. The audit is a point-in-time registry check, not proof that all possible vulnerabilities are absent.
 
 On 23 October 2026 the lockfile was refreshed to patched dependencies, including `image-size` 2.0.4. The previous image-size audit exception is retired. The image-format restriction in `scripts/validate-image-assets.mjs` remains as a content policy and additional protection.
 

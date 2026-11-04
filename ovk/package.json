@@ -12,7 +12,7 @@
     "validate": "npm run validate:runtime && node scripts/validate-image-assets.mjs && node scripts/validate-identifier-config.mjs",
     "validate:runtime": "node scripts/validate-runtime.mjs",
     "test": "node --test scripts/*.test.mjs",
-    "audit:dependencies": "npm audit --audit-level=low",
+    "audit:dependencies": "node scripts/audit-dependencies.mjs",
     "check": "npm run audit:dependencies && npm test && npm run validate && npm run build && npm run validate:seo",
     "validate:seo": "node scripts/validate-seo.mjs",
     "swizzle": "docusaurus swizzle",
