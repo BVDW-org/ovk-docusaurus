@@ -7,7 +7,8 @@ keywords: ["Break Ad", "OVK Werbeform", "technische Spezifikationen", "digitale 
 
 # Break Ad
 
-
+<span class="badge badge--success">Active</span>
+<img alt="Beispieldarstellung des OVK-Werbeformats Break Ad" src="/img/formats/261016_OVK_Web_Ad.png" />
 
 ## Was ist das OVK-Werbeformat Break Ad?
 Das Break Ad ist geschaffen für eine Pause, die sich der User selbst im Surfverlauf nimmt, beispielsweise nach dem Versenden einer E-Mail, einer zeitweisen Inaktivität auf einer Website oder nach dem Logout.
