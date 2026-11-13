@@ -7,12 +7,9 @@ const sidebars = {
     {
       type: 'category',
       label: 'Identity',
-      link: { type: 'doc', id: 'identitysolutions/README' },
+      link: { type: 'doc', id: 'openparks/index' },
       items: [
-        // OVK Open Parks (docs/openparks) wird nach Freigabe die Startseite
-        // dieser Kategorie: link auf 'openparks/index' setzen und README als
-        // { type: 'doc', id: 'identitysolutions/README', label: 'Einführung' }
-        // hier einreihen. Bis dahin nur per Deep Link mit Zugangscode.
+        { type: 'doc', id: 'identitysolutions/README', label: 'Einführung' },
         { type: 'doc', id: 'identitysolutions/ID-Support_OVK-Vermarkter/OVK-IdentifierSupport_byVendor' },
         // Bewusst ausgeblendet (per Direktlink weiter erreichbar):
         // identitysolutions/Case Studies

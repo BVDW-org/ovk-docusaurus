@@ -14,7 +14,8 @@ async function collectMarkdownFiles(directory, prefix = '') {
     if (entry.isDirectory()) {
       return collectMarkdownFiles(absolutePath, relativePath);
     }
-    return entry.isFile() && markdownExtensions.has(path.extname(entry.name))
+    // Files starting with "_" are excluded from the docs routes as well.
+    return entry.isFile() && !entry.name.startsWith('_') && markdownExtensions.has(path.extname(entry.name))
       ? [{absolutePath, relativePath}]
       : [];
   }));
@@ -79,6 +80,7 @@ ${linkFor('werbeformen/Werbeformen_new/Übersicht.md', 'Alle digitalen Werbeform
 ${linkFor('identitysolutions/README.md', 'Identity-Lösungen')}
 ${linkFor('identitysolutions/ID-Support_OVK-Vermarkter/OVK-IdentifierSupport_byVendor.md', 'Identifier-Unterstützung der OVK-Vermarkter')}
 ${linkFor('contextualstandards/index.md', 'OVK Contextual Standard')}
+${linkFor('openparks/index.mdx', 'OVK Open Parks')}
 ${linkFor('tools/id-landscape-map.md', 'OVK ID Landscape Map')}
 
 ## Technische Hilfen
@@ -130,9 +132,17 @@ export default function seoArtifactsPlugin(context) {
       const documents = await Promise.all(
         files
           .filter(({relativePath}) => !excludedDocuments.has(relativePath))
-          .map(async ({absolutePath, relativePath}) =>
-            parseDocument(await readFile(absolutePath, 'utf8'), relativePath),
-          ),
+          .map(async ({absolutePath, relativePath}) => {
+            const document = parseDocument(await readFile(absolutePath, 'utf8'), relativePath);
+            // Component-based pages (MDX that only renders a React component)
+            // provide their text through a sibling _llms.md; everything after
+            // its first "---" line replaces the MDX body.
+            const plainText = await readFile(path.join(path.dirname(absolutePath), '_llms.md'), 'utf8').catch(() => null);
+            if (plainText) {
+              document.body = plainText.split(/^---$/m).slice(1).join('---').trim();
+            }
+            return document;
+          }),
       );
       return {documents};
     },

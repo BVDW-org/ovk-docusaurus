@@ -10,6 +10,7 @@ import {Flask} from '@phosphor-icons/react/dist/icons/Flask';
 import {IdentificationCard} from '@phosphor-icons/react/dist/icons/IdentificationCard';
 import {Info} from '@phosphor-icons/react/dist/icons/Info';
 import {Monitor} from '@phosphor-icons/react/dist/icons/Monitor';
+import {MapTrifold} from '@phosphor-icons/react/dist/icons/MapTrifold';
 import {Path} from '@phosphor-icons/react/dist/icons/Path';
 import {Play} from '@phosphor-icons/react/dist/icons/Play';
 import {Question} from '@phosphor-icons/react/dist/icons/Question';
@@ -50,9 +51,14 @@ const topics = [
     title: 'Identity',
     Icon: UserCircle,
     description:
-      'Aktive ID-Lösungen pro Vermarkter, die interaktive ID Landscape Map und Antworten auf häufige Fragen.',
-    to: '/docs/identitysolutions/',
+      'OVK Open Parks, aktive ID-Lösungen pro Vermarkter, die interaktive ID Landscape Map und Antworten auf häufige Fragen.',
+    to: '/docs/identitysolutions/openparks',
     links: [
+      {
+        label: 'OVK Open Parks',
+        to: '/docs/identitysolutions/openparks',
+        Icon: Path,
+      },
       {
         label: 'Identity Intro',
         to: '/docs/identitysolutions/',
@@ -61,7 +67,7 @@ const topics = [
       {
         label: 'ID Landscape Map',
         to: '/docs/tools/id-landscape-map',
-        Icon: Path,
+        Icon: MapTrifold,
       },
       {
         label: 'OVK Vermarkter ID-Overview',
